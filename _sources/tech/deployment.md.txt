@@ -1,0 +1,165 @@
+# Deployment
+
+```{admonition} Coming Soon
+
+This article describes a feature which is currently unavailable but whose API has been finalized and will be released soon.
+```
+
+This article describes the process of deploying your Certified Application to
+the Evam platform.
+
+## Overview
+
+The Developer portal is the main gateway for any Certified App developer
+or Strategic partner to deploy an app package. This is the place you will push your application package to once it is built and ready for deployment.
+
+Packages deployed to the Developer Portal will be reviewed by Evam to
+ensure they meet the quality standards that users of the Evam platform
+expect. Those reviews can take from a few hours to several days depending
+on the size and nature of the update.
+
+Once validated, Central Services will download the package and make it available for Vehicle Services to download. Once downloaded by Vehicle Services, users will be able to access it.
+
+```{eval-rst}
+.. mermaid::
+
+    stateDiagram-v2
+        DP: Developer Portal Package registry
+        CS: Central Services
+        VS: Vehicle Services
+        DEV: Certified Developer or Strategic Partner
+        VS --> CS : queries regularly
+        CS --> DP : queries regularly
+        DP --> CS : download all updated & verified app packages
+        CS --> VS : download updated app packages for this vehicle
+        DEV --> DP: Certified App packages
+```
+
+
+## How to publish a new release
+
+```{admonition} Support
+
+The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.
+```
+
+Follow these steps to create a new release of your application.
+
+```{admonition} Requirement
+
+You must have setup your machine to access the Developer Portal as described in the article below.
+
+```{eval-rst}
+:ref:`getting_started`
+```
+
+### Step 0 - Setup your package for publishing (do once)
+
+This step is a one-time only setup that is required to register your application in the Evam platform.
+
+#### Create a signing key for publishing
+
+All packages pushed to Vehicle Services must be signed by an authorized Certified App Developer or Strategic Partner.
+
+To achieve this, you must generate a new private/public key pair for signing the package before it is pushed to the Developer Portal. Packages with no signature data or errors will be rejected.
+
+This is how you can generate a new key pair:
+
+```shell
+openssl genrsa -out private.pem 2048
+openssl rsa -in private.pem -pubout > public.pem
+```
+
+You now have a private and public key that can be used for signing.
+
+You should store the private one securely (ideally it should be generated in and stored in a protected CI/CD environment). The public one you will need in the next stage.
+
+#### Register an application ID
+
+Each Certified Application has an unique ID which is used by the platform to identify the application. This ID is to be specified in the Evam Manifest file and has the format (example): `com.example.application_name`. You can also make use of subdomains such as `com.example.subdomain1.subdomain2[...].application_name`.
+
+Each Application ID has to be registered in the Evam platform by creating an issue in your private issue tracker. It is located in your organization's "Home" project in the Developer Portal.
+
+```{admonition} Information
+
+The issues in the private issue tracker can only be seen by Evam and the members of your own organization.
+```
+
+In the issue tracker, create a new issue with the Description template "Register new Application ID" and fill in the required fields. Once done, submit the issue.
+
+```{admonition} Example - Register new app ID
+![New app ID](register_app_id.png)
+```
+
+Evam will review this submission to ensure the Application ID is available and register it. Once done, you will be able to start deploying your application.
+
+#### Setup your Evam app Manifest
+
+The application manifest is location at `public/evam.json` in your application.
+
+You should set it up accordingly with your newly register app ID, and add the required information as well - logo, permissions, settings, name, etc.
+
+See the article below for more information.
+
+```{eval-rst}
+:ref:`getting_started`
+```
+
+### Step 2 - Build your application
+
+Before building your application, make sure to update its `version` and `versionCode` in the Manifest. The version code will be used to detect an update, it always should be stricly superior to the previous pushed version. 
+
+The `version` should always be in the format `X.Y.Z` for production-ready releases, and `X.Y.Z-rcN` for beta releases (`X.Y.Z-betaN` is also accepted). The numbers X, Y, Z and N are integers in the range 0 to 99.
+
+You may build your application using the following run command:
+
+```shell
+npm run build
+```
+
+This will produce a compiled version of your application under the `dist/` folder. 
+
+You may then create a signed version of this package :
+
+```shell
+npm run sign
+```
+
+The signed package will be available as `<app_id>-<version>.tar.gz`.
+
+For instance, if the app ID is "com.example.app" and the version is "1.0.0" then package will be `com.example.app-1.0.0.tar.gz`.
+
+### Step 3 - Upload the package to the Developer Portal
+
+It is now time to upload the signed package to the Developer Portal package registry.
+
+The first is for you to decide in which project you wish to upload this artifact. Central Services will scan all projects so there is no requirement from Evam side on the hosting project but you may wish to separate your applications in different projects for the sake of management.
+
+Simply create a project in your developer portal group or select an existing one, and write down its project ID.
+
+```{admonition} Example - Get project ID 
+![Project ID](project_id.png)
+
+In this case, the project ID is 14.
+```
+
+A personal access token must be generated to allow the upload of artifacts to the Developer Portal. 
+
+1. Using a web browser, navigate to [Personal access tokens](https://www.developers.evam.life/-/profile/personal_access_tokens)
+1. Create a token by giving it a name and minimal scope of **`api`**, it is recommended to provide an expiration date too for security reasons.
+
+```{admonition} Example - create a personal access token
+![Add token](add_token_api.png)
+```
+
+You may then push it to the developer portal:
+
+```shell
+curl -H "PRIVATE-TOKEN: YOUR_PRIVATE_TOKEN_WITH_API_ACCESS" https://www.developers.evam.life/api/v4/projects/14/packages/generic/APP_ID/VERSION/app.tar.gz
+```
+
+You should get a success message back:
+
+```json
+{"message":"201 Created"}
+```

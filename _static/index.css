@@ -1,0 +1,20 @@
+.md-sidebar {
+    position: absolute;
+    width: 0rem;
+    padding: 1.2rem 0;
+    overflow: hidden
+}
+
+.md-content {
+    margin-right: 1.1rem;
+    margin-left: 1.1rem;
+}
+
+body {
+    background-image: url("https://uploads-ssl.webflow.com/617bfe6eee00c8179b464cd6/617bfe6eee00c83b9b464d09_evam-about-us-01-l-p-2000.jpeg");
+    background-color: #ffffff;
+}
+
+.toctree-wrapper {
+    font-size: 0rem;
+}

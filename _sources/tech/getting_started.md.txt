@@ -1,0 +1,116 @@
+```{eval-rst}
+.. _getting_started:
+```
+
+
+# Getting started
+
+This article will help you getting started with the development of apps for the Evam platform.
+
+The Evam SDK is Node.js-based and therefore the associated distribution tool is NPM (Node Package Manager). Templates are also provided for fast UI development using the React library.
+
+The Evam SDK corresponds to the package `@evam/sdk` and the React template is `@evam/cra-template-app-template-react-ts`.
+
+The installation process of the Evam SDK builds on top of a standard Node.js setup.
+
+```{admonition} Requirements
+Make sure the following software is available on your system:
+
+- Node.js 14 or later with NPM and NPX
+- Linux-based OS, Windows 10 (including WSL) or MacOS
+
+Additionally, you will need an account on [the Evam developer portal](https://www.developers.evam.life).
+```
+
+```{warning}
+If you are using a Linux-based OS and you have several NodeJS versions installed, make sure the `node` executable in your `$PATH` and `env` has the correct version.
+```
+
+## Step 1 - Create a Gitlab access token
+
+The Evam SDK is only available to certified developers and as a result is not available on any public repository such as NPM.
+
+This means we must start by indicating to NPM where to fetch the Evam SDK and templates.
+
+1. Using a web browser, navigate to [Personal access tokens](https://www.developers.evam.life/-/profile/personal_access_tokens)
+1. Create a token by giving it a name and minimal scope of `read_api`, it is recommended to provide an expiration date too for security reasons.
+
+```{admonition} Example - create a personal access token
+![Add token](add_token.png)
+```
+
+3. Copy the obtained token in a secure place such as a password manager.
+
+```{admonition} Example - see your obtained token
+![See token](see_token.png)
+```
+
+```{warning}
+This token is secret and personal. You should never share it with anyone else or store it in your app's version control system.
+
+Evam will never ask you to send this token.
+```
+
+## Step 2 - Configure NPM to use this token for Evam packages
+
+We now need to add this token to the NPM configuration. This is done in a file named ".npmrc" located directly under the user home directory.
+
+```{note}
+This is where the configuration file is located on each platform:
+
+- *Windows 10*: `C:\Users\<username>\.npmrc`
+- *Linux*: `/home/<username>/.npmrc`
+- *MacOS*: `/Users/<username>/.npmrc`
+
+Make sure to replace `<username>` with your actual user name on your machine.
+```
+
+The content to be added is:
+
+```
+@evam:registry=https://www.developers.evam.life/api/v4/projects/4/packages/npm/
+//www.developers.evam.life/api/v4/projects/4/packages/npm/:_authToken=<secret_token>
+```
+
+Make sure to replace `<secret_token>` with your own token obtained from Step 1.
+
+## Step 3 - Start a project using the Evam SDK from a template
+
+In this step, we will bootstrap a project using the `create-react-app` tool. This will allow us to have a starting point application that uses the Evam SDK including an UI that complies with the Evam design guidelines.
+
+Using your preferred shell, run:
+
+```shell
+npx create-react-app <app_name> --template @evam/cra-template-app-template-react-ts
+```
+
+You may replace `<app_name>` with the name of your application.
+
+The command will take a few seconds to complete. It will create a directory with the same name as your app name. This directory contains a standard NodeJS code repository whose source set is a starting point for your Evam application. 
+
+```{note}
+You may get a warning during the app creation about security vulnerabilities.
+It is good to run `npm audit` in the newly created repository to ensure that those are not simply false positives.
+
+False positives exist and can be dismissed, see [this open issue](https://github.com/facebook/create-react-app/issues/11174).
+```
+
+The Evam SDK should be already part of the dependencies in `package.json`:
+
+```jsonc
+{
+    // ...
+    "@evam/sdk": "^1.0.4"   // Note: version will evolve with new releases of the SDK
+    // ...
+}
+```
+
+You may finally open this directory using your preferred IDE such as Visual Studio Code or Jetbrains Webstorm.
+
+## Troubleshooting
+
+### Running `create-react-app` creates a repository without the Evam SDK
+
+There is an [open issue](https://github.com/facebook/create-react-app/issues/12253) with `create-react-app` that can cause an old version of `react-scripts` to be installed due to an outdated version of `npm/npx` being installed. 
+
+The solution is to ensure NodeJS 14 or later is installed on your computer. See the [NodeJS Downloads page](https://nodejs.org/en/download/).

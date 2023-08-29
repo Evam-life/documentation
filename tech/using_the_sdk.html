@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Using the Evam SDK &#8212; Evam developer SDK  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SDK reference" href="../api/modules.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=white data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#tech/using_the_sdk" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Evam developer SDK  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/evam-black.png" height="26"
+                   alt="Evam developer SDK documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
+          <span class="md-header-nav__topic"> Using the Evam SDK </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Evam developer SDK  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Evam developer SDK documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/evam-black.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Evam developer SDK documentation">Evam developer SDK  documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="deployment.html" class="md-nav__link">Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Using the Evam SDK </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Using the Evam SDK</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-using-the-sdk--page-root" class="md-nav__link">Using the Evam SDK</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#install-the-sdk" class="md-nav__link">Install the SDK</a>
+        </li>
+        <li class="md-nav__item"><a href="#sdk-versioning" class="md-nav__link">SDK versioning</a>
+        </li>
+        <li class="md-nav__item"><a href="#setup-your-app-metadata" class="md-nav__link">Setup your app metadata</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-the-built-in-ui-components" class="md-nav__link">Use the built-in UI components</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#app-bar-component" class="md-nav__link">App bar component</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#with-added-search-functionality" class="md-nav__link">With added Search functionality</a>
+        </li>
+        <li class="md-nav__item"><a href="#with-added-menu" class="md-nav__link">With added Menu</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#use-the-evam-api" class="md-nav__link">Use the Evam API</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#read-the-evam-platform-data" class="md-nav__link">Read the Evam platform data</a>
+        </li>
+        <li class="md-nav__item"><a href="#simulate-events-in-a-development-environment" class="md-nav__link">Simulate events in a development environment</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#recommended-workflow" class="md-nav__link">Recommended workflow</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../api/modules.html" class="md-nav__link">SDK reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-using-the-sdk--page-root" class="md-nav__link">Using the Evam SDK</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#install-the-sdk" class="md-nav__link">Install the SDK</a>
+        </li>
+        <li class="md-nav__item"><a href="#sdk-versioning" class="md-nav__link">SDK versioning</a>
+        </li>
+        <li class="md-nav__item"><a href="#setup-your-app-metadata" class="md-nav__link">Setup your app metadata</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-the-built-in-ui-components" class="md-nav__link">Use the built-in UI components</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#app-bar-component" class="md-nav__link">App bar component</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#with-added-search-functionality" class="md-nav__link">With added Search functionality</a>
+        </li>
+        <li class="md-nav__item"><a href="#with-added-menu" class="md-nav__link">With added Menu</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#use-the-evam-api" class="md-nav__link">Use the Evam API</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#read-the-evam-platform-data" class="md-nav__link">Read the Evam platform data</a>
+        </li>
+        <li class="md-nav__item"><a href="#simulate-events-in-a-development-environment" class="md-nav__link">Simulate events in a development environment</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#recommended-workflow" class="md-nav__link">Recommended workflow</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="using-the-evam-sdk">
+<span id="using-the-sdk"></span><h1 id="tech-using-the-sdk--page-root">Using the Evam SDK<a class="headerlink" href="#tech-using-the-sdk--page-root" title="Permalink to this heading">¶</a></h1>
+<p>The Evam SDK is offered as a NPM package <code class="docutils literal notranslate"><span class="pre">@evam/sdk</span></code>, it contains:</p>
+<ul class="simple">
+<li><p>A set of APIs to interact with the Evam platform in <cite>EvamApi</cite>, including getting the currently active case, and application settings.</p></li>
+<li><p>A set of UI components that help you kickstart your development and make it easier to follow the Evam <a class="reference internal" href="../design_guidelines/Design-Guidelines.html#design-guidelines"><span class="std std-ref">Design guidelines</span></a>, including a App bar component.</p></li>
+</ul>
+<section id="install-the-sdk">
+<h2 id="install-the-sdk">Install the SDK<a class="headerlink" href="#install-the-sdk" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>This is not necessary if you use the Evam React template, see <a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a>.</p>
+</div>
+<p>To install the Evam SDK, add it to <code class="docutils literal notranslate"><span class="pre">package.json</span></code> dependencies:</p>
+<div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
+    // ...
+    "@evam/sdk": "^1.0.0"   // Note: version may vary
+    // ...
+}
+</pre></div>
+</div>
+<p>and run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">i</span></code>.</p>
+</section>
+<section id="sdk-versioning">
+<h2 id="sdk-versioning">SDK versioning<a class="headerlink" href="#sdk-versioning" title="Permalink to this heading">¶</a></h2>
+<p>Evam adheres to <a class="reference external" href="https://semver.org/">Semantic versioning</a>.</p>
+</section>
+<section id="setup-your-app-metadata">
+<h2 id="setup-your-app-metadata">Setup your app metadata<a class="headerlink" href="#setup-your-app-metadata" title="Permalink to this heading">¶</a></h2>
+<p>Some metadata about your application should be set such as its ID within the Evam platform, its name, logo, settings, etc.</p>
+<p>All of this can be set in the Evam manifest located under <code class="docutils literal notranslate"><span class="pre">public/evam.json</span></code>, here is an example content:</p>
+<div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
+    "applicationId": "com.example.application",
+    "applicationName": "Demo application",
+    "settings": [
+        {
+            "id": "debug",
+            "name": "Debug mode",
+            "description": "Enable debug mode by displaying logs on screen",
+            "value": {
+                "type": "bool",
+                "default": false
+            }
+        }
+    ],
+    "logo": "logo.png",
+    "permissions": [
+        "ACTIVE_OPERATION_READ",
+        "SETTINGS_READ",
+        "DISPLAY_MODE_READ"
+    ]
+}
+</pre></div>
+</div>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">applicationId</span></code></p></td>
+<td><p>Unique ID of your application.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">applicationName</span></code></p></td>
+<td><p>Application name as it will appear to the end user.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">settings</span></code></p></td>
+<td><p>Array of entries describing the available settings for this application. The value of those settings will be typically set by the end user to tune their experience. The settings format that will be made available to the application during runtime will be a direct mapping <code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-&gt;</span> <span class="pre">value</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">{"debug":</span> <span class="pre">true}</span></code> in this case). The name and description will be used to display the settings effect to the end user. The available values for <code class="docutils literal notranslate"><span class="pre">type</span></code> are: <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">logo</span></code></p></td>
+<td><p>Path to the application logo as it will appear in the bottom bar. The path is relative to the root of the built package.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">permissions</span></code></p></td>
+<td><p>List of permissions required for the application to run. This is currently unused but will be implemented to enhance the security of user’s data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="use-the-built-in-ui-components">
+<h2 id="use-the-built-in-ui-components">Use the built-in UI components<a class="headerlink" href="#use-the-built-in-ui-components" title="Permalink to this heading">¶</a></h2>
+<p>Currently an App bar component is available, alongside its associated widgets.</p>
+<section id="app-bar-component">
+<h3 id="app-bar-component">App bar component<a class="headerlink" href="#app-bar-component" title="Permalink to this heading">¶</a></h3>
+<p>The base App bar component is an efficient framework to start your application without having to setup a navigation system from scratch.</p>
+<p><img alt="App bar" src="../_images/app_bar_5.png"/></p>
+<p>Here is the code associated to the visuals above:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span> <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">}</span> <span class="p">&gt;</span>
+<span class="w">                </span><span class="c1">// Note: for clarity, this content will put in a separate</span>
+<span class="w">                </span><span class="c1">// React Fragment named "MainView" after this example</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">paddingLeft</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> <span class="na">paddingRight</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">1</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Lorem</span><span class="w"> </span><span class="nx">ipsum</span><span class="w"> </span><span class="nx">dolor</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">amet</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nx">consectetur</span><span class="w"> </span><span class="nx">adipiscing</span><span class="w"> </span><span class="nx">elit</span><span class="p">,</span><span class="w"> </span><span class="nx">sed</span><span class="w"> </span><span class="k">do</span>
+<span class="w">                                    </span><span class="nx">eiusmod</span>
+<span class="w">                                    </span><span class="nx">tempor</span><span class="w"> </span><span class="nx">incididunt</span>
+<span class="w">                                    </span><span class="nx">ut</span><span class="w"> </span><span class="nx">labore</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">magna</span><span class="w"> </span><span class="nx">aliqua</span><span class="p">.</span><span class="w"> </span><span class="nx">Ut</span>
+<span class="w">                                    </span><span class="nx">enim</span><span class="w"> </span><span class="nx">ad</span><span class="w"> </span><span class="nx">minim</span><span class="w"> </span><span class="nx">veniam</span><span class="p">,</span><span class="w"> </span><span class="nx">quis</span><span class="w"> </span><span class="nx">nostrud</span>
+<span class="w">                                    </span><span class="nx">exercitation</span>
+<span class="w">                                    </span><span class="nx">ullamco</span><span class="w"> </span><span class="nx">laboris</span><span class="w"> </span><span class="nx">nisi</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">aliquip</span><span class="w"> </span><span class="nx">ex</span>
+<span class="w">                                    </span><span class="nx">ea</span><span class="w"> </span><span class="nx">commodo</span><span class="w"> </span><span class="nx">consequat</span><span class="p">.</span><span class="w"> </span><span class="nx">Duis</span><span class="w"> </span><span class="nx">aute</span>
+<span class="w">                                    </span><span class="nx">irure</span>
+<span class="w">                                    </span><span class="nx">dolor</span><span class="w"> </span><span class="ow">in</span>
+<span class="w">                                    </span><span class="nx">reprehenderit</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">voluptate</span><span class="w"> </span><span class="nx">velit</span>
+<span class="w">                                    </span><span class="nx">esse</span><span class="w"> </span><span class="nx">cillum</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">eu</span><span class="w"> </span><span class="nx">fugiat</span><span class="w"> </span><span class="nx">nulla</span>
+<span class="w">                                    </span><span class="nx">pariatur</span><span class="p">.</span><span class="w"> </span><span class="nx">Excepteur</span>
+<span class="w">                                    </span><span class="nx">sint</span><span class="w"> </span><span class="nx">occaecat</span><span class="w"> </span><span class="nx">cupidatat</span><span class="w"> </span><span class="nx">non</span>
+<span class="w">                                    </span><span class="nx">proident</span><span class="p">,</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
+<span class="w">                                    </span><span class="nx">deserunt</span>
+<span class="w">                                    </span><span class="nx">mollit</span><span class="w"> </span><span class="nx">anim</span><span class="w"> </span><span class="nx">id</span>
+<span class="w">                                    </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Sed</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">perspiciatis</span><span class="w"> </span><span class="nx">unde</span><span class="w"> </span><span class="nx">omnis</span><span class="w"> </span><span class="nx">iste</span>
+<span class="w">                                    </span><span class="nx">natus</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">voluptatem</span>
+<span class="w">                                    </span><span class="nx">accusantium</span>
+<span class="w">                                    </span><span class="nx">doloremque</span>
+<span class="w">                                    </span><span class="nx">laudantium</span><span class="p">,</span><span class="w"> </span><span class="nx">totam</span><span class="w"> </span><span class="nx">rem</span><span class="w"> </span><span class="nx">aperiam</span><span class="p">,</span><span class="w"> </span><span class="nx">eaque</span>
+<span class="w">                                    </span><span class="nx">ipsa</span><span class="w"> </span><span class="nx">quae</span><span class="w"> </span><span class="nx">ab</span><span class="w"> </span><span class="nx">illo</span><span class="w"> </span><span class="nx">inventore</span>
+<span class="w">                                    </span><span class="nx">veritatis</span>
+<span class="w">                                    </span><span class="nx">et</span><span class="w"> </span><span class="nx">quasi</span>
+<span class="w">                                    </span><span class="nx">architecto</span><span class="w"> </span><span class="nx">beatae</span><span class="w"> </span><span class="nx">vitae</span><span class="w"> </span><span class="nx">dicta</span><span class="w"> </span><span class="nx">sunt</span>
+<span class="w">                                    </span><span class="nx">explicabo</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">3</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">At</span><span class="w"> </span><span class="nx">vero</span><span class="w"> </span><span class="nx">eos</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">accusamus</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">iusto</span>
+<span class="w">                                    </span><span class="nx">odio</span><span class="w"> </span><span class="nx">dignissimos</span><span class="w"> </span><span class="nx">ducimus</span><span class="w"> </span><span class="nx">qui</span>
+<span class="w">                                    </span><span class="nx">blanditiis</span>
+<span class="w">                                    </span><span class="nx">praesentium</span>
+<span class="w">                                    </span><span class="nx">voluptatum</span><span class="w"> </span><span class="nx">deleniti</span><span class="w"> </span><span class="nx">atque</span><span class="w"> </span><span class="nx">corrupti</span>
+<span class="w">                                    </span><span class="nx">quos</span><span class="w"> </span><span class="nx">dolores</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">quas</span><span class="w"> </span><span class="nx">molestias</span>
+<span class="w">                                    </span><span class="nx">excepturi</span>
+<span class="w">                                    </span><span class="nx">sint</span>
+<span class="w">                                    </span><span class="nx">occaecati</span><span class="w"> </span><span class="nx">cupiditate</span><span class="w"> </span><span class="nx">non</span><span class="w"> </span><span class="nx">provident</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nx">similique</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
+<span class="w">                                    </span><span class="nx">deserunt</span>
+<span class="w">                                    </span><span class="nx">mollitia</span><span class="w"> </span><span class="nx">animi</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="w"> </span><span class="nx">et</span>
+<span class="w">                                    </span><span class="nx">dolorum</span><span class="w"> </span><span class="nx">fuga</span><span class="p">.</span><span class="w"> </span><span class="nx">Et</span><span class="w"> </span><span class="nx">harum</span><span class="w"> </span><span class="nx">quidem</span><span class="w"> </span><span class="nx">rerum</span>
+<span class="w">                                    </span><span class="nx">facilis</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">et</span>
+<span class="w">                                    </span><span class="nx">expedita</span><span class="w"> </span><span class="nx">distinctio</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<section id="with-added-search-functionality">
+<h4 id="with-added-search-functionality">With added Search functionality<a class="headerlink" href="#with-added-search-functionality" title="Permalink to this heading">¶</a></h4>
+<p>Adding a Search functionality at the top right of the App bar component can be done by setting the <code class="docutils literal notranslate"><span class="pre">extraFunction</span></code> property of <code class="docutils literal notranslate"><span class="pre">EvamAppBarLayout</span></code>:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span>
+                <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">}</span> <span class="na">extraFunction</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EvamTabSearch</span><span class="p">/&gt;}</span>
+            <span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="s2">"/"</span><span class="p">}</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">MainView</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="s2">"/search"</span><span class="p">}</span>
+                           <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">SearchView</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>And here is the <code class="docutils literal notranslate"><span class="pre">SearchView</span></code> definition:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">useSearchParams</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-router-dom"</span><span class="p">;</span>
+
+<span class="kr">interface</span><span class="w"> </span><span class="nx">SearchViewProps</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">SearchView</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="nx">SearchViewProps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{...</span><span class="nx">other</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">params</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSearchParams</span><span class="p">()</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="p">{</span><span class="na">...other</span><span class="p">}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">No</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s2">"{params.get("</span><span class="nx">searchText</span><span class="s2">")}"</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">We</span><span class="w"> </span><span class="nx">could</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">find</span><span class="w"> </span><span class="nx">anything</span><span class="p">,</span><span class="w"> </span><span class="nx">please</span><span class="w"> </span><span class="nx">review</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">query</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that we have added a Router and Routes objects from <code class="docutils literal notranslate"><span class="pre">react-router-dom</span></code> to this example as we have now 2 different views we must keep track of:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">MainView</span></code> with the 3 tabs</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">SearchView</span></code> with the search bar and search results.</p></li>
+</ul>
+<p>In this example, we have deciced to implement the search functionality as an independent view, but we could have kept it on the Main View by simply routing “/search” routes to the Main View.</p>
+<p>This is the result:</p>
+<p><img alt="Main view" src="../_images/app_bar_3.png"/>
+<img alt="Main view" src="../_images/app_bar_4.png"/></p>
+<p><em>Note: the second screenshot above is after searching for “hello world”.</em></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">EvamTabSearch</span></code> component, once clicked, will automatically navigate to “/search”. And whenever the search query is updated in the input box, the path will update to “/search?searchText=&lt;ENCODED_SEARCH_QUERY&gt;”. For instance, when searching for “hello world”, the path will be “/search?searchText=hello%20world”.</p>
+<p>This allows for a flexible implementation of the Search function.</p>
+<p>Additionally, it is possible to further customize the look of the top bar when in search mode with 2 properties of <code class="docutils literal notranslate"><span class="pre">EvamAppBarLayout</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">searchHint</span></code>: text shown when the search input is empty, defaults to “Search”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">showSearchCancel</span></code>: set to false to hide the cancel button in the top bar.</p></li>
+</ul>
+<p>See example below:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span> <span class="na">searchHint</span><span class="o">=</span><span class="p">{</span><span class="s2">"Sök"</span><span class="p">}</span> <span class="na">showSearchCancel</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+                <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span>
+                                <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">}</span> <span class="na">extraFunction</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EvamTabSearch</span><span class="p">/&gt;}</span>
+            <span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="s2">"/"</span><span class="p">}</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">MainView</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="s2">"/search"</span><span class="p">}</span>
+                           <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">SearchView</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="with-added-menu">
+<h4 id="with-added-menu">With added Menu<a class="headerlink" href="#with-added-menu" title="Permalink to this heading">¶</a></h4>
+<p>If your application requires extra navigation options, adding a hamburger menu is a good way to provide them without cluttering the visuals. It can be done with the <code class="docutils literal notranslate"><span class="pre">extraFunction</span></code> property just like for Search:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span> <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span> 
+                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">}</span> <span class="na">extraFunction</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// Simple hamburger menu layout with 2 options</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">EvamHamburgerMenu</span>  <span class="na">sx</span><span class="o">=</span><span class="p">{{</span><span class="nx">backdropFilter</span><span class="o">:</span><span class="w"> </span><span class="s2">"blur(5px)"</span><span class="p">}}&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mf">600</span><span class="p">}</span> <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mf">500</span><span class="p">}&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamMenuItem</span> <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="s2">"Menu option 1"</span><span class="p">}&gt;</span><span class="nx">Menu</span><span class="w"> </span><span class="nx">option</span><span class="w"> </span><span class="mf">1</span><span class="p">&lt;/</span><span class="nt">EvamMenuItem</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamMenuItem</span> <span class="na">id</span><span class="o">=</span><span class="p">{</span><span class="s2">"Menu option 2"</span><span class="p">}&gt;</span><span class="nx">Menu</span><span class="w"> </span><span class="nx">option</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">EvamMenuItem</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">EvamHamburgerMenu</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">}</span>
+            <span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="s2">"/"</span><span class="p">}</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">MainView</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="nx">formatRoutePathByMenuId</span><span class="p">(</span><span class="s2">"Menu option 1"</span><span class="p">)}</span>
+                           <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Option</span><span class="w"> </span><span class="mf">1</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;}/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="p">{</span><span class="nx">formatRoutePathByMenuId</span><span class="p">(</span><span class="s2">"Menu option 2"</span><span class="p">)}</span>
+                           <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Option</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;}/&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>This is the result:</p>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>Main View</p></th>
+<th class="head"><p>After touching menu button</p></th>
+<th class="head"><p>After selecting option 1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="Main view" src="../_images/app_bar_0.png"/></p></td>
+<td><p><img alt="Main view" src="../_images/app_bar_1.png"/></p></td>
+<td><p><img alt="Main view" src="../_images/app_bar_6.png"/></p></td>
+</tr>
+</tbody>
+</table>
+<p>Similarly to the <code class="docutils literal notranslate"><span class="pre">EvamTabSearch</span></code> component, <code class="docutils literal notranslate"><span class="pre">EvamHamburgerMenu</span></code> also uses navigation to propagate user actions to the app:</p>
+<ul class="simple">
+<li><p>Selecting an <code class="docutils literal notranslate"><span class="pre">EvamMenuItem</span></code> navigates to “/hmenu/&lt;ENCODED_ID&gt;”, for instance for a menu id “Menu option 1”, the path will be “/hmenu/Menu%20option%201”. To make it easy with routing, the function <code class="docutils literal notranslate"><span class="pre">formatRoutePathByMenuId</span></code> is available to compute the final path from a menu id.</p></li>
+<li><p>Touching the “Back arrow” goes back to “/”.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="use-the-evam-api">
+<h2 id="use-the-evam-api">Use the Evam API<a class="headerlink" href="#use-the-evam-api" title="Permalink to this heading">¶</a></h2>
+<p>Interacting with the Evam platform is made possible through the Evam API.</p>
+<p>It contains a set of functions to access the platform data and simulate specific events in a development environment.</p>
+<p>The guiding principles behind the API functions are:</p>
+<ul class="simple">
+<li><p>they should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them</p></li>
+<li><p>they should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)</p></li>
+<li><p>they should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks</p></li>
+<li><p>The API is entirely written in Typescript, making it type-safe (to the extent permitted by Typescript) and Javascript-compatible.</p></li>
+</ul>
+<section id="read-the-evam-platform-data">
+<h3 id="read-the-evam-platform-data">Read the Evam platform data<a class="headerlink" href="#read-the-evam-platform-data" title="Permalink to this heading">¶</a></h3>
+<p>There are 7 objects that can be read from the Evam platform:</p>
+<ul class="simple">
+<li><p>The <strong>Operation</strong>:<br/>
+it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle (“Active operation”).</p></li>
+<li><p>The <strong>Settings</strong>:<br/>
+your application can specify a set of parameters in its application manifest (see <a class="reference internal" href="#setup-your-app-metadata"><span class="std std-ref">Setup your app metadata</span></a>). Those settings will be set by the end user upon installation of you app, and the Evam platform will feed them to your app at runtime when it starts and when the settings are updated by the end user. The obtained <code class="docutils literal notranslate"><span class="pre">settings</span></code> object will have the same format as the settings supplied in the App manifest.</p></li>
+<li><p>The <strong>Device Role</strong>:<br/>
+this is one of three values ‘SINGLE_DEVICE’, ‘RECEIVING_DEVICE’ or ‘MAIN_DEVICE’. This will be configured within Vehicle Services via the setup.</p></li>
+<li><p>The <strong>Location</strong>:<br/>
+the vehicles current location, latitude, logitude, and timestamp,</p></li>
+<li><p>The <strong>Internet State</strong>:<br/>
+one of seven possible values where ‘NO_INTERNET’ means no connection whatsoever. Aside from that all other states are named ‘CONNECTED_…’ where ‘…’ can be either ‘2G’, ‘EDGE’, ‘3G’, ‘4G’, ‘5G’ or ‘WIFI’.</p></li>
+<li><p>The <strong>Vehicle State</strong>:<br/>
+vehicle state stores various data regarding the logged in vehicle. Such data are vehicle status, active case full id, vehicle location and whatnot.</p></li>
+<li><p>The <strong>Trip Location History</strong>:<br/>
+stores an array of Location objects representing the trip history.</p></li>
+</ul>
+<p>This is how those APIs can be used:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@evam/sdk/api/EvamApi'</span><span class="p">;</span>
+
+<span class="c1">// Get API singleton</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">();</span>
+
+<span class="c1">// Register a new callback on any active operation update that simply logs its ID</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedOperation</span><span class="p">(</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">activeOperation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">activeOperation</span><span class="o">?</span><span class="p">.</span><span class="nx">getFullId</span><span class="p">())</span>
+<span class="p">);</span>
+
+<span class="c1">// Register a new callback on any application settings update that simply logs them</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedSettings</span><span class="p">(</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Check the <a class="reference internal" href="../api/modules.html#sdk-reference"><span class="std std-ref">SDK reference</span></a> for a comprehensive list of the available API functions.</p>
+</section>
+<section id="simulate-events-in-a-development-environment">
+<h3 id="simulate-events-in-a-development-environment">Simulate events in a development environment<a class="headerlink" href="#simulate-events-in-a-development-environment" title="Permalink to this heading">¶</a></h3>
+<p>The Operations and Settings will be provided by the Evam platform as shown below, but you may simulate incoming Operations and Settings updates in a development environment (i.e. a web browser such as Chrome or Firefox running on your development computer). This allows you to test those scenarios with proper tooling and without needing an Evam device.</p>
+<p>It is compatible with test libraries such as <code class="docutils literal notranslate"><span class="pre">jest</span></code>.</p>
+<p>This is how you may inject such events using the API:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">ActiveCase</span><span class="p">,</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@evam/sdk/api/EvamApi'</span><span class="p">;</span>
+
+<span class="c1">// Get Evam API singleton</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+
+<span class="c1">// Always check if we are in production environment to avoid exceptions</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">evam</span><span class="p">.</span><span class="nx">isRunningInVehicleServices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Inject an ActiveCase, or undefined if you wish no active operation</span>
+<span class="w">    </span><span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectOperation</span><span class="p">(</span>
+<span class="w">        </span><span class="nx">ActiveCase</span><span class="p">.</span><span class="nx">fromJson</span><span class="p">(</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">operationID</span><span class="o">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">patientName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Test Testkort"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">patientUID</span><span class="o">:</span><span class="w"> </span><span class="s2">"900608-2381"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">callCenterId</span><span class="o">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">caseFolderId</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">prio</span><span class="o">:</span><span class="w"> </span><span class="s2">"PRIO 1"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">vehicleStatus</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Kvittera"</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nx">destinationSiteLocation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.35393</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">17.973795</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">"Vretenvägen 13"</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Brand i bilen"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">sendTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">createdTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Inject Settings</span>
+<span class="w">    </span><span class="c1">// Note: No type validation here, make sure to respect the format</span>
+<span class="w">    </span><span class="c1">// [id] -&gt; value from your manifest</span>
+<span class="w">    </span><span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectSettings</span><span class="p">({</span><span class="nx">debug</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions.</p>
+</section>
+</section>
+<section id="recommended-workflow">
+<h2 id="recommended-workflow">Recommended workflow<a class="headerlink" href="#recommended-workflow" title="Permalink to this heading">¶</a></h2>
+<p>The Evam SDK is built on top of the NodeJS ecosystem and React library, which provides any developer with a rich set of tools to efficiently develop and application out of the box. Developing an app for the Evam platform is very similar to developing a React web application.</p>
+<p>Only an IDE such as VS Code and a web browser such as Chrome are needed.</p>
+<p>One notable difference is that your application will be run and used in a mobile device (typically a tablet), with limited screen real estate. To ensure your application will look as intended in the Evam Platform, make sure to use the “Device Mode” of your web browser (example for Chrome: <a class="reference external" href="https://developer.chrome.com/docs/devtools/device-mode/">Device mode</a>).</p>
+<p>You can find out which device dimensions are available in the Evam platform in the <a class="reference internal" href="../design_guidelines/Design-Guidelines.html#design-guidelines-layout"><span class="std std-ref">Layout</span></a> documentation in the design guidelines.</p>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="getting_started.html" title="Getting started"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Getting started </span>
+              </div>
+            </a>
+          
+          
+            <a href="../api/modules.html" title="SDK reference"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> SDK reference </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Evam.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

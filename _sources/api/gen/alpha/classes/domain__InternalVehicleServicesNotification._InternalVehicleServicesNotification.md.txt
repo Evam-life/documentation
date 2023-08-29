@@ -1,0 +1,67 @@
+# Class: \_InternalVehicleServicesNotification
+
+[domain/_InternalVehicleServicesNotification](../modules/domain__InternalVehicleServicesNotification.md)._InternalVehicleServicesNotification
+
+## Constructors
+
+### constructor
+
+**new _InternalVehicleServicesNotification**(`heading`, `description`, `notificationType`, `primaryButton`, `secondaryButton`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `heading` | `string` |
+| `description` | `string` |
+| `notificationType` | [`NotificationType`](../enums/domain_NotificationType.NotificationType.md) |
+| `primaryButton` | `Object` |
+| `primaryButton.callback` | `string` |
+| `primaryButton.label` | `string` |
+| `secondaryButton` | `Object` |
+| `secondaryButton.callback` | `string` |
+| `secondaryButton.label` | `string` |
+
+## Properties
+
+### description
+
+ **description**: `string`
+
+___
+
+### heading
+
+ **heading**: `string`
+
+___
+
+### notificationType
+
+ **notificationType**: [`NotificationType`](../enums/domain_NotificationType.NotificationType.md)
+
+___
+
+### primaryButton
+
+ **primaryButton**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | `string` |
+| `label` | `string` |
+
+___
+
+### secondaryButton
+
+ **secondaryButton**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | `string` |
+| `label` | `string` |

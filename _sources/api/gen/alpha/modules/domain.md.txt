@@ -1,0 +1,97 @@
+# Module: domain
+
+## References
+
+### DestinationControlPointLocation
+
+Re-exports [DestinationControlPointLocation](../classes/domain_DestinationControlPointLocation.DestinationControlPointLocation.md)
+
+___
+
+### DestinationSiteLocation
+
+Re-exports [DestinationSiteLocation](../classes/domain_DestinationSiteLocation.DestinationSiteLocation.md)
+
+___
+
+### DeviceRole
+
+Re-exports [DeviceRole](../enums/domain_DeviceRole.DeviceRole.md)
+
+___
+
+### EvamEvents
+
+Re-exports [EvamEvents](../enums/domain_EvamEvents.EvamEvents.md)
+
+___
+
+### HospitalLocation
+
+Re-exports [HospitalLocation](../classes/domain_HospitalLocation.HospitalLocation.md)
+
+___
+
+### InternetState
+
+Re-exports [InternetState](../enums/domain_InternetState.InternetState.md)
+
+___
+
+### Location
+
+Re-exports [Location](../classes/domain_Location.Location.md)
+
+___
+
+### Notification
+
+Re-exports [Notification](../classes/domain_Notification.Notification.md)
+
+___
+
+### NotificationType
+
+Re-exports [NotificationType](../enums/domain_NotificationType.NotificationType.md)
+
+___
+
+### Operation
+
+Re-exports [Operation](../classes/domain_Operation.Operation.md)
+
+___
+
+### OperationPriority
+
+Re-exports [OperationPriority](../classes/domain_OperationPriority.OperationPriority.md)
+
+___
+
+### Patient
+
+Re-exports [Patient](../classes/domain_Patient.Patient.md)
+
+___
+
+### SystemHealth
+
+Re-exports [SystemHealth](../classes/domain_SystemHealth.SystemHealth.md)
+
+___
+
+### TripLocationHistory
+
+Re-exports [TripLocationHistory](../classes/domain_TripLocationHistory.TripLocationHistory.md)
+
+___
+
+### VehicleState
+
+Re-exports [VehicleState](../classes/domain_VehicleState.VehicleState.md)
+
+___
+
+### VehicleStatus
+
+Re-exports [VehicleStatus](../classes/domain_VehicleStatus.VehicleStatus.md)

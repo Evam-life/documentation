@@ -1,0 +1,63 @@
+# Development environment
+The Evam SDK Development Environment is a React component intended to assist you in testing your Certified App.
+The Development Environment can be thought of as a 'Vehicle Services' emulator that runs in the Web.
+
+## Installation
+
+Install via the Evam SDK package.
+
+```javascript
+import {VehicleServicesDevelopmentEnvironment} from '@evam/sdk/dev-test-environment'
+```
+
+## Usage
+Simply wrap your app with the **VehicleServicesDevelopmentEnvironment** component.
+
+```jsx
+<VehicleServicesDevelopmentEnvironment>
+    <App/>
+</VehicleServicesDevelopmentEnvironment>
+```
+
+## Side Note
+- The **VehicleServicesDevelopmentEnvironment** component will detect whether it is running in Vehicle Services and will render appropriately. This means it will still 
+render your app inside Vehicle Services but none of the Development Environment components will render to the DOM. Events will also propagate without being consumed by the Developer Environment. This way you need not worry about removing the component for production.
+
+## Features
+
+- **Notifications**
+
+The Development Environment simulates Vehicle Services' notifications. The EvamApi provides a method **sendNotification** for displaying notifications in Vehicle Services. The Development Environment will intercept these notifications and display notifications with capability of being cancelled and triggering callbacks.
+
+![img.png](img.png)
+
+
+```typescript
+const evamApi = new EvamApi();
+
+const notification = Notification.fromJSON({
+    heading: "Notification Heading",
+    description: "Notification Description",
+    notificationType: NotificationType.ACTION_HUN,
+    primaryButton: {
+        label: "Primary Button",
+        callback: () => {
+            console.log('Primary Button clicked on test notification');
+        }
+    },
+    secondaryButton: {
+        label: "Secondary Button",
+        callback: () => {
+            console.log('Secondary Button clicked on test notification');
+        }
+    }
+});
+
+evamApi.sendNotification(notification);
+```
+
+<!---
+- **Theme Builder:**
+- **gRPC:**
+- **Event Simulation:**
+-->

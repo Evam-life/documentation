@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Getting started &#8212; Evam developer SDK  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the Evam SDK" href="using_the_sdk.html" />
+    <link rel="prev" title="Development environment" href="development_environment.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=white data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#tech/getting_started" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Evam developer SDK  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/evam-black.png" height="26"
+                   alt="Evam developer SDK documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
+          <span class="md-header-nav__topic"> Getting started </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Evam developer SDK  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Evam developer SDK documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/evam-black.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Evam developer SDK documentation">Evam developer SDK  documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="deployment.html" class="md-nav__link">Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Getting started </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Getting started</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-getting-started--page-root" class="md-nav__link">Getting started</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#step-1-create-a-gitlab-access-token" class="md-nav__link">Step 1 - Create a Gitlab access token</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-2-configure-npm-to-use-this-token-for-evam-packages" class="md-nav__link">Step 2 - Configure NPM to use this token for Evam packages</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-3-start-a-project-using-the-evam-sdk-from-a-template" class="md-nav__link">Step 3 - Start a project using the Evam SDK from a template</a>
+        </li>
+        <li class="md-nav__item"><a href="#troubleshooting" class="md-nav__link">Troubleshooting</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#running-create-react-app-creates-a-repository-without-the-evam-sdk" class="md-nav__link">Running <code class="docutils literal notranslate"><span class="pre">create-react-app</span></code> creates a repository without the Evam SDK</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../api/modules.html" class="md-nav__link">SDK reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-getting-started--page-root" class="md-nav__link">Getting started</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#step-1-create-a-gitlab-access-token" class="md-nav__link">Step 1 - Create a Gitlab access token</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-2-configure-npm-to-use-this-token-for-evam-packages" class="md-nav__link">Step 2 - Configure NPM to use this token for Evam packages</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-3-start-a-project-using-the-evam-sdk-from-a-template" class="md-nav__link">Step 3 - Start a project using the Evam SDK from a template</a>
+        </li>
+        <li class="md-nav__item"><a href="#troubleshooting" class="md-nav__link">Troubleshooting</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#running-create-react-app-creates-a-repository-without-the-evam-sdk" class="md-nav__link">Running <code class="docutils literal notranslate"><span class="pre">create-react-app</span></code> creates a repository without the Evam SDK</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="getting-started">
+<span id="id1"></span><h1 id="tech-getting-started--page-root">Getting started<a class="headerlink" href="#tech-getting-started--page-root" title="Permalink to this heading">¶</a></h1>
+<p>This article will help you getting started with the development of apps for the Evam platform.</p>
+<p>The Evam SDK is Node.js-based and therefore the associated distribution tool is NPM (Node Package Manager). Templates are also provided for fast UI development using the React library.</p>
+<p>The Evam SDK corresponds to the package <code class="docutils literal notranslate"><span class="pre">@evam/sdk</span></code> and the React template is <code class="docutils literal notranslate"><span class="pre">@evam/cra-template-app-template-react-ts</span></code>.</p>
+<p>The installation process of the Evam SDK builds on top of a standard Node.js setup.</p>
+<div class="admonition-requirements admonition">
+<p class="admonition-title">Requirements</p>
+<p>Make sure the following software is available on your system:</p>
+<ul class="simple">
+<li><p>Node.js 14 or later with NPM and NPX</p></li>
+<li><p>Linux-based OS, Windows 10 (including WSL) or MacOS</p></li>
+</ul>
+<p>Additionally, you will need an account on <a class="reference external" href="https://www.developers.evam.life">the Evam developer portal</a>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using a Linux-based OS and you have several NodeJS versions installed, make sure the <code class="docutils literal notranslate"><span class="pre">node</span></code> executable in your <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">env</span></code> has the correct version.</p>
+</div>
+<section id="step-1-create-a-gitlab-access-token">
+<h2 id="step-1-create-a-gitlab-access-token">Step 1 - Create a Gitlab access token<a class="headerlink" href="#step-1-create-a-gitlab-access-token" title="Permalink to this heading">¶</a></h2>
+<p>The Evam SDK is only available to certified developers and as a result is not available on any public repository such as NPM.</p>
+<p>This means we must start by indicating to NPM where to fetch the Evam SDK and templates.</p>
+<ol class="arabic simple">
+<li><p>Using a web browser, navigate to <a class="reference external" href="https://www.developers.evam.life/-/profile/personal_access_tokens">Personal access tokens</a></p></li>
+<li><p>Create a token by giving it a name and minimal scope of <code class="docutils literal notranslate"><span class="pre">read_api</span></code>, it is recommended to provide an expiration date too for security reasons.</p></li>
+</ol>
+<div class="admonition-example-create-a-personal-access-token admonition">
+<p class="admonition-title">Example - create a personal access token</p>
+<p><img alt="Add token" src="../_images/add_token.png"/></p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Copy the obtained token in a secure place such as a password manager.</p></li>
+</ol>
+<div class="admonition-example-see-your-obtained-token admonition">
+<p class="admonition-title">Example - see your obtained token</p>
+<p><img alt="See token" src="../_images/see_token.png"/></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This token is secret and personal. You should never share it with anyone else or store it in your app’s version control system.</p>
+<p>Evam will never ask you to send this token.</p>
+</div>
+</section>
+<section id="step-2-configure-npm-to-use-this-token-for-evam-packages">
+<h2 id="step-2-configure-npm-to-use-this-token-for-evam-packages">Step 2 - Configure NPM to use this token for Evam packages<a class="headerlink" href="#step-2-configure-npm-to-use-this-token-for-evam-packages" title="Permalink to this heading">¶</a></h2>
+<p>We now need to add this token to the NPM configuration. This is done in a file named “.npmrc” located directly under the user home directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is where the configuration file is located on each platform:</p>
+<ul class="simple">
+<li><p><em>Windows 10</em>: <code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;username&gt;\.npmrc</span></code></p></li>
+<li><p><em>Linux</em>: <code class="docutils literal notranslate"><span class="pre">/home/&lt;username&gt;/.npmrc</span></code></p></li>
+<li><p><em>MacOS</em>: <code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;/.npmrc</span></code></p></li>
+</ul>
+<p>Make sure to replace <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your actual user name on your machine.</p>
+</div>
+<p>The content to be added is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@evam</span><span class="p">:</span><span class="n">registry</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">developers</span><span class="o">.</span><span class="n">evam</span><span class="o">.</span><span class="n">life</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">npm</span><span class="o">/</span>
+<span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">developers</span><span class="o">.</span><span class="n">evam</span><span class="o">.</span><span class="n">life</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v4</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">packages</span><span class="o">/</span><span class="n">npm</span><span class="o">/</span><span class="p">:</span><span class="n">_authToken</span><span class="o">=&lt;</span><span class="n">secret_token</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to replace <code class="docutils literal notranslate"><span class="pre">&lt;secret_token&gt;</span></code> with your own token obtained from Step 1.</p>
+</section>
+<section id="step-3-start-a-project-using-the-evam-sdk-from-a-template">
+<h2 id="step-3-start-a-project-using-the-evam-sdk-from-a-template">Step 3 - Start a project using the Evam SDK from a template<a class="headerlink" href="#step-3-start-a-project-using-the-evam-sdk-from-a-template" title="Permalink to this heading">¶</a></h2>
+<p>In this step, we will bootstrap a project using the <code class="docutils literal notranslate"><span class="pre">create-react-app</span></code> tool. This will allow us to have a starting point application that uses the Evam SDK including an UI that complies with the Evam design guidelines.</p>
+<p>Using your preferred shell, run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>create-react-app<span class="w"> </span>&lt;app_name&gt;<span class="w"> </span>--template<span class="w"> </span>@evam/cra-template-app-template-react-ts
+</pre></div>
+</div>
+<p>You may replace <code class="docutils literal notranslate"><span class="pre">&lt;app_name&gt;</span></code> with the name of your application.</p>
+<p>The command will take a few seconds to complete. It will create a directory with the same name as your app name. This directory contains a standard NodeJS code repository whose source set is a starting point for your Evam application.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may get a warning during the app creation about security vulnerabilities.
+It is good to run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">audit</span></code> in the newly created repository to ensure that those are not simply false positives.</p>
+<p>False positives exist and can be dismissed, see <a class="reference external" href="https://github.com/facebook/create-react-app/issues/11174">this open issue</a>.</p>
+</div>
+<p>The Evam SDK should be already part of the dependencies in <code class="docutils literal notranslate"><span class="pre">package.json</span></code>:</p>
+<div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
+    // ...
+    "@evam/sdk": "^1.0.4"   // Note: version will evolve with new releases of the SDK
+    // ...
+}
+</pre></div>
+</div>
+<p>You may finally open this directory using your preferred IDE such as Visual Studio Code or Jetbrains Webstorm.</p>
+</section>
+<section id="troubleshooting">
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<section id="running-create-react-app-creates-a-repository-without-the-evam-sdk">
+<h3 id="running-create-react-app-creates-a-repository-without-the-evam-sdk">Running <code class="docutils literal notranslate"><span class="pre">create-react-app</span></code> creates a repository without the Evam SDK<a class="headerlink" href="#running-create-react-app-creates-a-repository-without-the-evam-sdk" title="Permalink to this heading">¶</a></h3>
+<p>There is an <a class="reference external" href="https://github.com/facebook/create-react-app/issues/12253">open issue</a> with <code class="docutils literal notranslate"><span class="pre">create-react-app</span></code> that can cause an old version of <code class="docutils literal notranslate"><span class="pre">react-scripts</span></code> to be installed due to an outdated version of <code class="docutils literal notranslate"><span class="pre">npm/npx</span></code> being installed.</p>
+<p>The solution is to ensure NodeJS 14 or later is installed on your computer. See the <a class="reference external" href="https://nodejs.org/en/download/">NodeJS Downloads page</a>.</p>
+</section>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="development_environment.html" title="Development environment"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Development environment </span>
+              </div>
+            </a>
+          
+          
+            <a href="using_the_sdk.html" title="Using the Evam SDK"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> Using the Evam SDK </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Evam.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

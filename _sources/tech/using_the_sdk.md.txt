@@ -1,0 +1,445 @@
+```{eval-rst}
+.. _using_the_sdk:
+```
+
+# Using the Evam SDK
+
+The Evam SDK is offered as a NPM package `@evam/sdk`, it contains:
+
+```{eval-rst}
+- A set of APIs to interact with the Evam platform in `EvamApi`, including getting the currently active case, and application settings.
+- A set of UI components that help you kickstart your development and make it easier to follow the Evam :ref:`design_guidelines`, including a App bar component.
+```
+
+## Install the SDK
+
+```{admonition} Note
+
+```{eval-rst}
+This is not necessary if you use the Evam React template, see :ref:`getting_started`.
+
+```
+
+To install the Evam SDK, add it to `package.json` dependencies:
+
+```jsonc
+{
+    // ...
+    "@evam/sdk": "^1.0.0"   // Note: version may vary
+    // ...
+}
+```
+
+and run `npm i`.
+
+## SDK versioning
+
+Evam adheres to [Semantic versioning](https://semver.org/).
+
+## Setup your app metadata
+
+Some metadata about your application should be set such as its ID within the Evam platform, its name, logo, settings, etc.
+
+All of this can be set in the Evam manifest located under `public/evam.json`, here is an example content:
+
+```jsonc
+{
+    "applicationId": "com.example.application",
+    "applicationName": "Demo application",
+    "settings": [
+        {
+            "id": "debug",
+            "name": "Debug mode",
+            "description": "Enable debug mode by displaying logs on screen",
+            "value": {
+                "type": "bool",
+                "default": false
+            }
+        }
+    ],
+    "logo": "logo.png",
+    "permissions": [
+        "ACTIVE_OPERATION_READ",
+        "SETTINGS_READ",
+        "DISPLAY_MODE_READ"
+    ]
+}
+```
+
+| Field | Description |
+| --- | --- |
+| `applicationId` | Unique ID of your application. |
+| `applicationName` | Application name as it will appear to the end user. |
+| `settings` | Array of entries describing the available settings for this application. The value of those settings will be typically set by the end user to tune their experience. The settings format that will be made available to the application during runtime will be a direct mapping `id -> value` (e.g. `{"debug": true}` in this case). The name and description will be used to display the settings effect to the end user. The available values for `type` are: `bool`, `int`, `float` and `string`.  |
+| `logo` | Path to the application logo as it will appear in the bottom bar. The path is relative to the root of the built package. |
+| `permissions` | List of permissions required for the application to run. This is currently unused but will be implemented to enhance the security of user's data. |
+
+## Use the built-in UI components
+
+Currently an App bar component is available, alongside its associated widgets.
+
+### App bar component
+
+The base App bar component is an efficient framework to start your application without having to setup a navigation system from scratch.
+
+![App bar](screenshots/app_bar_5.png)
+
+Here is the code associated to the visuals above:
+
+```jsx
+<div className="App">
+    <Router>
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <EvamAppBarLayout tabs={
+                <EvamTabs>
+                    <EvamTab label={"Panel 1"} index={0} 
+                             icon={<Home fontSize={"large"}/>}/>
+                    <EvamTab label={"Panel 2"} index={1} 
+                             icon={<ArchiveIcon fontSize={"large"}/>}/>
+                    <EvamTab label={"Panel 3"} index={2} 
+                             icon={<EditIcon fontSize={"large"}/>}/>
+                </EvamTabs>
+            } >
+                // Note: for clarity, this content will put in a separate
+                // React Fragment named "MainView" after this example
+                <Box paddingLeft={1} paddingRight={1}>
+                        <EvamTabPanel index={0}>
+                                <h1>Panel 1</h1>
+                                <p>Lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit, sed do
+                                    eiusmod
+                                    tempor incididunt
+                                    ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud
+                                    exercitation
+                                    ullamco laboris nisi ut aliquip ex
+                                    ea commodo consequat. Duis aute
+                                    irure
+                                    dolor in
+                                    reprehenderit in voluptate velit
+                                    esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur
+                                    sint occaecat cupidatat non
+                                    proident, sunt in culpa qui officia
+                                    deserunt
+                                    mollit anim id
+                                    est laborum.</p>
+                        </EvamTabPanel>
+                        <EvamTabPanel index={1}>
+                                <h1>Panel 2</h1>
+                                <p>Sed ut perspiciatis unde omnis iste
+                                    natus error sit voluptatem
+                                    accusantium
+                                    doloremque
+                                    laudantium, totam rem aperiam, eaque
+                                    ipsa quae ab illo inventore
+                                    veritatis
+                                    et quasi
+                                    architecto beatae vitae dicta sunt
+                                    explicabo.</p>
+                        </EvamTabPanel>
+                        <EvamTabPanel index={2}>
+                                <h1>Panel 3</h1>
+                                <p>At vero eos et accusamus et iusto
+                                    odio dignissimos ducimus qui
+                                    blanditiis
+                                    praesentium
+                                    voluptatum deleniti atque corrupti
+                                    quos dolores et quas molestias
+                                    excepturi
+                                    sint
+                                    occaecati cupiditate non provident,
+                                    similique sunt in culpa qui officia
+                                    deserunt
+                                    mollitia animi, id est laborum et
+                                    dolorum fuga. Et harum quidem rerum
+                                    facilis est et
+                                    expedita distinctio.</p>
+                        </EvamTabPanel>
+                </Box>
+            </EvamAppBarLayout>
+        </ThemeProvider>
+    </Router>
+</div>
+```
+
+
+
+#### With added Search functionality
+
+Adding a Search functionality at the top right of the App bar component can be done by setting the `extraFunction` property of `EvamAppBarLayout`:
+
+```jsx
+<div className="App">
+    <Router>
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <EvamAppBarLayout
+                tabs={
+                    <EvamTabs>
+                        <EvamTab label={"Panel 1"} index={0}
+                                icon={<Home fontSize={"large"}/>}/>
+                        <EvamTab label={"Panel 2"} index={1}
+                                icon={<ArchiveIcon fontSize={"large"}/>}/>
+                        <EvamTab label={"Panel 3"} index={2}
+                                icon={<EditIcon fontSize={"large"}/>}/>
+                    </EvamTabs>
+                } extraFunction={<EvamTabSearch/>}
+            >
+                <Routes>
+                    <Route path={"/"} element={<MainView/>}></Route>
+                    <Route path={"/search"}
+                           element={<SearchView/>}></Route>
+                </Routes>
+            </EvamAppBarLayout>
+        </ThemeProvider>
+    </Router>
+</div>
+```
+
+And here is the `SearchView` definition:
+
+```jsx
+import {useSearchParams} from "react-router-dom";
+
+interface SearchViewProps {
+}
+
+export function SearchView(props: SearchViewProps) {
+    const {...other} = props
+
+    const [params] = useSearchParams()
+
+    return (
+        <div {...other}>
+            <h1>No result for "{params.get("searchText")}"</h1>
+            <p>We could not find anything, please review your query.</p>
+        </div>
+    )
+}
+```
+
+Note that we have added a Router and Routes objects from `react-router-dom` to this example as we have now 2 different views we must keep track of:
+
+- The `MainView` with the 3 tabs
+- The `SearchView` with the search bar and search results.
+
+In this example, we have deciced to implement the search functionality as an independent view, but we could have kept it on the Main View by simply routing "/search" routes to the Main View.
+
+This is the result:
+
+![Main view](screenshots/app_bar_3.png)
+![Main view](screenshots/app_bar_4.png)
+
+*Note: the second screenshot above is after searching for "hello world".*
+
+The `EvamTabSearch` component, once clicked, will automatically navigate to "/search". And whenever the search query is updated in the input box, the path will update to "/search?searchText=<ENCODED_SEARCH_QUERY>". For instance, when searching for "hello world", the path will be "/search?searchText=hello%20world".
+
+This allows for a flexible implementation of the Search function.
+
+Additionally, it is possible to further customize the look of the top bar when in search mode with 2 properties of `EvamAppBarLayout`:
+
+- `searchHint`: text shown when the search input is empty, defaults to "Search"
+- `showSearchCancel`: set to false to hide the cancel button in the top bar.
+
+See example below:
+
+```jsx
+<div className="App">
+    <Router>
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <EvamAppBarLayout searchHint={"Sök"} showSearchCancel={true}
+                tabs={
+                    <EvamTabs>
+                        <EvamTab label={"Panel 1"} index={0}
+                                icon={<Home fontSize={"large"}/>}/>
+                        <EvamTab label={"Panel 2"} index={1}
+                                icon={<ArchiveIcon fontSize={"large"}/>}/>
+                        <EvamTab label={"Panel 3"} index={2}
+                                icon={<EditIcon fontSize={"large"}/>}/>
+                    </EvamTabs>
+                } extraFunction={<EvamTabSearch/>}
+            >
+                <Routes>
+                    <Route path={"/"} element={<MainView/>}></Route>
+                    <Route path={"/search"}
+                           element={<SearchView/>}></Route>
+                </Routes>
+            </EvamAppBarLayout>
+        </ThemeProvider>
+    </Router>
+</div>
+```
+
+#### With added Menu
+
+If your application requires extra navigation options, adding a hamburger menu is a good way to provide them without cluttering the visuals. It can be done with the `extraFunction` property just like for Search:
+
+```jsx
+<div className="App">
+    <Router>
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <EvamAppBarLayout tabs={
+                <EvamTabs>
+                    <EvamTab label={"Panel 1"} index={0} 
+                             icon={<Home fontSize={"large"}/>}/>
+                    <EvamTab label={"Panel 2"} index={1} 
+                             icon={<ArchiveIcon fontSize={"large"}/>}/>
+                    <EvamTab label={"Panel 3"} index={2} 
+                             icon={<EditIcon fontSize={"large"}/>}/>
+                </EvamTabs>
+            } extraFunction={
+                // Simple hamburger menu layout with 2 options
+                <EvamHamburgerMenu  sx={{backdropFilter: "blur(5px)"}}>
+                    <Box height={600} width={500}>
+                        <EvamMenuItem id={"Menu option 1"}>Menu option 1</EvamMenuItem>
+                        <EvamMenuItem id={"Menu option 2"}>Menu option 2</EvamMenuItem>
+                    </Box>
+                </EvamHamburgerMenu>
+            }
+            >
+                <Routes>
+                    <Route path={"/"} element={<MainView/>}></Route>
+                    <Route path={formatRoutePathByMenuId("Menu option 1")}
+                           element={<h1>Option 1</h1>}/>
+                    <Route path={formatRoutePathByMenuId("Menu option 2")}
+                           element={<h1>Option 2</h1>}/>
+                </Routes>
+            </EvamAppBarLayout>
+        </ThemeProvider>
+    </Router>
+</div>
+```
+
+This is the result:
+
+| Main View | After touching menu button | After selecting option 1 |
+| -- | -- | -- |
+| ![Main view](screenshots/app_bar_0.png) | ![Main view](screenshots/app_bar_1.png) | ![Main view](screenshots/app_bar_6.png) |
+
+
+Similarly to the `EvamTabSearch` component, `EvamHamburgerMenu` also uses navigation to propagate user actions to the app:
+
+- Selecting an `EvamMenuItem` navigates to "/hmenu/<ENCODED_ID>", for instance for a menu id "Menu option 1", the path will be "/hmenu/Menu%20option%201". To make it easy with routing, the function `formatRoutePathByMenuId` is available to compute the final path from a menu id.
+- Touching the "Back arrow" goes back to "/".
+
+## Use the Evam API
+
+Interacting with the Evam platform is made possible through the Evam API.
+
+It contains a set of functions to access the platform data and simulate specific events in a development environment.
+
+The guiding principles behind the API functions are:
+
+- they should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them
+- they should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)
+- they should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks
+- The API is entirely written in Typescript, making it type-safe (to the extent permitted by Typescript) and Javascript-compatible.
+
+### Read the Evam platform data
+
+There are 7 objects that can be read from the Evam platform:
+
+- The **Operation**:\
+it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle ("Active operation").
+- The **Settings**:\
+your application can specify a set of parameters in its application manifest (see [](#setup-your-app-metadata)). Those settings will be set by the end user upon installation of you app, and the Evam platform will feed them to your app at runtime when it starts and when the settings are updated by the end user. The obtained `settings` object will have the same format as the settings supplied in the App manifest.
+- The **Device Role**:\
+this is one of three values 'SINGLE_DEVICE', 'RECEIVING_DEVICE' or 'MAIN_DEVICE'. This will be configured within Vehicle Services via the setup.
+- The **Location**:\
+the vehicles current location, latitude, logitude, and timestamp,
+- The **Internet State**:\
+one of seven possible values where 'NO_INTERNET' means no connection whatsoever. Aside from that all other states are named 'CONNECTED_...' where '...' can be either '2G', 'EDGE', '3G', '4G', '5G' or 'WIFI'.
+- The **Vehicle State**:\
+vehicle state stores various data regarding the logged in vehicle. Such data are vehicle status, active case full id, vehicle location and whatnot.
+- The **Trip Location History**:\
+stores an array of Location objects representing the trip history.
+
+This is how those APIs can be used:
+
+```javascript
+import {EvamApi} from '@evam/sdk/api/EvamApi';
+
+// Get API singleton
+const evamApi = new EvamApi();
+
+// Register a new callback on any active operation update that simply logs its ID
+evamApi.onNewOrUpdatedOperation(
+    (activeOperation) => console.log(activeOperation?.getFullId())
+);
+
+// Register a new callback on any application settings update that simply logs them
+evamApi.onNewOrUpdatedSettings(
+    (settings) => console.log(settings)
+);
+```
+
+```{eval-rst}
+Check the :ref:`sdk-reference` for a comprehensive list of the available API functions.
+```
+
+
+### Simulate events in a development environment
+
+The Operations and Settings will be provided by the Evam platform as shown below, but you may simulate incoming Operations and Settings updates in a development environment (i.e. a web browser such as Chrome or Firefox running on your development computer). This allows you to test those scenarios with proper tooling and without needing an Evam device.
+
+It is compatible with test libraries such as `jest`.
+
+This is how you may inject such events using the API:
+
+```typescript
+import {ActiveCase, EvamApi} from '@evam/sdk/api/EvamApi';
+
+// Get Evam API singleton
+const evamApi = EvamApi.getInstance();
+
+// Always check if we are in production environment to avoid exceptions
+if (!evam.isRunningInVehicleServices) {
+    // Inject an ActiveCase, or undefined if you wish no active operation
+    evamApi.injectOperation(
+        ActiveCase.fromJson(
+            {
+                operationID: "56",
+                patientName: "Test Testkort",
+                patientUID: "900608-2381",
+                callCenterId: "18",
+                caseFolderId: "1",
+                prio: "PRIO 1",
+                vehicleStatus: {
+                    name: "Kvittera"
+                },
+                destinationSiteLocation: {
+                    latitude: 59.35393,
+                    longitude: 17.973795,
+                    street: "Vretenvägen 13"
+                },
+                name: "Brand i bilen",
+                sendTime: (new Date()).getTime() / 1000,
+                createdTime: (new Date()).getTime() / 1000,
+            }
+        )
+    );
+
+    // Inject Settings
+    // Note: No type validation here, make sure to respect the format
+    // [id] -> value from your manifest
+    evamApi.injectSettings({debug: true});
+}
+```
+
+Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions.
+
+## Recommended workflow
+
+The Evam SDK is built on top of the NodeJS ecosystem and React library, which provides any developer with a rich set of tools to efficiently develop and application out of the box. Developing an app for the Evam platform is very similar to developing a React web application.
+
+Only an IDE such as VS Code and a web browser such as Chrome are needed.
+
+One notable difference is that your application will be run and used in a mobile device (typically a tablet), with limited screen real estate. To ensure your application will look as intended in the Evam Platform, make sure to use the "Device Mode" of your web browser (example for Chrome: [Device mode](https://developer.chrome.com/docs/devtools/device-mode/)).
+
+```{eval-rst}
+You can find out which device dimensions are available in the Evam platform in the :ref:`design_guidelines_layout` documentation in the design guidelines.
+```

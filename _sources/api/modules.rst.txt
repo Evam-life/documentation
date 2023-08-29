@@ -1,0 +1,76 @@
+.. _sdk-reference:
+
+=============
+SDK reference
+=============
+
+Production version - {{ version.current }}
+=========================================
+
+Here is the API reference for the current production version of the SDK.
+
+This is the recommended version for any production deployment of your certified app.
+
+All functions below are available in:
+
+- the Evam platform (i.e. an actual Evam device)
+- the development environment (web browser)
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   gen/current/**
+
+{% if version.alpha != version.current %}
+
+Alpha version - {{ version.alpha }}
+=====================================
+
+Here is the API reference for the current alpha version of the SDK.
+
+This is the recommended version if the production version does not yet integrate all
+functions you need to develop your certified app.
+
+The functions below are currently available in the development environment only.
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   gen/alpha/**
+
+{% endif %}
+
+Roadmap
+=======
+
+The Evam SDK is evolving constantly to add more functions, data sharing and access to system functions.
+
+This is how we plan on developing the SDK moving forward. If you have some input - such as a
+feature request - please get in touch with us via the public or private issue tracker in the developer portal!
+
+- Addition of new APIs for hardware access (CANBus, USB),
+- Addition of new APIs for interacting with the Navigation App (add elements in the map, etc),
+- Improvements to the Development environment.
+
+Other versions
+==============
+
+Those versions of the SDK are here for reference only, it is recommended you use either the
+Production or Alpha version instead.
+
+
+{% for ver in version.other %}
+
+{{ ver }}
+-------------
+
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   gen/other/{{ ver }}/**
+
+{% endfor %}

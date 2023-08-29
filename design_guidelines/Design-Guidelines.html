@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Design guidelines &#8212; Evam developer SDK  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deployment" href="../tech/deployment.html" />
+    <link rel="prev" title="Welcome to the Evam developer SDK documentation!" href="../index.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=white data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#design_guidelines/Design-Guidelines" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Evam developer SDK  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/evam-black.png" height="26"
+                   alt="Evam developer SDK documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
+          <span class="md-header-nav__topic"> Design guidelines </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Evam developer SDK  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Evam developer SDK documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/evam-black.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Evam developer SDK documentation">Evam developer SDK  documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Design guidelines </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Design guidelines</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#design-guidelines-design-guidelines--page-root" class="md-nav__link">Design guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#introduction" class="md-nav__link">Introduction</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#get-to-know-our-users" class="md-nav__link">Get to know our users</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-main-principles" class="md-nav__link">The main principles</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-main-components-of-evam-vehicle-services" class="md-nav__link">The main components of Evam Vehicle Services</a>
+        </li>
+        <li class="md-nav__item"><a href="#modes-in-evam-vehicle-services" class="md-nav__link">Modes in Evam Vehicle Services</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#templates" class="md-nav__link">Templates</a>
+        </li>
+        <li class="md-nav__item"><a href="#navigation" class="md-nav__link">Navigation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#how-to-create-great-navigation" class="md-nav__link">How to create great navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#flat-navigation" class="md-nav__link">Flat navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#hierarchical-navigation" class="md-nav__link">Hierarchical navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-of-navigation-structure" class="md-nav__link">Example of navigation structure</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#layout" class="md-nav__link">Layout</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#responsiveness-and-app-area" class="md-nav__link">Responsiveness and app area</a>
+        </li>
+        <li class="md-nav__item"><a href="#responsive-margins" class="md-nav__link">Responsive margins</a>
+        </li>
+        <li class="md-nav__item"><a href="#touch-areas" class="md-nav__link">Touch areas</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#color" class="md-nav__link">Color</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#choosing-colors" class="md-nav__link">Choosing colors</a>
+        </li>
+        <li class="md-nav__item"><a href="#text-legibility" class="md-nav__link">Text legibility</a>
+        </li>
+        <li class="md-nav__item"><a href="#day-and-night-mode" class="md-nav__link">Day and night mode</a>
+        </li>
+        <li class="md-nav__item"><a href="#elevation" class="md-nav__link">Elevation</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#text-and-typography" class="md-nav__link">Text and typography</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#sizing" class="md-nav__link">Sizing</a>
+        </li>
+        <li class="md-nav__item"><a href="#layout-and-alignment" class="md-nav__link">Layout and alignment</a>
+        </li>
+        <li class="md-nav__item"><a href="#language-support" class="md-nav__link">Language support</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#iconography" class="md-nav__link">Iconography</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#system-icons" class="md-nav__link">System icons</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#system-icon-sizing" class="md-nav__link">System icon sizing</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#usage-of-icons-displaying-directions-and-actions" class="md-nav__link">Usage of icons displaying directions and actions</a>
+        </li>
+        <li class="md-nav__item"><a href="#app-icon" class="md-nav__link">App icon</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Sizing</a>
+        </li>
+        <li class="md-nav__item"><a href="#color-contrast" class="md-nav__link">Color contrast</a>
+        </li>
+        <li class="md-nav__item"><a href="#icon-without-text" class="md-nav__link">Icon without text</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#components" class="md-nav__link">Components</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#selectors" class="md-nav__link">Selectors</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#radio-buttons" class="md-nav__link">Radio buttons</a>
+        </li>
+        <li class="md-nav__item"><a href="#checkboxes" class="md-nav__link">Checkboxes</a>
+        </li>
+        <li class="md-nav__item"><a href="#dropdown-list" class="md-nav__link">Dropdown list</a>
+        </li>
+        <li class="md-nav__item"><a href="#toggle" class="md-nav__link">Toggle</a>
+        </li>
+        <li class="md-nav__item"><a href="#chips" class="md-nav__link">Chips</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#buttons" class="md-nav__link">Buttons</a>
+        </li>
+        <li class="md-nav__item"><a href="#top-bar" class="md-nav__link">Top bar</a>
+        </li>
+        <li class="md-nav__item"><a href="#list" class="md-nav__link">List</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#communication-with-the-user" class="md-nav__link">Communication with the user</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#notifications" class="md-nav__link">Notifications</a>
+        </li>
+        <li class="md-nav__item"><a href="#loading-states" class="md-nav__link">Loading states</a>
+        </li>
+        <li class="md-nav__item"><a href="#error-messages" class="md-nav__link">Error messages</a>
+        </li>
+        <li class="md-nav__item"><a href="#confirmation-and-acknowledgements" class="md-nav__link">Confirmation and acknowledgements</a>
+        </li>
+        <li class="md-nav__item"><a href="#communicate-differently-depending-on-urgency" class="md-nav__link">Communicate differently depending on urgency</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#branding" class="md-nav__link">Branding</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tech/deployment.html" class="md-nav__link">Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tech/development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tech/getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../tech/using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../api/modules.html" class="md-nav__link">SDK reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#design-guidelines-design-guidelines--page-root" class="md-nav__link">Design guidelines</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#introduction" class="md-nav__link">Introduction</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#get-to-know-our-users" class="md-nav__link">Get to know our users</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-main-principles" class="md-nav__link">The main principles</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-main-components-of-evam-vehicle-services" class="md-nav__link">The main components of Evam Vehicle Services</a>
+        </li>
+        <li class="md-nav__item"><a href="#modes-in-evam-vehicle-services" class="md-nav__link">Modes in Evam Vehicle Services</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#templates" class="md-nav__link">Templates</a>
+        </li>
+        <li class="md-nav__item"><a href="#navigation" class="md-nav__link">Navigation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#how-to-create-great-navigation" class="md-nav__link">How to create great navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#flat-navigation" class="md-nav__link">Flat navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#hierarchical-navigation" class="md-nav__link">Hierarchical navigation</a>
+        </li>
+        <li class="md-nav__item"><a href="#example-of-navigation-structure" class="md-nav__link">Example of navigation structure</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#layout" class="md-nav__link">Layout</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#responsiveness-and-app-area" class="md-nav__link">Responsiveness and app area</a>
+        </li>
+        <li class="md-nav__item"><a href="#responsive-margins" class="md-nav__link">Responsive margins</a>
+        </li>
+        <li class="md-nav__item"><a href="#touch-areas" class="md-nav__link">Touch areas</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#color" class="md-nav__link">Color</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#choosing-colors" class="md-nav__link">Choosing colors</a>
+        </li>
+        <li class="md-nav__item"><a href="#text-legibility" class="md-nav__link">Text legibility</a>
+        </li>
+        <li class="md-nav__item"><a href="#day-and-night-mode" class="md-nav__link">Day and night mode</a>
+        </li>
+        <li class="md-nav__item"><a href="#elevation" class="md-nav__link">Elevation</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#text-and-typography" class="md-nav__link">Text and typography</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#sizing" class="md-nav__link">Sizing</a>
+        </li>
+        <li class="md-nav__item"><a href="#layout-and-alignment" class="md-nav__link">Layout and alignment</a>
+        </li>
+        <li class="md-nav__item"><a href="#language-support" class="md-nav__link">Language support</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#iconography" class="md-nav__link">Iconography</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#system-icons" class="md-nav__link">System icons</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#system-icon-sizing" class="md-nav__link">System icon sizing</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#usage-of-icons-displaying-directions-and-actions" class="md-nav__link">Usage of icons displaying directions and actions</a>
+        </li>
+        <li class="md-nav__item"><a href="#app-icon" class="md-nav__link">App icon</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Sizing</a>
+        </li>
+        <li class="md-nav__item"><a href="#color-contrast" class="md-nav__link">Color contrast</a>
+        </li>
+        <li class="md-nav__item"><a href="#icon-without-text" class="md-nav__link">Icon without text</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#components" class="md-nav__link">Components</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#selectors" class="md-nav__link">Selectors</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#radio-buttons" class="md-nav__link">Radio buttons</a>
+        </li>
+        <li class="md-nav__item"><a href="#checkboxes" class="md-nav__link">Checkboxes</a>
+        </li>
+        <li class="md-nav__item"><a href="#dropdown-list" class="md-nav__link">Dropdown list</a>
+        </li>
+        <li class="md-nav__item"><a href="#toggle" class="md-nav__link">Toggle</a>
+        </li>
+        <li class="md-nav__item"><a href="#chips" class="md-nav__link">Chips</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#buttons" class="md-nav__link">Buttons</a>
+        </li>
+        <li class="md-nav__item"><a href="#top-bar" class="md-nav__link">Top bar</a>
+        </li>
+        <li class="md-nav__item"><a href="#list" class="md-nav__link">List</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#communication-with-the-user" class="md-nav__link">Communication with the user</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#notifications" class="md-nav__link">Notifications</a>
+        </li>
+        <li class="md-nav__item"><a href="#loading-states" class="md-nav__link">Loading states</a>
+        </li>
+        <li class="md-nav__item"><a href="#error-messages" class="md-nav__link">Error messages</a>
+        </li>
+        <li class="md-nav__item"><a href="#confirmation-and-acknowledgements" class="md-nav__link">Confirmation and acknowledgements</a>
+        </li>
+        <li class="md-nav__item"><a href="#communicate-differently-depending-on-urgency" class="md-nav__link">Communicate differently depending on urgency</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#branding" class="md-nav__link">Branding</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="design-guidelines">
+<span id="id1"></span><h1 id="design-guidelines-design-guidelines--page-root">Design guidelines<a class="headerlink" href="#design-guidelines-design-guidelines--page-root" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>A Certified app will be part of the collection of carefully selected apps for Evam Vehicle Services. Vehicle Services supports users to stay in control and powers them into the digital world. An app inside Vehicle Services needs to be tailored for the users, the first responders.</p>
+<p><img alt="Productimage" src="../_images/Productimage.png"/></p>
+<p></p>
+<section id="get-to-know-our-users">
+<h3 id="get-to-know-our-users">Get to know our users<a class="headerlink" href="#get-to-know-our-users" title="Permalink to this heading">¶</a></h3>
+<p>First responders include police officers, paramedics, and firefighters. They are the first ones at the site of an emergency. Our users are great at handling stressful and pressured situations, as well as making quick decisions to save lives. What they are not as used to in their everyday work life is being powered by the digital world. Rather, digital products aimed at helping them has sometimes added complexity to their tasks. Some of the main challenges the users are experiencing:</p>
+<p><strong>Handling a lot of information.</strong> Without information being filtered users are experiencing cognitive overload when trying to find what is important and remembering routines.</p>
+<p>The users do need lots of information, but they only need what it is relevant when it is. Information about things that are not relevant should not be displayed. Try to reduce the cognitive load in all aspects, for example, users should never have to remember important information from one page when moving to another page.</p>
+<p><strong>Knowing what to do and prioritize.</strong> Decisions needs to be made, both small and big, even if the situation is stressful. Digital products can make this challenging by not clearly showing what is the most important to do.</p>
+<p>To support users knowing what to do and when to do it, we can help by foreseeing what questions they might have in different situations. The design should clearly point out primary actions and by knowing how often and when functions are used we can help them prioritizing.</p>
+<p><strong>Having to handle bad design in digital products.</strong> Digital tools are not adapted for the different situations users are exposed to. The design is also not easily recognizable for users used to modern technology in their private lives.</p>
+<p>Our users know their needs, but they are not suited to decide the design. Dare to challenge the users and translate their needs to a good design. The interfaces users meet in Evam Vehicle Services should feel familiar, be recognizable and intuitive. This is done by carefully creating a clear navigation structure for the app, and by using components and patterns the users use in their everyday private life when exposed to digital products.</p>
+<p><strong>Making an app tailored for first responders means designing it intentionally with these challenges in mind.</strong></p>
+<p></p>
+<p></p>
+</section>
+<section id="the-main-principles">
+<h3 id="the-main-principles">The main principles<a class="headerlink" href="#the-main-principles" title="Permalink to this heading">¶</a></h3>
+<p><strong>Know what user needs you are to meet.</strong> Do research. Find out the needs and rank them. When are the needs relevant? Often the user will communicate their need with a design. Make sure you clearly know the need and dare to challenge their design proposal.</p>
+<p><strong>Challenge old ways.</strong> Try new ways and test them with users. Look at how other successful products do it in other industries and be inspired. Don’t let the previous undigitalized ways of working influence your product when not needed.</p>
+<p><strong>Test your app with the users.</strong> Go out and meet the people using the product out in the field. Dare to make mistakes and redo the design.</p>
+<p><strong>Prioritize and minimize content.</strong> Try minimizing the amount of content and features as much as possible to ensure the best value for the user.</p>
+<p><strong>Keep the UI design consistent.</strong> Try to always keep interaction patters the same, and make sure components behave alike throughout the app.</p>
+<p><strong>Make UI targets easy to touch.</strong> Remember to keep the app accessible to the users and simple to use in broad daylight, complete darkness and in a bumpy car ride.</p>
+</section>
+<section id="the-main-components-of-evam-vehicle-services">
+<h3 id="the-main-components-of-evam-vehicle-services">The main components of Evam Vehicle Services<a class="headerlink" href="#the-main-components-of-evam-vehicle-services" title="Permalink to this heading">¶</a></h3>
+<p>The app you are about to create will be displayed in the app area of Evam Vehicle Services and its app icon will be placed in the app bar available at the bottom of the screen. In Evam Vehicle Services, the screen is split between the navigation app (always in the top) and any other app in the bottom area.</p>
+<p><img alt="Evam_OS" src="../_images/Evam_OS.png"/></p>
+</section>
+<section id="modes-in-evam-vehicle-services">
+<h3 id="modes-in-evam-vehicle-services">Modes in Evam Vehicle Services<a class="headerlink" href="#modes-in-evam-vehicle-services" title="Permalink to this heading">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This will be available for Certified apps in the future</p>
+</div>
+<p><strong>There is driving mode and non-driving mode to enhance focus on the road for the driver.</strong> When driving mode is active on a tablet, some apps will be locked to that user. Also notifications will be restricted.</p>
+<p><strong>There is day mode as well as night mode to enhance usability in different light conditions.</strong> Except for change of brightness in different light conditions, we also have night mode and day mode to change the colors of the UI to make the contrast more suitable. Read more about this under <a class="reference internal" href="#color">Color</a>.</p>
+</section>
+</section>
+<section id="templates">
+<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permalink to this heading">¶</a></h2>
+<p>We are providing templates for the app bar. It includes two different app menus as well as states for page titles and back button. The templates can be styled, branded and customized to fit your app. We are recommending you to use the tab menu for the primary navigation.</p>
+<div class="admonition-top-bar-requirements admonition">
+<p class="admonition-title">Top bar requirements</p>
+<ul class="simple">
+<li><p>However you choose to design the content, either the templated tab bar or the hamburger menu is to be used</p></li>
+</ul>
+</div>
+<p><img alt="Menu" src="../_images/Menu.png"/></p>
+<p>Both menu types in the app bar also have states for displaying page title and back button:</p>
+<p><img alt="Back_button" src="../_images/Back_button.png"/></p>
+<p>You can add in icon buttons to have functionality such as “Search” or “Adding to favourites”. In the example below we have put in a search icon inside a tab bar menu to indicate the search functionality:</p>
+<p><img alt="search_button_and_app_bar" src="../_images/search_button_and_app_bar.png"/></p>
+<p></p>
+<p></p>
+</section>
+<section id="navigation">
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permalink to this heading">¶</a></h2>
+<p>Navigation is the act of moving between screens of an app to complete tasks. It’s based on your app’s information structure. It’s enabled through several means: dedicated navigation components, embedding navigation behavior into content, and platform affordances. An affordance is an element, like a button, that is recognized by users and therefore contribute to represent the function of it.</p>
+<p></p>
+<section id="how-to-create-great-navigation">
+<h3 id="how-to-create-great-navigation">How to create great navigation<a class="headerlink" href="#how-to-create-great-navigation" title="Permalink to this heading">¶</a></h3>
+<p>People tend to be unaware of an app’s navigation until it doesn’t meet their expectations. Your job is to implement navigation in a way that supports the structure and purpose of your app without calling attention to itself. Navigation should feel natural and familiar. After having done user research and knowing your user’s needs, here are some reminders to create great navigation in your app:</p>
+<p><strong>Dare to prioritize features.</strong> A common challenge when creating navigation for an app is the need to fit in everything. A common mistake is also to link everything from the same start page, and not clearly guide the user to the main features. Instead, try to make sure to categorize and prioritize features for each frame in the app.</p>
+<p><strong>Dare to remove features.</strong> More features do not equal more value for the user. If the app is not easy to navigate due to having too much low priority-features, user will not only stop using those features, but also find it difficult finding and using the high priority features.</p>
+<p><strong>Always provide a clear path.</strong> Users should always know where they are within the app and how to get to their next destination or backwards. The path needs to be predictable and easy to follow. Make it fast and easy to get to content. Organize your navigation in a way that requires a minimum number of taps and screens.</p>
+<p><strong>Use standard navigation components and keep it familiar.</strong> Whenever possible, use standard navigation controls such as buttons, tabs and expandable containers. Users are already familiar with these controls, and will intuitively know how to get around your app. In general, users are using smart phones in their everyday life and using the same interaction patterns as the most common apps is a good principle.</p>
+<p></p>
+</section>
+<section id="flat-navigation">
+<h3 id="flat-navigation">Flat navigation<a class="headerlink" href="#flat-navigation" title="Permalink to this heading">¶</a></h3>
+<p>Flat navigation refers to moving between screens at the same hierarchical level. This enables the user to quickly move to other parts of the app by simply switching between multiple content categories.</p>
+<p><img alt="Flat" src="../_images/Flat.png"/></p>
+<p><strong>The primary navigation component in an app should always provide access to all destinations at the top level of the hierarchy.</strong> A tab bar is an excellent way to do this since the user can easily move between main content categories by switching between the tabs. Ideally, the tab bar can stay visible also if the goes deeper into hierarchical navigation within a tab (category of content). Flat navigation enables the user to get to the more nested pages within fewer taps.</p>
+<p><img alt="Tab_bar_1" src="../_images/Tab_bar_1.png"/></p>
+<p></p>
+</section>
+<section id="hierarchical-navigation">
+<h3 id="hierarchical-navigation">Hierarchical navigation<a class="headerlink" href="#hierarchical-navigation" title="Permalink to this heading">¶</a></h3>
+<p>Hierarchical navigation is when the user is to make one choice per screen until they reach the destination. To then go to another destination, the user is to trace back the steps and start over from the beginning and make a different choice.</p>
+<p><img alt="hier" src="../_images/hier.png"/></p>
+<p>Hierarchical navigation is typically used when searching within an app, or for settings within an app. It is good to use for some functions, but should not be used for the main primary navigation since it often includes many clicks for the user both to get to a destination, and go back from it.</p>
+<p></p>
+</section>
+<section id="example-of-navigation-structure">
+<h3 id="example-of-navigation-structure">Example of navigation structure<a class="headerlink" href="#example-of-navigation-structure" title="Permalink to this heading">¶</a></h3>
+<p>Most common is to make a combination of flat and hierarchical navigation in an app. This makes it easier to keep the levels of hierarchical navigation low but still allow for hierarchical navigation in some parts. Below is an example of a music app where flat navigation is used for the primary navigation (a tab bar) but is combined with hierarchical navigation for the search function.</p>
+<p><img alt="examplenav" src="../_images/examplenav.png"/></p>
+<p></p>
+</section>
+</section>
+<section id="layout">
+<span id="design-guidelines-layout"></span><h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permalink to this heading">¶</a></h2>
+<p>Layout is all about creating consistency, alignment and familiarity in Evam Vehicle Services.</p>
+<div class="admonition-layout-requirements admonition">
+<p class="admonition-title">Layout requirements</p>
+<ul class="simple">
+<li><p>For app area width less than 1280 dp, use a minimum margin of 16 dp</p></li>
+<li><p>For app area width greater that 1280 dp, use a minimum margin of 24 dp</p></li>
+<li><p>Minimum touch area is 76 x 76 dp</p></li>
+<li><p>Touch areas cannot overlap with other touch areas</p></li>
+<li><p>Elements smaller than 76 dp are to be centered within the minimum touch area</p></li>
+</ul>
+</div>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+<p></p>
+<section id="responsiveness-and-app-area">
+<h3 id="responsiveness-and-app-area">Responsiveness and app area<a class="headerlink" href="#responsiveness-and-app-area" title="Permalink to this heading">¶</a></h3>
+<p>Users want use Evam Vehicle Services on different devices and in any context. To ensure the consistency of the app across different screen sizes and screen orientations it needs to be responsive to the sizing of the app area:</p>
+<p><img alt="Group_12151" src="../_images/Group_12151.png"/></p>
+<p></p>
+</section>
+<section id="responsive-margins">
+<h3 id="responsive-margins">Responsive margins<a class="headerlink" href="#responsive-margins" title="Permalink to this heading">¶</a></h3>
+<p>Margins make it easier to interact with the app and enhances the readability. For wider app areas the margins also become bigger.</p>
+<p><img alt="margins" src="../_images/margins.png"/></p>
+<p></p>
+</section>
+<section id="touch-areas">
+<h3 id="touch-areas">Touch areas<a class="headerlink" href="#touch-areas" title="Permalink to this heading">¶</a></h3>
+<p>Onscreen touch targets that are easily glanceable and reachable reduce driver distraction. Touch areas for the targets inside car environments must therefore be larger than on phones and tablets used outside of the vehicle.</p>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+<div class="admonition-touch-area-requirements admonition">
+<p class="admonition-title">Touch area requirements</p>
+<ul class="simple">
+<li><p>Minimum touch area is 76 x 76 dp</p></li>
+<li><p>Touch areas cannot overlap with other touch areas</p></li>
+<li><p>Elements smaller than 76 dp are to be centered within the minimum touch area</p></li>
+</ul>
+</div>
+<blockquote>
+<div><blockquote>
+<div></div></blockquote>
+</div></blockquote>
+<p><img alt="touch" src="../_images/touch.png"/></p>
+<p></p>
+<p></p>
+</section>
+</section>
+<section id="color">
+<h2 id="color">Color<a class="headerlink" href="#color" title="Permalink to this heading">¶</a></h2>
+<p>Colors used in a good way together makes the design harmonious, ensure accessible text, and distinguish UI elements and surfaces from one another. Color can also affect moods, invoke emotions, convey messages or signal actions.</p>
+<p>We recommend you to:</p>
+<ul class="simple">
+<li><p><strong>Build your color choices from black to easily support both day and night usage with good readability</strong></p></li>
+<li><p><strong>Use color minimally, with purpose</strong></p></li>
+<li><p><strong>Show elevation via grayscale</strong></p></li>
+<li><p><strong>Use transparency and opacity to guide visual focus</strong></p></li>
+</ul>
+<div class="admonition-color-requirements admonition">
+<p class="admonition-title">Color requirements</p>
+<ul class="simple">
+<li><p>Minimum visual contrast of 4,5:1 between the foreground (text or icons) and background (colors, images etc.) is required for legibility. This is to meet the WCAG 2.0 Level AA Normal Text contrast requirements.</p></li>
+<li><p>Night mode must have dark background.</p></li>
+</ul>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Night mode will be available for the Certified apps in the future</p>
+</div>
+<p><img alt="color_image_1" src="../_images/color_image_1.png"/></p>
+<p><img alt="Group_12150" src="../_images/Group_12150.png"/></p>
+<p></p>
+<section id="choosing-colors">
+<h3 id="choosing-colors">Choosing colors<a class="headerlink" href="#choosing-colors" title="Permalink to this heading">¶</a></h3>
+<p>Choosing and applying color to the design can be a challenge. Here you will find some guidance.</p>
+<p><img alt="palette" src="../_images/palette.png"/></p>
+<p></p>
+</section>
+<section id="text-legibility">
+<h3 id="text-legibility">Text legibility<a class="headerlink" href="#text-legibility" title="Permalink to this heading">¶</a></h3>
+<p>To make text accessible to everyone and i every context, contrast requirement between text color and background is very important.</p>
+<p>Black text is recommended for use on light backgrounds, and white text on dark backgrounds. Colored backgrounds or typography additionally change the rules regarding text opacity and different states of text. It is important to make sure the text is readable also for those with reduced color vision.</p>
+<p>Instead of using grey text and icons on top of colored backgrounds, create better contrast by displaying white or black text with reduced opacity. For example, black text displayed at 75% opacity on a green background gives the text an appearance of black, with a hint of green.</p>
+<p><img alt="Group_12024" src="../_images/Group_12024.jpg"/></p>
+<p>Opacity is also great for creating emphasis on the important parts of the interface and should be used both for elements and text.</p>
+<p><img alt="day_and_night1" src="../_images/day_and_night1.png"/></p>
+<p></p>
+</section>
+<section id="day-and-night-mode">
+<h3 id="day-and-night-mode">Day and night mode<a class="headerlink" href="#day-and-night-mode" title="Permalink to this heading">¶</a></h3>
+<p>Having a dark theme and a dark background is great for apps used inside vehicles both in day mode and night mode. It’s important that screens do not appear to bright when we are driving to not distract us. On top of that, it is important that the apps have a mode to work well when it is dark outside. The contrasts should not be as big, and everything can in general be darker.</p>
+<p>For day mode you can have either a lighter or darker theme. Either way you will have to make some adjustments for the night mode.</p>
+<p><em>How to create a night mode from your design:</em> <img alt="Group_12134" src="../_images/Group_12134.png"/></p>
+<p><img alt="in_a_dark_theme." src="../_images/in_a_dark_theme..png"/></p>
+<p><img alt="saturated_colors" src="../_images/saturated_colors.png"/></p>
+<p></p>
+</section>
+<section id="elevation">
+<h3 id="elevation">Elevation<a class="headerlink" href="#elevation" title="Permalink to this heading">¶</a></h3>
+<p>Surfaces and components appear on top of each other to create a hierarchy and to clearly group relevant components together.</p>
+<p><img alt="elecation" src="../_images/elecation.jpg"/></p>
+<p><img alt="shadows_and_color" src="../_images/shadows_and_color.png"/></p>
+<p><img alt="blur_or-and" src="../_images/blur_or-and.png"/></p>
+<p></p>
+<p></p>
+</section>
+</section>
+<section id="text-and-typography">
+<h2 id="text-and-typography">Text and typography<a class="headerlink" href="#text-and-typography" title="Permalink to this heading">¶</a></h2>
+<p><strong>Use familiar, understandable words and phrases.</strong> Technology can be intimidating. Avoid acronyms and technical jargon that people might not understand. Use what you know about your audience to determine whether certain words or phrases are appropriate.</p>
+<p><strong>Keep interface text clear and concise.</strong> People absorb short, direct text quickly and easily. They don’t appreciate being forced to read long passages to accomplish a task. Identify the most important information, express it concise, and present it clearly so people don’t have to read too much to find what they’re looking for or figure out what to do next.</p>
+<div class="admonition-typography-requirements admonition">
+<p class="admonition-title">Typography requirements</p>
+<ul class="simple">
+<li><p>Minimum font size for body text is 20 sp if app is to be used by non-drivers only (locked to drivers)</p></li>
+<li><p>Minimum font size for body text is 24 sp if app is also to be used by drivers</p></li>
+<li><p>App bar titles are 32 sp</p></li>
+</ul>
+</div>
+<p></p>
+<section id="sizing">
+<h3 id="sizing">Sizing<a class="headerlink" href="#sizing" title="Permalink to this heading">¶</a></h3>
+<p><strong>Use a predecided typographic scale to ensure a consistent look and glanceable text at a range of levels for display text, body text, and subtext.</strong> This will also help the user understand what’s important. Convey a visual hierarchy among text elements. Focus attention in the most important spots. Both sizing and font weights are good tools for this.</p>
+<p>We recommend having a typographic scale similar to this for the different levels of text:</p>
+<p><img alt="typogragraphy" src="../_images/typogragraphy.png"/></p>
+<p><img alt="text_weights" src="../_images/text_weights.png"/></p>
+<p></p>
+</section>
+<section id="layout-and-alignment">
+<h3 id="layout-and-alignment">Layout and alignment<a class="headerlink" href="#layout-and-alignment" title="Permalink to this heading">¶</a></h3>
+<p><strong>The ideal line length is 40-60 characters per line for body text</strong>. To ensure good readability it should be easy for the user to jump between rows when reading.</p>
+<p><img alt="quest" src="../_images/quest.png"/></p>
+<p><strong>Left-aligned text is the most common setting for left-to-right languages such as English</strong>. It is also important for readability to not justify the text.</p>
+<p><img alt="do_left_aligh_text" src="../_images/do_left_aligh_text.png"/></p>
+<p></p>
+</section>
+<section id="language-support">
+<h3 id="language-support">Language support<a class="headerlink" href="#language-support" title="Permalink to this heading">¶</a></h3>
+<p><strong>Make sure the text written in the app can be translated and that the design is adaptable for the translations.</strong> Words and sentences can often have different lengths when translated.</p>
+<p><img alt="trasnlation" src="../_images/trasnlation.png"/></p>
+<p></p>
+<p></p>
+</section>
+</section>
+<section id="iconography">
+<h2 id="iconography">Iconography<a class="headerlink" href="#iconography" title="Permalink to this heading">¶</a></h2>
+<p>Icons can symbolize common actions, files and directories. In this section we look into design and usage for both system icons inside the app and the app icon representing your app.</p>
+<div class="admonition-system-icon-requirements admonition">
+<p class="admonition-title">System icon requirements</p>
+<ul class="simple">
+<li><p>System icon size requirements; Primary icon (44 x 44 dp), Secondary (36 x 36 dp), Tertiary icon (24 x 24 dp).</p></li>
+<li><p>Minimum touch-target size is 76 x 76 dp</p></li>
+<li><p>Maintain a contrast ratio of at least 4.5:1 between the background and icons.</p></li>
+</ul>
+</div>
+<div class="admonition-app-icon-requirements admonition">
+<p class="admonition-title">App icon requirements</p>
+<ul class="simple">
+<li><p>App icon size requirements: The icon is going to be displayed in the size 64 x 64 dp.</p></li>
+<li><p>Provide active and deactive states</p></li>
+<li><p>Provide icon versions that are visible on light and dark background for both active and deactive states.</p></li>
+</ul>
+</div>
+<p></p>
+<p></p>
+<section id="system-icons">
+<h3 id="system-icons">System icons<a class="headerlink" href="#system-icons" title="Permalink to this heading">¶</a></h3>
+<p>System icons are designed to aid and be understood by most people. Try using well-known icons as much as possible, we recommend using Google Fonts when suitable (<a class="reference external" href="https://fonts.google.com/icons">https://fonts.google.com/icons</a>).</p>
+<p>Icon shapes are bold and geometric. They have a symmetrical and consistent look, ensuring readability and clarity, even at small sizes.</p>
+<p><img alt="icons_1" src="../_images/icons_1.png"/></p>
+<p></p>
+<section id="system-icon-sizing">
+<h4 id="system-icon-sizing">System icon sizing<a class="headerlink" href="#system-icon-sizing" title="Permalink to this heading">¶</a></h4>
+<p>Generously sized icons and text make it easier and quicker for users to interact with apps and return attention to their environment when in a vehicle.</p>
+<p><img alt="icon_size" src="../_images/icon_size.png"/></p>
+<p></p>
+</section>
+</section>
+<section id="usage-of-icons-displaying-directions-and-actions">
+<h3 id="usage-of-icons-displaying-directions-and-actions">Usage of icons displaying directions and actions<a class="headerlink" href="#usage-of-icons-displaying-directions-and-actions" title="Permalink to this heading">¶</a></h3>
+<p><img alt="icons" src="../_images/icons.png"/></p>
+<p></p>
+</section>
+<section id="app-icon">
+<h3 id="app-icon">App icon<a class="headerlink" href="#app-icon" title="Permalink to this heading">¶</a></h3>
+<p>To distinguish your app from others in the app menu of the Evam Vehicle Services you will provide an app icon. The icon will be displayed in both active and deactive states.</p>
+<p><img alt="App_icon_1" src="../_images/App_icon_1.png"/></p>
+<p></p>
+<section id="id2">
+<h4 id="id2">Sizing<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
+<p>The icon is going to be displayed in the size 64 x 64 dp.</p>
+<p></p>
+</section>
+<section id="color-contrast">
+<h4 id="color-contrast">Color contrast<a class="headerlink" href="#color-contrast" title="Permalink to this heading">¶</a></h4>
+<p>The icon needs to clearly be visible against both light (test on white) and dark environments (test on black). You can provide different versions of the icon if needed.</p>
+<p><img alt="contrast" src="../_images/contrast.png"/></p>
+<p></p>
+</section>
+<section id="icon-without-text">
+<h4 id="icon-without-text">Icon without text<a class="headerlink" href="#icon-without-text" title="Permalink to this heading">¶</a></h4>
+<p>There will not be any text displayed under or next to the icon. It is generelly good with icons that does not contain longer words or names. Try to make a graphic icon that is easy to recognize, easy to remember for the user, and in-line with your brand.</p>
+<p><img alt="icon_without_text" src="../_images/icon_without_text.png"/></p>
+<p></p>
+</section>
+</section>
+</section>
+<section id="components">
+<h2 id="components">Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
+<p>Components are the building blocks that make up the design. In this section you will find some common components and how you can use them in your app.</p>
+<p></p>
+<section id="selectors">
+<h3 id="selectors">Selectors<a class="headerlink" href="#selectors" title="Permalink to this heading">¶</a></h3>
+<p>To ensure design that users recognize it is important to know when to use selectors:</p>
+<p><img alt="selectors" src="../_images/selectors.png"/></p>
+<p></p>
+<section id="radio-buttons">
+<h4 id="radio-buttons">Radio buttons<a class="headerlink" href="#radio-buttons" title="Permalink to this heading">¶</a></h4>
+<p>Radio buttons are good for overview when there are multiple options. Only one option can be chosen.</p>
+<p><img alt="radio_button" src="../_images/radio_button.png"/></p>
+<p></p>
+</section>
+<section id="checkboxes">
+<h4 id="checkboxes">Checkboxes<a class="headerlink" href="#checkboxes" title="Permalink to this heading">¶</a></h4>
+<p>Checkboxes are good when vertical space is available for when users can pick many options at once. Remember the effect takes place after submission.</p>
+<p><img alt="checkbox" src="../_images/checkbox.png"/></p>
+<p></p>
+</section>
+<section id="dropdown-list">
+<h4 id="dropdown-list">Dropdown list<a class="headerlink" href="#dropdown-list" title="Permalink to this heading">¶</a></h4>
+<p>Use dropdown lists carefully and only when content is not important to display without interaction. This selector often require extra clicks and scrolling.</p>
+<p><img alt="drop_down" src="../_images/drop_down.png"/></p>
+<p></p>
+</section>
+<section id="toggle">
+<h4 id="toggle">Toggle<a class="headerlink" href="#toggle" title="Permalink to this heading">¶</a></h4>
+<p>Toggle selectors are for immediate on/off settings. In a vehicle it is important the state is clear with contrast and color change to not make the user confused about the state.</p>
+<p><img alt="toggle_-_and" src="../_images/toggle_-_and.png"/></p>
+<p></p>
+</section>
+<section id="chips">
+<h4 id="chips">Chips<a class="headerlink" href="#chips" title="Permalink to this heading">¶</a></h4>
+<p>Chips are a good alternative to checkboxes, especially when vertical spacing is restricted. They are good for filtering (long lists for example).</p>
+<p><img alt="without" src="../_images/without.png"/></p>
+<p></p>
+</section>
+</section>
+<section id="buttons">
+<h3 id="buttons">Buttons<a class="headerlink" href="#buttons" title="Permalink to this heading">¶</a></h3>
+<p>Buttons are widely used in interfaces and can appear in many different ways. In a vehicle setting it is important they are visible and big. Another thing that enhance the user experience is to clearly state the hierarchy between different buttons to help the user know what button to push. For example, if there are two buttons to choose between for the user, help them by coloring the primary one more prominent than the other one. In general, have only up to 3 color variants (primary, secondary, tertiary) for buttons to create emphasis when needed.</p>
+<p><img alt="Group_11936" src="../_images/Group_11936.jpg"/></p>
+<p></p>
+</section>
+<section id="top-bar">
+<h3 id="top-bar">Top bar<a class="headerlink" href="#top-bar" title="Permalink to this heading">¶</a></h3>
+<p>See section on <a class="reference internal" href="#templates">templates</a> for info on this.</p>
+<p></p>
+</section>
+<section id="list">
+<h3 id="list">List<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h3>
+<p>A list can be used in combination with other components such as radio buttons or checkboxes. List items are to be clearly separated. Below are some example of doing that in a good way.</p>
+<p><img alt="Lists" src="../_images/Lists.png"/></p>
+<p></p>
+<p></p>
+</section>
+</section>
+<section id="communication-with-the-user">
+<h2 id="communication-with-the-user">Communication with the user<a class="headerlink" href="#communication-with-the-user" title="Permalink to this heading">¶</a></h2>
+<p>People want to know what is going on, and what the system they are interacting with is doing. This includes showing progress when loading as well as warning about what an action might lead to. Try your best to learn when and how communication is needed with the users.</p>
+<p></p>
+<section id="notifications">
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permalink to this heading">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This functionality will be available for Certified apps in the future</p>
+</div>
+<p>Notification cards communicate small amounts of timely information from the system or from an app. A notification card can look and behave different depending on what kind it is:</p>
+<p><img alt="communication" src="../_images/communication.png"/></p>
+<p><strong>1. Lasting heads-up notification (Lasting HUN) card:</strong> Used for notifications with very important information requiring an interaction from the user (for example to accept a new call-out)</p>
+<p><strong>2. Quick heads-up notification (Quick HUN) card:</strong> Used for a notification that appears briefly over the current screen (for example if there has been an update to the call-out information)</p>
+<p><strong>3. Grouped-notification card:</strong> Combines multiple Notification Center cards in one card (for example if there are multiple updates to the call-out that has triggered multiple notifications)</p>
+<p><strong>4. Notification Center card:</strong> Used for notifications listed in the Notification Center (for example a Quick HUN that has not been interacted with)</p>
+<p></p>
+</section>
+<section id="loading-states">
+<h3 id="loading-states">Loading states<a class="headerlink" href="#loading-states" title="Permalink to this heading">¶</a></h3>
+<p>It’s important to communicate an app’s state and indicate available actions. When loading is ongoing it needs to be communicated clearly. It can be when saving something, when submitting something or when search is made for example. If you can provide a progress bar indicating how much loading is left, this is optimal. Otherwise you need to at least show some sort of loading indicator. Here are examples of a loading state for a button, and a loading indicator showing how much is left for an app update inside the Evam OS:</p>
+<p><img alt="Group_11934" src="../_images/Group_11934.png"/></p>
+<p></p>
+</section>
+<section id="error-messages">
+<h3 id="error-messages">Error messages<a class="headerlink" href="#error-messages" title="Permalink to this heading">¶</a></h3>
+<p>Errors occur when an app fails to complete an expected action. It is important to then inform about the error and what the user can do to fix it. Some reasons an app fails are:</p>
+<p><strong>When user input is not understood</strong></p>
+<p>It is important to write out what the user should do to fix the error. For when user input is not understood, it is important to write what the user should be writing:</p>
+<p><img alt="Input_error" src="../_images/Input_error.png"/></p>
+<p><strong>An app failing to load</strong></p>
+<p>Errors because the app fails to load can be because of different reasons. When connectivity is bad, the user should be able to interact with as much of the rest of the app as possible.</p>
+<p>If appropriate, present an action to help a user accomplish their task. Only offer actions that you can actually support. For example, don’t offer an option like “Try again” in cases where you can detect that the operation will fail. In the example below you can see both the action “Try again” but also “Go back” to allow for the user to skip trying again right now if they have the need to cancel the update and ‘go back’ to the app.</p>
+<p><img alt="Error_Try_again" src="../_images/Error_Try_again.png"/></p>
+<p><strong>Incompatible operations are run concurrently</strong></p>
+<p>Incompatible state errors occur when users attempt to run operations that conflict. Help prevent users from putting themselves into these situations by clearly communicating the states they are selecting and the implications for the rest of their experience. When these errors are triggered, do not imply that they are the user’s fault.</p>
+<p></p>
+</section>
+<section id="confirmation-and-acknowledgements">
+<h3 id="confirmation-and-acknowledgements">Confirmation and acknowledgements<a class="headerlink" href="#confirmation-and-acknowledgements" title="Permalink to this heading">¶</a></h3>
+<p>A confirmation asks the user to verify that they truly want to proceed with the action they just invoked. It may be paired with a warning or critical information related to that action. An example of this type of confirmation is when users try to cancel the navigation taking them to the call-out.</p>
+<p>Acknowledgement removes uncertainty about implicit operations that the system is taking. It may be paired with an option to undo the action.</p>
+<p><img alt="confirmations_1" src="../_images/confirmations_1.png"/></p>
+<p></p>
+</section>
+<section id="communicate-differently-depending-on-urgency">
+<h3 id="communicate-differently-depending-on-urgency">Communicate differently depending on urgency<a class="headerlink" href="#communicate-differently-depending-on-urgency" title="Permalink to this heading">¶</a></h3>
+<p><img alt="Notifi_alert_chart" src="../_images/Notifi_alert_chart.png"/></p>
+<p></p>
+<p></p>
+</section>
+</section>
+<section id="branding">
+<h2 id="branding">Branding<a class="headerlink" href="#branding" title="Permalink to this heading">¶</a></h2>
+<p>Create your own style for your app that is inline with your brand. In this section we show the flexibility you have in adapting the design to your liking with coloring, font and shapes of elements for example. Below is a made up music app with two different styles to the content.</p>
+<p><img alt="Branding" src="../_images/Branding.png"/></p>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../index.html" title="Welcome to the Evam developer SDK documentation!"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Welcome to the Evam developer SDK documentation! </span>
+              </div>
+            </a>
+          
+          
+            <a href="../tech/deployment.html" title="Deployment"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> Deployment </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Evam.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

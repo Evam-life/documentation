@@ -1,0 +1,388 @@
+# Class: EvamApi
+
+[EvamApi](../modules/EvamApi.md).EvamApi
+
+Evam API singleton that exposes methods to interact with the Evam platform.
+
+**`Example`**
+
+```ts
+// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)
+const evamApi = new EvamApi();
+
+// Register a new callback on any operation update that simply logs it
+evamApi.onNewOrUpdatedOperation((activeOperation) => console.log(activeOperation));
+
+// Register a new callback on any application settings update that simply logs them
+evamApi.onNewOrUpdatedSettings((settings) => console.log(settings));
+
+//Register a new callback to any specific application data update. Available register methods:
+evamApi.onNewOrUpdatedDeviceRole((deviceRole) => ...);
+evamApi.onNewOrUpdatedLocation((location) => ...);
+evamApi.onNewOrUpdatedInternetState((internetState) => ...);
+evamApi.onNewOrUpdatedVehicleState((vehicleState) => ...);
+evamApi.onNewOrUpdatedTripLocationHistory((tripLocationHistory) => ...);
+
+// Send a new notification to VS (this will also work for the developer environment)
+// This will display a notification with heading "example", description "lorem ipsum". It will have type 'QUICK_HUN' and a primary button
+// which is labelled 'primary button' that doesn't do anything when called. The secondary button is not defined, thus it will not display.
+evamApi.sendNotification(new Notification("example","lorem ipsum", NotificationType.QUICK_HUN, {label:'primary button', callback:()=>{}}, undefined))
+
+//Remove all callbacks from the SDK (this is useful for cleanup)
+evamApi.unsubscribeFromAllCallbacks()
+
+//Detect whether the certified app is currently running in Vehicle Services
+EvamApi.isRunningInVehicleServices
+
+//update the current hospital by id (be sure that the hospital is listed in available hospitals)
+evamApi.setHospital(1234)
+
+//update the current priority (be sure that the priority is listed in available priorities)
+evamApi.setPriority (1)
+
+//simulate Vehicle Services data inject (development + testing only)
+//DO NOT USE THESE METHODS IN PRODUCTION, While not breaking by any means they will not perform any function.
+evamApi.injectLocation(new Location(59.364, 18.012, new Date()))
+evamApi.injectVehicleState(new VehicleState(...))
+evamApi.injectTrip(new TripLocationHistory(...))
+evamApi.injectDeviceRole(new DeviceRole(...))
+evamApi.injectInternetState(new InternetState(...))
+evamApi.injectOperation(new Operation(...))
+evamApi.injectSettings(new Settings(...))
+```
+
+## Constructors
+
+### constructor
+
+**new EvamApi**()
+
+## Properties
+
+### isRunningInVehicleServices
+
+ `Static` `Readonly` **isRunningInVehicleServices**: `boolean`
+
+True if Vehicle Services environment is detected, False otherwise (for instance a web application)
+We have to ignore this because the Android item causes an error.
+
+## Methods
+
+### injectDeviceRole
+
+**injectDeviceRole**(`deviceRole`): `void`
+
+Manually inject deviceRole to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `deviceRole` | [`DeviceRole`](../enums/domain_DeviceRole.DeviceRole.md) | the deviceRole to inject. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectInternetState
+
+**injectInternetState**(`internetState`): `void`
+
+Manually inject internetState to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `internetState` | [`InternetState`](../enums/domain_InternetState.InternetState.md) | the internetState to inject. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectLocation
+
+**injectLocation**(`location`): `void`
+
+Manually inject location to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `location` | [`Location`](domain_Location.Location.md) | the location to inject. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectOperation
+
+**injectOperation**(`activeCase`): `void`
+
+Injects the Active Operation manually. This will trigger onNewOrUpdatedOperation(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `activeCase` | [`Operation`](domain_Operation.Operation.md) | The active case to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectSettings
+
+**injectSettings**(`settings`): `void`
+
+Injects the settings manually. This will trigger onNewOrUpdatedSettings(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `settings` | `object` | The settings to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectTrip
+
+**injectTrip**(`tripLocationHistory`): `void`
+
+Manually inject tripLocationHistory to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `tripLocationHistory` | [`TripLocationHistory`](domain_TripLocationHistory.TripLocationHistory.md) | the tripLocationHistory to inject. |
+
+#### Returns
+
+`void`
+
+___
+
+### injectVehicleState
+
+**injectVehicleState**(`vehicleState`): `void`
+
+Manually inject vehicleState to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `vehicleState` | [`VehicleState`](domain_VehicleState.VehicleState.md) | the vehicleState to inject. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedDeviceRole
+
+**onNewOrUpdatedDeviceRole**(`callback`): `void`
+
+Registers a callback to be run upon new device role or device role update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`deviceRole`: [`DeviceRole`](../enums/domain_DeviceRole.DeviceRole.md)) => `void` | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedInternetState
+
+**onNewOrUpdatedInternetState**(`callback`): `void`
+
+Registers a callback to be run upon new internetState or internetState update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`internetState`: [`InternetState`](../enums/domain_InternetState.InternetState.md)) => `void` | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedLocation
+
+**onNewOrUpdatedLocation**(`callback`): `void`
+
+Registers a callback to be run upon new location or location update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`location`: [`Location`](domain_Location.Location.md)) => `void` | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedOperation
+
+**onNewOrUpdatedOperation**(`callback`): `void`
+
+Registers a callback to be run upon a new Active Operation is available or the current Active
+Operation is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`activeOperation`: [`Operation`](domain_Operation.Operation.md)) => `void` | The callback to be executed |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedSettings
+
+**onNewOrUpdatedSettings**(`callback`): `void`
+
+Registers a callback to be run upon new application settings reception or settings update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`settings`: `object`) => `void` | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedTripLocationHistory
+
+**onNewOrUpdatedTripLocationHistory**(`callback`): `void`
+
+Used to assign a callback when the trip location history is created or updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`tripLocationHistory`: [`TripLocationHistory`](domain_TripLocationHistory.TripLocationHistory.md)) => `void` | The callback with (optional) argument tripLocationHistory. Use this to access the trip location history. |
+
+#### Returns
+
+`void`
+
+___
+
+### onNewOrUpdatedVehicleState
+
+**onNewOrUpdatedVehicleState**(`callback`): `void`
+
+Used to assign a callback when the vehicle state is created or updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | (`vehicleState`: [`VehicleState`](domain_VehicleState.VehicleState.md)) => `void` | The callback with (optional) argument vehicleState. Use this to access the vehicle state. |
+
+#### Returns
+
+`void`
+
+___
+
+### sendNotification
+
+**sendNotification**(`notification`): `void`
+
+send a notification to vehicle services (or evam-dev-environment if using the dev environment)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `notification` | [`Notification`](domain_Notification.Notification.md) |
+
+#### Returns
+
+`void`
+
+___
+
+### setHospital
+
+**setHospital**(`id`): `void`
+
+Sets the selected hospital id for the current active operation. The id must be present inside the available hospitals
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | the id of the hospital to be set |
+
+#### Returns
+
+`void`
+
+___
+
+### setPriority
+
+**setPriority**(`id`): `void`
+
+Sets the selected priority id for the current active operation. The id must be present inside the available priorities.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | of the priority to be set |
+
+#### Returns
+
+`void`
+
+___
+
+### unsubscribeFromAllCallbacks
+
+**unsubscribeFromAllCallbacks**(): `void`
+
+Unsubscribes all registered callbacks from Vehicle Service events.
+
+#### Returns
+
+`void`
