@@ -146,12 +146,13 @@ h1 {
     max-width: 1577px;
 }
 
-@media screen and (max-width: 1792px){
-    .md-footer-meta, md-footer-nav{
+@media screen and (max-width: 1792px) {
+    .md-footer-meta, md-footer-nav {
         margin-left: 48px;
         margin-right: 48px;
     }
 }
+
 
 .md-footer-copyright {
     color: rgba(95, 99, 104, 1);
@@ -167,4 +168,12 @@ html .md-footer-meta.md-typeset a {
 
 html .md-footer-meta.md-typeset a {
     color: rgba(95, 99, 104, 1);
+}
+
+@media screen and (max-width: 460px) {
+    .md-footer-meta {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
 }

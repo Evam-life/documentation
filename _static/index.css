@@ -240,6 +240,7 @@ a {
     max-width: 1857px;
 }
 
+
 .hero-container {
     overflow: visible;
     display: flex;
@@ -255,12 +256,21 @@ a {
     margin-bottom: 0 !important;
 }
 
-@media screen and (max-width: 420px) {
-    .hero-card h1 {
-        font-size: 48px;
+@media screen and (max-width: 460px) {
+    .hero-card, .bottom-card {
+        padding-top: 48px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .hero-card h1, .bottom-card h1{
+        font-size: 32px !important;
     }
     .hero-card p {
-        font-size: 24px;
+        font-size: 20px !important;
+    }
+    .card {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }
 
@@ -346,6 +356,7 @@ a {
     padding-bottom: 160px;
     margin: 130px auto;
     width: 100%;
+    text-align: center;
 }
 
 .bottom-card h1 {
