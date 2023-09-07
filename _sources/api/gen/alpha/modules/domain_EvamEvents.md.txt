@@ -1,5 +1,0 @@
-# Module: domain/EvamEvents
-
-## Enumerations
-
-- [EvamEvents](../enums/domain_EvamEvents.EvamEvents.md)

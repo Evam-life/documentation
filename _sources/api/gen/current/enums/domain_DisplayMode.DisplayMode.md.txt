@@ -1,0 +1,15 @@
+# Enumeration: DisplayMode
+
+[domain/DisplayMode](../modules/domain_DisplayMode.md).DisplayMode
+
+## Enumeration Members
+
+### DARK
+
+ **DARK** = ``"dark"``
+
+___
+
+### LIGHT
+
+ **LIGHT** = ``"light"``

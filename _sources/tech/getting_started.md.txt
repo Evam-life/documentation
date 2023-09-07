@@ -9,7 +9,7 @@ This article will help you getting started with the development of apps for the 
 
 The Evam SDK is Node.js-based and therefore the associated distribution tool is NPM (Node Package Manager). Templates are also provided for fast UI development using the React library.
 
-The Evam SDK corresponds to the package `@evam/sdk` and the React template is `@evam/cra-template-app-template-react-ts`.
+The Evam SDK corresponds to the package `@evam-life/sdk` and the React template is `@evam-life/cra-template-app-template-react-ts`.
 
 The installation process of the Evam SDK builds on top of a standard Node.js setup.
 
@@ -19,69 +19,23 @@ Make sure the following software is available on your system:
 - Node.js 14 or later with NPM and NPX
 - Linux-based OS, Windows 10 (including WSL) or MacOS
 
-Additionally, you will need an account on [the Evam developer portal](https://www.developers.evam.life).
+You will need an account on [the Evam developer portal](https://www.developers.evam.life) when it is time to deploy your application for production.
 ```
 
 ```{warning}
 If you are using a Linux-based OS and you have several NodeJS versions installed, make sure the `node` executable in your `$PATH` and `env` has the correct version.
 ```
 
-## Step 1 - Create a Gitlab access token
 
-The Evam SDK is only available to certified developers and as a result is not available on any public repository such as NPM.
 
-This means we must start by indicating to NPM where to fetch the Evam SDK and templates.
+## Option 1 - Start a project using the Evam SDK from a template
 
-1. Using a web browser, navigate to [Personal access tokens](https://www.developers.evam.life/-/profile/personal_access_tokens)
-1. Create a token by giving it a name and minimal scope of `read_api`, it is recommended to provide an expiration date too for security reasons.
-
-```{admonition} Example - create a personal access token
-![Add token](add_token.png)
-```
-
-3. Copy the obtained token in a secure place such as a password manager.
-
-```{admonition} Example - see your obtained token
-![See token](see_token.png)
-```
-
-```{warning}
-This token is secret and personal. You should never share it with anyone else or store it in your app's version control system.
-
-Evam will never ask you to send this token.
-```
-
-## Step 2 - Configure NPM to use this token for Evam packages
-
-We now need to add this token to the NPM configuration. This is done in a file named ".npmrc" located directly under the user home directory.
-
-```{note}
-This is where the configuration file is located on each platform:
-
-- *Windows 10*: `C:\Users\<username>\.npmrc`
-- *Linux*: `/home/<username>/.npmrc`
-- *MacOS*: `/Users/<username>/.npmrc`
-
-Make sure to replace `<username>` with your actual user name on your machine.
-```
-
-The content to be added is:
-
-```
-@evam:registry=https://www.developers.evam.life/api/v4/projects/4/packages/npm/
-//www.developers.evam.life/api/v4/projects/4/packages/npm/:_authToken=<secret_token>
-```
-
-Make sure to replace `<secret_token>` with your own token obtained from Step 1.
-
-## Step 3 - Start a project using the Evam SDK from a template
-
-In this step, we will bootstrap a project using the `create-react-app` tool. This will allow us to have a starting point application that uses the Evam SDK including an UI that complies with the Evam design guidelines.
+In this case, we will bootstrap a project using the `create-react-app` tool. This will allow us to have a starting point application that uses the Evam SDK including an UI that complies with the Evam design guidelines.
 
 Using your preferred shell, run:
 
 ```shell
-npx create-react-app <app_name> --template @evam/cra-template-app-template-react-ts
+npx create-react-app <app_name> --template @evam-life/cra-template-app-template-react-ts
 ```
 
 You may replace `<app_name>` with the name of your application.
@@ -100,12 +54,27 @@ The Evam SDK should be already part of the dependencies in `package.json`:
 ```jsonc
 {
     // ...
-    "@evam/sdk": "^1.0.4"   // Note: version will evolve with new releases of the SDK
+    "@evam-life/sdk": "^2.0.3"   // Note: version will evolve with new releases of the SDK
     // ...
 }
 ```
 
 You may finally open this directory using your preferred IDE such as Visual Studio Code or Jetbrains Webstorm.
+
+## Option 2 - Add the Evam SDK to your existing application
+
+If you already have an application and you would like to add the Evam SDK to it, you may simply add its dependency to
+your `package.json`.
+
+```jsonc
+{
+    // ...
+    "@evam-life/sdk": "^2.0.3"   // Note: version will evolve with new releases of the SDK
+    // ...
+}
+```
+
+Then run `npm i` to install the depdendency.
 
 ## Troubleshooting
 

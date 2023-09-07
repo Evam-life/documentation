@@ -4,7 +4,7 @@
 
 # Using the Evam SDK
 
-The Evam SDK is offered as a NPM package `@evam/sdk`, it contains:
+The Evam SDK is offered as a NPM package `@evam-life/sdk`, it contains:
 
 ```{eval-rst}
 - A set of APIs to interact with the Evam platform in `EvamApi`, including getting the currently active case, and application settings.
@@ -25,7 +25,7 @@ To install the Evam SDK, add it to `package.json` dependencies:
 ```jsonc
 {
     // ...
-    "@evam/sdk": "^1.0.0"   // Note: version may vary
+    "@evam-life/sdk": "^2.0.3"   // Note: version may vary
     // ...
 }
 ```
@@ -42,7 +42,7 @@ Some metadata about your application should be set such as its ID within the Eva
 
 All of this can be set in the Evam manifest located under `public/evam.json`, here is an example content:
 
-```jsonc
+```json
 {
     "applicationId": "com.example.application",
     "applicationName": "Demo application",
@@ -58,11 +58,17 @@ All of this can be set in the Evam manifest located under `public/evam.json`, he
         }
     ],
     "logo": "logo.png",
+    "apiVersion": {
+        "target": "2",
+        "minimum": "2"
+    },
     "permissions": [
         "ACTIVE_OPERATION_READ",
         "SETTINGS_READ",
         "DISPLAY_MODE_READ"
-    ]
+    ],
+    "version": "0.0.1",
+    "versionCode": 1
 }
 ```
 
@@ -72,7 +78,10 @@ All of this can be set in the Evam manifest located under `public/evam.json`, he
 | `applicationName` | Application name as it will appear to the end user. |
 | `settings` | Array of entries describing the available settings for this application. The value of those settings will be typically set by the end user to tune their experience. The settings format that will be made available to the application during runtime will be a direct mapping `id -> value` (e.g. `{"debug": true}` in this case). The name and description will be used to display the settings effect to the end user. The available values for `type` are: `bool`, `int`, `float` and `string`.  |
 | `logo` | Path to the application logo as it will appear in the bottom bar. The path is relative to the root of the built package. |
-| `permissions` | List of permissions required for the application to run. This is currently unused but will be implemented to enhance the security of user's data. |
+| `apiVersion` | Reserved for future extension. |
+| `permissions` | List of permissions required for the application to run. Refer to each function's documentation to know the required permissions. This is not required in development environment (i.e. in a web browser), as all permissions are granted by default in this case. |
+| `version` | The app version. |
+| `versionCode` | A positive integer used as an internal version number. This number helps determine whether one version is more recent than another, with higher numbers indicating more recent versions. |
 
 ## Use the built-in UI components
 
@@ -86,82 +95,179 @@ The base App bar component is an efficient framework to start your application w
 
 Here is the code associated to the visuals above:
 
+
+
 ```jsx
-<div className="App">
-    <Router>
-        <ThemeProvider theme={theme}>
-            <CssBaseline/>
-            <EvamAppBarLayout tabs={
-                <EvamTabs>
-                    <EvamTab label={"Panel 1"} index={0} 
-                             icon={<Home fontSize={"large"}/>}/>
-                    <EvamTab label={"Panel 2"} index={1} 
-                             icon={<ArchiveIcon fontSize={"large"}/>}/>
-                    <EvamTab label={"Panel 3"} index={2} 
-                             icon={<EditIcon fontSize={"large"}/>}/>
-                </EvamTabs>
-            } >
-                // Note: for clarity, this content will put in a separate
-                // React Fragment named "MainView" after this example
-                <Box paddingLeft={1} paddingRight={1}>
-                        <EvamTabPanel index={0}>
-                                <h1>Panel 1</h1>
-                                <p>Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do
-                                    eiusmod
-                                    tempor incididunt
-                                    ut labore et dolore magna aliqua. Ut
-                                    enim ad minim veniam, quis nostrud
-                                    exercitation
-                                    ullamco laboris nisi ut aliquip ex
-                                    ea commodo consequat. Duis aute
-                                    irure
-                                    dolor in
-                                    reprehenderit in voluptate velit
-                                    esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur
-                                    sint occaecat cupidatat non
-                                    proident, sunt in culpa qui officia
-                                    deserunt
-                                    mollit anim id
-                                    est laborum.</p>
-                        </EvamTabPanel>
-                        <EvamTabPanel index={1}>
-                                <h1>Panel 2</h1>
-                                <p>Sed ut perspiciatis unde omnis iste
-                                    natus error sit voluptatem
-                                    accusantium
-                                    doloremque
-                                    laudantium, totam rem aperiam, eaque
-                                    ipsa quae ab illo inventore
-                                    veritatis
-                                    et quasi
-                                    architecto beatae vitae dicta sunt
-                                    explicabo.</p>
-                        </EvamTabPanel>
-                        <EvamTabPanel index={2}>
-                                <h1>Panel 3</h1>
-                                <p>At vero eos et accusamus et iusto
-                                    odio dignissimos ducimus qui
-                                    blanditiis
-                                    praesentium
-                                    voluptatum deleniti atque corrupti
-                                    quos dolores et quas molestias
-                                    excepturi
-                                    sint
-                                    occaecati cupiditate non provident,
-                                    similique sunt in culpa qui officia
-                                    deserunt
-                                    mollitia animi, id est laborum et
-                                    dolorum fuga. Et harum quidem rerum
-                                    facilis est et
-                                    expedita distinctio.</p>
-                        </EvamTabPanel>
-                </Box>
-            </EvamAppBarLayout>
-        </ThemeProvider>
-    </Router>
-</div>
+function App() {
+    // Define colors
+    const APP_COLORS = {
+        day: {
+            black0: "#000000",
+            black0_5: "#17181B",
+            black1: "#202124",
+            black2: "#282A2D",
+            black3: "#2E3134",
+            black4: "#3C4043",
+            orange_primary: "#FF5F5E",
+            orange_secondary: "#FF7B52",
+            orange_tertiary: "#FFBCA9",
+            blue1: "#0857C3",
+            blue2: "#5C88DA",
+            red1: "#E10600"
+        },
+        night: {
+            black0: "#000000",
+            black0_5: "#0E1013",
+            black1: "#17181B",
+            black2: "#202124",
+            black3: "#282A2D",
+            black4: "#2E3134",
+            orange_primary: "#FF5F5E",
+            orange_secondary: "#FF7B52",
+            orange_tertiary: "#FFBCA9",
+            blue1: "#0857C3",
+            blue2: "#5C88DA",
+            red1: "#E10600"
+        }
+    }
+
+    // Define theme
+    const theme = createTheme({
+        transitions: {
+            duration: {
+                shortest: 150,
+                shorter: 200,
+                short: 250,
+                // most basic recommended timing
+                standard: 300,
+                // this is to be used in complex animations
+                complex: 375,
+                // recommended when something is entering screen
+                enteringScreen: 225,
+                // recommended when something is leaving screen
+                leavingScreen: 195,
+            },
+        },
+        palette: {
+            background: {
+                default: palette.black0,
+                paper: palette.black4
+            },
+            text: {
+                primary: "#FFFFFF",
+                secondary: "#BBBBBB",
+                disabled: "#999999"
+            },
+            primary: {
+                main: palette.orange_primary,
+            },
+            secondary: {
+                main: palette.orange_secondary,
+            },
+        },
+        components: {
+            MuiButtonBase: {
+                defaultProps: {
+                    disableRipple: false,
+                    centerRipple: true,
+                }
+            }
+        },
+        typography: {
+            body1: {
+                fontSize: "28px"
+            },
+            h4: {
+                marginBottom: "12px"
+            },
+            h2: {
+                marginBottom: "20px"
+            },
+            h1: {
+                marginBottom: "28px"
+            }
+        },
+    })
+
+    return (
+        <div className="App">
+            <Router>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline/>
+                    <EvamAppBarLayout tabs={
+                        <EvamTabs>
+                            <EvamTab label={"Panel 1"} index={0} 
+                                    icon={<Home fontSize={"large"}/>}/>
+                            <EvamTab label={"Panel 2"} index={1} 
+                                    icon={<ArchiveIcon fontSize={"large"}/>}/>
+                            <EvamTab label={"Panel 3"} index={2} 
+                                    icon={<EditIcon fontSize={"large"}/>}/>
+                        </EvamTabs>
+                    } >
+                        // Note: for clarity, this content will put in a separate
+                        // React Fragment named "MainView" after this example
+                        <Box paddingLeft={1} paddingRight={1}>
+                                <EvamTabPanel index={0}>
+                                        <h1>Panel 1</h1>
+                                        <p>Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod
+                                            tempor incididunt
+                                            ut labore et dolore magna aliqua. Ut
+                                            enim ad minim veniam, quis nostrud
+                                            exercitation
+                                            ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute
+                                            irure
+                                            dolor in
+                                            reprehenderit in voluptate velit
+                                            esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur
+                                            sint occaecat cupidatat non
+                                            proident, sunt in culpa qui officia
+                                            deserunt
+                                            mollit anim id
+                                            est laborum.</p>
+                                </EvamTabPanel>
+                                <EvamTabPanel index={1}>
+                                        <h1>Panel 2</h1>
+                                        <p>Sed ut perspiciatis unde omnis iste
+                                            natus error sit voluptatem
+                                            accusantium
+                                            doloremque
+                                            laudantium, totam rem aperiam, eaque
+                                            ipsa quae ab illo inventore
+                                            veritatis
+                                            et quasi
+                                            architecto beatae vitae dicta sunt
+                                            explicabo.</p>
+                                </EvamTabPanel>
+                                <EvamTabPanel index={2}>
+                                        <h1>Panel 3</h1>
+                                        <p>At vero eos et accusamus et iusto
+                                            odio dignissimos ducimus qui
+                                            blanditiis
+                                            praesentium
+                                            voluptatum deleniti atque corrupti
+                                            quos dolores et quas molestias
+                                            excepturi
+                                            sint
+                                            occaecati cupiditate non provident,
+                                            similique sunt in culpa qui officia
+                                            deserunt
+                                            mollitia animi, id est laborum et
+                                            dolorum fuga. Et harum quidem rerum
+                                            facilis est et
+                                            expedita distinctio.</p>
+                                </EvamTabPanel>
+                        </Box>
+                    </EvamAppBarLayout>
+                </ThemeProvider>
+            </Router>
+        </div>
+    )
+}
+
 ```
 
 
@@ -334,9 +440,9 @@ It contains a set of functions to access the platform data and simulate specific
 
 The guiding principles behind the API functions are:
 
-- they should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them
-- they should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)
-- they should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks
+- They should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them
+- They should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)
+- They should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks
 - The API is entirely written in Typescript, making it type-safe (to the extent permitted by Typescript) and Javascript-compatible.
 
 ### Read the Evam platform data
@@ -344,7 +450,7 @@ The guiding principles behind the API functions are:
 There are 7 objects that can be read from the Evam platform:
 
 - The **Operation**:\
-it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle ("Active operation").
+it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle ("Active operation"). The SDK v2 adds a function to observe all operations received in the Evam platform.
 - The **Settings**:\
 your application can specify a set of parameters in its application manifest (see [](#setup-your-app-metadata)). Those settings will be set by the end user upon installation of you app, and the Evam platform will feed them to your app at runtime when it starts and when the settings are updated by the end user. The obtained `settings` object will have the same format as the settings supplied in the App manifest.
 - The **Device Role**:\
@@ -358,24 +464,30 @@ vehicle state stores various data regarding the logged in vehicle. Such data are
 - The **Trip Location History**:\
 stores an array of Location objects representing the trip history.
 
-This is how those APIs can be used:
+To use this SDK, instantiate `EvamApi()` and access its observer functions.
 
-```javascript
-import {EvamApi} from '@evam/sdk/api/EvamApi';
 
-// Get API singleton
+```typescript
+import {EvamApi} from "@evam-life/sdk";
+
 const evamApi = new EvamApi();
 
-// Register a new callback on any active operation update that simply logs its ID
-evamApi.onNewOrUpdatedOperation(
-    (activeOperation) => console.log(activeOperation?.getFullId())
-);
+// Register observer for active operation
+evamApi.onNewOrUpdatedActiveOperation((activeCase) => {
+    // Handle updated case
+})
 
-// Register a new callback on any application settings update that simply logs them
-evamApi.onNewOrUpdatedSettings(
-    (settings) => console.log(settings)
-);
+// Register observer for device location
+evamApi.onNewOrUpdatedLocation((deviceLocation) => {
+    // Handle updated device location
+})
+
+// Add as many API function calls as required
 ```
+
+It is recommended you set up all needed observers `onNew...` as soon as your application
+starts. The typical pattern is to handle each update from `EvamApi` by passing
+the observed data in your preferred application data store, such as Redux.
 
 ```{eval-rst}
 Check the :ref:`sdk-reference` for a comprehensive list of the available API functions.
@@ -391,46 +503,49 @@ It is compatible with test libraries such as `jest`.
 This is how you may inject such events using the API:
 
 ```typescript
-import {ActiveCase, EvamApi} from '@evam/sdk/api/EvamApi';
+import {EvamApi, Operation} from "@evam-life/sdk";
+import OperationState from "@evam-life/sdk/sdk/domain/OperationState";
 
-// Get Evam API singleton
-const evamApi = EvamApi.getInstance();
+const evamApi = new EvamApi();
 
-// Always check if we are in production environment to avoid exceptions
-if (!evam.isRunningInVehicleServices) {
-    // Inject an ActiveCase, or undefined if you wish no active operation
-    evamApi.injectOperation(
-        ActiveCase.fromJson(
-            {
-                operationID: "56",
-                patientName: "Test Testkort",
-                patientUID: "900608-2381",
-                callCenterId: "18",
-                caseFolderId: "1",
-                prio: "PRIO 1",
-                vehicleStatus: {
-                    name: "Kvittera"
-                },
-                destinationSiteLocation: {
-                    latitude: 59.35393,
-                    longitude: 17.973795,
-                    street: "Vretenvägen 13"
-                },
-                name: "Brand i bilen",
-                sendTime: (new Date()).getTime() / 1000,
-                createdTime: (new Date()).getTime() / 1000,
-            }
-        )
-    );
-
-    // Inject Settings
-    // Note: No type validation here, make sure to respect the format
-    // [id] -> value from your manifest
-    evamApi.injectSettings({debug: true});
-}
+// Get Evam API instance
+evamApi.injectOperation(Operation.fromJSON({
+    operationID: "56",
+    patientName: "Test Testkort",
+    operationState: OperationState.ACTIVE,
+    patientUID: "900608-2381",
+    callCenterId: "18",
+    caseFolderId: "1",
+    prio: "PRIO 1",
+    vehicleStatus: {
+        name: "Test status",
+        event: undefined,
+        successorName: undefined,
+        isStartStatus: false,
+        isEndStatus: false,
+        categoryType: "other",
+        categoryName: "test",
+    },
+    destinationSiteLocation: {
+        latitude: 59.35393,
+        longitude: 17.973795,
+        street: "Vretenvägen 13"
+    },
+    name: "Test operation",
+    sendTime: (new Date()).getTime() / 1000,
+    createdTime: (new Date()).getTime() / 1000,
+}))
 ```
 
-Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions.
+Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions being thrown.
+
+You can check what environment you are running in in this way:
+
+```typescript
+if (!EvamApi.isRunningInVehicleServices){
+    // Perform event simulations
+}
+```
 
 ## Recommended workflow
 
@@ -442,4 +557,10 @@ One notable difference is that your application will be run and used in a mobile
 
 ```{eval-rst}
 You can find out which device dimensions are available in the Evam platform in the :ref:`design_guidelines_layout` documentation in the design guidelines.
+
+Setting your device dimensions to the smallest available ones is a good starting point.
+```
+
+```{eval-rst}
+See :ref:`dev_env` for more information about this development environment in-browser.
 ```

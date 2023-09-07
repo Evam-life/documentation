@@ -13,7 +13,7 @@ This is the recommended version for any production deployment of your certified 
 
 All functions below are available in:
 
-- the Evam platform (i.e. an actual Evam device)
+- the Evam platform (i.e. an actual Evam device) - except for the functions marked as "Preview",
 - the development environment (web browser)
 
 .. toctree::

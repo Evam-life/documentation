@@ -1,4 +1,9 @@
+```{eval-rst}
+.. _dev_env:
+```
+
 # Development environment
+
 The Evam SDK Development Environment is a React component intended to assist you in testing your Certified App.
 The Development Environment can be thought of as a 'Vehicle Services' emulator that runs in the Web.
 
@@ -7,10 +12,18 @@ The Development Environment can be thought of as a 'Vehicle Services' emulator t
 Install via the Evam SDK package.
 
 ```javascript
-import {VehicleServicesDevelopmentEnvironment} from '@evam/sdk/dev-test-environment'
+import {VehicleServicesDevelopmentEnvironment} from "@evam-life/sdk";
 ```
 
 ## Usage
+
+```{admonition} Note
+
+```{eval-rst}
+This is not necessary if you use the Evam React template, see :ref:`getting_started`.
+
+```
+
 Simply wrap your app with the **VehicleServicesDevelopmentEnvironment** component.
 
 ```jsx
@@ -19,7 +32,8 @@ Simply wrap your app with the **VehicleServicesDevelopmentEnvironment** componen
 </VehicleServicesDevelopmentEnvironment>
 ```
 
-## Side Note
+### Side Note
+
 - The **VehicleServicesDevelopmentEnvironment** component will detect whether it is running in Vehicle Services and will render appropriately. This means it will still 
 render your app inside Vehicle Services but none of the Development Environment components will render to the DOM. Events will also propagate without being consumed by the Developer Environment. This way you need not worry about removing the component for production.
 
@@ -55,9 +69,3 @@ const notification = Notification.fromJSON({
 
 evamApi.sendNotification(notification);
 ```
-
-<!---
-- **Theme Builder:**
-- **gRPC:**
-- **Event Simulation:**
--->

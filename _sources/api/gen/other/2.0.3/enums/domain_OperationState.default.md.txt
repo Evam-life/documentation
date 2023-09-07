@@ -1,0 +1,21 @@
+# Enumeration: default
+
+[domain/OperationState](../modules/domain_OperationState.md).default
+
+## Enumeration Members
+
+### ACTIVE
+
+ **ACTIVE** = ``0``
+
+___
+
+### AVAILABLE
+
+ **AVAILABLE** = ``1``
+
+___
+
+### COMPLETE
+
+ **COMPLETE** = ``2``

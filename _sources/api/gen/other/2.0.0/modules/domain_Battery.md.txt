@@ -1,0 +1,11 @@
+# Module: domain/Battery
+
+## Enumerations
+
+- [BatteryHealth](../enums/domain_Battery.BatteryHealth.md)
+- [BatteryPlugged](../enums/domain_Battery.BatteryPlugged.md)
+- [BatteryStatus](../enums/domain_Battery.BatteryStatus.md)
+
+## Classes
+
+- [Battery](../classes/domain_Battery.Battery.md)

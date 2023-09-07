@@ -5,8 +5,12 @@
 This article describes a feature which is currently unavailable but whose API has been finalized and will be released soon.
 ```
 
-This article describes the process of deploying your Certified Application to
-the Evam platform.
+```{admonition} Evam Developer portal account required
+
+You need an account in the [Developer Portal](https://www.developers.evam.life) to deploy your certified apps.
+```
+
+This article describes the process of deploying your Certified Application to the Evam platform.
 
 ## Overview
 
@@ -45,13 +49,6 @@ The steps below have been designed and tested on a Linux-based OS. MacOS should 
 
 Follow these steps to create a new release of your application.
 
-```{admonition} Requirement
-
-You must have setup your machine to access the Developer Portal as described in the article below.
-
-```{eval-rst}
-:ref:`getting_started`
-```
 
 ### Step 0 - Setup your package for publishing (do once)
 
@@ -163,3 +160,5 @@ You should get a success message back:
 ```json
 {"message":"201 Created"}
 ```
+
+At that stage, the application package is uploaded to the Developer Portal. It will undergo a review by Evam and upon success be deployed to the organizations who decided to install your application in their vehicles.

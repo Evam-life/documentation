@@ -317,7 +317,7 @@
             
   <section id="using-the-evam-sdk">
 <span id="using-the-sdk"></span><h1 id="tech-using-the-sdk--page-root">Using the Evam SDK<a class="headerlink" href="#tech-using-the-sdk--page-root" title="Permalink to this heading">¶</a></h1>
-<p>The Evam SDK is offered as a NPM package <code class="docutils literal notranslate"><span class="pre">@evam/sdk</span></code>, it contains:</p>
+<p>The Evam SDK is offered as a NPM package <code class="docutils literal notranslate"><span class="pre">@evam-life/sdk</span></code>, it contains:</p>
 <ul class="simple">
 <li><p>A set of APIs to interact with the Evam platform in <cite>EvamApi</cite>, including getting the currently active case, and application settings.</p></li>
 <li><p>A set of UI components that help you kickstart your development and make it easier to follow the Evam <a class="reference internal" href="../design_guidelines/Design-Guidelines.html#design-guidelines"><span class="std std-ref">Design guidelines</span></a>, including a App bar component.</p></li>
@@ -331,7 +331,7 @@
 <p>To install the Evam SDK, add it to <code class="docutils literal notranslate"><span class="pre">package.json</span></code> dependencies:</p>
 <div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
     // ...
-    "@evam/sdk": "^1.0.0"   // Note: version may vary
+    "@evam-life/sdk": "^2.0.3"   // Note: version may vary
     // ...
 }
 </pre></div>
@@ -346,27 +346,33 @@
 <h2 id="setup-your-app-metadata">Setup your app metadata<a class="headerlink" href="#setup-your-app-metadata" title="Permalink to this heading">¶</a></h2>
 <p>Some metadata about your application should be set such as its ID within the Evam platform, its name, logo, settings, etc.</p>
 <p>All of this can be set in the Evam manifest located under <code class="docutils literal notranslate"><span class="pre">public/evam.json</span></code>, here is an example content:</p>
-<div class="highlight-jsonc notranslate"><div class="highlight"><pre><span></span>{
-    "applicationId": "com.example.application",
-    "applicationName": "Demo application",
-    "settings": [
-        {
-            "id": "debug",
-            "name": "Debug mode",
-            "description": "Enable debug mode by displaying logs on screen",
-            "value": {
-                "type": "bool",
-                "default": false
-            }
-        }
-    ],
-    "logo": "logo.png",
-    "permissions": [
-        "ACTIVE_OPERATION_READ",
-        "SETTINGS_READ",
-        "DISPLAY_MODE_READ"
-    ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"applicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"com.example.application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"applicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"debug"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debug mode"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable debug mode by displaying logs on screen"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logo.png"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"apiVersion"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"ACTIVE_OPERATION_READ"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"SETTINGS_READ"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"DISPLAY_MODE_READ"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"versionCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <table>
@@ -388,8 +394,17 @@
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">logo</span></code></p></td>
 <td><p>Path to the application logo as it will appear in the bottom bar. The path is relative to the root of the built package.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">permissions</span></code></p></td>
-<td><p>List of permissions required for the application to run. This is currently unused but will be implemented to enhance the security of user’s data.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">apiVersion</span></code></p></td>
+<td><p>Reserved for future extension.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">permissions</span></code></p></td>
+<td><p>List of permissions required for the application to run. Refer to each function’s documentation to know the required permissions. This is not required in development environment (i.e. in a web browser), as all permissions are granted by default in this case.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">version</span></code></p></td>
+<td><p>The app version.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">versionCode</span></code></p></td>
+<td><p>A positive integer used as an internal version number. This number helps determine whether one version is more recent than another, with higher numbers indicating more recent versions.</p></td>
 </tr>
 </tbody>
 </table>
@@ -402,81 +417,175 @@
 <p>The base App bar component is an efficient framework to start your application without having to setup a navigation system from scratch.</p>
 <p><img alt="App bar" src="../_images/app_bar_5.png"/></p>
 <p>Here is the code associated to the visuals above:</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span> <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
-<span class="w">                </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
-<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span> 
-                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
-<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> 
-                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
-<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span> 
-                             <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
-<span class="w">                </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">}</span> <span class="p">&gt;</span>
-<span class="w">                </span><span class="c1">// Note: for clarity, this content will put in a separate</span>
-<span class="w">                </span><span class="c1">// React Fragment named "MainView" after this example</span>
-<span class="w">                </span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">paddingLeft</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> <span class="na">paddingRight</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
-<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">1</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Lorem</span><span class="w"> </span><span class="nx">ipsum</span><span class="w"> </span><span class="nx">dolor</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">amet</span><span class="p">,</span>
-<span class="w">                                    </span><span class="nx">consectetur</span><span class="w"> </span><span class="nx">adipiscing</span><span class="w"> </span><span class="nx">elit</span><span class="p">,</span><span class="w"> </span><span class="nx">sed</span><span class="w"> </span><span class="k">do</span>
-<span class="w">                                    </span><span class="nx">eiusmod</span>
-<span class="w">                                    </span><span class="nx">tempor</span><span class="w"> </span><span class="nx">incididunt</span>
-<span class="w">                                    </span><span class="nx">ut</span><span class="w"> </span><span class="nx">labore</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">magna</span><span class="w"> </span><span class="nx">aliqua</span><span class="p">.</span><span class="w"> </span><span class="nx">Ut</span>
-<span class="w">                                    </span><span class="nx">enim</span><span class="w"> </span><span class="nx">ad</span><span class="w"> </span><span class="nx">minim</span><span class="w"> </span><span class="nx">veniam</span><span class="p">,</span><span class="w"> </span><span class="nx">quis</span><span class="w"> </span><span class="nx">nostrud</span>
-<span class="w">                                    </span><span class="nx">exercitation</span>
-<span class="w">                                    </span><span class="nx">ullamco</span><span class="w"> </span><span class="nx">laboris</span><span class="w"> </span><span class="nx">nisi</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">aliquip</span><span class="w"> </span><span class="nx">ex</span>
-<span class="w">                                    </span><span class="nx">ea</span><span class="w"> </span><span class="nx">commodo</span><span class="w"> </span><span class="nx">consequat</span><span class="p">.</span><span class="w"> </span><span class="nx">Duis</span><span class="w"> </span><span class="nx">aute</span>
-<span class="w">                                    </span><span class="nx">irure</span>
-<span class="w">                                    </span><span class="nx">dolor</span><span class="w"> </span><span class="ow">in</span>
-<span class="w">                                    </span><span class="nx">reprehenderit</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">voluptate</span><span class="w"> </span><span class="nx">velit</span>
-<span class="w">                                    </span><span class="nx">esse</span><span class="w"> </span><span class="nx">cillum</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">eu</span><span class="w"> </span><span class="nx">fugiat</span><span class="w"> </span><span class="nx">nulla</span>
-<span class="w">                                    </span><span class="nx">pariatur</span><span class="p">.</span><span class="w"> </span><span class="nx">Excepteur</span>
-<span class="w">                                    </span><span class="nx">sint</span><span class="w"> </span><span class="nx">occaecat</span><span class="w"> </span><span class="nx">cupidatat</span><span class="w"> </span><span class="nx">non</span>
-<span class="w">                                    </span><span class="nx">proident</span><span class="p">,</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
-<span class="w">                                    </span><span class="nx">deserunt</span>
-<span class="w">                                    </span><span class="nx">mollit</span><span class="w"> </span><span class="nx">anim</span><span class="w"> </span><span class="nx">id</span>
-<span class="w">                                    </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
-<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Sed</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">perspiciatis</span><span class="w"> </span><span class="nx">unde</span><span class="w"> </span><span class="nx">omnis</span><span class="w"> </span><span class="nx">iste</span>
-<span class="w">                                    </span><span class="nx">natus</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">voluptatem</span>
-<span class="w">                                    </span><span class="nx">accusantium</span>
-<span class="w">                                    </span><span class="nx">doloremque</span>
-<span class="w">                                    </span><span class="nx">laudantium</span><span class="p">,</span><span class="w"> </span><span class="nx">totam</span><span class="w"> </span><span class="nx">rem</span><span class="w"> </span><span class="nx">aperiam</span><span class="p">,</span><span class="w"> </span><span class="nx">eaque</span>
-<span class="w">                                    </span><span class="nx">ipsa</span><span class="w"> </span><span class="nx">quae</span><span class="w"> </span><span class="nx">ab</span><span class="w"> </span><span class="nx">illo</span><span class="w"> </span><span class="nx">inventore</span>
-<span class="w">                                    </span><span class="nx">veritatis</span>
-<span class="w">                                    </span><span class="nx">et</span><span class="w"> </span><span class="nx">quasi</span>
-<span class="w">                                    </span><span class="nx">architecto</span><span class="w"> </span><span class="nx">beatae</span><span class="w"> </span><span class="nx">vitae</span><span class="w"> </span><span class="nx">dicta</span><span class="w"> </span><span class="nx">sunt</span>
-<span class="w">                                    </span><span class="nx">explicabo</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
-<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">3</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="w">                                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">At</span><span class="w"> </span><span class="nx">vero</span><span class="w"> </span><span class="nx">eos</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">accusamus</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">iusto</span>
-<span class="w">                                    </span><span class="nx">odio</span><span class="w"> </span><span class="nx">dignissimos</span><span class="w"> </span><span class="nx">ducimus</span><span class="w"> </span><span class="nx">qui</span>
-<span class="w">                                    </span><span class="nx">blanditiis</span>
-<span class="w">                                    </span><span class="nx">praesentium</span>
-<span class="w">                                    </span><span class="nx">voluptatum</span><span class="w"> </span><span class="nx">deleniti</span><span class="w"> </span><span class="nx">atque</span><span class="w"> </span><span class="nx">corrupti</span>
-<span class="w">                                    </span><span class="nx">quos</span><span class="w"> </span><span class="nx">dolores</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">quas</span><span class="w"> </span><span class="nx">molestias</span>
-<span class="w">                                    </span><span class="nx">excepturi</span>
-<span class="w">                                    </span><span class="nx">sint</span>
-<span class="w">                                    </span><span class="nx">occaecati</span><span class="w"> </span><span class="nx">cupiditate</span><span class="w"> </span><span class="nx">non</span><span class="w"> </span><span class="nx">provident</span><span class="p">,</span>
-<span class="w">                                    </span><span class="nx">similique</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
-<span class="w">                                    </span><span class="nx">deserunt</span>
-<span class="w">                                    </span><span class="nx">mollitia</span><span class="w"> </span><span class="nx">animi</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="w"> </span><span class="nx">et</span>
-<span class="w">                                    </span><span class="nx">dolorum</span><span class="w"> </span><span class="nx">fuga</span><span class="p">.</span><span class="w"> </span><span class="nx">Et</span><span class="w"> </span><span class="nx">harum</span><span class="w"> </span><span class="nx">quidem</span><span class="w"> </span><span class="nx">rerum</span>
-<span class="w">                                    </span><span class="nx">facilis</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">et</span>
-<span class="w">                                    </span><span class="nx">expedita</span><span class="w"> </span><span class="nx">distinctio</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
-<span class="w">                </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Define colors</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">APP_COLORS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">day</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">black0</span><span class="o">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black0_5</span><span class="o">:</span><span class="w"> </span><span class="s2">"#17181B"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#202124"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black2</span><span class="o">:</span><span class="w"> </span><span class="s2">"#282A2D"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black3</span><span class="o">:</span><span class="w"> </span><span class="s2">"#2E3134"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black4</span><span class="o">:</span><span class="w"> </span><span class="s2">"#3C4043"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_primary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FF5F5E"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_secondary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FF7B52"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_tertiary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FFBCA9"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">blue1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#0857C3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">blue2</span><span class="o">:</span><span class="w"> </span><span class="s2">"#5C88DA"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">red1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#E10600"</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">night</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">black0</span><span class="o">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black0_5</span><span class="o">:</span><span class="w"> </span><span class="s2">"#0E1013"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#17181B"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black2</span><span class="o">:</span><span class="w"> </span><span class="s2">"#202124"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black3</span><span class="o">:</span><span class="w"> </span><span class="s2">"#282A2D"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">black4</span><span class="o">:</span><span class="w"> </span><span class="s2">"#2E3134"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_primary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FF5F5E"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_secondary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FF7B52"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">orange_tertiary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FFBCA9"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">blue1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#0857C3"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">blue2</span><span class="o">:</span><span class="w"> </span><span class="s2">"#5C88DA"</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">red1</span><span class="o">:</span><span class="w"> </span><span class="s2">"#E10600"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Define theme</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createTheme</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">transitions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">shortest</span><span class="o">:</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">shorter</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span>
+<span class="w">                </span><span class="kr">short</span><span class="o">:</span><span class="w"> </span><span class="mf">250</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// most basic recommended timing</span>
+<span class="w">                </span><span class="nx">standard</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// this is to be used in complex animations</span>
+<span class="w">                </span><span class="nx">complex</span><span class="o">:</span><span class="w"> </span><span class="mf">375</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// recommended when something is entering screen</span>
+<span class="w">                </span><span class="nx">enteringScreen</span><span class="o">:</span><span class="w"> </span><span class="mf">225</span><span class="p">,</span>
+<span class="w">                </span><span class="c1">// recommended when something is leaving screen</span>
+<span class="w">                </span><span class="nx">leavingScreen</span><span class="o">:</span><span class="w"> </span><span class="mf">195</span><span class="p">,</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">palette</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">black0</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">paper</span><span class="o">:</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">black4</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#FFFFFF"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">secondary</span><span class="o">:</span><span class="w"> </span><span class="s2">"#BBBBBB"</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">disabled</span><span class="o">:</span><span class="w"> </span><span class="s2">"#999999"</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">primary</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">main</span><span class="o">:</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">orange_primary</span><span class="p">,</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">secondary</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">main</span><span class="o">:</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">orange_secondary</span><span class="p">,</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">components</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">MuiButtonBase</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">defaultProps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">disableRipple</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">centerRipple</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">typography</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">body1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s2">"28px"</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">h4</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">marginBottom</span><span class="o">:</span><span class="w"> </span><span class="s2">"12px"</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">h2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">marginBottom</span><span class="o">:</span><span class="w"> </span><span class="s2">"20px"</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">h1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">marginBottom</span><span class="o">:</span><span class="w"> </span><span class="s2">"28px"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">})</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span> <span class="na">theme</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="p">}&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">CssBaseline</span><span class="p">/&gt;</span>
+<span class="w">                    </span><span class="p">&lt;</span><span class="nt">EvamAppBarLayout</span> <span class="na">tabs</span><span class="o">=</span><span class="p">{</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                            </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 1"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}</span> 
+                                    <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                            </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 2"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> 
+                                    <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">ArchiveIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                            </span><span class="p">&lt;</span><span class="nt">EvamTab</span> <span class="na">label</span><span class="o">=</span><span class="p">{</span><span class="s2">"Panel 3"</span><span class="p">}</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span> 
+                                    <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditIcon</span> <span class="na">fontSize</span><span class="o">=</span><span class="p">{</span><span class="s2">"large"</span><span class="p">}/&gt;}/&gt;</span>
+<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">EvamTabs</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">}</span> <span class="p">&gt;</span>
+<span class="w">                        </span><span class="c1">// Note: for clarity, this content will put in a separate</span>
+<span class="w">                        </span><span class="c1">// React Fragment named "MainView" after this example</span>
+<span class="w">                        </span><span class="p">&lt;</span><span class="nt">Box</span> <span class="na">paddingLeft</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}</span> <span class="na">paddingRight</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">0</span><span class="p">}&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">1</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Lorem</span><span class="w"> </span><span class="nx">ipsum</span><span class="w"> </span><span class="nx">dolor</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">amet</span><span class="p">,</span>
+<span class="w">                                            </span><span class="nx">consectetur</span><span class="w"> </span><span class="nx">adipiscing</span><span class="w"> </span><span class="nx">elit</span><span class="p">,</span><span class="w"> </span><span class="nx">sed</span><span class="w"> </span><span class="k">do</span>
+<span class="w">                                            </span><span class="nx">eiusmod</span>
+<span class="w">                                            </span><span class="nx">tempor</span><span class="w"> </span><span class="nx">incididunt</span>
+<span class="w">                                            </span><span class="nx">ut</span><span class="w"> </span><span class="nx">labore</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">magna</span><span class="w"> </span><span class="nx">aliqua</span><span class="p">.</span><span class="w"> </span><span class="nx">Ut</span>
+<span class="w">                                            </span><span class="nx">enim</span><span class="w"> </span><span class="nx">ad</span><span class="w"> </span><span class="nx">minim</span><span class="w"> </span><span class="nx">veniam</span><span class="p">,</span><span class="w"> </span><span class="nx">quis</span><span class="w"> </span><span class="nx">nostrud</span>
+<span class="w">                                            </span><span class="nx">exercitation</span>
+<span class="w">                                            </span><span class="nx">ullamco</span><span class="w"> </span><span class="nx">laboris</span><span class="w"> </span><span class="nx">nisi</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">aliquip</span><span class="w"> </span><span class="nx">ex</span>
+<span class="w">                                            </span><span class="nx">ea</span><span class="w"> </span><span class="nx">commodo</span><span class="w"> </span><span class="nx">consequat</span><span class="p">.</span><span class="w"> </span><span class="nx">Duis</span><span class="w"> </span><span class="nx">aute</span>
+<span class="w">                                            </span><span class="nx">irure</span>
+<span class="w">                                            </span><span class="nx">dolor</span><span class="w"> </span><span class="ow">in</span>
+<span class="w">                                            </span><span class="nx">reprehenderit</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">voluptate</span><span class="w"> </span><span class="nx">velit</span>
+<span class="w">                                            </span><span class="nx">esse</span><span class="w"> </span><span class="nx">cillum</span><span class="w"> </span><span class="nx">dolore</span><span class="w"> </span><span class="nx">eu</span><span class="w"> </span><span class="nx">fugiat</span><span class="w"> </span><span class="nx">nulla</span>
+<span class="w">                                            </span><span class="nx">pariatur</span><span class="p">.</span><span class="w"> </span><span class="nx">Excepteur</span>
+<span class="w">                                            </span><span class="nx">sint</span><span class="w"> </span><span class="nx">occaecat</span><span class="w"> </span><span class="nx">cupidatat</span><span class="w"> </span><span class="nx">non</span>
+<span class="w">                                            </span><span class="nx">proident</span><span class="p">,</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
+<span class="w">                                            </span><span class="nx">deserunt</span>
+<span class="w">                                            </span><span class="nx">mollit</span><span class="w"> </span><span class="nx">anim</span><span class="w"> </span><span class="nx">id</span>
+<span class="w">                                            </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">1</span><span class="p">}&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">2</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Sed</span><span class="w"> </span><span class="nx">ut</span><span class="w"> </span><span class="nx">perspiciatis</span><span class="w"> </span><span class="nx">unde</span><span class="w"> </span><span class="nx">omnis</span><span class="w"> </span><span class="nx">iste</span>
+<span class="w">                                            </span><span class="nx">natus</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">sit</span><span class="w"> </span><span class="nx">voluptatem</span>
+<span class="w">                                            </span><span class="nx">accusantium</span>
+<span class="w">                                            </span><span class="nx">doloremque</span>
+<span class="w">                                            </span><span class="nx">laudantium</span><span class="p">,</span><span class="w"> </span><span class="nx">totam</span><span class="w"> </span><span class="nx">rem</span><span class="w"> </span><span class="nx">aperiam</span><span class="p">,</span><span class="w"> </span><span class="nx">eaque</span>
+<span class="w">                                            </span><span class="nx">ipsa</span><span class="w"> </span><span class="nx">quae</span><span class="w"> </span><span class="nx">ab</span><span class="w"> </span><span class="nx">illo</span><span class="w"> </span><span class="nx">inventore</span>
+<span class="w">                                            </span><span class="nx">veritatis</span>
+<span class="w">                                            </span><span class="nx">et</span><span class="w"> </span><span class="nx">quasi</span>
+<span class="w">                                            </span><span class="nx">architecto</span><span class="w"> </span><span class="nx">beatae</span><span class="w"> </span><span class="nx">vitae</span><span class="w"> </span><span class="nx">dicta</span><span class="w"> </span><span class="nx">sunt</span>
+<span class="w">                                            </span><span class="nx">explicabo</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;</span><span class="nt">EvamTabPanel</span> <span class="na">index</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Panel</span><span class="w"> </span><span class="mf">3</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">                                        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">At</span><span class="w"> </span><span class="nx">vero</span><span class="w"> </span><span class="nx">eos</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">accusamus</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">iusto</span>
+<span class="w">                                            </span><span class="nx">odio</span><span class="w"> </span><span class="nx">dignissimos</span><span class="w"> </span><span class="nx">ducimus</span><span class="w"> </span><span class="nx">qui</span>
+<span class="w">                                            </span><span class="nx">blanditiis</span>
+<span class="w">                                            </span><span class="nx">praesentium</span>
+<span class="w">                                            </span><span class="nx">voluptatum</span><span class="w"> </span><span class="nx">deleniti</span><span class="w"> </span><span class="nx">atque</span><span class="w"> </span><span class="nx">corrupti</span>
+<span class="w">                                            </span><span class="nx">quos</span><span class="w"> </span><span class="nx">dolores</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">quas</span><span class="w"> </span><span class="nx">molestias</span>
+<span class="w">                                            </span><span class="nx">excepturi</span>
+<span class="w">                                            </span><span class="nx">sint</span>
+<span class="w">                                            </span><span class="nx">occaecati</span><span class="w"> </span><span class="nx">cupiditate</span><span class="w"> </span><span class="nx">non</span><span class="w"> </span><span class="nx">provident</span><span class="p">,</span>
+<span class="w">                                            </span><span class="nx">similique</span><span class="w"> </span><span class="nx">sunt</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">culpa</span><span class="w"> </span><span class="nx">qui</span><span class="w"> </span><span class="nx">officia</span>
+<span class="w">                                            </span><span class="nx">deserunt</span>
+<span class="w">                                            </span><span class="nx">mollitia</span><span class="w"> </span><span class="nx">animi</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">laborum</span><span class="w"> </span><span class="nx">et</span>
+<span class="w">                                            </span><span class="nx">dolorum</span><span class="w"> </span><span class="nx">fuga</span><span class="p">.</span><span class="w"> </span><span class="nx">Et</span><span class="w"> </span><span class="nx">harum</span><span class="w"> </span><span class="nx">quidem</span><span class="w"> </span><span class="nx">rerum</span>
+<span class="w">                                            </span><span class="nx">facilis</span><span class="w"> </span><span class="nx">est</span><span class="w"> </span><span class="nx">et</span>
+<span class="w">                                            </span><span class="nx">expedita</span><span class="w"> </span><span class="nx">distinctio</span><span class="p">.&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                                </span><span class="p">&lt;/</span><span class="nt">EvamTabPanel</span><span class="p">&gt;</span>
+<span class="w">                        </span><span class="p">&lt;/</span><span class="nt">Box</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="p">&lt;/</span><span class="nt">EvamAppBarLayout</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <section id="with-added-search-functionality">
@@ -643,9 +752,9 @@
 <p>It contains a set of functions to access the platform data and simulate specific events in a development environment.</p>
 <p>The guiding principles behind the API functions are:</p>
 <ul class="simple">
-<li><p>they should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them</p></li>
-<li><p>they should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)</p></li>
-<li><p>they should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks</p></li>
+<li><p>They should be safe to use, this means that it should not be possible to negatively affect (e.g. crash) the platform by using them</p></li>
+<li><p>They should not require extensive tooling to be used - the Evam API is a singleton and using it in several places in your app does not require a dependency injection system (even though it will be compatible with it)</p></li>
+<li><p>They should be reactive - this means that your application does not have to implement busy-waiting on the Evam data as it will be fed to your app when updated through callbacks</p></li>
 <li><p>The API is entirely written in Typescript, making it type-safe (to the extent permitted by Typescript) and Javascript-compatible.</p></li>
 </ul>
 <section id="read-the-evam-platform-data">
@@ -653,7 +762,7 @@
 <p>There are 7 objects that can be read from the Evam platform:</p>
 <ul class="simple">
 <li><p>The <strong>Operation</strong>:<br/>
-it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle (“Active operation”).</p></li>
+it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle (“Active operation”). The SDK v2 adds a function to observe all operations received in the Evam platform.</p></li>
 <li><p>The <strong>Settings</strong>:<br/>
 your application can specify a set of parameters in its application manifest (see <a class="reference internal" href="#setup-your-app-metadata"><span class="std std-ref">Setup your app metadata</span></a>). Those settings will be set by the end user upon installation of you app, and the Evam platform will feed them to your app at runtime when it starts and when the settings are updated by the end user. The obtained <code class="docutils literal notranslate"><span class="pre">settings</span></code> object will have the same format as the settings supplied in the App manifest.</p></li>
 <li><p>The <strong>Device Role</strong>:<br/>
@@ -667,23 +776,27 @@ vehicle state stores various data regarding the logged in vehicle. Such data are
 <li><p>The <strong>Trip Location History</strong>:<br/>
 stores an array of Location objects representing the trip history.</p></li>
 </ul>
-<p>This is how those APIs can be used:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@evam/sdk/api/EvamApi'</span><span class="p">;</span>
+<p>To use this SDK, instantiate <code class="docutils literal notranslate"><span class="pre">EvamApi()</span></code> and access its observer functions.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk"</span><span class="p">;</span>
 
-<span class="c1">// Get API singleton</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">();</span>
 
-<span class="c1">// Register a new callback on any active operation update that simply logs its ID</span>
-<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedOperation</span><span class="p">(</span>
-<span class="w">    </span><span class="p">(</span><span class="nx">activeOperation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">activeOperation</span><span class="o">?</span><span class="p">.</span><span class="nx">getFullId</span><span class="p">())</span>
-<span class="p">);</span>
+<span class="c1">// Register observer for active operation</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedActiveOperation</span><span class="p">((</span><span class="nx">activeCase</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Handle updated case</span>
+<span class="p">})</span>
 
-<span class="c1">// Register a new callback on any application settings update that simply logs them</span>
-<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedSettings</span><span class="p">(</span>
-<span class="w">    </span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="c1">// Register observer for device location</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedLocation</span><span class="p">((</span><span class="nx">deviceLocation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Handle updated device location</span>
+<span class="p">})</span>
+
+<span class="c1">// Add as many API function calls as required</span>
 </pre></div>
 </div>
+<p>It is recommended you set up all needed observers <code class="docutils literal notranslate"><span class="pre">onNew...</span></code> as soon as your application
+starts. The typical pattern is to handle each update from <code class="docutils literal notranslate"><span class="pre">EvamApi</span></code> by passing
+the observed data in your preferred application data store, such as Redux.</p>
 <p>Check the <a class="reference internal" href="../api/modules.html#sdk-reference"><span class="std std-ref">SDK reference</span></a> for a comprehensive list of the available API functions.</p>
 </section>
 <section id="simulate-events-in-a-development-environment">
@@ -691,46 +804,47 @@ stores an array of Location objects representing the trip history.</p></li>
 <p>The Operations and Settings will be provided by the Evam platform as shown below, but you may simulate incoming Operations and Settings updates in a development environment (i.e. a web browser such as Chrome or Firefox running on your development computer). This allows you to test those scenarios with proper tooling and without needing an Evam device.</p>
 <p>It is compatible with test libraries such as <code class="docutils literal notranslate"><span class="pre">jest</span></code>.</p>
 <p>This is how you may inject such events using the API:</p>
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">ActiveCase</span><span class="p">,</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@evam/sdk/api/EvamApi'</span><span class="p">;</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">EvamApi</span><span class="p">,</span><span class="w"> </span><span class="nx">Operation</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">OperationState</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk/sdk/domain/OperationState"</span><span class="p">;</span>
 
-<span class="c1">// Get Evam API singleton</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">();</span>
 
-<span class="c1">// Always check if we are in production environment to avoid exceptions</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">evam</span><span class="p">.</span><span class="nx">isRunningInVehicleServices</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Inject an ActiveCase, or undefined if you wish no active operation</span>
-<span class="w">    </span><span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectOperation</span><span class="p">(</span>
-<span class="w">        </span><span class="nx">ActiveCase</span><span class="p">.</span><span class="nx">fromJson</span><span class="p">(</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">operationID</span><span class="o">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">patientName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Test Testkort"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">patientUID</span><span class="o">:</span><span class="w"> </span><span class="s2">"900608-2381"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">callCenterId</span><span class="o">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">caseFolderId</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">prio</span><span class="o">:</span><span class="w"> </span><span class="s2">"PRIO 1"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">vehicleStatus</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Kvittera"</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="nx">destinationSiteLocation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.35393</span><span class="p">,</span>
-<span class="w">                    </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">17.973795</span><span class="p">,</span>
-<span class="w">                    </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">"Vretenvägen 13"</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Brand i bilen"</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">sendTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
-<span class="w">                </span><span class="nx">createdTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">)</span>
-<span class="w">    </span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// Inject Settings</span>
-<span class="w">    </span><span class="c1">// Note: No type validation here, make sure to respect the format</span>
-<span class="w">    </span><span class="c1">// [id] -&gt; value from your manifest</span>
-<span class="w">    </span><span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectSettings</span><span class="p">({</span><span class="nx">debug</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">});</span>
+<span class="c1">// Get Evam API instance</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectOperation</span><span class="p">(</span><span class="nx">Operation</span><span class="p">.</span><span class="nx">fromJSON</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">operationID</span><span class="o">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">patientName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Test Testkort"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">operationState</span><span class="o">:</span><span class="w"> </span><span class="kt">OperationState.ACTIVE</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">patientUID</span><span class="o">:</span><span class="w"> </span><span class="s2">"900608-2381"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">callCenterId</span><span class="o">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">caseFolderId</span><span class="o">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">prio</span><span class="o">:</span><span class="w"> </span><span class="s2">"PRIO 1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">vehicleStatus</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Test status"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">event</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">successorName</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">isStartStatus</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">isEndStatus</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">categoryType</span><span class="o">:</span><span class="w"> </span><span class="s2">"other"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">categoryName</span><span class="o">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">destinationSiteLocation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.35393</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">17.973795</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">street</span><span class="o">:</span><span class="w"> </span><span class="s2">"Vretenvägen 13"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Test operation"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sendTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">createdTime</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span>
+<span class="p">}))</span>
+</pre></div>
+</div>
+<p>Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions being thrown.</p>
+<p>You can check what environment you are running in in this way:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">EvamApi</span><span class="p">.</span><span class="nx">isRunningInVehicleServices</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// Perform event simulations</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Please note that those functions will not work when run in the Evam platform (i.e. an Evam device) and will result in Exceptions.</p>
 </section>
 </section>
 <section id="recommended-workflow">
@@ -739,6 +853,8 @@ stores an array of Location objects representing the trip history.</p></li>
 <p>Only an IDE such as VS Code and a web browser such as Chrome are needed.</p>
 <p>One notable difference is that your application will be run and used in a mobile device (typically a tablet), with limited screen real estate. To ensure your application will look as intended in the Evam Platform, make sure to use the “Device Mode” of your web browser (example for Chrome: <a class="reference external" href="https://developer.chrome.com/docs/devtools/device-mode/">Device mode</a>).</p>
 <p>You can find out which device dimensions are available in the Evam platform in the <a class="reference internal" href="../design_guidelines/Design-Guidelines.html#design-guidelines-layout"><span class="std std-ref">Layout</span></a> documentation in the design guidelines.</p>
+<p>Setting your device dimensions to the smallest available ones is a good starting point.</p>
+<p>See <a class="reference internal" href="development_environment.html#dev-env"><span class="std std-ref">Development environment</span></a> for more information about this development environment in-browser.</p>
 </section>
 </section>
 

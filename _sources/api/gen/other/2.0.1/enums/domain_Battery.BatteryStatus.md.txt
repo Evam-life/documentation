@@ -1,0 +1,33 @@
+# Enumeration: BatteryStatus
+
+[domain/Battery](../modules/domain_Battery.md).BatteryStatus
+
+## Enumeration Members
+
+### CHARGING
+
+ **CHARGING** = ``2``
+
+___
+
+### DISCHARGING
+
+ **DISCHARGING** = ``3``
+
+___
+
+### FULL
+
+ **FULL** = ``5``
+
+___
+
+### NOT\_CHARGING
+
+ **NOT\_CHARGING** = ``4``
+
+___
+
+### UNKNOWN
+
+ **UNKNOWN** = ``1``

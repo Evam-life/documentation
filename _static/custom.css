@@ -1,3 +1,35 @@
+:root {
+    ---9aa0a6-500: #9AA0A6;
+    ---ff5f2e-primary-orange: #FF5F2E;
+    ---ff7b52-secondary-orange: #FF7B52;
+    ---ffbca9-tertiary-orange: #FFBCA9;
+    ---f1f3f4-100: #F1F3F4;
+    ---e8eaed-200: #E8EAED;
+    ---17181b-928-day-0-5-night-1-: #17181B;
+    ---dadce0-300: #DADCE0;
+    ---bdc1c6-400: #BDC1C6;
+    ---80868b-600: #80868B;
+    ---2e3134-846-day-3-night-4-: #2E3134;
+    ---5f6368-700: #5F6368;
+
+}
+
+
+@font-face {
+    font-family: 'TWKLausanne-550';
+    src: local('TWKLausanne-550'), url(./assets/font/TWKLausanne-550.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TWKLausanne-400';
+    src: local('TWKLausanne-400'), url(./assets/font/TWKLausanne-400.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'TWKLausanne-300';
+    src: local('TWKLausanne-300'), url(./assets/font/TWKLausanne-300.ttf) format('truetype');
+}
+
 h1 {
     font-size: xxx-large !important;
     font-weight: bolder !important;
@@ -13,8 +45,10 @@ nav.md-tabs {
     height: 0;
 }
 
-@media only screen and (min-width:60em) {
-    .md-search__form,.md-search__input{
+@media only screen and (min-width: 60em) {
+
+    .md-search__form,
+    .md-search__input {
         border-radius: .9rem;
     }
 }
@@ -39,15 +73,14 @@ h2 {
 }
 
 
-
-.md-typeset .admonition.attention>.admonition-title:before,
-.md-typeset .admonition.attention>summary:before,
-.md-typeset .admonition.error>.admonition-title:before,
-.md-typeset .admonition.error>summary:before,
-.md-typeset details.danger>.admonition-title:before,
-.md-typeset details.danger>summary:before,
-.md-typeset details.error>.admonition-title:before,
-.md-typeset details.error>summary:before {
+.md-typeset .admonition.attention > .admonition-title:before,
+.md-typeset .admonition.attention > summary:before,
+.md-typeset .admonition.error > .admonition-title:before,
+.md-typeset .admonition.error > summary:before,
+.md-typeset details.danger > .admonition-title:before,
+.md-typeset details.danger > summary:before,
+.md-typeset details.error > .admonition-title:before,
+.md-typeset details.error > summary:before {
     color: #ff1744;
     content: "feedback" !important;
     position: absolute !important;
@@ -63,18 +96,18 @@ h2 {
     border-left-color: #ff1744 !important
 }
 
-.md-typeset .admonition.attention>.admonition-title,
-.md-typeset .admonition.attention>summary,
-.md-typeset .admonition.caution>.admonition-title,
-.md-typeset .admonition.caution>summary,
-.md-typeset .admonition.attention>.admonition-title,
-.md-typeset .admonition.attention>summary,
-.md-typeset details.attention>.admonition-title,
-.md-typeset details.attention>summary,
-.md-typeset details.caution>.admonition-title,
-.md-typeset details.caution>summary,
-.md-typeset details.attention>.admonition-title,
-.md-typeset details.attention>summary {
+.md-typeset .admonition.attention > .admonition-title,
+.md-typeset .admonition.attention > summary,
+.md-typeset .admonition.caution > .admonition-title,
+.md-typeset .admonition.caution > summary,
+.md-typeset .admonition.attention > .admonition-title,
+.md-typeset .admonition.attention > summary,
+.md-typeset details.attention > .admonition-title,
+.md-typeset details.attention > summary,
+.md-typeset details.caution > .admonition-title,
+.md-typeset details.caution > summary,
+.md-typeset details.attention > .admonition-title,
+.md-typeset details.attention > summary {
     border-bottom-color: rgba(255, 45, 0, .1) !important;
     background-color: rgba(255, 45, 0, .1) !important;
 }
@@ -93,4 +126,45 @@ h4 {
 
 h1 {
     color: black !important;
+}
+
+/* Footer colors */
+.md-footer-nav {
+    background-color: white;
+    color: rgba(95, 99, 104, 1);
+    max-width: 1577px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.md-footer-meta {
+    background: rgba(241, 243, 244, 1) 0% 0% no-repeat padding-box;
+    border-radius: 70px;
+    opacity: 1;
+    max-height: 73px;
+    margin: 53px auto 140px;
+    max-width: 1577px;
+}
+
+@media screen and (max-width: 1792px){
+    .md-footer-meta, md-footer-nav{
+        margin-left: 48px;
+        margin-right: 48px;
+    }
+}
+
+.md-footer-copyright {
+    color: rgba(95, 99, 104, 1);
+}
+
+.md-footer-copyright__highlight {
+    color: rgba(95, 99, 104, 1);
+}
+
+html .md-footer-meta.md-typeset a {
+    color: rgba(95, 99, 104, 1);
+}
+
+html .md-footer-meta.md-typeset a {
+    color: rgba(95, 99, 104, 1);
 }

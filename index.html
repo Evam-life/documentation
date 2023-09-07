@@ -47,7 +47,7 @@
   
   
   
-    <title>Welcome to the Evam developer SDK documentation! &#8212; Evam developer SDK  documentation</title>
+    <title>Documentation &#8212; Evam developer SDK  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -95,7 +95,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
-          <span class="md-header-nav__topic"> Welcome to the Evam developer SDK documentation! </span>
+          <span class="md-header-nav__topic"> Documentation </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -192,15 +192,148 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="welcome-to-the-evam-developer-sdk-documentation">
-<h1 id="index--page-root">Welcome to the Evam developer SDK documentation!<a class="headerlink" href="#index--page-root" title="Permalink to this heading">¶</a></h1>
-<html>
+  <section id="documentation">
+<h1 id="index--page-root">Documentation<a class="headerlink" href="#index--page-root" title="Permalink to this heading">¶</a></h1>
+<html lang="en">
 <head>
 <link href="_static/index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<p>Design guidelines: <a href="design_guidelines/Design-Guidelines.html">Link</a></p>
+<div class="page-container">
+<div class="hero-card" style="background-image: url(_static/assets/img/png/introducing-the.svg)">
+<h1>Evam Documentation</h1>
+<p>Examples, documentation, design guidelines and <br/> resources. All you need to start developing on the <br/>
+            Evam platform
+            and SDK.</p>
+<a href="/tech/getting_started.html">
+<button class="hero-action-button">Get started <img alt="forward arrow" src="_static/assets/img/svg/arrow_forward_black_24dp.svg"/></button>
+</a>
+</div>
+<div class="page-bottom-container">
+<div class="badge grey">
+<h2>Content</h2>
+</div>
+<div class="grid-container">
+<div class="grid-item">
+<a href="/tech/getting_started.html">
+<div class="card">
+<div class="card-top-item">
+<img class="getting-started-img" src="_static/assets/img/svg/Getting%20started.svg"/>
+<div class="card-text-item">
+<h3>Getting started</h3>
+<p>Your starting point for the development with the Evam SDK</p>
+</div>
+</div>
+<button class="action-button">Build</button>
+</div>
+</a>
+</div>
+<div class="grid-item">
+<a href="/design_guidelines/Design-Guidelines.html">
+<div class="card">
+<div class="card-top-item">
+<img class="design-guidelines-img" src="_static/assets/img/svg/Design%20guidelines.svg"/>
+<div class="card-text-item">
+<h3>Design guidelines</h3>
+<p>Your blueprint to impeccable driving-centric design on the Evam platform</p>
+</div>
+</div>
+<button class="action-button">
+                            Design
+                        </button>
+</div>
+</a>
+</div>
+<div class="grid-item">
+<a href="/tech/deployment.html">
+<div class="card">
+<div class="card-top-item">
+<img class="deployment-img" src="_static/assets/img/svg/Deployment.svg"/>
+<div class="card-text-item">
+<h3>Deployment</h3>
+<p>Your guide to seamlessly getting apps approved and deployed on the Evam platform</p>
+</div>
+</div>
+<button class="action-button">Deploy</button>
+</div>
+</a>
+</div>
+<div class="grid-item">
+<a href="/tech/development_environment.html">
+<div class="card">
+<div class="card-top-item">
+<img class="development-environment-img" src="_static/assets/img/svg/Development%20environment.svg"/>
+<div class="card-text-item">
+<h3>Development Environment</h3>
+<p>Your pathway to harnessing the development environment of the Evam platform</p>
+</div>
+</div>
+<button class="action-button">Build</button>
+</div>
+</a>
+</div>
+<div class="grid-item">
+<a href="/tech/using_the_sdk.html">
+<div class="card">
+<div class="card-top-item">
+<img class="using-sdk-img" src="_static/assets/img/svg/Using%20the%20Evam%20SDK.svg"/>
+<div class="card-text-item">
+<h3>Using the Evam SDK</h3>
+<p>Harness the Evam SDK to craft exceptional apps with impact</p>
+</div>
+</div>
+<button class="action-button">Code</button>
+</div>
+</a>
+</div>
+<div class="grid-item">
+<a href="/api/modules.html">
+<div class="card">
+<div class="card-top-item">
+<img class="sdk-ref-img" src="_static/assets/img/svg/SDK%20reference.svg"/>
+<div class="card-text-item">
+<h3>SDK reference</h3>
+<p>Explore the complete Evam SDK for informed and impactful development
+                            </p></div>
+</div>
+<button class="action-button">
+                            Code
+                        </button>
+</div>
+</a>
+</div>
+</div>
+<div class="bottom-card">
+<h1>Get to know Evam</h1>
+<a href="http://www.evam.life/book-a-demo" target="_blank">
+<button class="action-button card-button black">
+                    Book A Demo
+                </button>
+</a>
+</div>
+</div>
+</div>
 </body>
+<script>
+    // Some framework things cannot be easily tuned so use JS to handle them
+    document.addEventListener("DOMContentLoaded", function (event) {
+
+        // Override the framework's top var title animation
+        var elements = document.getElementsByClassName("md-header-nav__topic");
+        for (var i = elements.length - 1; i >= 0; --i) {
+            if (i === 0) {
+                elements[i].innerHTML = "Documentation";
+            } else {
+                elements[i].innerHTML = ""
+            }
+        }
+
+        // Remove the duplicate h1 and bottom contents
+        document.getElementById("index--page-root").remove()
+        document.getElementById("contents").remove()
+    });
+
+</script>
 </html>
 <section id="contents">
 <h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h2>

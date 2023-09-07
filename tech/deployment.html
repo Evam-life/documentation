@@ -307,8 +307,11 @@
 <p class="admonition-title">Coming Soon</p>
 <p>This article describes a feature which is currently unavailable but whose API has been finalized and will be released soon.</p>
 </div>
-<p>This article describes the process of deploying your Certified Application to
-the Evam platform.</p>
+<div class="admonition-evam-developer-portal-account-required admonition">
+<p class="admonition-title">Evam Developer portal account required</p>
+<p>You need an account in the <a class="reference external" href="https://www.developers.evam.life">Developer Portal</a> to deploy your certified apps.</p>
+</div>
+<p>This article describes the process of deploying your Certified Application to the Evam platform.</p>
 <section id="overview">
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>The Developer portal is the main gateway for any Certified App developer
@@ -337,11 +340,6 @@ on the size and nature of the update.</p>
 <p>The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.</p>
 </div>
 <p>Follow these steps to create a new release of your application.</p>
-<div class="admonition-requirement admonition">
-<p class="admonition-title">Requirement</p>
-<p>You must have setup your machine to access the Developer Portal as described in the article below.</p>
-<p><a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a></p>
-</div>
 <section id="step-0-setup-your-package-for-publishing-do-once">
 <h3 id="step-0-setup-your-package-for-publishing-do-once">Step 0 - Setup your package for publishing (do once)<a class="headerlink" href="#step-0-setup-your-package-for-publishing-do-once" title="Permalink to this heading">¶</a></h3>
 <p>This step is a one-time only setup that is required to register your application in the Evam platform.</p>
@@ -423,6 +421,7 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"201 Created"</span><span class="p">}</span>
 </pre></div>
 </div>
+<p>At that stage, the application package is uploaded to the Developer Portal. It will undergo a review by Evam and upon success be deployed to the organizations who decided to install your application in their vehicles.</p>
 </section>
 </section>
 </section>

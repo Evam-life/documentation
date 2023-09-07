@@ -484,12 +484,6 @@ People want to know what is going on, and what the system they are interacting w
 
 ### Notifications
 
-`````{attention}
-This functionality will be available for Certified apps in the future
-`````
-
-
-
 Notification cards communicate small amounts of timely information from the system or from an app. A notification card can look and behave different depending on what kind it is:
 
 ![communication](uploads/33e7cb5fae2b6aa7d83e4cb876f6cda7/communication.png)

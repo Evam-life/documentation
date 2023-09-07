@@ -206,9 +206,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
         </li>
-        <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a>
-        </li>
+        <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a><nav class="md-nav">
+              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#side-note" class="md-nav__link">Side Note</a>
+        </li></ul>
+            </nav>
         </li>
         <li class="md-nav__item"><a href="#features" class="md-nav__link">Features</a>
         </li></ul>
@@ -258,9 +260,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
         </li>
-        <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a>
-        </li>
+        <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a><nav class="md-nav">
+              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#side-note" class="md-nav__link">Side Note</a>
+        </li></ul>
+            </nav>
         </li>
         <li class="md-nav__item"><a href="#features" class="md-nav__link">Features</a>
         </li></ul>
@@ -276,31 +280,35 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="development-environment">
-<h1 id="tech-development-environment--page-root">Development environment<a class="headerlink" href="#tech-development-environment--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="dev-env"></span><h1 id="tech-development-environment--page-root">Development environment<a class="headerlink" href="#tech-development-environment--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The Evam SDK Development Environment is a React component intended to assist you in testing your Certified App.
 The Development Environment can be thought of as a ‘Vehicle Services’ emulator that runs in the Web.</p>
 <section id="installation">
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <p>Install via the Evam SDK package.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">VehicleServicesDevelopmentEnvironment</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@evam/sdk/dev-test-environment'</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">VehicleServicesDevelopmentEnvironment</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk"</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="usage">
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>This is not necessary if you use the Evam React template, see <a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a>.</p>
+</div>
 <p>Simply wrap your app with the <strong>VehicleServicesDevelopmentEnvironment</strong> component.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">VehicleServicesDevelopmentEnvironment</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">VehicleServicesDevelopmentEnvironment</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</section>
 <section id="side-note">
-<h2 id="side-note">Side Note<a class="headerlink" href="#side-note" title="Permalink to this heading">¶</a></h2>
+<h3 id="side-note">Side Note<a class="headerlink" href="#side-note" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The <strong>VehicleServicesDevelopmentEnvironment</strong> component will detect whether it is running in Vehicle Services and will render appropriately. This means it will still
 render your app inside Vehicle Services but none of the Development Environment components will render to the DOM. Events will also propagate without being consumed by the Developer Environment. This way you need not worry about removing the component for production.</p></li>
 </ul>
+</section>
 </section>
 <section id="features">
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h2>
@@ -332,11 +340,6 @@ render your app inside Vehicle Services but none of the Development Environment 
 <span class="nx">evamApi</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="nx">notification</span><span class="p">);</span>
 </pre></div>
 </div>
-<!---
-- **Theme Builder:**
-- **gRPC:**
-- **Event Simulation:**
--->
 </section>
 </section>
 
