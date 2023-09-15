@@ -1,0 +1,21 @@
+# Interface: UsbInterface
+
+[api/hardware/EvamHardwareUsbApi](../modules/api_hardware_EvamHardwareUsbApi.md).UsbInterface
+
+A USB interface exposed by a device
+
+## Properties
+
+### endpoints
+
+ **endpoints**: [`UsbEndpoint`](api_hardware_EvamHardwareUsbApi.UsbEndpoint.md)[]
+
+The available endpoints
+
+___
+
+### interfaceNumber
+
+ **interfaceNumber**: `number`
+
+The interface number

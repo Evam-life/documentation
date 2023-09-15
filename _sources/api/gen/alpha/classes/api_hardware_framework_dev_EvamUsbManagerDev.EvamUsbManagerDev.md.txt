@@ -1,0 +1,112 @@
+# Class: EvamUsbManagerDev
+
+[api/hardware/framework/dev/EvamUsbManagerDev](../modules/api_hardware_framework_dev_EvamUsbManagerDev.md).EvamUsbManagerDev
+
+Usb manager class for the Evam platform, contains general USB device
+management APIs.
+
+## Implements
+
+- [`UsbManager`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md)
+
+## Constructors
+
+### constructor
+
+**new EvamUsbManagerDev**(`usb`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `usb` | `USB` |
+
+## Methods
+
+### getDeviceList
+
+**getDeviceList**(): `Promise`<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
+
+Gets the list of devices the application is allowed (authorized)
+to communicate with.
+
+#### Returns
+
+`Promise`<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
+
+UsbDevice[] List of accessible devices
+
+#### Implementation of
+
+[UsbManager](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md).[getDeviceList](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md#getdevicelist)
+
+___
+
+### hasPermission
+
+**hasPermission**(`device`): `Promise`<`boolean`\>
+
+Checks if a specific device can be accessed from this application
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `device` | [`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md) | The target USB device |
+
+#### Returns
+
+`Promise`<`boolean`\>
+
+boolean true if application is authorized, false otherwise
+
+#### Implementation of
+
+[UsbManager](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md).[hasPermission](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md#haspermission)
+
+___
+
+### openDevice
+
+**openDevice**(`device`): `Promise`<`void`\>
+
+Opens a specific device
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `device` | [`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md) | Device to be opened for communication |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbManager](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md).[openDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md#opendevice)
+
+___
+
+### requestPermission
+
+**requestPermission**(`filters`, `callback`): `Promise`<`void`\>
+
+Requests the permission to access a specific device selected from a
+list of filters. Will cause a system pop-up to be shown to the end user
+for the device selection.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filters` | [`UsbDeviceFilter`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDeviceFilter.md)[] | List of filters for the USB device to be requested |
+| `callback` | (`device`: [`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md), `message`: `string`) => `void` | Function to be run when the end user has granted permission to a device. Provides the device and a result message. |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbManager](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md).[requestPermission](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md#requestpermission)

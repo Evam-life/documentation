@@ -1,0 +1,29 @@
+# Interface: UsbEndpoint
+
+[api/hardware/EvamHardwareUsbApi](../modules/api_hardware_EvamHardwareUsbApi.md).UsbEndpoint
+
+A USB endpoint available for communication
+
+## Properties
+
+### direction
+
+ **direction**: `string`
+
+The endpoint direction: "in" (device->host) or "out" (host->device)
+
+___
+
+### endpointNumber
+
+ **endpointNumber**: `number`
+
+The endpoint number
+
+___
+
+### packetSize
+
+ **packetSize**: `number`
+
+The maximum allowed packet size in Bytes

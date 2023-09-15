@@ -22,6 +22,8 @@ All functions below are available in:
 
    gen/current/**
 
+.. _sdk-reference-alpha:
+
 {% if version.alpha != version.current %}
 
 Alpha version - {{ version.alpha }}

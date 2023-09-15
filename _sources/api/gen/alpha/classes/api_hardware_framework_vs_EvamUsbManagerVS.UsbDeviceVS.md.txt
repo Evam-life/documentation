@@ -1,0 +1,339 @@
+# Class: UsbDeviceVS
+
+[api/hardware/framework/vs/EvamUsbManagerVS](../modules/api_hardware_framework_vs_EvamUsbManagerVS.md).UsbDeviceVS
+
+Usb device accessible from the Evam platform
+
+## Implements
+
+- [`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)
+
+## Constructors
+
+### constructor
+
+**new UsbDeviceVS**(`android`, `serialNumber`, `productId`, `productName`, `vendorId`, `version`, `classCode`, `subclassCode`, `protocolCode`)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `android` | [`AndroidInterface`](../interfaces/api_hardware_framework_vs_AndroidInterface.AndroidInterface.md) |
+| `serialNumber` | `string` |
+| `productId` | `number` |
+| `productName` | `string` |
+| `vendorId` | `number` |
+| `version` | `string` |
+| `classCode` | `number` |
+| `subclassCode` | `number` |
+| `protocolCode` | `number` |
+
+## Properties
+
+### classCode
+
+ `Readonly` **classCode**: `number`
+
+Device class code
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[classCode](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#classcode)
+
+___
+
+### productId
+
+ `Readonly` **productId**: `number`
+
+Device product ID
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[productId](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#productid)
+
+___
+
+### productName
+
+ `Readonly` **productName**: `string`
+
+Device product name
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[productName](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#productname)
+
+___
+
+### protocolCode
+
+ `Readonly` **protocolCode**: `number`
+
+Device protocol code
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[protocolCode](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#protocolcode)
+
+___
+
+### serialNumber
+
+ `Readonly` **serialNumber**: `string`
+
+Device serial number
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[serialNumber](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#serialnumber)
+
+___
+
+### subclassCode
+
+ `Readonly` **subclassCode**: `number`
+
+Device sub class code
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[subclassCode](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#subclasscode)
+
+___
+
+### vendorId
+
+ `Readonly` **vendorId**: `number`
+
+Device vendor ID
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[vendorId](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#vendorid)
+
+___
+
+### version
+
+ `Readonly` **version**: `string`
+
+Device USB version as "major.minor.sub-minor"
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[version](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#version)
+
+## Methods
+
+### claimInterface
+
+**claimInterface**(`interfaceNumber`, `force`): `Promise`<`void`\>
+
+Claims an interface by its number for exclusive communication access
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `interfaceNumber` | `number` | The interface number from [UsbInterface] |
+| `force` | `boolean` | Set to true to make an attempt at enforcing the claim |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[claimInterface](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#claiminterface)
+
+___
+
+### close
+
+**close**(): `Promise`<`void`\>
+
+Close a device once it is no longer needed
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[close](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#close)
+
+___
+
+### controlTransferIn
+
+**controlTransferIn**(`requestType`, `recipient`, `request`, `value`, `index`, `length`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+Perform a control transfer - IN direction (data read)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestType` | `USBRequestType` | The request type: "standard", "class" or "vendor" |
+| `recipient` | `USBRecipient` | The recipient: "device" \| "interface" \| "endpoint" \| "other" |
+| `request` | `number` | The request byte |
+| `value` | `number` | The value byte |
+| `index` | `number` | The index for the request |
+| `length` | `number` | The request length |
+| `timeout` | `number` | timeout in milliseconds |
+
+#### Returns
+
+`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[controlTransferIn](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#controltransferin)
+
+___
+
+### controlTransferOut
+
+**controlTransferOut**(`requestType`, `recipient`, `request`, `value`, `index`, `data`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+Perform a control transfer - OUT direction (data write)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `requestType` | `USBRequestType` | The request type: "standard", "class" or "vendor" |
+| `recipient` | `USBRecipient` | The recipient: "device" \| "interface" \| "endpoint" \| "other" |
+| `request` | `number` | The request byte |
+| `value` | `number` | The value byte |
+| `index` | `number` | The index for the request |
+| `data` | `Uint8Array` | The data to be written |
+| `timeout` | `number` | The timeout in milliseconds |
+
+#### Returns
+
+`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[controlTransferOut](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#controltransferout)
+
+___
+
+### forget
+
+**forget**(): `Promise`<`void`\>
+
+Release the authorization for this device, access will have to
+be requested again.
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[forget](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#forget)
+
+___
+
+### getInterfaces
+
+**getInterfaces**(): [`UsbInterface`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbInterface.md)[]
+
+Get the interfaces this device has
+
+#### Returns
+
+[`UsbInterface`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbInterface.md)[]
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[getInterfaces](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#getinterfaces)
+
+___
+
+### open
+
+**open**(): `Promise`<`void`\>
+
+Open the device for communication
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[open](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#open)
+
+___
+
+### releaseInterface
+
+**releaseInterface**(`interfaceNumber`): `Promise`<`void`\>
+
+Release an interface once communication is no longer needed
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `interfaceNumber` | `number` | The interface number from [UsbInterface] |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[releaseInterface](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#releaseinterface)
+
+___
+
+### transferIn
+
+**transferIn**(`endpointNumber`, `length`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+Perform a bulk transfer - IN direction (data read)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `endpointNumber` | `number` | The endpoint number to be targeted |
+| `length` | `number` | The transfer length |
+| `timeout` | `number` | The timeout in milliseconds |
+
+#### Returns
+
+`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[transferIn](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#transferin)
+
+___
+
+### transferOut
+
+**transferOut**(`endpointNumber`, `data`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+Perform a bulk transfer - OUT direction (data write)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `endpointNumber` | `number` | The endpoint number to be targeted |
+| `data` | `Uint8Array` | The data bytes to be written |
+| `timeout` | `number` | The timeout in milliseconds |
+
+#### Returns
+
+`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+
+#### Implementation of
+
+[UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md).[transferOut](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md#transferout)

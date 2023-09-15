@@ -1,0 +1,55 @@
+# Interface: UsbDeviceFilter
+
+[api/hardware/EvamHardwareUsbApi](../modules/api_hardware_EvamHardwareUsbApi.md).UsbDeviceFilter
+
+## Properties
+
+### classCode
+
+ `Optional` **classCode**: `number`
+
+Device class code
+
+___
+
+### productId
+
+ `Optional` **productId**: `number`
+
+Device product ID
+
+___
+
+### protocolCode
+
+ `Optional` **protocolCode**: `number`
+
+Device protocol code
+
+___
+
+### serialNumber
+
+ `Optional` **serialNumber**: `string`
+
+**`Deprecated`**
+
+Device serial number, avoid using this in the filter as it may not
+always be possible to the read the serial number before obtaining
+access to the device. In that case this filter value will be ignored.
+
+___
+
+### subclassCode
+
+ `Optional` **subclassCode**: `number`
+
+Device sub class code
+
+___
+
+### vendorId
+
+ `Optional` **vendorId**: `number`
+
+Device vendor ID

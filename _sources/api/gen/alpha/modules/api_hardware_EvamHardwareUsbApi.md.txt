@@ -1,0 +1,14 @@
+# Module: api/hardware/EvamHardwareUsbApi
+
+## Classes
+
+- [EvamHardwareUsbApi](../classes/api_hardware_EvamHardwareUsbApi.EvamHardwareUsbApi.md)
+
+## Interfaces
+
+- [UsbDevice](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)
+- [UsbDeviceFilter](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDeviceFilter.md)
+- [UsbEndpoint](../interfaces/api_hardware_EvamHardwareUsbApi.UsbEndpoint.md)
+- [UsbInterface](../interfaces/api_hardware_EvamHardwareUsbApi.UsbInterface.md)
+- [UsbManager](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md)
+- [UsbTransferResult](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)

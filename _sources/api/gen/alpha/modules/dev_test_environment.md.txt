@@ -1,19 +1,7 @@
 # Module: dev-test-environment
 
-## Functions
+## References
 
 ### VehicleServicesDevelopmentEnvironment
 
-**VehicleServicesDevelopmentEnvironment**(`props`, `context?`): `ReactElement`<`any`, `any`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `props` | `Object` |
-| `props.children?` | `ReactNode` |
-| `context?` | `any` |
-
-#### Returns
-
-`ReactElement`<`any`, `any`\>
+Re-exports [VehicleServicesDevelopmentEnvironment](dev_test_environment_context_VehicleServicesDevelopmentEnvironment.md#vehicleservicesdevelopmentenvironment)

@@ -1,0 +1,63 @@
+# Class: EvamHardwareUsbApi
+
+[api/hardware/EvamHardwareUsbApi](../modules/api_hardware_EvamHardwareUsbApi.md).EvamHardwareUsbApi
+
+Evam API singleton that exposes methods to interact with the hardware
+connected to the Evam platform over USB.
+
+**`Example`**
+
+```ts
+// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)
+const evamHwApi = new EvamHardwareUsbApi();
+
+// List USB devices the application has access to from the Evam platform
+let devices = await evamHwApi.usbManager.getDeviceList()
+
+// Request access to another device (will show a pop-up to the user)
+evamHwApi.usbManager.requestPermission(
+    [{vendorId: 0x403}], // Device filters
+    (device, msg) => {
+        console.log(`Permission request result ${msg}`)
+        // Set up the obtained device [device] if not undefined and store it
+    })
+
+// Open the obtained device, required for further access
+await device.open()
+
+// List all interfaces and endpoints
+device.getInterfaces().forEach((ifc) => {
+    // Claim interface to perform transfer operations
+    device.claimInterface(ifc.interfaceNumber, true).then(() => {
+        // Example: set baud rate to 38400 in FTDI chip TTL232RG-VSW3V3
+        device.controlTransferOut("vendor", "device", 0x03, 0xc04e, 48000000, new Uint8Array([]), 0)
+    })
+    ifc.endpoints.forEach((endpt) => {
+        console.log(`Endpoint: ${endpt.endpointNumber} - ${endpt.direction}`)
+    })
+})
+
+// Write to serial (in this case endpoint 2's direction is 'out')
+let result = await device.transferOut(2, new TextEncoder().encode("AT\r\n"), 0)
+console.log(`Bytes written: ${result.length}`)
+
+// Read 64 Bytes from serial (in this case endpoint 1's direction is 'in')
+let result = await device.transferIn(1, 64, 0)
+let responseText = String.fromCharCode(...result.data)
+console.log(`Response from serial: ${responseText}`)
+```
+
+## Constructors
+
+### constructor
+
+**new EvamHardwareUsbApi**()
+
+Create new EvamHardwareUsbApi instance, backend framework will be
+auto-detected (Development environment or Vehicle Services).
+
+## Properties
+
+### usbManager
+
+ `Readonly` **usbManager**: [`UsbManager`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbManager.md)

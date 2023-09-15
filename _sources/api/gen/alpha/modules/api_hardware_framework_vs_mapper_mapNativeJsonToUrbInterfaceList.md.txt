@@ -1,0 +1,17 @@
+# Module: api/hardware/framework/vs/mapper/mapNativeJsonToUrbInterfaceList
+
+## Functions
+
+### mapNativeJsonToUsbInterfaceList
+
+**mapNativeJsonToUsbInterfaceList**(`json`): [`UsbInterface`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbInterface.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `json` | `string` |
+
+#### Returns
+
+[`UsbInterface`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbInterface.md)[]

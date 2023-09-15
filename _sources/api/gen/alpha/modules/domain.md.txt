@@ -56,6 +56,12 @@ Re-exports [EvamEvent](../enums/domain_EvamEvent.EvamEvent.md)
 
 ___
 
+### GRPC
+
+Re-exports [GRPC](../classes/domain_GRPC.GRPC.md)
+
+___
+
 ### HospitalLocation
 
 Re-exports [HospitalLocation](../classes/domain_HospitalLocation.HospitalLocation.md)

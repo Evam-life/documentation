@@ -1,0 +1,18 @@
+# Module: api/hardware/framework/vs/mapper/mapNativeJsonToUsbDevice
+
+## Functions
+
+### mapNativeJsonToUsbDeviceList
+
+**mapNativeJsonToUsbDeviceList**(`android`, `json`): [`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `android` | [`AndroidInterface`](../interfaces/api_hardware_framework_vs_AndroidInterface.AndroidInterface.md) |
+| `json` | `string` |
+
+#### Returns
+
+[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]

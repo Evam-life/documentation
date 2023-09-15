@@ -1,0 +1,5 @@
+# Module: api/hardware/framework/vs/AndroidInterface
+
+## Interfaces
+
+- [AndroidInterface](../interfaces/api_hardware_framework_vs_AndroidInterface.AndroidInterface.md)

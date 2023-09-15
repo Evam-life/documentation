@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Hardware APIs &#8212; Evam developer SDK  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using the Evam SDK" href="using_the_sdk.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=white data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#tech/hardware_apis" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="Evam developer SDK  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../_static/evam-black.png" height="26"
+                   alt="Evam developer SDK documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
+          <span class="md-header-nav__topic"> Hardware APIs </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">Evam developer SDK  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="Evam developer SDK documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/evam-black.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="Evam developer SDK documentation">Evam developer SDK  documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="deployment.html" class="md-nav__link">Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Hardware APIs </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Hardware APIs</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-hardware-apis--page-root" class="md-nav__link">Hardware APIs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#hardware-support" class="md-nav__link">Hardware support</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#usb-access" class="md-nav__link">USB access</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#development-environment" class="md-nav__link">Development environment</a>
+        </li>
+        <li class="md-nav__item"><a href="#permissions" class="md-nav__link">Permissions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#manifest-setup" class="md-nav__link">Manifest setup</a>
+        </li>
+        <li class="md-nav__item"><a href="#end-user-authorization" class="md-nav__link">End user authorization</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../api/modules.html" class="md-nav__link">SDK reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#tech-hardware-apis--page-root" class="md-nav__link">Hardware APIs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#hardware-support" class="md-nav__link">Hardware support</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#usb-access" class="md-nav__link">USB access</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#development-environment" class="md-nav__link">Development environment</a>
+        </li>
+        <li class="md-nav__item"><a href="#permissions" class="md-nav__link">Permissions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#manifest-setup" class="md-nav__link">Manifest setup</a>
+        </li>
+        <li class="md-nav__item"><a href="#end-user-authorization" class="md-nav__link">End user authorization</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="hardware-apis">
+<h1 id="tech-hardware-apis--page-root">Hardware APIs<a class="headerlink" href="#tech-hardware-apis--page-root" title="Permalink to this heading">¶</a></h1>
+<div class="admonition-preview admonition">
+<p class="admonition-title">Preview</p>
+<p>This is currently available as a preview API, which means it cannot be
+used in a production deployment yet.</p>
+<p>However, you may use it in a development environment with full functionality,
+and the code you write using this API should work in production without major adjustment
+as soon as the feature is available in the stable branch.</p>
+<p>See the reference for the alpha version here: <a class="reference internal" href="../api/modules.html#sdk-reference-alpha"><span class="std std-ref">Alpha version - 3.0.0-beta.1</span></a>.</p>
+</div>
+<p>The Evam SDK exposes a set of Hardware APIs that allow certified applications to
+access some of the devices connected to the Evam platform.</p>
+<p>This is currently limited to USB devices, future developments will extend the hardware coverage. Notably,
+an API to access the Tetra radio connected to the Evam platform will be added in the future.</p>
+<section id="hardware-support">
+<h2 id="hardware-support">Hardware support<a class="headerlink" href="#hardware-support" title="Permalink to this heading">¶</a></h2>
+<section id="usb-access">
+<h3 id="usb-access">USB access<a class="headerlink" href="#usb-access" title="Permalink to this heading">¶</a></h3>
+<p>The USB devices can be accessed using the <code class="docutils literal notranslate"><span class="pre">EvamHardwareUsbApi</span></code> class in the SDK <code class="docutils literal notranslate"><span class="pre">@evam/sdk</span></code>.</p>
+<p>The available APIs notably allow a certified app to:</p>
+<ul class="simple">
+<li><p>List connected devices,</p></li>
+<li><p>Request access to those device (through a pop-up for the end user),</p></li>
+<li><p>Open and claim exclusive access to a device,</p></li>
+<li><p>Perform transfer operations to this device endpoints.</p></li>
+</ul>
+<p>Using this API requires exclusive access to the device. Therefore it is not possible to access the Tetra radio
+used by the Evam platform as it is already claimed by the native side of the platform itself.</p>
+<p>Here are a few examples:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evamHwApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamHardwareUsbApi</span><span class="p">();</span>
+
+<span class="c1">// List USB devices the application has access to from the Evam platform</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">devices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">evamHwApi</span><span class="p">.</span><span class="nx">usbManager</span><span class="p">.</span><span class="nx">getDeviceList</span><span class="p">()</span>
+
+<span class="c1">// Request access to another device (will show a pop-up to the user)</span>
+<span class="nx">evamHwApi</span><span class="p">.</span><span class="nx">usbManager</span><span class="p">.</span><span class="nx">requestPermission</span><span class="p">(</span>
+<span class="w">    </span><span class="p">[{</span><span class="nx">vendorId</span><span class="o">:</span><span class="w"> </span><span class="kt">0x403</span><span class="p">}],</span><span class="w"> </span><span class="c1">// Device filters</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">device</span><span class="p">,</span><span class="w"> </span><span class="nx">msg</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Permission request result </span><span class="si">${</span><span class="nx">msg</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">        </span><span class="c1">// Set up the obtained device [device] if not undefined and store it</span>
+<span class="w">    </span><span class="p">})</span>
+
+<span class="c1">// Open the obtained device, required for further access</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">device</span><span class="p">.</span><span class="nx">open</span><span class="p">()</span>
+
+<span class="c1">// List all interfaces and endpoints</span>
+<span class="nx">device</span><span class="p">.</span><span class="nx">getInterfaces</span><span class="p">().</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">ifc</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Claim interface to perform transfer operations</span>
+<span class="w">    </span><span class="nx">device</span><span class="p">.</span><span class="nx">claimInterface</span><span class="p">(</span><span class="nx">ifc</span><span class="p">.</span><span class="nx">interfaceNumber</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Example: set baud rate to 38400 in FTDI chip TTL232RG-VSW3V3</span>
+<span class="w">        </span><span class="nx">device</span><span class="p">.</span><span class="nx">controlTransferOut</span><span class="p">(</span><span class="s2">"vendor"</span><span class="p">,</span><span class="w"> </span><span class="s2">"device"</span><span class="p">,</span><span class="w"> </span><span class="mh">0x03</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc04e</span><span class="p">,</span><span class="w"> </span><span class="mf">48000000</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Uint8Array</span><span class="p">([]),</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">ifc</span><span class="p">.</span><span class="nx">endpoints</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">endpt</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Endpoint: </span><span class="si">${</span><span class="nx">endpt</span><span class="p">.</span><span class="nx">endpointNumber</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">endpt</span><span class="p">.</span><span class="nx">direction</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="p">})</span>
+
+<span class="c1">// Write to serial (in this case endpoint 2's direction is 'out')</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">device</span><span class="p">.</span><span class="nx">transferOut</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TextEncoder</span><span class="p">().</span><span class="nx">encode</span><span class="p">(</span><span class="s2">"AT\r\n"</span><span class="p">),</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Bytes written: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+
+<span class="c1">// Read 64 Bytes from serial (in this case endpoint 1's direction is 'in')</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">device</span><span class="p">.</span><span class="nx">transferIn</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">64</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">responseText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(...</span><span class="nx">result</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Response from serial: </span><span class="si">${</span><span class="nx">responseText</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="development-environment">
+<h2 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permalink to this heading">¶</a></h2>
+<p>The Hardware APIs follow the Evam SDK philosophy to ensure a quality developer experience.</p>
+<p>Only an IDE such as VS Code and a web browser such as Chrome are needed,
+in addition to the hardware devices you may want to access from the certified app of course.</p>
+<p>In particular, it is not needed (and infact discouraged) to use an Evam Android device for
+development, as the development tools offered by React and NodeJS when developing on a web browser
+are significantly richer.</p>
+<p>The Hardware APIs are built in such a way that it does not matter if the certified app is running
+in either of those environments:</p>
+<ul class="simple">
+<li><p><strong>Production</strong>: Inside Vehicle Services as an installed certified app - with hardware devices connected to the Evam device itself;</p></li>
+<li><p><strong>Development</strong>: Inside a web browser as a development React app served from <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">start</span></code> - with hardware devices connected to your development computer.</p></li>
+</ul>
+<p>This is achieved by selecting the appropriate backend depending on the detected environment:</p>
+<ul class="simple">
+<li><p>Production: Android USB Host API,</p></li>
+<li><p>Development: WebUSB (compatible web browser required, see: https://caniuse.com/webusb).</p></li>
+</ul>
+<p>This is handled by the Evam SDK and requires no adaptation from the application side.</p>
+</section>
+<section id="permissions">
+<h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permalink to this heading">¶</a></h2>
+<p>The Hardware APIs allow certified apps to perform privileged operations such as raw data transfer to USB peripherals,
+therefore you should consider whether your application really needs them or not.</p>
+<p>In particular, if your application needs to access the missions (“operations”) data transferred by a dispatch center over
+the Tetra radio, it is recommended you use the <code class="docutils literal notranslate"><span class="pre">EvamApi</span></code> data APIs instead.</p>
+<p>See <a class="reference internal" href="using_the_sdk.html#using-the-sdk"><span class="std std-ref">Using the Evam SDK</span></a> for more details about this data API.</p>
+<section id="manifest-setup">
+<h3 id="manifest-setup">Manifest setup<a class="headerlink" href="#manifest-setup" title="Permalink to this heading">¶</a></h3>
+<p>The Evam manifest located under <code class="docutils literal notranslate"><span class="pre">public/evam.json</span></code> should be updated to request access to those APIs:</p>
+<ul class="simple">
+<li><p>The “HARDWARE_USB” should be added to “permissions”,</p></li>
+<li><p>The “advancedPermissions” field should include configuration filters for all devices that the application needs access to.</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"applicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"com.example.application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"applicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"debug"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debug mode"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable debug mode by displaying logs on screen"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"logo.png"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"apiVersion"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"minimum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"ACTIVE_OPERATION_READ"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"SETTINGS_READ"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"DISPLAY_MODE_READ"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"HARDWARE_USB"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"advancedPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"hardware.usb"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceFilter"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"vendorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1023</span><span class="p">}]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deviceFilter"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"vendorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1022</span><span class="p">,</span><span class="w"> </span><span class="nt">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">}]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0.1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"versionCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this case, the application requests access to all devices matching either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vendorId===1023</span></code> (<code class="docutils literal notranslate"><span class="pre">0x3FF</span></code>), or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vendorId===1022</span> <span class="pre">&amp;&amp;</span> <span class="pre">productId===45</span></code> (<code class="docutils literal notranslate"><span class="pre">0x3FE</span></code>, <code class="docutils literal notranslate"><span class="pre">0x2D</span></code>)</p></li>
+</ul>
+<p>This will be taken into account when requesting devices.</p>
+<div class="admonition-wildcard admonition">
+<p class="admonition-title">Wildcard</p>
+<p>Specifying this filter: <code class="docutils literal notranslate"><span class="pre">{"type":</span> <span class="pre">"deviceFilter","value":</span> <span class="pre">[]}</span></code></p>
+<p>Is equivalent to a wildcard, it will match all devices. It is discouraged as the user may end up having to choose among too many devices,
+making it potentially confusing.</p>
+<p>It may also make the review of your application longer before it get published.</p>
+</div>
+</section>
+<section id="end-user-authorization">
+<h3 id="end-user-authorization">End user authorization<a class="headerlink" href="#end-user-authorization" title="Permalink to this heading">¶</a></h3>
+<p>Accessing the hardware devices is a highly privileged operation and therefore user consent
+must be granted at least once.</p>
+<p>This results in a system pop-up being shown upon a new request being made.</p>
+<p>In development mode, this may look like:</p>
+<p><img alt="USB popup webUSB" src="../_images/usb-popup-dev.png"/></p>
+<p>The production mode popup will be functionally identical and the Evam SDK will handle them in the same way.</p>
+</section>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="getting_started.html" title="Getting started"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Getting started </span>
+              </div>
+            </a>
+          
+          
+            <a href="using_the_sdk.html" title="Using the Evam SDK"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> Using the Evam SDK </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Evam.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

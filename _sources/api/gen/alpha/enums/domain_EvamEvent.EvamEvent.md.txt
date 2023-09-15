@@ -19,6 +19,12 @@ ___
 
 ___
 
+### GRPCEstablished
+
+ **GRPCEstablished** = ``"gRPCEstablished"``
+
+___
+
 ### NewOrUpdatedBattery
 
  **NewOrUpdatedBattery** = ``"newOrUpdatedBattery"``

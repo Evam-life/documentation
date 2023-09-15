@@ -1,0 +1,196 @@
+# Hardware APIs
+
+```{admonition} Preview
+
+This is currently available as a preview API, which means it cannot be 
+used in a production deployment yet.
+
+However, you may use it in a development environment with full functionality, 
+and the code you write using this API should work in production without major adjustment
+as soon as the feature is available in the stable branch.
+
+
+```{eval-rst}
+See the reference for the alpha version here: :ref:`sdk-reference-alpha`.
+
+```
+
+The Evam SDK exposes a set of Hardware APIs that allow certified applications to
+access some of the devices connected to the Evam platform.
+
+This is currently limited to USB devices, future developments will extend the hardware coverage. Notably,
+an API to access the Tetra radio connected to the Evam platform will be added in the future.
+
+## Hardware support
+
+### USB access
+
+The USB devices can be accessed using the `EvamHardwareUsbApi` class in the SDK `@evam/sdk`.
+
+The available APIs notably allow a certified app to:
+
+- List connected devices,
+- Request access to those device (through a pop-up for the end user),
+- Open and claim exclusive access to a device,
+- Perform transfer operations to this device endpoints.
+
+Using this API requires exclusive access to the device. Therefore it is not possible to access the Tetra radio
+used by the Evam platform as it is already claimed by the native side of the platform itself.
+
+Here are a few examples:
+
+```ts
+// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)
+const evamHwApi = new EvamHardwareUsbApi();
+
+// List USB devices the application has access to from the Evam platform
+let devices = await evamHwApi.usbManager.getDeviceList()
+
+// Request access to another device (will show a pop-up to the user)
+evamHwApi.usbManager.requestPermission(
+    [{vendorId: 0x403}], // Device filters
+    (device, msg) => {
+        console.log(`Permission request result ${msg}`)
+        // Set up the obtained device [device] if not undefined and store it
+    })
+
+// Open the obtained device, required for further access
+await device.open()
+
+// List all interfaces and endpoints
+device.getInterfaces().forEach((ifc) => {
+    // Claim interface to perform transfer operations
+    device.claimInterface(ifc.interfaceNumber, true).then(() => {
+        // Example: set baud rate to 38400 in FTDI chip TTL232RG-VSW3V3
+        device.controlTransferOut("vendor", "device", 0x03, 0xc04e, 48000000, new Uint8Array([]), 0)
+    })
+    ifc.endpoints.forEach((endpt) => {
+        console.log(`Endpoint: ${endpt.endpointNumber} - ${endpt.direction}`)
+    })
+})
+
+// Write to serial (in this case endpoint 2's direction is 'out')
+let result = await device.transferOut(2, new TextEncoder().encode("AT\r\n"), 0)
+console.log(`Bytes written: ${result.length}`)
+
+// Read 64 Bytes from serial (in this case endpoint 1's direction is 'in')
+let result = await device.transferIn(1, 64, 0)
+let responseText = String.fromCharCode(...result.data)
+console.log(`Response from serial: ${responseText}`)
+```
+
+## Development environment
+
+The Hardware APIs follow the Evam SDK philosophy to ensure a quality developer experience.
+
+Only an IDE such as VS Code and a web browser such as Chrome are needed, 
+in addition to the hardware devices you may want to access from the certified app of course.
+
+In particular, it is not needed (and infact discouraged) to use an Evam Android device for 
+development, as the development tools offered by React and NodeJS when developing on a web browser
+are significantly richer.
+
+The Hardware APIs are built in such a way that it does not matter if the certified app is running
+in either of those environments:
+
+- **Production**: Inside Vehicle Services as an installed certified app - with hardware devices connected to the Evam device itself;
+- **Development**: Inside a web browser as a development React app served from `npm start` - with hardware devices connected to your development computer.
+
+This is achieved by selecting the appropriate backend depending on the detected environment:
+
+- Production: Android USB Host API,
+- Development: WebUSB (compatible web browser required, see: https://caniuse.com/webusb).
+
+This is handled by the Evam SDK and requires no adaptation from the application side.
+
+## Permissions
+
+The Hardware APIs allow certified apps to perform privileged operations such as raw data transfer to USB peripherals,
+therefore you should consider whether your application really needs them or not.
+
+In particular, if your application needs to access the missions ("operations") data transferred by a dispatch center over
+the Tetra radio, it is recommended you use the `EvamApi` data APIs instead.
+
+```{eval-rst}
+See :ref:`using_the_sdk` for more details about this data API.
+```
+
+### Manifest setup
+
+The Evam manifest located under `public/evam.json` should be updated to request access to those APIs:
+
+- The "HARDWARE_USB" should be added to "permissions",
+- The "advancedPermissions" field should include configuration filters for all devices that the application needs access to.
+
+```json
+{
+    "applicationId": "com.example.application",
+    "applicationName": "Demo application",
+    "settings": [
+        {
+            "id": "debug",
+            "name": "Debug mode",
+            "description": "Enable debug mode by displaying logs on screen",
+            "value": {
+                "type": "bool",
+                "default": false
+            }
+        }
+    ],
+    "logo": "logo.png",
+    "apiVersion": {
+        "target": "2",
+        "minimum": "2"
+    },
+    "permissions": [
+        "ACTIVE_OPERATION_READ",
+        "SETTINGS_READ",
+        "DISPLAY_MODE_READ",
+        "HARDWARE_USB"
+    ],
+    "advancedPermissions": {
+        "hardware.usb": [
+            {
+                "type": "deviceFilter",
+                "value": [{"vendorId": 1023}]
+            },
+            {
+                "type": "deviceFilter",
+                "value": [{"vendorId": 1022, "productId": 45}]
+            },
+        ]
+    },
+    "version": "0.0.1",
+    "versionCode": 1
+}
+```
+
+In this case, the application requests access to all devices matching either:
+
+- `vendorId===1023` (`0x3FF`), or
+- `vendorId===1022 && productId===45` (`0x3FE`, `0x2D`)
+
+This will be taken into account when requesting devices.
+
+```{admonition} Wildcard
+
+Specifying this filter: `{"type": "deviceFilter","value": []}`
+
+Is equivalent to a wildcard, it will match all devices. It is discouraged as the user may end up having to choose among too many devices, 
+making it potentially confusing.
+
+It may also make the review of your application longer before it get published.
+```
+
+### End user authorization
+
+Accessing the hardware devices is a highly privileged operation and therefore user consent 
+must be granted at least once.
+
+This results in a system pop-up being shown upon a new request being made.
+
+In development mode, this may look like:
+
+![USB popup webUSB](usb-popup-dev.png)
+
+The production mode popup will be functionally identical and the Evam SDK will handle them in the same way.

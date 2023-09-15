@@ -1,0 +1,29 @@
+# Interface: UsbTransferResult
+
+[api/hardware/EvamHardwareUsbApi](../modules/api_hardware_EvamHardwareUsbApi.md).UsbTransferResult
+
+The result of a USB transfer operation
+
+## Properties
+
+### data
+
+ **data**: `number`[]
+
+The received data bytes (if read operation)
+
+___
+
+### length
+
+ **length**: `number`
+
+The number of bytes read or written
+
+___
+
+### status
+
+ **status**: `string`
+
+The status message: "ok" or some error message

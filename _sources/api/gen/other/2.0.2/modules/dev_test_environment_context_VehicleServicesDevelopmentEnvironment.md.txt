@@ -1,0 +1,19 @@
+# Module: dev-test-environment/context/VehicleServicesDevelopmentEnvironment
+
+## Functions
+
+### VehicleServicesDevelopmentEnvironment
+
+**VehicleServicesDevelopmentEnvironment**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `Object` |
+| `props.children?` | `ReactNode` |
+| `context?` | `any` |
+
+#### Returns
+
+`ReactElement`<`any`, `any`\>

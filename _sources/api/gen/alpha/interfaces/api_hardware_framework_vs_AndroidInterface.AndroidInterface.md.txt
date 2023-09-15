@@ -1,0 +1,207 @@
+# Interface: AndroidInterface
+
+[api/hardware/framework/vs/AndroidInterface](../modules/api_hardware_framework_vs_AndroidInterface.md).AndroidInterface
+
+## Methods
+
+### deviceClaimInterface
+
+**deviceClaimInterface**(`vendorId`, `interfaceNumber`, `force`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+| `interfaceNumber` | `number` |
+| `force` | `boolean` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceClose
+
+**deviceClose**(`vendorId`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceControlTransferIn
+
+**deviceControlTransferIn**(`vendorId`, `requestType`, `recipient`, `request`, `value`, `index`, `length`, `timeout`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+| `requestType` | `string` |
+| `recipient` | `string` |
+| `request` | `number` |
+| `value` | `number` |
+| `index` | `number` |
+| `length` | `number` |
+| `timeout` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceControlTransferOut
+
+**deviceControlTransferOut**(`vendorId`, `requestType`, `recipient`, `request`, `value`, `index`, `data`, `timeout`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+| `requestType` | `string` |
+| `recipient` | `string` |
+| `request` | `number` |
+| `value` | `number` |
+| `index` | `number` |
+| `data` | `string` |
+| `timeout` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceGetInterfaces
+
+**deviceGetInterfaces**(`vendorId`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceOpen
+
+**deviceOpen**(`vendorId`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceTransferIn
+
+**deviceTransferIn**(`vendorId`, `endpointNumber`, `length`, `timeoutMs`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+| `endpointNumber` | `number` |
+| `length` | `number` |
+| `timeoutMs` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### deviceTransferOut
+
+**deviceTransferOut**(`vendorId`, `endpointNumber`, `data`, `timeoutMs`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `vendorId` | `number` |
+| `endpointNumber` | `number` |
+| `data` | `string` |
+| `timeoutMs` | `number` |
+
+#### Returns
+
+`string`
+
+___
+
+### getDeviceList
+
+**getDeviceList**(): `string`
+
+#### Returns
+
+`string`
+
+___
+
+### hasPermission
+
+**hasPermission**(`productId`, `vendorId`, `serialNumber`): `boolean`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `productId` | `number` |
+| `vendorId` | `number` |
+| `serialNumber` | `string` |
+
+#### Returns
+
+`boolean`
+
+___
+
+### requestPermission
+
+**requestPermission**(`deviceFilterJson`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `deviceFilterJson` | `string` |
+
+#### Returns
+
+`string`
+
+___
+
+### toast
+
+**toast**(): `void`
+
+#### Returns
+
+`void`
