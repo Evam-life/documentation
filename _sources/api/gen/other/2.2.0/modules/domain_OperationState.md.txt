@@ -1,0 +1,5 @@
+# Module: domain/OperationState
+
+## Enumerations
+
+- [default](../enums/domain_OperationState.default.md)

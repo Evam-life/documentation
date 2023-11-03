@@ -1,8 +1,8 @@
 # Deployment
 
-```{admonition} Coming Soon
+```{admonition} Minimum version
 
-This article describes a feature which is currently unavailable but whose API has been finalized and will be released soon.
+Make sure you use the Evam SDK version 2.3.0 or above to use this feature.
 ```
 
 ```{admonition} Evam Developer portal account required
@@ -45,12 +45,16 @@ Once validated, Central Services will download the package and make it available
 ```{admonition} Support
 
 The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.
+
+If you are on Windows, we recommend you use WSL2 for those steps.
+
+See [how to enable WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
 ```
 
 Follow these steps to create a new release of your application.
 
 
-### Step 0 - Setup your package for publishing (do once)
+### Step 1 - Setup your package for publishing (do once)
 
 This step is a one-time only setup that is required to register your application in the Evam platform.
 
@@ -119,12 +123,12 @@ This will produce a compiled version of your application under the `dist/` folde
 You may then create a signed version of this package :
 
 ```shell
-npm run sign
+npm exec evam-sign -- --public public.pem --private private.pem
 ```
 
-The signed package will be available as `<app_id>-<version>.tar.gz`.
+The signed package will be available as `<version>.tar.gz`, the version being taken from the Evam manifest file under `build/evam.json`.
 
-For instance, if the app ID is "com.example.app" and the version is "1.0.0" then package will be `com.example.app-1.0.0.tar.gz`.
+For instance, if the app ID is "1.0.0" then the package will be `1.0.0.tar.gz`.
 
 ### Step 3 - Upload the package to the Developer Portal
 
@@ -154,6 +158,8 @@ You may then push it to the developer portal:
 ```shell
 curl -H "PRIVATE-TOKEN: YOUR_PRIVATE_TOKEN_WITH_API_ACCESS" https://www.developers.evam.life/api/v4/projects/14/packages/generic/APP_ID/VERSION/app.tar.gz
 ```
+
+The `app.tar.gz` corresponds to the signed package you generated at the previous step.
 
 You should get a success message back:
 

@@ -1,0 +1,27 @@
+# Enumeration: BatteryPlugged
+
+[domain/Battery](../modules/domain_Battery.md).BatteryPlugged
+
+## Enumeration Members
+
+### AC
+
+ **AC** = ``1``
+
+___
+
+### DOCK
+
+ **DOCK** = ``0``
+
+___
+
+### USB
+
+ **USB** = ``2``
+
+___
+
+### WIRELESS
+
+ **WIRELESS** = ``4``

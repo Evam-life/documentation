@@ -1,0 +1,95 @@
+# Evam platform runtime
+
+This article describes the environment a certified app is running within when installed in the Evam platform (either through production deployment or sideloading).
+
+## Overview
+
+Your certified app is running within an Android webview. It is served from a local web server and using the Evam SDK as part of your certified app allows it to call the various APIs made available to interact with the Evam platform's Native side.
+
+Additionally, a gRPC proxy is integrated in the Native side to allow for an easy use of `grpc-web` as part of your certified app.
+
+![Overview](Evam_platform_runtime_overview.png)
+
+### Local web server
+
+Building a certified application using the Evam SDK results in a package consisting of Single Page Application (SPA). The local web server is handling the serving of all files this SPA is consisting of, for exclusive use by the Webview associated to your certified app.
+
+The behaviour of this local web server is not customizable, its only function is to serve the application files.
+
+The URL associated to your certified application is following this schema:
+
+```
+https://<APP_SLUG>.microapp.device-local.evam.life/
+```
+
+The `<APP_SLUG>` is determined by the ID of your application. For instance, if your app ID is `com.example.application`, then the `<APP_SLUG>` will be `application.example.com`. As a result, the internal URL of the application will be:
+
+```
+https://application.example.com.microapp.device-local.evam.life/
+```
+
+The DNS server for the domain `microapp.device-local.evam.life` is handled locally, and the local web server uses a TLS certificate trusted by the webview. Thanks to this, the secure context is available. Read more about [Secure Contexts here](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts). 
+
+### Certified app lifecycle
+
+When Vehicle Services starts, all certified apps that are installed in the device are set to start automatically. This means the `index.html`  and its resources will be automatically loaded even if the end user does not open the certified application, enabling "background" routines that you add into the certified application to always run.
+
+### gRPC proxy
+
+```{admonition} Coming Soon
+
+This feature is currently unavailable but its API has been finalized and will be released soon.
+```
+
+gRPC is a modern and high-performance Remote Procedure Call (RPC) framework that has enjoyed increasing popularity over the past years. 
+
+The `grpc-web` library is available for your certified application to use. 
+
+This library requires a proxy to function properly since gRPC relies on HTTP/2, which is not available in web browsers (Android Webview included). Typically, this means a proxy such a Envoy must be used to allow a web application to communicate with a gRPC backend server.
+
+The Evam platform integrates a gRPC proxy that can be used to communicate with any gRPC backend. Each certified application gets exclusive access to an instance of this proxy, specified using the `getGRPC()` method.
+
+```typescript
+const evamApi = new EvamApi();
+
+const grpcAddress = evamApi.getGRPC();  // use this as address for grpc-web clients
+
+// An example gRPC client from https://grpc.io/docs/platforms/web/basics/
+// Use this field to specify the target
+let metadata = {'evam-target-backend': "https://backend.example.com/"}
+let echoService = new EchoServiceClient(grpcAddress, metadata)
+
+// Create request
+var request = new EchoRequest();
+request.setMessage('Hello World!');
+
+// Make unary call
+echoService.echo(request, {}, function(err, response) {
+  // ...
+});
+```
+
+As a result, you do not need to setup any gRPC proxy to communicate with your gRPC backend server.
+
+The gRPC proxy will always use TLS negotiation, attempting to connect to an insecure backend is not supported due to security concerns.
+
+## Recommendations
+
+Here is a set of recommendations to make your certified app deployment a success.
+
+### Error tracking
+
+The Evam platform only tracks the minimum set of health-related metrics within the platform to safeguard the privacy of end users' data. This means errors within certified apps are neither stored within the device nor pushed to some cloud service by design without explicit user action.
+
+If your application and the data it handles are compatible with it, we recommend you use an error tracking service such as [Sentry](https://sentry.io/) to monitor potential errors in the field and other relevant metrics.
+
+Make sure to be mindful about the content of the data sent over such service.
+
+### Communication with backend servers
+
+As part of your deployment in end users' vehicles, you may need to setup other services (physical or not) that may need to be accessed by your certified application. This can typically be some server application running in a computer within the local network of the end user vehicle.
+
+Regardless of the security context of this local network (use of Wi-Fi passwords, RADIUS, etc), we recommend you always secure your communication using TLS and do not rely on plain text. Your certified application runtime environment is a secure context which means plain HTTP calls (as opposed to HTTPS) will fail by design.
+
+Additionally, relying on self-signed certificates is not supported and it is expected that any peer server has a valid certificate signed by a trusted certificate authority prior to any communication being possible. In particular, pay attention to server name validation as it is required.
+

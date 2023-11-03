@@ -1,0 +1,34 @@
+# Module: api/AndroidNativeHelpers
+
+## Variables
+
+### isRunningInVehicleServices
+
+ `Const` **isRunningInVehicleServices**: `boolean`
+
+## Functions
+
+### androidNativeHelpers
+
+**androidNativeHelpers**(`insideVs`): `Object`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `insideVs` | `boolean` |
+
+#### Returns
+
+`Object`
+
+| Name | Type |
+| :------ | :------ |
+| `apiReady` | () => `void` |
+| `clearItems` | () => `void` |
+| `deleteItem` | (`key`: `string`) => `void` |
+| `getItem` | (`key`: `string`) => `any` |
+| `sendNotification` | (`notification`: `_InternalVehicleServicesNotification`) => `void` |
+| `setHospital` | (`id`: `number`) => `void` |
+| `setItem` | (`key`: `string`, `value`: `string`) => `void` |
+| `setPriority` | (`id`: `number`) => `void` |

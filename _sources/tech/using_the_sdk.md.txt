@@ -25,7 +25,7 @@ To install the Evam SDK, add it to `package.json` dependencies:
 ```jsonc
 {
     // ...
-    "@evam-life/sdk": "^2.0.3"   // Note: version may vary
+    "@evam-life/sdk": "~2.3.0"   // Note: version may vary
     // ...
 }
 ```
@@ -64,7 +64,6 @@ All of this can be set in the Evam manifest located under `public/evam.json`, he
     },
     "permissions": [
         "ACTIVE_OPERATION_READ",
-        "SETTINGS_READ",
         "DISPLAY_MODE_READ"
     ],
     "version": "0.0.1",

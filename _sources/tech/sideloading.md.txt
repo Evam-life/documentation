@@ -1,0 +1,100 @@
+# Sideloading your application
+
+```{admonition} Minimum version
+
+Make sure you use the Evam SDK version 2.2.0 or above to use this feature.
+```
+
+```{attention} This is not a Development setup!
+
+Sideloading should be done when your application has been developed and is fully working in the development environment.
+
+Running an app in the Evam platform offers no debugging access or error messages, which is required when an app still undergoes development.
+
+The development environment is implemented to replicate the Evam platform fully, running on real hardware does not require any adaptation.
+```
+
+Once developed, you may wish to run your application in an Evam device to showcase 
+it running within the Evam platform.
+
+To achieve this, you will need access to an Evam device. 
+Get in touch with your Evam representative for this.
+
+## Step 1 - Review your Evam manifest
+
+Under `public/evam.json`, make sure to setup your Evam manifest with all required
+fields. This is required for the platform to load the application correctly.
+
+```{eval-rst}
+See :ref:`using_the_sdk` for the Evam manifest format.
+```
+
+## Step 2 - Build a release version of your application
+
+You should build your application:
+
+```shell
+npm run build
+```
+This will create a `build/` directory with the release application files.
+
+## Step 3 - Connect your Evam device to your computer
+
+Start by physically connecting your Evam device to your computer, 
+your OS should notify you upon successful connection.
+
+Then, make sure developer options and USB debugging are enabled in the Evam device. 
+Refer to [the Android Developer documentation](https://developer.android.com/studio/debug/dev-options) to achieve this.
+Make sure you also grant access to your computer by accepting the popup in the Evam device.
+
+## Step 4 - Install your app by sideloading
+
+You can now sideload your application:
+
+```shell
+npm exec evam-sideload
+```
+
+This command will install all required files to run your application within the 
+Evam platform. Pay attention to its output to know if there is any issue.
+
+A successful install should output something similar to this:
+
+```
+Installing to <SERIAL>...
+Created directory
+Created directory
+Started installation
+Pushing 
+Pushing /asset-manifest.json
+Pushing /evam.json
+Pushing /favicon.ico
+Pushing /index.html
+Pushing /logo.png
+Pushing /manifest.json
+Pushing /robots.txt
+Pushing /static
+Pushing /static/css
+Pushing /static/css/main.87781695.css
+Pushing /static/css/main.87781695.css.map
+Pushing /static/js
+Pushing /static/js/787.cfcfd7eb.chunk.js
+Pushing /static/js/787.cfcfd7eb.chunk.js.map
+Pushing /static/js/main.1431c619.js
+Pushing /static/js/main.1431c619.js.LICENSE.txt
+Pushing /static/js/main.1431c619.js.map
+```
+
+## Step 5 - Run the application
+
+You may now start Vehicle Services on your Evam device.
+
+Your application will show in the GUI shell with your logo and name.
+Clicking its icon will open it.
+
+The application will remain installed, so you do not need to install it again.
+
+If you need to update the installed application, you should re-run this flow from step 3. 
+Keep in mind you will need to restart Vehicle Services for the changes to apply.
+
+At the moment, only one application can be sideloaded at a time, so sideloading a new application replaces the previous one.

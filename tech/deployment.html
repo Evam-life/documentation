@@ -203,7 +203,7 @@
         </li>
         <li class="md-nav__item"><a href="#how-to-publish-a-new-release" class="md-nav__link">How to publish a new release</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#step-0-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 0 - Setup your package for publishing (do once)</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 1 - Setup your package for publishing (do once)</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#create-a-signing-key-for-publishing" class="md-nav__link">Create a signing key for publishing</a>
         </li>
@@ -236,6 +236,13 @@
     <li class="md-nav__item">
     
     
+      <a href="evam_platform_runtime.html" class="md-nav__link">Evam platform runtime</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="getting_started.html" class="md-nav__link">Getting started</a>
       
     
@@ -244,6 +251,13 @@
     
     
       <a href="hardware_apis.html" class="md-nav__link">Hardware APIs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="sideloading.html" class="md-nav__link">Sideloading your application</a>
       
     
     </li>
@@ -281,7 +295,7 @@
         </li>
         <li class="md-nav__item"><a href="#how-to-publish-a-new-release" class="md-nav__link">How to publish a new release</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#step-0-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 0 - Setup your package for publishing (do once)</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 1 - Setup your package for publishing (do once)</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#create-a-signing-key-for-publishing" class="md-nav__link">Create a signing key for publishing</a>
         </li>
@@ -310,9 +324,9 @@
             
   <section id="deployment">
 <h1 id="tech-deployment--page-root">Deployment<a class="headerlink" href="#tech-deployment--page-root" title="Permalink to this heading">¶</a></h1>
-<div class="admonition-coming-soon admonition">
-<p class="admonition-title">Coming Soon</p>
-<p>This article describes a feature which is currently unavailable but whose API has been finalized and will be released soon.</p>
+<div class="admonition-minimum-version admonition">
+<p class="admonition-title">Minimum version</p>
+<p>Make sure you use the Evam SDK version 2.3.0 or above to use this feature.</p>
 </div>
 <div class="admonition-evam-developer-portal-account-required admonition">
 <p class="admonition-title">Evam Developer portal account required</p>
@@ -345,10 +359,12 @@ on the size and nature of the update.</p>
 <div class="admonition-support admonition">
 <p class="admonition-title">Support</p>
 <p>The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.</p>
+<p>If you are on Windows, we recommend you use WSL2 for those steps.</p>
+<p>See <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">how to enable WSL</a>.</p>
 </div>
 <p>Follow these steps to create a new release of your application.</p>
-<section id="step-0-setup-your-package-for-publishing-do-once">
-<h3 id="step-0-setup-your-package-for-publishing-do-once">Step 0 - Setup your package for publishing (do once)<a class="headerlink" href="#step-0-setup-your-package-for-publishing-do-once" title="Permalink to this heading">¶</a></h3>
+<section id="step-1-setup-your-package-for-publishing-do-once">
+<h3 id="step-1-setup-your-package-for-publishing-do-once">Step 1 - Setup your package for publishing (do once)<a class="headerlink" href="#step-1-setup-your-package-for-publishing-do-once" title="Permalink to this heading">¶</a></h3>
 <p>This step is a one-time only setup that is required to register your application in the Evam platform.</p>
 <section id="create-a-signing-key-for-publishing">
 <h4 id="create-a-signing-key-for-publishing">Create a signing key for publishing<a class="headerlink" href="#create-a-signing-key-for-publishing" title="Permalink to this heading">¶</a></h4>
@@ -395,11 +411,11 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 </div>
 <p>This will produce a compiled version of your application under the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> folder.</p>
 <p>You may then create a signed version of this package :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>run<span class="w"> </span>sign
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>evam-sign<span class="w"> </span>--<span class="w"> </span>--public<span class="w"> </span>public.pem<span class="w"> </span>--private<span class="w"> </span>private.pem
 </pre></div>
 </div>
-<p>The signed package will be available as <code class="docutils literal notranslate"><span class="pre">&lt;app_id&gt;-&lt;version&gt;.tar.gz</span></code>.</p>
-<p>For instance, if the app ID is “com.example.app” and the version is “1.0.0” then package will be <code class="docutils literal notranslate"><span class="pre">com.example.app-1.0.0.tar.gz</span></code>.</p>
+<p>The signed package will be available as <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;.tar.gz</span></code>, the version being taken from the Evam manifest file under <code class="docutils literal notranslate"><span class="pre">build/evam.json</span></code>.</p>
+<p>For instance, if the app ID is “1.0.0” then the package will be <code class="docutils literal notranslate"><span class="pre">1.0.0.tar.gz</span></code>.</p>
 </section>
 <section id="step-3-upload-the-package-to-the-developer-portal">
 <h3 id="step-3-upload-the-package-to-the-developer-portal">Step 3 - Upload the package to the Developer Portal<a class="headerlink" href="#step-3-upload-the-package-to-the-developer-portal" title="Permalink to this heading">¶</a></h3>
@@ -424,6 +440,7 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"PRIVATE-TOKEN: YOUR_PRIVATE_TOKEN_WITH_API_ACCESS"</span><span class="w"> </span>https://www.developers.evam.life/api/v4/projects/14/packages/generic/APP_ID/VERSION/app.tar.gz
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">app.tar.gz</span></code> corresponds to the signed package you generated at the previous step.</p>
 <p>You should get a success message back:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"201 Created"</span><span class="p">}</span>
 </pre></div>

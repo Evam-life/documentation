@@ -16,7 +16,7 @@ The installation process of the Evam SDK builds on top of a standard Node.js set
 ```{admonition} Requirements
 Make sure the following software is available on your system:
 
-- Node.js 14 or later with NPM and NPX
+- Node.js 16 or later with NPM and NPX
 - Linux-based OS, Windows 10 (including WSL) or MacOS
 
 You will need an account on [the Evam developer portal](https://www.developers.evam.life) when it is time to deploy your application for production.
@@ -54,7 +54,7 @@ The Evam SDK should be already part of the dependencies in `package.json`:
 ```jsonc
 {
     // ...
-    "@evam-life/sdk": "^2.0.3"   // Note: version will evolve with new releases of the SDK
+    "@evam-life/sdk": "~2.3.0"   // Note: version will evolve with new releases of the SDK
     // ...
 }
 ```
@@ -69,7 +69,7 @@ your `package.json`.
 ```jsonc
 {
     // ...
-    "@evam-life/sdk": "^2.0.3"   // Note: version will evolve with new releases of the SDK
+    "@evam-life/sdk": "~2.3.0"   // Note: version will evolve with new releases of the SDK
     // ...
 }
 ```
