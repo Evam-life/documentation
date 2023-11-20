@@ -85,6 +85,32 @@ ___
 
 ## Methods
 
+### deleteNavLayer
+
+**deleteNavLayer**(`id`): `void`
+
+Deletes a layer by its ID. A certified app can only delete a layer it has created.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer (if the layer doesn't exist then one will be created) |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions NAVIGATION_PRIVATE_LAYERS
+
+**`Preview`**
+
+This function is currently available in the Development Environment only.
+
+___
+
 ### getAppId
 
 **getAppId**(): `string`
@@ -664,6 +690,62 @@ Sets the selected hospital id for the current active operation. The id must be p
 **`Requires`**
 
 Permissions ACTIVE_OPERATION_WRITE
+
+___
+
+### setNavLayerPoint
+
+**setNavLayerPoint**(`id`, `layerData`): `void`
+
+Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of points on the map with text and icon at the specified lat and lon
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer (if the layer doesn't exist then one will be created) |
+| `layerData` | [`LayerPointData`](../modules/domain_LayerData.md#layerpointdata)[] | array of points to be shown with text and icon. Note that the icon of the first element will be used for all points. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions NAVIGATION_PRIVATE_LAYERS
+
+**`Preview`**
+
+This function is currently available in the Development Environment only.
+
+___
+
+### setNavLayerShape
+
+**setNavLayerShape**(`id`, `layerData`): `void`
+
+Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of shapes on the map with the text in its center.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer (if the layer doesn't exist then one will be created) |
+| `layerData` | [`LayerShapeData`](../modules/domain_LayerData.md#layershapedata)[] | array of shapes to be shown with text and shape color (format: "#AARRGGBB", just like the SC buttons) |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions NAVIGATION_PRIVATE_LAYERS
+
+**`Preview`**
+
+This function is currently available in the Development Environment only.
 
 ___
 

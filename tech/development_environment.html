@@ -361,6 +361,74 @@ render your app inside Vehicle Services but none of the Development Environment 
 <span class="nx">evamApi</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="nx">notification</span><span class="p">);</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><strong>Map</strong></p></li>
+</ul>
+<div class="admonition-minimum-version admonition">
+<p class="admonition-title">Minimum version</p>
+<p>Make sure you use the Evam SDK version 2.4.1 or above to use this feature.</p>
+</div>
+<div class="admonition-preview admonition">
+<p class="admonition-title">Preview</p>
+<p>This is currently available as a preview API, which means it cannot be
+used in a production deployment yet.</p>
+</div>
+<p>The Development Environment provides a basic Map to allow you to preview the effects of calling some APIs such as <code class="docutils literal notranslate"><span class="pre">EvamApi.setNavLayerPoint(...)</span></code>.</p>
+<p>This Map will appear if its feature flag is set:</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">VehicleServicesDevelopmentEnvironment</span><span class="w"> </span><span class="na">showFullDeviceView</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">VehicleServicesDevelopmentEnvironment</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>You may then add objects to the map:</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">();</span>
+
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">setNavLayerPoint</span><span class="p">(</span><span class="s2">"layer-point-stockholm"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">"Stockholm"</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">// Image from your 'public' folder</span>
+<span class="w">        </span><span class="c1">// Note that all points in the same layer must have the same icon</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s2">"location-icon.png"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">point</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.32782768407381</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.061689825305674</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">])</span>
+
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">setNavLayerShape</span><span class="p">(</span><span class="s2">"layer-shape-gamla-stan"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">"Gamla Stan"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">"#ff8000"</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">points</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.327684</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.060225</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.327684</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.077854</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.321029</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.077854</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.321029</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.060225</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">latitude</span><span class="o">:</span><span class="w"> </span><span class="kt">59.327684</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">longitude</span><span class="o">:</span><span class="w"> </span><span class="kt">18.060225</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]);</span>
+</pre></div>
+</div>
+<p>Which will yield:</p>
+<p><img alt="Development environment map" src="../_images/dev_env_map.png"/></p>
 </section>
 </section>
 

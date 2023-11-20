@@ -57,7 +57,7 @@
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Module: api/AndroidWrapper" href="api_AndroidWrapper.html" />
+    <link rel="next" title="Module: component/appbar/EvamTabContext" href="component_appbar_EvamTabContext.html" />
     <link rel="prev" title="Module: EvamApi" href="EvamApi.html" />
   
    
@@ -333,19 +333,28 @@
 <tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">deleteItem</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">getItem</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">deleteNavLayer</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">getItem</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">any</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sendNotification</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">sendNotification</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">notification</span></code>: <code class="docutils literal notranslate"><span class="pre">_InternalVehicleServicesNotification</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setHospital</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setHospital</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">number</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setItem</span></code></p></td>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setItem</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setPriority</span></code></p></td>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setNavLayerPoint</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">layerData</span></code>: <a class="reference internal" href="domain_LayerData.html#layerpointdata"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LayerPointData</span></code></span></a>[]) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setNavLayerShape</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">layerData</span></code>: <a class="reference internal" href="domain_LayerData.html#layershapedata"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LayerShapeData</span></code></span></a>[]) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setPriority</span></code></p></td>
 <td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">id</span></code>: <code class="docutils literal notranslate"><span class="pre">number</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
 </tbody>
@@ -379,12 +388,12 @@
             </a>
           
           
-            <a href="api_AndroidWrapper.html" title="Module: api/AndroidWrapper"
+            <a href="component_appbar_EvamTabContext.html" title="Module: component/appbar/EvamTabContext"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Module: api/AndroidWrapper </span>
+                class="md-footer-nav__direction"> "Next" </span> Module: component/appbar/EvamTabContext </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

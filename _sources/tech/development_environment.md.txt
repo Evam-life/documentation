@@ -69,3 +69,79 @@ const notification = Notification.fromJSON({
 
 evamApi.sendNotification(notification);
 ```
+
+- **Map**
+
+```{admonition} Minimum version
+
+Make sure you use the Evam SDK version 2.4.1 or above to use this feature.
+```
+
+```{admonition} Preview
+
+This is currently available as a preview API, which means it cannot be 
+used in a production deployment yet.
+```
+
+The Development Environment provides a basic Map to allow you to preview the effects of calling some APIs such as `EvamApi.setNavLayerPoint(...)`.
+
+This Map will appear if its feature flag is set:
+
+```jsx
+<VehicleServicesDevelopmentEnvironment showFullDeviceView={true}>
+    <App/>
+</VehicleServicesDevelopmentEnvironment>
+```
+
+You may then add objects to the map:
+
+```typescript
+const evamApi = new EvamApi();
+
+evamApi.setNavLayerPoint("layer-point-stockholm", [
+    {
+        text: "Stockholm",
+
+        // Image from your 'public' folder
+        // Note that all points in the same layer must have the same icon
+        icon: "location-icon.png",
+        point: {
+            latitude: 59.32782768407381,
+            longitude: 18.061689825305674
+        }
+    }
+])
+
+evamApi.setNavLayerShape("layer-shape-gamla-stan", [
+    {
+        text: "Gamla Stan",
+        color: "#ff8000",
+        points: [
+            {
+                latitude: 59.327684, 
+                longitude: 18.060225
+            },
+            {
+                latitude: 59.327684, 
+                longitude: 18.077854
+            },
+            {
+                latitude: 59.321029, 
+                longitude: 18.077854
+            },
+            {
+                latitude: 59.321029, 
+                longitude: 18.060225
+            },
+            {
+                latitude: 59.327684, 
+                longitude: 18.060225
+            }
+        ]
+    }
+]);
+```
+
+Which will yield:
+
+![Development environment map](dev_env_map.png)
