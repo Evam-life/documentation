@@ -1,0 +1,77 @@
+# Class: Notification
+
+[domain/Notification](../modules/domain_Notification.md).Notification
+
+## Constructors
+
+### constructor
+
+**new Notification**(`heading`, `description`, `notificationType`, `primaryButton`, `secondaryButton`)
+
+Notification to appear in vehicle services
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `heading` | `string` | the main title of the notification |
+| `description` | `string` | extra detail regarding the notification |
+| `notificationType` | [`NotificationType`](../enums/domain_NotificationType.NotificationType.md) | how the notification is displayed |
+| `primaryButton` | `NotificationButton` | primary button label and optional callback |
+| `secondaryButton` | `NotificationButton` | optional secondary button label and optional callback |
+
+## Properties
+
+### description
+
+ **description**: `string`
+
+extra detail regarding the notification
+
+___
+
+### heading
+
+ **heading**: `string`
+
+the main title of the notification
+
+___
+
+### notificationType
+
+ **notificationType**: [`NotificationType`](../enums/domain_NotificationType.NotificationType.md)
+
+how the notification is displayed
+
+___
+
+### primaryButton
+
+ **primaryButton**: `NotificationButton`
+
+primary button label and optional callback
+
+___
+
+### secondaryButton
+
+ **secondaryButton**: `NotificationButton`
+
+optional secondary button label and optional callback
+
+## Methods
+
+### fromJSON
+
+`Static` **fromJSON**(`notification`): [`Notification`](domain_Notification.Notification.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `notification` | `any` |
+
+#### Returns
+
+[`Notification`](domain_Notification.Notification.md)

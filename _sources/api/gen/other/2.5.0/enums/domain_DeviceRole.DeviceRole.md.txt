@@ -1,0 +1,23 @@
+# Enumeration: DeviceRole
+
+[domain/DeviceRole](../modules/domain_DeviceRole.md).DeviceRole
+
+Represents the role of a Vehicle Service device.
+
+## Enumeration Members
+
+### MAIN\_DEVICE
+
+ **MAIN\_DEVICE** = ``"MAIN_DEVICE"``
+
+___
+
+### RECEIVING\_DEVICE
+
+ **RECEIVING\_DEVICE** = ``"RECEIVING_DEVICE"``
+
+___
+
+### SINGLE\_DEVICE
+
+ **SINGLE\_DEVICE** = ``"SINGLE_DEVICE"``

@@ -1,0 +1,21 @@
+# Enumeration: OperationState
+
+[domain/OperationState](../modules/domain_OperationState.md).OperationState
+
+## Enumeration Members
+
+### ACTIVE
+
+ **ACTIVE** = ``"ACTIVE"``
+
+___
+
+### AVAILABLE
+
+ **AVAILABLE** = ``"AVAILABLE"``
+
+___
+
+### COMPLETE
+
+ **COMPLETE** = ``"COMPLETE"``

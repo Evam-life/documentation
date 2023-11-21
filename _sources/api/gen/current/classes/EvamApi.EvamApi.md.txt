@@ -215,6 +215,24 @@ ___
 
 ___
 
+### injectAvailableVehicleStatusList
+
+**injectAvailableVehicleStatusList**(`vehicleStatusList`): `void`
+
+Manually inject the Available Vehicle Status list to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `vehicleStatusList` | [`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)[] | the list of available Vehicle Statuses |
+
+#### Returns
+
+`void`
+
+___
+
 ### injectBattery
 
 **injectBattery**(`battery`): `void`
@@ -361,6 +379,24 @@ This function is to be used for development only and will throw an error when us
 
 ___
 
+### injectRakelState
+
+**injectRakelState**(`rakelState`): `void`
+
+Manually inject the Rakel State to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rakelState` | [`RakelState`](domain_RakelState.RakelState.md) | The Rakel State |
+
+#### Returns
+
+`void`
+
+___
+
 ### injectSettings
 
 **injectSettings**(`settings`): `void`
@@ -452,6 +488,28 @@ Operation is updated.
 **`Requires`**
 
 Permissions ACTIVE_OPERATION_READ
+
+___
+
+### onNewOrUpdatedAvailableVehicleStatusList
+
+**onNewOrUpdatedAvailableVehicleStatusList**(`callback`): `void`
+
+Used to assign a callback when the list of available Vehicle Statuses is created or updated
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)[], `void`\> | The callback with (optional) argument available Vehicle Status list. Use this to access the available Vehicle Statuses. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions AVAILABLE_VEHICLE_STATUS_LIST_READ
 
 ___
 
@@ -584,6 +642,32 @@ Used to assign a callback when the operation list is updated.
 **`Requires`**
 
 Permissions OPERATION_READ
+
+___
+
+### onNewOrUpdatedRakelState
+
+**onNewOrUpdatedRakelState**(`callback`): `void`
+
+Used to assign a callback when the rakel state is created or updated
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`RakelState`](domain_RakelState.RakelState.md), `void`\> | The callback with (optional) argument Rakel state. Use this to access the Rakel state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions RAKEL_STATE_READ
+
+**`Preview`**
+
+This function is currently available in the Development Environment only.
 
 ___
 
