@@ -511,6 +511,10 @@ Used to assign a callback when the list of available Vehicle Statuses is created
 
 Permissions AVAILABLE_VEHICLE_STATUS_LIST_READ
 
+**`Preview`**
+
+This function is currently available in the Development Environment only.
+
 ___
 
 ### onNewOrUpdatedBattery

@@ -1,0 +1,47 @@
+# Enumeration: InternetState
+
+[domain/InternetState](../modules/domain_InternetState.md).InternetState
+
+Represent the state of the internet connection
+
+## Enumeration Members
+
+### CONNECTED\_2G
+
+ **CONNECTED\_2G** = ``"CONNECTED_2G"``
+
+___
+
+### CONNECTED\_3G
+
+ **CONNECTED\_3G** = ``"CONNECTED_3G"``
+
+___
+
+### CONNECTED\_4G
+
+ **CONNECTED\_4G** = ``"CONNECTED_4G"``
+
+___
+
+### CONNECTED\_5G
+
+ **CONNECTED\_5G** = ``"CONNECTED_5G"``
+
+___
+
+### CONNECTED\_EDGE
+
+ **CONNECTED\_EDGE** = ``"CONNECTED_EDGE"``
+
+___
+
+### CONNECTED\_WIFI
+
+ **CONNECTED\_WIFI** = ``"CONNECTED_WIFI"``
+
+___
+
+### NO\_INTERNET
+
+ **NO\_INTERNET** = ``"NO_INTERNET"``
