@@ -1,0 +1,7 @@
+# Module: domain/\_internal/AndroidMethod
+
+## Type Aliases
+
+### AndroidMethod
+
+ **AndroidMethod**: \{ [K in keyof AndroidMethodArgumentMap]: AndroidMethodArgumentMap[K] extends readonly (string \| number \| boolean)[] ? K : never }[keyof [`AndroidMethodArgumentMap`](../interfaces/domain__internal_AndroidMethodArgumentMap.AndroidMethodArgumentMap.md)]
