@@ -103,6 +103,12 @@ ___
 
 ___
 
+### NewOrUpdatedRakelMessages
+
+ **NewOrUpdatedRakelMessages** = ``"newOrUpdatedRakelMessages"``
+
+___
+
 ### NewOrUpdatedSettings
 
  **NewOrUpdatedSettings** = ``"newOrUpdatedSettings"``
@@ -124,6 +130,12 @@ ___
 ### OSVersionSet
 
  **OSVersionSet** = ``"osVersionSet"``
+
+___
+
+### RawRakelActionSent
+
+ **RawRakelActionSent** = ``"rawRakelActionSent"``
 
 ___
 

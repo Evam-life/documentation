@@ -40,6 +40,12 @@ ___
 
 ___
 
+### sendRawRakelAction
+
+ **sendRawRakelAction**: readonly [`string`]
+
+___
+
 ### setHospital
 
  **setHospital**: readonly [`number`]

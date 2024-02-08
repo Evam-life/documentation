@@ -379,6 +379,25 @@ This function is to be used for development only and will throw an error when us
 
 ___
 
+### injectRakelMessages
+
+**injectRakelMessages**(`rakelMessages`): `void`
+
+Inject a list of raw Rakel messages as they would be received from the radio.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rakelMessages` | `string`[] | list of raw Rakel messages. |
+
+#### Returns
+
+`void`
+
+___
+
 ### injectRakelState
 
 **injectRakelState**(`rakelState`): `void`
@@ -649,6 +668,33 @@ Permissions OPERATION_READ
 
 ___
 
+### onNewOrUpdatedRakelMessages
+
+**onNewOrUpdatedRakelMessages**(`callback`): `void`
+
+Used to assign a callback when the incoming Rakel messages are updated.
+The messages are piped though in the raw form as they are received from the radio.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<`string`[], `void`\> | The callback with (optional) argument Rakel messages. Use this to access the incoming Rakel messages. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions RAKEL_COMMUNICATION_READ
+
+**`Preview`**
+
+This function is currently available in the Development Environment only.
+
+___
+
 ### onNewOrUpdatedRakelState
 
 **onNewOrUpdatedRakelState**(`callback`): `void`
@@ -756,6 +802,28 @@ send a notification to vehicle services (or evam-dev-environment if using the de
 **`Requires`**
 
 Permissions SEND_NOTIFICATION
+
+___
+
+### sendRawRakelAction
+
+**sendRawRakelAction**(`rawRakelAction`): `void`
+
+Sends a RawRakelAction to the Rakel radio.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rawRakelAction` | [`RawRakelAction`](domain_RawRakelAction.RawRakelAction.md) | the RawRakelAction to be sent to the radio. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions RAKEL_RAW_COMMAND_SEND
 
 ___
 
