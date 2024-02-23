@@ -1,0 +1,34 @@
+# Vehicle Services Build Flavour
+
+```{attention}
+This feature is exclusive to Strategic Partners.
+```
+
+## Key Features and Benefits
+
+* **Customized branding:** Tailor the appearance of the Vehicle Services platform to match your brand identity. Customize the platform logo, platform name, and splash screen for a cohesive branding experience for your customers.
+* **Platform SW Version Control:** Take charge of the Vehicle Services software version utilized by your customers. With support for two branches, Beta and Production, you can thoroughly test new software versions before deploying updates to your customers.
+
+## Customized Branding
+
+To set up customized branding, please contact your Evam representative or email support@evam.life. To create a new build flavor, you must provide the following information and assets:
+
+- **Thumbnail Image/Logo:** This will serve as the platform logo on the device desktop. Please provide the thumbnail as an SVG file, including a background color, with an aspect ratio of 1:1.
+- **Brand Image/Logo:** This will be used to create your custom splash screen. We recommend using your product or company logo. Please provide the asset as a transparent SVG file. The asset should be visible on a black background. Note that the text "Powered by Evam" will be added adjacent to the provided asset.
+
+
+## Platform SW Version Control
+
+To ensure full control over the Vehicle Services software version used by your customers, new software releases are managed through the following two branches:
+
+- **Beta Branch:** The Beta branch is designated for internal testing before deploying a new release to production. All new Vehicle Services software releases are automatically pushed to the Beta branch, including release candidates (named X.Y.Z rc#) and production releases (named X.Y.Z). Devices labeled as "Development devices" ordered from Evam will automatically be enrolled in the Beta branch.
+
+```{attention}
+Production devices should not be enrolled in the Beta branch.
+```
+
+* **Production branch:** Once a new production release is available, you will receive comprehensive release notes via email at your registered Strategic Partner email address (To register a new email, please contact support@evam.life). The release notes will include instructions on how to upgrade your build flavor to a new Vehicle Services software version. For transparency, the release notes will clearly state the criticality of the update, e.g., "Critical Security Update."
+
+```{attention}
+Only production releases, i.e., no release candidates, can be pushed to the production branch. 
+```
