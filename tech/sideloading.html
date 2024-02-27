@@ -186,6 +186,13 @@
     <li class="md-nav__item">
     
     
+      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool command reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="deployment.html" class="md-nav__link">Deployment</a>
       
     
@@ -241,6 +248,8 @@
         <li class="md-nav__item"><a href="#step-4-install-your-app-by-sideloading" class="md-nav__link">Step 4 - Install your app by sideloading</a>
         </li>
         <li class="md-nav__item"><a href="#step-5-run-the-application" class="md-nav__link">Step 5 - Run the application</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-6-debugging" class="md-nav__link">Step 6 - Debugging</a>
         </li></ul>
             </nav>
         </li>
@@ -295,6 +304,8 @@
         <li class="md-nav__item"><a href="#step-4-install-your-app-by-sideloading" class="md-nav__link">Step 4 - Install your app by sideloading</a>
         </li>
         <li class="md-nav__item"><a href="#step-5-run-the-application" class="md-nav__link">Step 5 - Run the application</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-6-debugging" class="md-nav__link">Step 6 - Debugging</a>
         </li></ul>
             </nav>
         </li>
@@ -315,10 +326,11 @@
 </div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>This is not a Development setup!</p>
+<p>Choose the right Development setup!</p>
 <p>Sideloading should be done when your application has been developed and is fully working in the development environment.</p>
-<p>Running an app in the Evam platform offers no debugging access or error messages, which is required when an app still undergoes development.</p>
-<p>The development environment is implemented to replicate the Evam platform fully, running on real hardware does not require any adaptation.</p>
+<p>Sideloading an app in the Evam platform offers little debugging access or error messages, which is beneficial when an app still undergoes development.</p>
+<p>If your app is still being actively developed, consider using the in-browser development environment to ensure a smooth developer experience.</p>
+<p>See <a class="reference internal" href="development_environment.html#dev-env"><span class="std std-ref">Development environment</span></a> for more information about the available development environments.</p>
 </div>
 <p>Once developed, you may wish to run your application in an Evam device to showcase
 it running within the Evam platform.</p>
@@ -389,6 +401,21 @@ Clicking its icon will open it.</p>
 <p>If you need to update the installed application, you should re-run this flow from step 3.
 Keep in mind you will need to restart Vehicle Services for the changes to apply.</p>
 <p>At the moment, only one application can be sideloaded at a time, so sideloading a new application replaces the previous one.</p>
+</section>
+<section id="step-6-debugging">
+<h2 id="step-6-debugging">Step 6 - Debugging<a class="headerlink" href="#step-6-debugging" title="Permalink to this heading">¶</a></h2>
+<p>There is no proper debugging support when an app is sideloaded at the moment, but you can still access the logs your application is outputting during its runtime.</p>
+<p>If your application is using <code class="docutils literal notranslate"><span class="pre">console.log</span></code> to print debug information, you may see them by accessing the Evam device’s <a class="reference external" href="https://developer.android.com/tools/logcat">logcat</a>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello world!"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>results in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ adb logcat
+[...]
+02-27 17:38:13.597 27534 27534 D WebAppWebChromeClient-life.evam.hydras.microapp.dev: [LOG] Hello world! -- From line 417 at /assets/index-CrvJ8TfU.js
+[...]
+</pre></div>
+</div>
 </section>
 </section>
 

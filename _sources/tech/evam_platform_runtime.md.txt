@@ -28,6 +28,12 @@ The `<APP_SLUG>` is determined by the ID of your application. For instance, if y
 https://application.example.com.microapp.device-local.evam.life/
 ```
 
+```{admonition} Special case - Sideloaded applications
+
+Sideloaded applications are always using this internal URL: `https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/`.
+
+```
+
 The DNS server for the domain `microapp.device-local.evam.life` is handled locally, and the local web server uses a TLS certificate trusted by the webview. Thanks to this, the secure context is available. Read more about [Secure Contexts here](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts). 
 
 ### Certified app lifecycle

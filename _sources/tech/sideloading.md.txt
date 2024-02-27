@@ -5,13 +5,17 @@
 Make sure you use the Evam SDK version 2.2.0 or above to use this feature.
 ```
 
-```{attention} This is not a Development setup!
+```{attention} Choose the right Development setup!
 
 Sideloading should be done when your application has been developed and is fully working in the development environment.
 
-Running an app in the Evam platform offers no debugging access or error messages, which is required when an app still undergoes development.
+Sideloading an app in the Evam platform offers little debugging access or error messages, which is beneficial when an app still undergoes development.
 
-The development environment is implemented to replicate the Evam platform fully, running on real hardware does not require any adaptation.
+If your app is still being actively developed, consider using the in-browser development environment to ensure a smooth developer experience.
+
+```{eval-rst}
+See :ref:`dev_env` for more information about the available development environments.
+
 ```
 
 Once developed, you may wish to run your application in an Evam device to showcase 
@@ -98,3 +102,22 @@ If you need to update the installed application, you should re-run this flow fro
 Keep in mind you will need to restart Vehicle Services for the changes to apply.
 
 At the moment, only one application can be sideloaded at a time, so sideloading a new application replaces the previous one.
+
+## Step 6 - Debugging
+
+There is no proper debugging support when an app is sideloaded at the moment, but you can still access the logs your application is outputting during its runtime.
+
+If your application is using `console.log` to print debug information, you may see them by accessing the Evam device's [logcat](https://developer.android.com/tools/logcat):
+
+```javascript
+console.log("Hello world!")
+```
+
+results in:
+
+```
+$ adb logcat
+[...]
+02-27 17:38:13.597 27534 27534 D WebAppWebChromeClient-life.evam.hydras.microapp.dev: [LOG] Hello world! -- From line 417 at /assets/index-CrvJ8TfU.js
+[...]
+```

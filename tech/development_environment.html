@@ -186,6 +186,13 @@
     <li class="md-nav__item">
     
     
+      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool command reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="deployment.html" class="md-nav__link">Deployment</a>
       
     
@@ -204,6 +211,8 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#tech-development-environment--page-root" class="md-nav__link">Development environment</a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#in-browser" class="md-nav__link">In-browser</a><nav class="md-nav">
+              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
         </li>
         <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a><nav class="md-nav">
@@ -213,6 +222,14 @@
             </nav>
         </li>
         <li class="md-nav__item"><a href="#features" class="md-nav__link">Features</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#in-device" class="md-nav__link">In-Device</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#evam-demo-tool" class="md-nav__link">Evam Demo Tool</a>
+        </li></ul>
+            </nav>
         </li></ul>
             </nav>
         </li>
@@ -286,6 +303,8 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#tech-development-environment--page-root" class="md-nav__link">Development environment</a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#in-browser" class="md-nav__link">In-browser</a><nav class="md-nav">
+              <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
         </li>
         <li class="md-nav__item"><a href="#usage" class="md-nav__link">Usage</a><nav class="md-nav">
@@ -295,6 +314,14 @@
             </nav>
         </li>
         <li class="md-nav__item"><a href="#features" class="md-nav__link">Features</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#in-device" class="md-nav__link">In-Device</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#evam-demo-tool" class="md-nav__link">Evam Demo Tool</a>
+        </li></ul>
+            </nav>
         </li></ul>
             </nav>
         </li>
@@ -309,17 +336,23 @@
             
   <section id="development-environment">
 <span id="dev-env"></span><h1 id="tech-development-environment--page-root">Development environment<a class="headerlink" href="#tech-development-environment--page-root" title="Permalink to this heading">¶</a></h1>
-<p>The Evam SDK Development Environment is a React component intended to assist you in testing your Certified App.
-The Development Environment can be thought of as a ‘Vehicle Services’ emulator that runs in the Web.</p>
+<p>Two options are made available to you when developing and testing your certified app within the Evam platform.</p>
+<p>The first one is the in-browser development environment, it runs fully within your web browser and offers a simple reproduction of the Vehicle Services platform. Since this runs fully within your web browser, you can leverage all the existing development tools React supports including debugging. This is well-suited for active development of your application.</p>
+<p>The second one is an in-device development environment. This is a great tool when your app is close to comletion and you wish to try it in a realistic environment and perform demos of your app within the Evam platform. It offers more limited support for development tools.</p>
+<section id="in-browser">
+<h2 id="in-browser">In-browser<a class="headerlink" href="#in-browser" title="Permalink to this heading">¶</a></h2>
+<p>The Evam SDK Development Environment in-browser is a React component intended to assist you in testing your Certified App.
+The Development Environment can be thought of as a ‘Vehicle Services’ emulator that runs in the Web with limited functionality. This notably includes support for testing Notifications and Map APIs.</p>
+<p>It requires your app to be built using React. Other setups may work but are not officially supported.</p>
 <section id="installation">
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
-<p>Install via the Evam SDK package.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h3>
+<p>Import directly from the Evam SDK package.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">VehicleServicesDevelopmentEnvironment</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk"</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="usage">
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h3>
 <div class="admonition-note admonition">
 <p class="admonition-title">Note</p>
 <p>This is not necessary if you use the Evam React template, see <a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a>.</p>
@@ -331,7 +364,7 @@ The Development Environment can be thought of as a ‘Vehicle Services’ emulat
 </pre></div>
 </div>
 <section id="side-note">
-<h3 id="side-note">Side Note<a class="headerlink" href="#side-note" title="Permalink to this heading">¶</a></h3>
+<h4 id="side-note">Side Note<a class="headerlink" href="#side-note" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>The <strong>VehicleServicesDevelopmentEnvironment</strong> component will detect whether it is running in Vehicle Services and will render appropriately. This means it will still
 render your app inside Vehicle Services but none of the Development Environment components will render to the DOM. Events will also propagate without being consumed by the Developer Environment. This way you need not worry about removing the component for production.</p></li>
@@ -339,7 +372,7 @@ render your app inside Vehicle Services but none of the Development Environment 
 </section>
 </section>
 <section id="features">
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h2>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Notifications</strong></p></li>
 </ul>
@@ -436,6 +469,41 @@ used in a production deployment yet.</p>
 </div>
 <p>Which will yield:</p>
 <p><img alt="Development environment map" src="../_images/dev_env_map.png"/></p>
+</section>
+</section>
+<section id="in-device">
+<h2 id="in-device">In-Device<a class="headerlink" href="#in-device" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>An Evam development device is required. You can purchase one through your Evam sales representative or by sending a mail to support@evam.life.</p>
+</div>
+<p>The Evam SDK Development Environment in-device is a set of tools installed
+in your Evam development device that enables you to test the Evam platform
+functionality as well as develop your application in a smooth way.</p>
+<p>Here are the tools made available to you:</p>
+<ul class="simple">
+<li><p>The Evam device running Vehicle Services - you should have received a login you can use to access the platform;</p></li>
+<li><p>A slot for a sideloaded app in Vehicle Services - this will allow you to run your certified app for demo and testing purposes;</p></li>
+<li><p>The <a class="reference external" href="https://www.demo-tool.portal.evam.life/">Evam Demo Tool</a>, a testing web-app that allows you to inject Operations and simulate the location of your device.</p></li>
+</ul>
+<section id="evam-demo-tool">
+<h3 id="evam-demo-tool">Evam Demo Tool<a class="headerlink" href="#evam-demo-tool" title="Permalink to this heading">¶</a></h3>
+<p>The <a class="reference external" href="https://www.demo-tool.portal.evam.life/">Evam Demo Tool</a> allows you
+to simulate events in Vehicle Services for demo and testing purposes.</p>
+<p>This includes:</p>
+<ul class="simple">
+<li><p>sending new operations and updates to Vehicle Services, simulating sendings by the dispatch;</p></li>
+<li><p>changing the location of the vehicle in Vehicle Services, simulating GPS updates as-if the vehicle was moving.</p></li>
+</ul>
+<p>Those events are grouped in several “Demos” that are made available to you
+with test data. Following them would allow you simulate the lifecycle of an Operation in Vehicle Services, based on the demo type.</p>
+<p>The available demos include:</p>
+<ul class="simple">
+<li><p>Fire department Sweden,</p></li>
+<li><p>Ambulance Sweden.</p></li>
+</ul>
+<p>Additionally, you can send your own events using the “Developer zone”.</p>
+</section>
 </section>
 </section>
 

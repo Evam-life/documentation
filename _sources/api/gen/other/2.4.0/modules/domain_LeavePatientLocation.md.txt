@@ -1,5 +1,0 @@
-# Module: domain/LeavePatientLocation
-
-## Classes
-
-- [LeavePatientLocation](../classes/domain_LeavePatientLocation.LeavePatientLocation.md)

@@ -186,6 +186,13 @@
     <li class="md-nav__item">
     
     
+      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool command reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="deployment.html" class="md-nav__link">Deployment</a>
       
     
@@ -342,6 +349,10 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">&lt;APP_SLUG&gt;</span></code> is determined by the ID of your application. For instance, if your app ID is <code class="docutils literal notranslate"><span class="pre">com.example.application</span></code>, then the <code class="docutils literal notranslate"><span class="pre">&lt;APP_SLUG&gt;</span></code> will be <code class="docutils literal notranslate"><span class="pre">application.example.com</span></code>. As a result, the internal URL of the application will be:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">application</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">microapp</span><span class="o">.</span><span class="n">device</span><span class="o">-</span><span class="n">local</span><span class="o">.</span><span class="n">evam</span><span class="o">.</span><span class="n">life</span><span class="o">/</span>
 </pre></div>
+</div>
+<div class="admonition-special-case-sideloaded-applications admonition">
+<p class="admonition-title">Special case - Sideloaded applications</p>
+<p>Sideloaded applications are always using this internal URL: <code class="docutils literal notranslate"><span class="pre">https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/</span></code>.</p>
 </div>
 <p>The DNS server for the domain <code class="docutils literal notranslate"><span class="pre">microapp.device-local.evam.life</span></code> is handled locally, and the local web server uses a TLS certificate trusted by the webview. Thanks to this, the secure context is available. Read more about <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts">Secure Contexts here</a>.</p>
 </section>

@@ -1,0 +1,63 @@
+# Evam Demo Tool command reference
+
+Here are all available commands you can send through the Demo Tool's
+Developer zone.
+
+## Location
+
+This will update the location of the vehicle in Vehicle Services.
+
+```json
+{"type": "location", "value": {"latitude": 59.356065,"longitude": 17.968331}}
+```
+
+## Route
+
+This will update the location of the vehicle along a route.
+
+```json
+{
+    "type": "route",
+    "value": [
+        {"latitude": 59.363155, "longitude": 18.025612, "sleep": 6000},
+        {"latitude": 59.363493, "longitude": 18.02568, "sleep": 1000},
+        {"latitude": 59.363717, "longitude": 18.025761, "sleep": 1000},
+        {"latitude": 59.364143, "longitude": 18.025904, "sleep": 1000},
+        {"latitude": 59.364146, "longitude": 18.026173, "sleep": 1500},
+        {"latitude": 59.364153, "longitude": 18.026436, "sleep": 1500},
+        {"latitude": 59.364211, "longitude": 18.026603, "sleep": 1500},
+        {"latitude": 59.364274, "longitude": 18.026719, "sleep": 1500}
+    ]
+}
+```
+
+The `sleep` field specifies how long (in ms) should the application wait until moving to the next location.
+
+## Com-coder
+
+This will inject an Operation using the same format as the Dispatch from SOS Alarm in Sweden.
+
+This is an example "10200" profile intended for fire and rescue usage:
+
+```json
+{
+    "type": "comcoder", 
+    "raw": "{0x12}10200{0x13}18{0x13}1358263{0x13}1{0x13}{CURDATE} {CURTIME+0}{0x13}{CURDATE} {CURTIME-20}{0x13}1{0x13}Trafikolycka{0x13}Personbil{0x13}Övrigt{0x13}{0x13}Tre bilar inblandade. Två skadade. En person fastklämd enligt ambulans på plats. Avvakta skyddsfordon vid brytpunkt.{0x13}E4 Norrgående{0x13}Stockholm{0x13}Stockholm{0x13}{0x13}La = 59° 22,0949'N    Lo = 018° 1,2303'E{0x13}{0x13}101-0090{0x16}Framme{0x16}Stockholm{0x13}240-1-9230022{0x16}230 RtjIns-1{0x15}240-1-9030011{0x16}Sthm RAPS-01{0x13}{0x13}{0x13}{0x13}La = 59° 21,8576'N    Lo = 018° 1,6015'E{0x13}Parkering avfart Haga Norra{0x13}{0x13}{0x13}{0x13}{0x13}{0x13}{0x13}{0x13}{0x14}"
+}
+```
+
+And an example "10036" profile for ambulance usage:
+
+```json
+{
+    "type": "comcoder", 
+    "raw": "{0x12}10036{0x13}3{0x13}34{0x13}1{0x13}{CURDATE} {CURTIME+0}{0x13}Test{0x13}Testkort{0x13}Man ca 60{0x13}1{0x13}Bröstsmärtor{0x13}Smärtor i skuldror, armar eller käkar{0x13}Övrigt{0x13}Hög risk av hjärtinfarkt. Andningsproblem, osammanhängande tal.{0x13}E4 Norrgående{0x13}Stockholm{0x13}Stockholm{0x13}{0x13}{0x13}{0x13}La = 59° 22,0949'N    Lo = 018° 1,2303'E{0x13}{0x13}{CURDATE} {CURTIME+0}{0x13}Eugeniavägen{0x13}164{0x13}Stockholm-Karolinska{0x13}Stockholm{0x13}{CURDATE} {CURTIME+300}{0x13}{0x13}La = 59° 21,0136'N  Lo = 18° 2,0541'E{0x13}{0x13}Test Medicinsk{0x13}Framme infart{0x13}240-1-9230022{0x16}230 SjvIns-1{0x15}240-1-9888565{0x16}Sthm RAPS-01{0x13}{0x13}{CURDATE} {CURTIME+30}{0x13}08-123456{0x13}314-9610{0x16}Stockholm{0x13}{0x13}Händelsen inträffade under lunchen{0x13}{0x14}"
+}
+```
+
+You can specify placeholder elements in "raw" that will be substituted when injected:
+
+- `{0x...}`: Delimiter bytes, specific to the profile - you should not need to modify them from the examples above,
+- `{CURDATE}`: Inject today's date,
+- `{CURTIME+N}` or `{CURTIME-N}`: Inject the current time, plus or minus `N` seconds.
+

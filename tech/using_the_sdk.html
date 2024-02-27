@@ -186,6 +186,13 @@
     <li class="md-nav__item">
     
     
+      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool command reference</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="deployment.html" class="md-nav__link">Deployment</a>
       
     
@@ -261,7 +268,7 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#read-the-evam-platform-data" class="md-nav__link">Read the Evam platform data</a>
         </li>
-        <li class="md-nav__item"><a href="#simulate-events-in-a-development-environment" class="md-nav__link">Simulate events in a development environment</a>
+        <li class="md-nav__item"><a href="#simulate-events-in-the-in-browser-development-environment" class="md-nav__link">Simulate events in the in-browser development environment</a>
         </li></ul>
             </nav>
         </li>
@@ -326,7 +333,7 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#read-the-evam-platform-data" class="md-nav__link">Read the Evam platform data</a>
         </li>
-        <li class="md-nav__item"><a href="#simulate-events-in-a-development-environment" class="md-nav__link">Simulate events in a development environment</a>
+        <li class="md-nav__item"><a href="#simulate-events-in-the-in-browser-development-environment" class="md-nav__link">Simulate events in the in-browser development environment</a>
         </li></ul>
             </nav>
         </li>
@@ -786,7 +793,7 @@
 </ul>
 <section id="read-the-evam-platform-data">
 <h3 id="read-the-evam-platform-data">Read the Evam platform data<a class="headerlink" href="#read-the-evam-platform-data" title="Permalink to this heading">¶</a></h3>
-<p>There are 7 objects that can be read from the Evam platform:</p>
+<p>There are many objects that can be read from the Evam platform:</p>
 <ul class="simple">
 <li><p>The <strong>Operation</strong>:<br/>
 it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle (“Active operation”). The SDK v2 adds a function to observe all operations received in the Evam platform.</p></li>
@@ -802,6 +809,13 @@ one of seven possible values where ‘NO_INTERNET’ means no connection whatsoe
 vehicle state stores various data regarding the logged in vehicle. Such data are vehicle status, active case full id, vehicle location and whatnot.</p></li>
 <li><p>The <strong>Trip Location History</strong>:<br/>
 stores an array of Location objects representing the trip history.</p></li>
+<li><p>The <strong>Available Vehicle Status list</strong>:<br/>
+all the possible Vehicle Status values that can be selected by the end user. Those are typically engaged in sequence and describe, among other things, the status of the Operation (accepted, on the way to site, complete, etc).</p></li>
+<li><p>The <strong>Battery state</strong>:<br/>
+details about the Evam device’s battery are provided such as its charge state, or health status.</p></li>
+<li><p>The <strong>Display mode</strong>: light or dark.</p></li>
+<li><p>The <strong>Rakel state</strong>:<br/>
+various details about the Rakel radio connected to the Evam device.</p></li>
 </ul>
 <p>To use this SDK, instantiate <code class="docutils literal notranslate"><span class="pre">EvamApi()</span></code> and access its observer functions.</p>
 <div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">EvamApi</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@evam-life/sdk"</span><span class="p">;</span>
@@ -826,8 +840,8 @@ starts. The typical pattern is to handle each update from <code class="docutils 
 the observed data in your preferred application data store, such as Redux.</p>
 <p>Check the <a class="reference internal" href="../api/modules.html#sdk-reference"><span class="std std-ref">SDK reference</span></a> for a comprehensive list of the available API functions.</p>
 </section>
-<section id="simulate-events-in-a-development-environment">
-<h3 id="simulate-events-in-a-development-environment">Simulate events in a development environment<a class="headerlink" href="#simulate-events-in-a-development-environment" title="Permalink to this heading">¶</a></h3>
+<section id="simulate-events-in-the-in-browser-development-environment">
+<h3 id="simulate-events-in-the-in-browser-development-environment">Simulate events in the in-browser development environment<a class="headerlink" href="#simulate-events-in-the-in-browser-development-environment" title="Permalink to this heading">¶</a></h3>
 <p>The Operations and Settings will be provided by the Evam platform as shown below, but you may simulate incoming Operations and Settings updates in a development environment (i.e. a web browser such as Chrome or Firefox running on your development computer). This allows you to test those scenarios with proper tooling and without needing an Evam device.</p>
 <p>It is compatible with test libraries such as <code class="docutils literal notranslate"><span class="pre">jest</span></code>.</p>
 <p>This is how you may inject such events using the API:</p>

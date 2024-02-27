@@ -446,7 +446,7 @@ The guiding principles behind the API functions are:
 
 ### Read the Evam platform data
 
-There are 7 objects that can be read from the Evam platform:
+There are many objects that can be read from the Evam platform:
 
 - The **Operation**:\
 it describes a mission being assigned to an emergency vehicle and is meant to be a wrapper over region-specific data frames such as the SOS profiles in Sweden. Contrary to those, an Operation in the Evam SDK always has the same fields and these fields have the same types. In the SDK v1, the only Operation that can be obtained is the one currently being worked on by the vehicle ("Active operation"). The SDK v2 adds a function to observe all operations received in the Evam platform.
@@ -462,6 +462,14 @@ one of seven possible values where 'NO_INTERNET' means no connection whatsoever.
 vehicle state stores various data regarding the logged in vehicle. Such data are vehicle status, active case full id, vehicle location and whatnot.
 - The **Trip Location History**:\
 stores an array of Location objects representing the trip history.
+- The **Available Vehicle Status list**:\
+all the possible Vehicle Status values that can be selected by the end user. Those are typically engaged in sequence and describe, among other things, the status of the Operation (accepted, on the way to site, complete, etc).
+- The **Battery state**:\
+details about the Evam device's battery are provided such as its charge state, or health status.
+- The **Display mode**: light or dark.
+- The **Rakel state**:\
+various details about the Rakel radio connected to the Evam device.
+
 
 To use this SDK, instantiate `EvamApi()` and access its observer functions.
 
@@ -493,7 +501,7 @@ Check the :ref:`sdk-reference` for a comprehensive list of the available API fun
 ```
 
 
-### Simulate events in a development environment
+### Simulate events in the in-browser development environment
 
 The Operations and Settings will be provided by the Evam platform as shown below, but you may simulate incoming Operations and Settings updates in a development environment (i.e. a web browser such as Chrome or Firefox running on your development computer). This allows you to test those scenarios with proper tooling and without needing an Evam device.
 

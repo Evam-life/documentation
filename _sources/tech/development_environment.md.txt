@@ -4,18 +4,28 @@
 
 # Development environment
 
-The Evam SDK Development Environment is a React component intended to assist you in testing your Certified App.
-The Development Environment can be thought of as a 'Vehicle Services' emulator that runs in the Web.
+Two options are made available to you when developing and testing your certified app within the Evam platform.
 
-## Installation
+The first one is the in-browser development environment, it runs fully within your web browser and offers a simple reproduction of the Vehicle Services platform. Since this runs fully within your web browser, you can leverage all the existing development tools React supports including debugging. This is well-suited for active development of your application.
 
-Install via the Evam SDK package.
+The second one is an in-device development environment. This is a great tool when your app is close to comletion and you wish to try it in a realistic environment and perform demos of your app within the Evam platform. It offers more limited support for development tools.
+
+## In-browser
+
+The Evam SDK Development Environment in-browser is a React component intended to assist you in testing your Certified App.
+The Development Environment can be thought of as a 'Vehicle Services' emulator that runs in the Web with limited functionality. This notably includes support for testing Notifications and Map APIs.
+
+It requires your app to be built using React. Other setups may work but are not officially supported.
+
+### Installation
+
+Import directly from the Evam SDK package.
 
 ```javascript
 import {VehicleServicesDevelopmentEnvironment} from "@evam-life/sdk";
 ```
 
-## Usage
+### Usage
 
 ```{admonition} Note
 
@@ -32,12 +42,12 @@ Simply wrap your app with the **VehicleServicesDevelopmentEnvironment** componen
 </VehicleServicesDevelopmentEnvironment>
 ```
 
-### Side Note
+#### Side Note
 
 - The **VehicleServicesDevelopmentEnvironment** component will detect whether it is running in Vehicle Services and will render appropriately. This means it will still 
 render your app inside Vehicle Services but none of the Development Environment components will render to the DOM. Events will also propagate without being consumed by the Developer Environment. This way you need not worry about removing the component for production.
 
-## Features
+### Features
 
 - **Notifications**
 
@@ -145,3 +155,41 @@ evamApi.setNavLayerShape("layer-shape-gamla-stan", [
 Which will yield:
 
 ![Development environment map](dev_env_map.png)
+
+## In-Device
+
+```{admonition} Note
+
+An Evam development device is required. You can purchase one through your Evam sales representative or by sending a mail to support@evam.life.
+
+```
+
+The Evam SDK Development Environment in-device is a set of tools installed
+in your Evam development device that enables you to test the Evam platform
+functionality as well as develop your application in a smooth way.
+
+Here are the tools made available to you:
+
+- The Evam device running Vehicle Services - you should have received a login you can use to access the platform;
+- A slot for a sideloaded app in Vehicle Services - this will allow you to run your certified app for demo and testing purposes;
+- The [Evam Demo Tool](https://www.demo-tool.portal.evam.life/), a testing web-app that allows you to inject Operations and simulate the location of your device.
+
+### Evam Demo Tool
+
+The [Evam Demo Tool](https://www.demo-tool.portal.evam.life/) allows you
+to simulate events in Vehicle Services for demo and testing purposes.
+
+This includes:
+
+- sending new operations and updates to Vehicle Services, simulating sendings by the dispatch;
+- changing the location of the vehicle in Vehicle Services, simulating GPS updates as-if the vehicle was moving.
+
+Those events are grouped in several "Demos" that are made available to you
+with test data. Following them would allow you simulate the lifecycle of an Operation in Vehicle Services, based on the demo type.
+
+The available demos include:
+
+- Fire department Sweden,
+- Ambulance Sweden.
+
+Additionally, you can send your own events using the "Developer zone".
