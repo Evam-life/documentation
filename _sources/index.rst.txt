@@ -18,7 +18,16 @@ This is a list of all articles in the documentation.
    :glob:
    :maxdepth: 1
    
+   tech/getting_started
+   tech/using_the_sdk
+   tech/development_environment
+   tech/sideloading
+   tech/demo_tool_commands_reference
+   tech/evam_platform_runtime
+   tech/hardware_apis
+   tech/deployment
+   tech/vehicle_services_build_flavour
    design_guidelines/*
-   tech/*
+   release_notes/*
    api/*
 

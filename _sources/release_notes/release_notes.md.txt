@@ -1,0 +1,44 @@
+# Changelog | Vehicle Services
+
+
+## 5.1.1
+
+2024-02-26
+
+### Highlights
+- **The map layer "Vehicles on your case":** The map layer "Vehicles on your case," which displays all vehicles associated with the same case on the map, has been improved to support and function for all available formats and handling of SOS case numbers and case folders.
+- **Stability improvements related to dispatch:** We have improved the handling of cases in the Operations application for situations where the GPS position of the event is missing in the alarm information. No navigation is initiated if the GPS position is not available in the case information. However, all other information, including any specified address in free text, will be displayed correctly.
+
+### Additional changes
+
+(none)
+
+
+## 5.1.0
+
+2024-02-14
+
+### Highlights
+- **Search for coordinates and navigate directly in the Navigation app:** It is now possible to enter GPS coordinates directly into the search field of the Navigation application in order to navigate to them. The search field can accept coordinates in both SWEREF 99 and WGS 84 Decimal formats. Longitude and Latitude can be separated by commas, spaces, or semicolons. When the coordinates are correctly formatted, they will appear as a search result from which navigation can be initiated.
+
+
+### Additional changes
+
+(none)
+
+
+## 5.0.8
+
+2024-02-06
+
+### Highlights
+
+- **The arrival experience in navigation is improved to provide support up to the exact position of the alarm:** Just as before, the navigation application will guide you along drivable roads as close as possible to the case's position. To enhance the quality of the case and offer support all the way to its position, such as in townhouse areas or terrain, the following improvements are made:
+    -  A dashed line is added between the drivable road and the case's position.
+    - Upon arrival at the last point on the drivable road, the dashed line will start indicating the direction between the vehicle and the case's position, and the map's zoom level will be adjusted to show both the vehicle's position and the case's position in the view. Meanwhile, the map's orientation (the vehicle's direction of travel or north) will be maintained based on the user's preference.
+    - The dashed line will be displayed until the route is manually ended or the "You have arrived" card is dismissed.
+
+
+### Additional changes
+
+- The notification for a changed destination has been given a clearer title.

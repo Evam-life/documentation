@@ -1,7 +1,9 @@
-# Evam Demo Tool command reference
+# Evam Demo Tool
 
 Here are all available commands you can send through the Demo Tool's
 Developer zone.
+
+**You can access it here: [Evam Demo Tool](https://www.demo-tool.portal.evam.life/).**
 
 ## Location
 

@@ -396,3 +396,9 @@ a {
 .card:hover .sdk-ref-img {
     content: url('assets/img/svg/Hover SDK reference.svg');
 }
+
+/* Prefetch assets to avoid jerkiness when hovering*/
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content:url('assets/img/svg/Hover SDK reference.svg') url('assets/img/svg/Hover Using the Evam SDK.svg') url('assets/img/svg/Hover Development environment.svg') url('assets/img/svg/Hover Deployment.svg') url('assets/img/svg/Hover Design guidelines.svg') url('assets/img/svg/hover- Getting started.svg');
+}

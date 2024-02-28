@@ -59,8 +59,8 @@
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Development environment" href="development_environment.html" />
-    <link rel="prev" title="Evam Demo Tool command reference" href="demo_tool_commands_reference.html" />
+    <link rel="next" title="Vehicle Services Build Flavour" href="vehicle_services_build_flavour.html" />
+    <link rel="prev" title="Hardware APIs" href="hardware_apis.html" />
   
    
 
@@ -181,14 +181,49 @@
     <li class="md-nav__item">
     
     
-      <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      <a href="getting_started.html" class="md-nav__link">Getting started</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool command reference</a>
+      <a href="using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="sideloading.html" class="md-nav__link">Sideloading your application</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="evam_platform_runtime.html" class="md-nav__link">Evam platform runtime</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="hardware_apis.html" class="md-nav__link">Hardware APIs</a>
       
     
     </li>
@@ -208,9 +243,9 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#overview" class="md-nav__link">Overview</a>
         </li>
-        <li class="md-nav__item"><a href="#how-to-publish-a-new-release" class="md-nav__link">How to publish a new release</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#how-to-publish-a-new-application-do-once-per-certified-application" class="md-nav__link">How to publish a new application (do once per certified application)</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 1 - Setup your package for publishing (do once)</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing" class="md-nav__link">Step 1 - Setup your package for publishing</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#create-a-signing-key-for-publishing" class="md-nav__link">Create a signing key for publishing</a>
         </li>
@@ -219,10 +254,18 @@
         <li class="md-nav__item"><a href="#setup-your-evam-app-manifest" class="md-nav__link">Setup your Evam app Manifest</a>
         </li></ul>
             </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#how-to-publish-a-new-release-for-your-application" class="md-nav__link">How to publish a new release for your application</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#step-1-increment-the-version-and-versioncode-in-your-evam-manifest" class="md-nav__link">Step 1 - Increment the <code class="docutils literal notranslate"><span class="pre">version</span></code> and <code class="docutils literal notranslate"><span class="pre">versionCode</span></code> in your Evam manifest</a>
         </li>
         <li class="md-nav__item"><a href="#step-2-build-your-application" class="md-nav__link">Step 2 - Build your application</a>
         </li>
         <li class="md-nav__item"><a href="#step-3-upload-the-package-to-the-developer-portal" class="md-nav__link">Step 3 - Upload the package to the Developer Portal</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-4-request-review-of-the-release-by-evam" class="md-nav__link">Step 4 - Request Review of the release by Evam</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -236,49 +279,21 @@
     <li class="md-nav__item">
     
     
-      <a href="development_environment.html" class="md-nav__link">Development environment</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="evam_platform_runtime.html" class="md-nav__link">Evam platform runtime</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="getting_started.html" class="md-nav__link">Getting started</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="hardware_apis.html" class="md-nav__link">Hardware APIs</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="sideloading.html" class="md-nav__link">Sideloading your application</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
-      <a href="using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
-      
-    
-    </li>
-    <li class="md-nav__item">
-    
-    
       <a href="vehicle_services_build_flavour.html" class="md-nav__link">Vehicle Services Build Flavour</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../release_notes/release_notes.html" class="md-nav__link">Changelog | Vehicle Services</a>
       
     
     </li>
@@ -307,9 +322,9 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#overview" class="md-nav__link">Overview</a>
         </li>
-        <li class="md-nav__item"><a href="#how-to-publish-a-new-release" class="md-nav__link">How to publish a new release</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#how-to-publish-a-new-application-do-once-per-certified-application" class="md-nav__link">How to publish a new application (do once per certified application)</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing-do-once" class="md-nav__link">Step 1 - Setup your package for publishing (do once)</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#step-1-setup-your-package-for-publishing" class="md-nav__link">Step 1 - Setup your package for publishing</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#create-a-signing-key-for-publishing" class="md-nav__link">Create a signing key for publishing</a>
         </li>
@@ -318,10 +333,18 @@
         <li class="md-nav__item"><a href="#setup-your-evam-app-manifest" class="md-nav__link">Setup your Evam app Manifest</a>
         </li></ul>
             </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#how-to-publish-a-new-release-for-your-application" class="md-nav__link">How to publish a new release for your application</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#step-1-increment-the-version-and-versioncode-in-your-evam-manifest" class="md-nav__link">Step 1 - Increment the <code class="docutils literal notranslate"><span class="pre">version</span></code> and <code class="docutils literal notranslate"><span class="pre">versionCode</span></code> in your Evam manifest</a>
         </li>
         <li class="md-nav__item"><a href="#step-2-build-your-application" class="md-nav__link">Step 2 - Build your application</a>
         </li>
         <li class="md-nav__item"><a href="#step-3-upload-the-package-to-the-developer-portal" class="md-nav__link">Step 3 - Upload the package to the Developer Portal</a>
+        </li>
+        <li class="md-nav__item"><a href="#step-4-request-review-of-the-release-by-evam" class="md-nav__link">Step 4 - Request Review of the release by Evam</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -368,17 +391,18 @@ on the size and nature of the update.</p>
     CS --&gt; VS : download updated app packages for this vehicle
     DEV --&gt; DP: Certified App packages
         </div></section>
-<section id="how-to-publish-a-new-release">
-<h2 id="how-to-publish-a-new-release">How to publish a new release<a class="headerlink" href="#how-to-publish-a-new-release" title="Permalink to this heading">¶</a></h2>
+<section id="how-to-publish-a-new-application-do-once-per-certified-application">
+<h2 id="how-to-publish-a-new-application-do-once-per-certified-application">How to publish a new application (do once per certified application)<a class="headerlink" href="#how-to-publish-a-new-application-do-once-per-certified-application" title="Permalink to this heading">¶</a></h2>
 <div class="admonition-support admonition">
 <p class="admonition-title">Support</p>
 <p>The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.</p>
 <p>If you are on Windows, we recommend you use WSL2 for those steps.</p>
 <p>See <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">how to enable WSL</a>.</p>
 </div>
-<p>Follow these steps to create a new release of your application.</p>
-<section id="step-1-setup-your-package-for-publishing-do-once">
-<h3 id="step-1-setup-your-package-for-publishing-do-once">Step 1 - Setup your package for publishing (do once)<a class="headerlink" href="#step-1-setup-your-package-for-publishing-do-once" title="Permalink to this heading">¶</a></h3>
+<p>Follow these steps to create a new certified application, with its own unique application ID as part of the Evam platform.</p>
+<p>This is to be done once per certified application, and is meant to provide Evam with the required information to handle the deployment of your applciation and its updates going forward.</p>
+<section id="step-1-setup-your-package-for-publishing">
+<h3 id="step-1-setup-your-package-for-publishing">Step 1 - Setup your package for publishing<a class="headerlink" href="#step-1-setup-your-package-for-publishing" title="Permalink to this heading">¶</a></h3>
 <p>This step is a one-time only setup that is required to register your application in the Evam platform.</p>
 <section id="create-a-signing-key-for-publishing">
 <h4 id="create-a-signing-key-for-publishing">Create a signing key for publishing<a class="headerlink" href="#create-a-signing-key-for-publishing" title="Permalink to this heading">¶</a></h4>
@@ -405,6 +429,8 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 <p class="admonition-title">Example - Register new app ID</p>
 <p><img alt="New app ID" src="../_images/register_app_id.png"/></p>
 </div>
+<p>As part of the registration of a new App ID, you are required to provide instructions for Evam to review your application.
+This is done by filling in the placeholders in the issue’s section titled “Testing of your application”. As described, Evam needs setup instructions to get your application started in Vehicle Services. This includes API keys, test login credentials, settings as defined in the Evam manifest - if applicable.</p>
 <p>Evam will review this submission to ensure the Application ID is available and register it. Once done, you will be able to start deploying your application.</p>
 </section>
 <section id="setup-your-evam-app-manifest">
@@ -415,10 +441,26 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 <p><a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a></p>
 </section>
 </section>
+</section>
+<section id="how-to-publish-a-new-release-for-your-application">
+<h2 id="how-to-publish-a-new-release-for-your-application">How to publish a new release for your application<a class="headerlink" href="#how-to-publish-a-new-release-for-your-application" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-support admonition">
+<p class="admonition-title">Support</p>
+<p>The steps below have been designed and tested on a Linux-based OS. MacOS should work in the same way of out of the box but Windows will require small adjustments that are out of the scope of this article.</p>
+<p>If you are on Windows, we recommend you use WSL2 for those steps.</p>
+<p>See <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">how to enable WSL</a>.</p>
+</div>
+<p>Follow these steps to create a new release of your application. This is to be done for each new update of your application.</p>
+<section id="step-1-increment-the-version-and-versioncode-in-your-evam-manifest">
+<h3 id="step-1-increment-the-version-and-versioncode-in-your-evam-manifest">Step 1 - Increment the <code class="docutils literal notranslate"><span class="pre">version</span></code> and <code class="docutils literal notranslate"><span class="pre">versionCode</span></code> in your Evam manifest<a class="headerlink" href="#step-1-increment-the-version-and-versioncode-in-your-evam-manifest" title="Permalink to this heading">¶</a></h3>
+<p>This is required to ensure Evam knows what is the latest version of your application.</p>
+<p>We recommend using semantic versioning for the <code class="docutils literal notranslate"><span class="pre">version</span></code> and increment <code class="docutils literal notranslate"><span class="pre">versionCode</span></code> for each new release.</p>
+<p>The version code will be used to detect an update, it always should be stricly superior to the previous pushed version.</p>
+<p>See the article below for more information.</p>
+<p><a class="reference internal" href="getting_started.html#getting-started"><span class="std std-ref">Getting started</span></a></p>
+</section>
 <section id="step-2-build-your-application">
 <h3 id="step-2-build-your-application">Step 2 - Build your application<a class="headerlink" href="#step-2-build-your-application" title="Permalink to this heading">¶</a></h3>
-<p>Before building your application, make sure to update its <code class="docutils literal notranslate"><span class="pre">version</span></code> and <code class="docutils literal notranslate"><span class="pre">versionCode</span></code> in the Manifest. The version code will be used to detect an update, it always should be stricly superior to the previous pushed version.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> should always be in the format <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> for production-ready releases, and <code class="docutils literal notranslate"><span class="pre">X.Y.Z-rcN</span></code> for beta releases (<code class="docutils literal notranslate"><span class="pre">X.Y.Z-betaN</span></code> is also accepted). The numbers X, Y, Z and N are integers in the range 0 to 99.</p>
 <p>You may build your application using the following run command:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>run<span class="w"> </span>build
 </pre></div>
@@ -429,7 +471,7 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 </pre></div>
 </div>
 <p>The signed package will be available as <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;.tar.gz</span></code>, the version being taken from the Evam manifest file under <code class="docutils literal notranslate"><span class="pre">build/evam.json</span></code>.</p>
-<p>For instance, if the app ID is “1.0.0” then the package will be <code class="docutils literal notranslate"><span class="pre">1.0.0.tar.gz</span></code>.</p>
+<p>For instance, if the app version is “1.0.0” then the package will be <code class="docutils literal notranslate"><span class="pre">1.0.0.tar.gz</span></code>.</p>
 </section>
 <section id="step-3-upload-the-package-to-the-developer-portal">
 <h3 id="step-3-upload-the-package-to-the-developer-portal">Step 3 - Upload the package to the Developer Portal<a class="headerlink" href="#step-3-upload-the-package-to-the-developer-portal" title="Permalink to this heading">¶</a></h3>
@@ -459,7 +501,25 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"201 Created"</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>At that stage, the application package is uploaded to the Developer Portal. It will undergo a review by Evam and upon success be deployed to the organizations who decided to install your application in their vehicles.</p>
+<p>At that stage, you should be able to see it in the Developer portal in your project, under “Deploy &gt; Package Registry”.</p>
+</section>
+<section id="step-4-request-review-of-the-release-by-evam">
+<h3 id="step-4-request-review-of-the-release-by-evam">Step 4 - Request Review of the release by Evam<a class="headerlink" href="#step-4-request-review-of-the-release-by-evam" title="Permalink to this heading">¶</a></h3>
+<p>Each release has to be requested for deployment by creating an issue in your private issue tracker. It is located in your organization’s “Home” project in the Developer Portal.</p>
+<div class="admonition-information admonition">
+<p class="admonition-title">Information</p>
+<p>The issues in the private issue tracker can only be seen by Evam and the members of your own organization.</p>
+</div>
+<p>In the issue tracker, create a new issue with the Description template “Make new release of my application” and fill in the required fields.</p>
+<p>In the title, provide the App ID and release version so Evam can find it easily. You should also provide it in the issue as per the placeholders.</p>
+<div class="admonition-example-request-review-of-release admonition">
+<p class="admonition-title">Example - Request review of release</p>
+<p><img alt="New app ID" src="../_images/register_release.png"/></p>
+</div>
+<p>If the new release should be tested differently compared to the instructions you provided when registering the app ID, you can provide updated instructions in this issue by filling in the placeholders. Otherwise, simply skip this part and Evam will use the instructions that you provided the first time.</p>
+<p>Once done, submit the issue. Evam will be notified and start the review process as soon as possible.</p>
+<p><strong>Communication during the review process will be handled exclusively through the Developer portal. To be notified of updates during the process, we highly recommend you enable email notifications in the <a class="reference external" href="https://www.developers.evam.life/-/profile/notifications">Developer Portal notification preferences</a>.</strong></p>
+<p>Once the review is completed, the updated app will be provided to the organizations that opted in using it.</p>
 </section>
 </section>
 </section>
@@ -474,7 +534,7 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="demo_tool_commands_reference.html" title="Evam Demo Tool command reference"
+            <a href="hardware_apis.html" title="Hardware APIs"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -483,17 +543,17 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-in<span class="w"> </
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Evam Demo Tool command reference </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Hardware APIs </span>
               </div>
             </a>
           
           
-            <a href="development_environment.html" title="Development environment"
+            <a href="vehicle_services_build_flavour.html" title="Vehicle Services Build Flavour"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> "Next" </span> Development environment </span>
+                class="md-footer-nav__direction"> "Next" </span> Vehicle Services Build Flavour </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
