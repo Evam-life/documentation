@@ -32,3 +32,6 @@ Production devices should not be enrolled in the Beta branch.
 ```{attention}
 Only production releases, i.e., no release candidates, can be pushed to the production branch. 
 ```
+```{attention}
+It is only possible to sync to the current/latest production release. This means that you cannot request to move a specific version into production if a later production version has been deployed by Evam. 
+```

@@ -1,5 +1,18 @@
 # Changelog | Vehicle Services
 
+## 5.2.0
+
+2024-03-13
+
+### Highlights
+- **Automatically end navigation as part of a status change:** Today, navigation ends when you arrive at your destination. Users also always need to accept the card 'You have arrived at your destination.' With version 5.2.0, the ability to end ongoing navigation as part of a status change is introduced. One or more statuses can be configured to end ongoing navigation. This feature can be used to reduce the number of button presses and is also well-suited for, for example, command vehicles that typically do not go all the way to the scene of the incident.
+- **The address is displayed on the map when you are within 200 meters of the destination:** To clarify the exact destination and expedite the response, the address of the destination appears in the navigation application when you are within 200 meters of the destination. This way, users can avoid having to open the case information in the operations app to confirm the house or gate number when arriving at the destination.
+
+### Additional changes
+- **Improved management of talk groups in alarm dispatch:** The operations app now correctly displays assigned talk groups even when a large number of talk groups are asigned with the case.
+- **Enhanced handling of case priority:** The operations application's handling of alarms sent without a priority has been improved and is now managed without a visual bug in the operations application's priority field.
+
+
 
 ## 5.1.1
 

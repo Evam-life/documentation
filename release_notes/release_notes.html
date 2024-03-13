@@ -260,7 +260,7 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#release-notes-release-notes--page-root" class="md-nav__link">Changelog | Vehicle Services</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id1" class="md-nav__link">5.1.1</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">5.2.0</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#highlights" class="md-nav__link">Highlights</a>
         </li>
@@ -268,7 +268,7 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#id2" class="md-nav__link">5.1.0</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">5.1.1</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#id3" class="md-nav__link">Highlights</a>
         </li>
@@ -276,11 +276,19 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#id5" class="md-nav__link">5.0.8</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id5" class="md-nav__link">5.1.0</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#id6" class="md-nav__link">Highlights</a>
         </li>
         <li class="md-nav__item"><a href="#id7" class="md-nav__link">Additional changes</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id8" class="md-nav__link">5.0.8</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id9" class="md-nav__link">Highlights</a>
+        </li>
+        <li class="md-nav__item"><a href="#id10" class="md-nav__link">Additional changes</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -314,7 +322,7 @@
   <ul class="md-nav__list" data-md-scrollfix="">
         <li class="md-nav__item"><a href="#release-notes-release-notes--page-root" class="md-nav__link">Changelog | Vehicle Services</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#id1" class="md-nav__link">5.1.1</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">5.2.0</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#highlights" class="md-nav__link">Highlights</a>
         </li>
@@ -322,7 +330,7 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#id2" class="md-nav__link">5.1.0</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">5.1.1</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#id3" class="md-nav__link">Highlights</a>
         </li>
@@ -330,11 +338,19 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#id5" class="md-nav__link">5.0.8</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#id5" class="md-nav__link">5.1.0</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#id6" class="md-nav__link">Highlights</a>
         </li>
         <li class="md-nav__item"><a href="#id7" class="md-nav__link">Additional changes</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#id8" class="md-nav__link">5.0.8</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id9" class="md-nav__link">Highlights</a>
+        </li>
+        <li class="md-nav__item"><a href="#id10" class="md-nav__link">Additional changes</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -352,27 +368,31 @@
   <section id="changelog-vehicle-services">
 <h1 id="release-notes-release-notes--page-root">Changelog | Vehicle Services<a class="headerlink" href="#release-notes-release-notes--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="id1">
-<h2 id="id1">5.1.1<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
-<p>2024-02-26</p>
+<h2 id="id1">5.2.0<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>2024-03-13</p>
 <section id="highlights">
 <h3 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><strong>The map layer “Vehicles on your case”:</strong> The map layer “Vehicles on your case,” which displays all vehicles associated with the same case on the map, has been improved to support and function for all available formats and handling of SOS case numbers and case folders.</p></li>
-<li><p><strong>Stability improvements related to dispatch:</strong> We have improved the handling of cases in the Operations application for situations where the GPS position of the event is missing in the alarm information. No navigation is initiated if the GPS position is not available in the case information. However, all other information, including any specified address in free text, will be displayed correctly.</p></li>
+<li><p><strong>Automatically end navigation as part of a status change:</strong> Today, navigation ends when you arrive at your destination. Users also always need to accept the card ‘You have arrived at your destination.’ With version 5.2.0, the ability to end ongoing navigation as part of a status change is introduced. One or more statuses can be configured to end ongoing navigation. This feature can be used to reduce the number of button presses and is also well-suited for, for example, command vehicles that typically do not go all the way to the scene of the incident.</p></li>
+<li><p><strong>The address is displayed on the map when you are within 200 meters of the destination:</strong> To clarify the exact destination and expedite the response, the address of the destination appears in the navigation application when you are within 200 meters of the destination. This way, users can avoid having to open the case information in the operations app to confirm the house or gate number when arriving at the destination.</p></li>
 </ul>
 </section>
 <section id="additional-changes">
 <h3 id="additional-changes">Additional changes<a class="headerlink" href="#additional-changes" title="Permalink to this heading">¶</a></h3>
-<p>(none)</p>
+<ul class="simple">
+<li><p><strong>Improved management of talk groups in alarm dispatch:</strong> The operations app now correctly displays assigned talk groups even when a large number of talk groups are asigned with the case.</p></li>
+<li><p><strong>Enhanced handling of case priority:</strong> The operations application’s handling of alarms sent without a priority has been improved and is now managed without a visual bug in the operations application’s priority field.</p></li>
+</ul>
 </section>
 </section>
 <section id="id2">
-<h2 id="id2">5.1.0<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
-<p>2024-02-14</p>
+<h2 id="id2">5.1.1<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>2024-02-26</p>
 <section id="id3">
 <h3 id="id3">Highlights<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
-<li><p><strong>Search for coordinates and navigate directly in the Navigation app:</strong> It is now possible to enter GPS coordinates directly into the search field of the Navigation application in order to navigate to them. The search field can accept coordinates in both SWEREF 99 and WGS 84 Decimal formats. Longitude and Latitude can be separated by commas, spaces, or semicolons. When the coordinates are correctly formatted, they will appear as a search result from which navigation can be initiated.</p></li>
+<li><p><strong>The map layer “Vehicles on your case”:</strong> The map layer “Vehicles on your case,” which displays all vehicles associated with the same case on the map, has been improved to support and function for all available formats and handling of SOS case numbers and case folders.</p></li>
+<li><p><strong>Stability improvements related to dispatch:</strong> We have improved the handling of cases in the Operations application for situations where the GPS position of the event is missing in the alarm information. No navigation is initiated if the GPS position is not available in the case information. However, all other information, including any specified address in free text, will be displayed correctly.</p></li>
 </ul>
 </section>
 <section id="id4">
@@ -381,10 +401,24 @@
 </section>
 </section>
 <section id="id5">
-<h2 id="id5">5.0.8<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
-<p>2024-02-06</p>
+<h2 id="id5">5.1.0<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>2024-02-14</p>
 <section id="id6">
 <h3 id="id6">Highlights<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Search for coordinates and navigate directly in the Navigation app:</strong> It is now possible to enter GPS coordinates directly into the search field of the Navigation application in order to navigate to them. The search field can accept coordinates in both SWEREF 99 and WGS 84 Decimal formats. Longitude and Latitude can be separated by commas, spaces, or semicolons. When the coordinates are correctly formatted, they will appear as a search result from which navigation can be initiated.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3 id="id7">Additional changes<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<p>(none)</p>
+</section>
+</section>
+<section id="id8">
+<h2 id="id8">5.0.8<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+<p>2024-02-06</p>
+<section id="id9">
+<h3 id="id9">Highlights<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>The arrival experience in navigation is improved to provide support up to the exact position of the alarm:</strong> Just as before, the navigation application will guide you along drivable roads as close as possible to the case’s position. To enhance the quality of the case and offer support all the way to its position, such as in townhouse areas or terrain, the following improvements are made:</p>
 <ul>
@@ -395,8 +429,8 @@
 </li>
 </ul>
 </section>
-<section id="id7">
-<h3 id="id7">Additional changes<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<section id="id10">
+<h3 id="id10">Additional changes<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>The notification for a changed destination has been given a clearer title.</p></li>
 </ul>
