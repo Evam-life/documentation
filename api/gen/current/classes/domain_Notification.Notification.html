@@ -293,6 +293,8 @@
         </li>
         <li class="md-nav__item"><a href="#heading" class="md-nav__link">heading</a>
         </li>
+        <li class="md-nav__item"><a href="#notificationid" class="md-nav__link">notificationId</a>
+        </li>
         <li class="md-nav__item"><a href="#notificationtype" class="md-nav__link">notificationType</a>
         </li>
         <li class="md-nav__item"><a href="#primarybutton" class="md-nav__link">primaryButton</a>
@@ -331,7 +333,7 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <section id="constructor">
 <h3 id="constructor">constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h3>
-<p><strong>new Notification</strong>(<code class="docutils literal notranslate"><span class="pre">heading</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">notificationType</span></code>, <code class="docutils literal notranslate"><span class="pre">primaryButton</span></code>, <code class="docutils literal notranslate"><span class="pre">secondaryButton</span></code>)</p>
+<p><strong>new Notification</strong>(<code class="docutils literal notranslate"><span class="pre">heading</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">notificationType</span></code>, <code class="docutils literal notranslate"><span class="pre">primaryButton</span></code>, <code class="docutils literal notranslate"><span class="pre">secondaryButton</span></code>, <code class="docutils literal notranslate"><span class="pre">notificationId?</span></code>)</p>
 <p>Notification to appear in vehicle services</p>
 <section id="parameters">
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h4>
@@ -363,6 +365,10 @@
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">NotificationButton</span></code></p></td>
 <td class="text-left"><p>optional secondary button label and optional callback</p></td>
 </tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">notificationId?</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>unique notification id that is optional and used if the app also needs to remove a notification</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -380,6 +386,12 @@
 <h3 id="heading">heading<a class="headerlink" href="#heading" title="Permalink to this heading">¶</a></h3>
 <p><strong>heading</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>the main title of the notification</p>
+</section>
+<hr class="docutils"/>
+<section id="notificationid">
+<h3 id="notificationid">notificationId<a class="headerlink" href="#notificationid" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Optional</span></code> <strong>notificationId</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>unique notification id that is optional and used if the app also needs to remove a notification</p>
 </section>
 <hr class="docutils"/>
 <section id="notificationtype">

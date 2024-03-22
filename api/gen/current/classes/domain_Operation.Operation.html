@@ -301,6 +301,8 @@
         </li>
         <li class="md-nav__item"><a href="#alarmeventtext" class="md-nav__link">alarmEventText</a>
         </li>
+        <li class="md-nav__item"><a href="#assignedresourcemissionno" class="md-nav__link">assignedResourceMissionNo</a>
+        </li>
         <li class="md-nav__item"><a href="#attachedcustomerobject" class="md-nav__link">attachedCustomerObject</a>
         </li>
         <li class="md-nav__item"><a href="#availablehospitallocations" class="md-nav__link">availableHospitalLocations</a>
@@ -342,6 +344,8 @@
         <li class="md-nav__item"><a href="#operationid" class="md-nav__link">operationID</a>
         </li>
         <li class="md-nav__item"><a href="#operationstate" class="md-nav__link">operationState</a>
+        </li>
+        <li class="md-nav__item"><a href="#operationunits" class="md-nav__link">operationUnits</a>
         </li>
         <li class="md-nav__item"><a href="#patientname" class="md-nav__link">patientName</a>
         </li>
@@ -399,7 +403,7 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <section id="constructor">
 <h3 id="constructor">constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h3>
-<p><strong>new Operation</strong>(<code class="docutils literal notranslate"><span class="pre">operationID</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">sendTime</span></code>, <code class="docutils literal notranslate"><span class="pre">createdTime</span></code>, <code class="docutils literal notranslate"><span class="pre">endTime</span></code>, <code class="docutils literal notranslate"><span class="pre">acceptedTime</span></code>, <code class="docutils literal notranslate"><span class="pre">callCenterId</span></code>, <code class="docutils literal notranslate"><span class="pre">caseFolderId</span></code>, <code class="docutils literal notranslate"><span class="pre">transmitterCode</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmCategory</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmEventCode</span></code>, <code class="docutils literal notranslate"><span class="pre">medicalCommander</span></code>, <code class="docutils literal notranslate"><span class="pre">medicalIncidentOfficer</span></code>, <code class="docutils literal notranslate"><span class="pre">attachedCustomerObject</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmEventText</span></code>, <code class="docutils literal notranslate"><span class="pre">additionalInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">keyNumber</span></code>, <code class="docutils literal notranslate"><span class="pre">electronicKey</span></code>, <code class="docutils literal notranslate"><span class="pre">radioGroupMain</span></code>, <code class="docutils literal notranslate"><span class="pre">radioGroupSecondary</span></code>, <code class="docutils literal notranslate"><span class="pre">additionalCoordinationInformation</span></code>, <code class="docutils literal notranslate"><span class="pre">availablePriorities</span></code>, <code class="docutils literal notranslate"><span class="pre">patientName</span></code>, <code class="docutils literal notranslate"><span class="pre">patientUID</span></code>, <code class="docutils literal notranslate"><span class="pre">vehicleStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">destinationSiteLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">breakpointLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">availableHospitalLocations</span></code>, <code class="docutils literal notranslate"><span class="pre">header1</span></code>, <code class="docutils literal notranslate"><span class="pre">header2</span></code>, <code class="docutils literal notranslate"><span class="pre">eventInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">caseInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">selectedHospital</span></code>, <code class="docutils literal notranslate"><span class="pre">selectedPriority</span></code>, <code class="docutils literal notranslate"><span class="pre">operationState</span></code>, <code class="docutils literal notranslate"><span class="pre">leavePatientLocation</span></code>)</p>
+<p><strong>new Operation</strong>(<code class="docutils literal notranslate"><span class="pre">operationID</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">sendTime</span></code>, <code class="docutils literal notranslate"><span class="pre">createdTime</span></code>, <code class="docutils literal notranslate"><span class="pre">endTime</span></code>, <code class="docutils literal notranslate"><span class="pre">acceptedTime</span></code>, <code class="docutils literal notranslate"><span class="pre">callCenterId</span></code>, <code class="docutils literal notranslate"><span class="pre">caseFolderId</span></code>, <code class="docutils literal notranslate"><span class="pre">transmitterCode</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmCategory</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmEventCode</span></code>, <code class="docutils literal notranslate"><span class="pre">medicalCommander</span></code>, <code class="docutils literal notranslate"><span class="pre">medicalIncidentOfficer</span></code>, <code class="docutils literal notranslate"><span class="pre">attachedCustomerObject</span></code>, <code class="docutils literal notranslate"><span class="pre">alarmEventText</span></code>, <code class="docutils literal notranslate"><span class="pre">additionalInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">keyNumber</span></code>, <code class="docutils literal notranslate"><span class="pre">electronicKey</span></code>, <code class="docutils literal notranslate"><span class="pre">radioGroupMain</span></code>, <code class="docutils literal notranslate"><span class="pre">radioGroupSecondary</span></code>, <code class="docutils literal notranslate"><span class="pre">additionalCoordinationInformation</span></code>, <code class="docutils literal notranslate"><span class="pre">availablePriorities</span></code>, <code class="docutils literal notranslate"><span class="pre">patientName</span></code>, <code class="docutils literal notranslate"><span class="pre">patientUID</span></code>, <code class="docutils literal notranslate"><span class="pre">vehicleStatus</span></code>, <code class="docutils literal notranslate"><span class="pre">destinationSiteLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">breakpointLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">availableHospitalLocations</span></code>, <code class="docutils literal notranslate"><span class="pre">header1</span></code>, <code class="docutils literal notranslate"><span class="pre">header2</span></code>, <code class="docutils literal notranslate"><span class="pre">eventInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">caseInfo</span></code>, <code class="docutils literal notranslate"><span class="pre">selectedHospital</span></code>, <code class="docutils literal notranslate"><span class="pre">selectedPriority</span></code>, <code class="docutils literal notranslate"><span class="pre">operationState</span></code>, <code class="docutils literal notranslate"><span class="pre">leavePatientLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">assignedResourceMissionNo</span></code>, <code class="docutils literal notranslate"><span class="pre">operationUnits</span></code>)</p>
 <section id="parameters">
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h4>
 <table>
@@ -554,6 +558,14 @@
 <td class="text-left"><p><a class="reference internal" href="domain_LeavePatientLocation.LeavePatientLocation.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">LeavePatientLocation</span></code></span></a></p></td>
 <td class="text-left"><p>The location of the leave-patient (‘toCity’, etc)</p></td>
 </tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">assignedResourceMissionNo</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The Assigned Resource Mission No value from SOS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">operationUnits</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_OperationUnit.OperationUnit.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">OperationUnit</span></code></span></a>[]</p></td>
+<td class="text-left"><p>A list of the units that include the Assigned Resource values from SOS and the Units from the cloud</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -595,6 +607,12 @@
 <h3 id="alarmeventtext">alarmEventText<a class="headerlink" href="#alarmeventtext" title="Permalink to this heading">¶</a></h3>
 <p><strong>alarmEventText</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <p>The alarm event text</p>
+</section>
+<hr class="docutils"/>
+<section id="assignedresourcemissionno">
+<h3 id="assignedresourcemissionno">assignedResourceMissionNo<a class="headerlink" href="#assignedresourcemissionno" title="Permalink to this heading">¶</a></h3>
+<p><strong>assignedResourceMissionNo</strong>: <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>The Assigned Resource Mission No value from SOS</p>
 </section>
 <hr class="docutils"/>
 <section id="attachedcustomerobject">
@@ -721,6 +739,12 @@
 <h3 id="operationstate">operationState<a class="headerlink" href="#operationstate" title="Permalink to this heading">¶</a></h3>
 <p><strong>operationState</strong>: <a class="reference internal" href="../enums/domain_OperationState.OperationState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">OperationState</span></code></span></a></p>
 <p>the current state of the operation (ACTIVE, AVAILABLE, COMPLETE)</p>
+</section>
+<hr class="docutils"/>
+<section id="operationunits">
+<h3 id="operationunits">operationUnits<a class="headerlink" href="#operationunits" title="Permalink to this heading">¶</a></h3>
+<p><strong>operationUnits</strong>: <a class="reference internal" href="domain_OperationUnit.OperationUnit.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">OperationUnit</span></code></span></a>[]</p>
+<p>A list of the units that include the Assigned Resource values from SOS and the Units from the cloud</p>
 </section>
 <hr class="docutils"/>
 <section id="patientname">

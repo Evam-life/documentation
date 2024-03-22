@@ -1,0 +1,24 @@
+# Module: util/triggerAndroid
+
+## Functions
+
+### triggerAndroid
+
+**triggerAndroid**\<`M`\>(`method`, `...args`): `any`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `M` | extends [`AndroidMethod`](domain__internal_AndroidMethod.md#androidmethod) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `method` | `M` |
+| `...args` | [`AndroidMethodArgumentMap`](../interfaces/domain__internal_AndroidMethodArgumentMap.AndroidMethodArgumentMap.md)[`M`] |
+
+#### Returns
+
+`any`

@@ -1,0 +1,18 @@
+# Module: dev-test-environment/components/MapDrawer
+
+## Functions
+
+### MapDrawer
+
+**MapDrawer**(`props`, `context?`): `ReactElement`\<`any`, `any`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | `Object` |
+| `context?` | `any` |
+
+#### Returns
+
+`ReactElement`\<`any`, `any`\>

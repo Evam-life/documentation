@@ -1,0 +1,109 @@
+# Class: LeavePatientLocation
+
+[domain/LeavePatientLocation](../modules/domain_LeavePatientLocation.md).LeavePatientLocation
+
+data class LeavePatientLocation(
+    override val locationType: LocationType = LocationType.LeavePatientSite,
+    override val locationId: String,
+    override val latitude: Double,
+    override val longitude: Double,
+    override val street: String?,
+    override val locality: String?,
+    override val municipality: String?,
+    override val routeDirections: String?,
+    val leaveTime: LocalDateTime?,
+)
+
+## Constructors
+
+### constructor
+
+**new LeavePatientLocation**(`latitude`, `longitude`, `street`, `locality`, `municipality`, `routeDirections`, `leaveTime`)
+
+Location of a leave patient location
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `latitude` | `number` | Latitude in decimal degrees |
+| `longitude` | `number` | Longitude in decimal degrees |
+| `street` | `string` | The street name if available |
+| `locality` | `string` | The locality name if available |
+| `municipality` | `string` | The municipality name if available |
+| `routeDirections` | `string` | The route directions text if available |
+| `leaveTime` | `string` | the leave time of the patient |
+
+## Properties
+
+### latitude
+
+ **latitude**: `number`
+
+Latitude in decimal degrees
+
+___
+
+### leaveTime
+
+ **leaveTime**: `string`
+
+the leave time of the patient
+
+___
+
+### locality
+
+ **locality**: `string`
+
+The locality name if available
+
+___
+
+### longitude
+
+ **longitude**: `number`
+
+Longitude in decimal degrees
+
+___
+
+### municipality
+
+ **municipality**: `string`
+
+The municipality name if available
+
+___
+
+### routeDirections
+
+ **routeDirections**: `string`
+
+The route directions text if available
+
+___
+
+### street
+
+ **street**: `string`
+
+The street name if available
+
+## Methods
+
+### fromJSON
+
+`Static` **fromJSON**(`loc`): [`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md)
+
+Create from JSON
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `loc` | `any` | JSON object |
+
+#### Returns
+
+[`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md)

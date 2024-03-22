@@ -1,0 +1,75 @@
+# Interface: AndroidMethodArgumentMap
+
+[domain/_internal/AndroidMethodArgumentMap](../modules/domain__internal_AndroidMethodArgumentMap.md).AndroidMethodArgumentMap
+
+## Properties
+
+### apiReady
+
+ **apiReady**: readonly []
+
+___
+
+### clearItems
+
+ **clearItems**: readonly []
+
+___
+
+### deleteItem
+
+ **deleteItem**: readonly [`string`]
+
+___
+
+### deleteNavLayer
+
+ **deleteNavLayer**: readonly [`string`]
+
+___
+
+### getItem
+
+ **getItem**: readonly [`string`]
+
+___
+
+### sendNotification
+
+ **sendNotification**: readonly [`string`]
+
+___
+
+### sendRawRakelAction
+
+ **sendRawRakelAction**: readonly [`string`]
+
+___
+
+### setHospital
+
+ **setHospital**: readonly [`number`]
+
+___
+
+### setItem
+
+ **setItem**: readonly [`string`, `string`]
+
+___
+
+### setNavLayerPoint
+
+ **setNavLayerPoint**: readonly [`string`, `string`]
+
+___
+
+### setNavLayerShape
+
+ **setNavLayerShape**: readonly [`string`, `string`]
+
+___
+
+### setPriority
+
+ **setPriority**: readonly [`number`]

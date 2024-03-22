@@ -1,0 +1,17 @@
+# Class: RawRakelAction
+
+[domain/RawRakelAction](../modules/domain_RawRakelAction.md).RawRakelAction
+
+## Constructors
+
+### constructor
+
+**new RawRakelAction**(`value`)
+
+Raw Rakel action used for sending commands to the radio.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `string`[] | the list of raw rakel commands |

@@ -1,0 +1,5 @@
+# Module: domain/NotificationType
+
+## Enumerations
+
+- [NotificationType](../enums/domain_NotificationType.NotificationType.md)

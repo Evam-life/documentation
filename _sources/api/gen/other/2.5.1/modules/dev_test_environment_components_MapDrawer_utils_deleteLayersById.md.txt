@@ -1,0 +1,18 @@
+# Module: dev-test-environment/components/MapDrawer/utils/deleteLayersById
+
+## Functions
+
+### default
+
+**default**(`map`, `id`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `map` | `MutableRefObject`\<`Map`\> |
+| `id` | `string` |
+
+#### Returns
+
+`void`

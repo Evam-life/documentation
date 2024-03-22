@@ -1,0 +1,123 @@
+# Module: dev-test-environment/components/MapDrawer/data/layer/style/layerLayout
+
+## Variables
+
+### imagePaintStyle
+
+ `Const` **imagePaintStyle**: `mapboxgl.SymbolPaint`
+
+## Functions
+
+### generateFillLayer
+
+**generateFillLayer**(`layerId`, `sourceId`): `FillLayer`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `layerId` | `string` |
+| `sourceId` | `string` |
+
+#### Returns
+
+`FillLayer`
+
+___
+
+### generateGeoJsonPointsLayerFromFeatures
+
+**generateGeoJsonPointsLayerFromFeatures**(`geoJsonFeatures`): `AnySourceData`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `geoJsonFeatures` | `Feature`\<`Geometry`, \{ `[p: string]`: `any`;  }\>[] |
+
+#### Returns
+
+`AnySourceData`
+
+___
+
+### generateImageLayer
+
+**generateImageLayer**(`layerId`, `sourceId`, `imageId`): `SymbolLayer`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `layerId` | `string` |
+| `sourceId` | `string` |
+| `imageId` | `string` |
+
+#### Returns
+
+`SymbolLayer`
+
+___
+
+### generateImageLayout
+
+**generateImageLayout**(`imageId`): `SymbolLayout`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `imageId` | `string` |
+
+#### Returns
+
+`SymbolLayout`
+
+___
+
+### generatePointsNavLayerGeoJsonFeatures
+
+**generatePointsNavLayerGeoJsonFeatures**(`layerDataArray`): `Feature`\<`Geometry`, \{ `[p: string]`: `any`;  }\>[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `layerDataArray` | [`LayerPointData`](domain_LayerData.md#layerpointdata)[] |
+
+#### Returns
+
+`Feature`\<`Geometry`, \{ `[p: string]`: `any`;  }\>[]
+
+___
+
+### generateShapeNavLayerGeoJsonFeatures
+
+**generateShapeNavLayerGeoJsonFeatures**(`layerDataArray`): `Feature`\<`Geometry`, \{ `[p: string]`: `any`;  }\>[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `layerDataArray` | [`LayerShapeData`](domain_LayerData.md#layershapedata)[] |
+
+#### Returns
+
+`Feature`\<`Geometry`, \{ `[p: string]`: `any`;  }\>[]
+
+___
+
+### generateTextLayer
+
+**generateTextLayer**(`labelId`, `sourceId`): `SymbolLayer`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `labelId` | `string` |
+| `sourceId` | `string` |
+
+#### Returns
+
+`SymbolLayer`
