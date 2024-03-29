@@ -1,5 +1,23 @@
 # Changelog | Vehicle Services
 
+## 5.2.2
+
+2024-03-27
+
+### Highlights
+- **Names of talk groups are now displayed in the same way as they are provided in the call-out from the dispatch central:** Previously, Vehicle Services has not always named talk groups with the same name as they are provided in the call-out from the dispatch central . For example, the application has translated the talk group "SjvIns" to "Insats". This has created some confusion. In the new version of Vehicle Services, the talk group "SjvIns" in the example above will be displayed as "SjvIns".
+- **Numerous improvements to the Evam SDK for developers on the Evam platform:** We are constantly developing our SDK to provide our developers on the platform with better opportunities to develop applications. This includes:
+    - The Operation units are now passed to the SDK
+    - It is now possible for a certified app to request being put in the foreground
+    - We now pass the USB health to the SDK
+    - It is now possible for a certified app to play sound files
+    - It is now possible for a certified app to remove a previously sent notification
+
+### Additional changes
+
+- **Simplified the ability to reload a third-party app:** An error message and a button to reload the app are now displayed in cases where a third-party application cannot be loaded.
+- **Improved handling of talk groups:** The case app now correctly displays assigned talk groups even if a large number of talk groups are included in the same case.
+
 ## 5.2.0
 
 2024-03-13
