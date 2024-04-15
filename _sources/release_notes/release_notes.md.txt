@@ -1,5 +1,13 @@
 # Changelog | Vehicle Services
 
+## 5.2.3
+
+2024-04-15
+
+### Highlights
+
+- **Stability improvements for Certified apps:** Previously, certified apps that attempted to reach unavailable servers could end up causing the certified app to be stopped by Vehicle Services. This should no longer be the case.
+
 ## 5.2.2
 
 2024-03-27
