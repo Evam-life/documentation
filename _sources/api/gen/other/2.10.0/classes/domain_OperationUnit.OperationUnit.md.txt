@@ -1,0 +1,86 @@
+# Class: OperationUnit
+
+[domain/OperationUnit](../modules/domain_OperationUnit.md).OperationUnit
+
+Operation unit corresponds to a vehicle on a case and it is related to the Assigned Resource values from SOS.
+
+## Constructors
+
+### constructor
+
+**new OperationUnit**(`unitId`, `status`, `role`, `source`, `eta`, `reportedInArea`)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `unitId` | `string` | The unique id of the unit, corresponds to the Resource ID for Assigned Resource from dispatch |
+| `status` | `string` | The current Status, also corresponds to the Status for Assigned Resource from dispatch |
+| `role` | `string` | The role of the unit, only potentially available if source is CLOUD |
+| `source` | [`OperationUnitSource`](../enums/domain_OperationUnitSource.OperationUnitSource.md) | The data source of the unit: RAKEL (from dispatch) or CLOUD (Evam Central Services) |
+| `eta` | `Date` | The estimated time of arrival for this unit, only potentially available if source is CLOUD |
+| `reportedInArea` | `string` | Corresponds to reportedInArea for Assigned Resource from dispatch |
+
+## Properties
+
+### eta
+
+ **eta**: `Date`
+
+The estimated time of arrival for this unit, only potentially available if source is CLOUD
+
+___
+
+### reportedInArea
+
+ **reportedInArea**: `string`
+
+Corresponds to reportedInArea for Assigned Resource from dispatch
+
+___
+
+### role
+
+ **role**: `string`
+
+The role of the unit, only potentially available if source is CLOUD
+
+___
+
+### source
+
+ **source**: [`OperationUnitSource`](../enums/domain_OperationUnitSource.OperationUnitSource.md)
+
+The data source of the unit: RAKEL (from dispatch) or CLOUD (Evam Central Services)
+
+___
+
+### status
+
+ **status**: `string`
+
+The current Status, also corresponds to the Status for Assigned Resource from dispatch
+
+___
+
+### unitId
+
+ **unitId**: `string`
+
+The unique id of the unit, corresponds to the Resource ID for Assigned Resource from dispatch
+
+## Methods
+
+### fromJSON
+
+`Static` **fromJSON**(`data`): [`OperationUnit`](domain_OperationUnit.OperationUnit.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `any` |
+
+#### Returns
+
+[`OperationUnit`](domain_OperationUnit.OperationUnit.md)

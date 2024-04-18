@@ -63,3 +63,69 @@ You can specify placeholder elements in "raw" that will be substituted when inje
 - `{CURDATE}`: Inject today's date,
 - `{CURTIME+N}` or `{CURTIME-N}`: Inject the current time, plus or minus `N` seconds.
 
+## Sideloaded certified app settings
+
+```{admonition} Minimum version
+
+Make sure you use Vehicle Services version 5.2.4 or above to use this feature.
+```
+
+You can set the sideloaded certified app settings, they will be passed to the certified app over the Evam SDK through `onNewOrUpdatedSettings`.
+
+The settings shall be defined in your Evam manifest, see the article below for more information:
+
+```{eval-rst}
+:ref:`using_the_sdk`
+```
+
+For instance, if you define those your Evam manifest as such:
+
+```json
+{
+    "applicationId": "com.example.application",
+    "applicationName": "Demo application",
+    "settings": [
+        {
+            "id": "debug",
+            "name": "Debug mode",
+            "description": "Enable debug mode by displaying logs on screen",
+            "value": {
+                "type": "bool",
+                "default": false
+            }
+        },
+        {
+            "id": "backendUrl",
+            "name": "URL to the backend server",
+            "description": "The URL to the backend server to be used",
+            "value": {
+                "type": "string",
+                "default": "https://example.com/"
+            }
+        }
+    ],
+    // ...
+}
+```
+
+Then you can simulate a settings update with this:
+
+```json
+{ 
+    "type":"devAppSettings", 
+    "value": {
+        "id": "com.example.application", 
+        "settingsString": {"backendUrl": "https://other-example.com/" }, 
+        "settingsLong": { }, 
+        "settingsDouble": { }, 
+        "settingsBoolean": {"debug": true }, 
+        "policies": [] 
+    }
+}
+```
+
+Your certified app, using `onNewOrUpdatedSettings`, will have its callback triggered with:
+
+- When the app starts: `{"debug": false, "backendUrl": "https://example.com/"}`,
+- When your run the command above: `{"debug": true, "backendUrl": "https://other-example.com/"}`.
+

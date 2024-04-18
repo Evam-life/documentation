@@ -8,7 +8,7 @@ Two options are made available to you when developing and testing your certified
 
 The first one is the in-browser development environment, it runs fully within your web browser and offers a simple reproduction of the Vehicle Services platform. Since this runs fully within your web browser, you can leverage all the existing development tools React supports including debugging. This is well-suited for active development of your application.
 
-The second one is an in-device development environment. This is a great tool when your app is close to comletion and you wish to try it in a realistic environment and perform demos of your app within the Evam platform. It offers more limited support for development tools.
+The second one is an in-device development environment. This is a great tool when your app is close to completion and you wish to try it in a realistic environment and perform demos of your app within the Evam platform. It offers more limited support for development tools.
 
 ## In-browser
 

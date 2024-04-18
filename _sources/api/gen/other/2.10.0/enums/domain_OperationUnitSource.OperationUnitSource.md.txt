@@ -1,0 +1,25 @@
+# Enumeration: OperationUnitSource
+
+[domain/OperationUnitSource](../modules/domain_OperationUnitSource.md).OperationUnitSource
+
+## Enumeration Members
+
+### CLOUD
+
+ **CLOUD** = ``"CLOUD"``
+
+The unit is provided by Central Services
+
+___
+
+### RAKEL
+
+ **RAKEL** = ``"RAKEL"``
+
+The unit is provided as part of a call-out from SOS
+
+___
+
+### UNKNOWN
+
+ **UNKNOWN** = ``"UNKNOWN"``

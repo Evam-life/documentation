@@ -25,7 +25,7 @@ To install the Evam SDK, add it to `package.json` dependencies:
 ```jsonc
 {
     // ...
-    "@evam-life/sdk": "~2.3.0"   // Note: version may vary
+    "@evam-life/sdk": "~2.10.0"   // Note: Make sure to check the SDK release notes for an up-to-date version
     // ...
 }
 ```
@@ -75,7 +75,7 @@ All of this can be set in the Evam manifest located under `public/evam.json`, he
 | --- | --- |
 | `applicationId` | Unique ID of your application. |
 | `applicationName` | Application name as it will appear to the end user. |
-| `settings` | Array of entries describing the available settings for this application. The value of those settings will be typically set by the end user to tune their experience. The settings format that will be made available to the application during runtime will be a direct mapping `id -> value` (e.g. `{"debug": true}` in this case). The name and description will be used to display the settings effect to the end user. The available values for `type` are: `bool`, `int`, `float` and `string`.  |
+| `settings` | Array of entries describing the available settings for this application. The value of those settings will be typically set by the end user to tune their experience. The settings format that will be made available to the application during runtime will be a direct mapping `id -> value` (e.g. `{"debug": true}` in this case). The name and description will be used to display the settings effect to the end user. The available values for `type` are: `bool`, `int`, `float` and `string`. |
 | `logo` | Path to the application logo as it will appear in the bottom bar. The path is relative to the root of the built package. |
 | `apiVersion` | Reserved for future extension. |
 | `permissions` | List of permissions required for the application to run. Refer to each function's documentation to know the required permissions. This is not required in development environment (i.e. in a web browser), as all permissions are granted by default in this case. |

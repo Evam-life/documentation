@@ -10,14 +10,20 @@ Represents the role of a Vehicle Service device.
 
  **MAIN\_DEVICE** = ``"MAIN_DEVICE"``
 
+Device is installed as the main device within this vehicle through Multiple Screen, connected to the Tetra radio *
+
 ___
 
 ### RECEIVING\_DEVICE
 
  **RECEIVING\_DEVICE** = ``"RECEIVING_DEVICE"``
 
+Device is installed as a receiving device within this vehicle through Multiple Screens, connected to the Main *
+
 ___
 
 ### SINGLE\_DEVICE
 
  **SINGLE\_DEVICE** = ``"SINGLE_DEVICE"``
+
+Device is installed as a single device within this vehicle *

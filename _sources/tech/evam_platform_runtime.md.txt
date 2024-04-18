@@ -30,7 +30,7 @@ https://application.example.com.microapp.device-local.evam.life/
 
 ```{admonition} Special case - Sideloaded applications
 
-Sideloaded applications are always using this internal URL: `https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/`.
+Sideloaded applications are always using this internal URL: `https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/` when using Vehicle Services 5.2.3 or below.
 
 ```
 

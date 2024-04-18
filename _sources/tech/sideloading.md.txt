@@ -5,6 +5,11 @@
 Make sure you use the Evam SDK version 2.2.0 or above to use this feature.
 ```
 
+```{admonition} Android platform tools
+
+The [Android platform tools](https://developer.android.com/tools/releases/platform-tools) need to be installed on your computer.
+```
+
 ```{attention} Choose the right Development setup!
 
 Sideloading should be done when your application has been developed and is fully working in the development environment.

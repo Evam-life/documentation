@@ -1,0 +1,66 @@
+# Changelog | SDK
+
+
+## 2.10.1
+
+2024-04-17
+
+### Highlights
+
+- **Documentation update:** The SDK reference now details more information about each API function: trigger conditions and requirements: minimum Vehicle Services version, runtime environment.
+
+## 2.10.0
+
+2024-04-16
+
+### Highlights
+
+- **New API - Telephony API:** A completly new API has been added now making it possible to make phone calls and retrieve their data using the SDK
+
+
+## 2.9.2
+
+2024-03-22
+
+### Additional changes
+
+- **Fixed ETA value in `OperationUnit`:** Fixed ETA value in `OperationUnit` that could end up being far in the future instead of the actual one.
+
+
+
+## 2.9.1
+
+2024-03-21
+
+### Additional changes
+
+- **Updates to the SDK documentation:** Added missing documentation for some fields in `Operation`.
+
+
+## 2.9.0
+
+2024-03-21
+
+### Highlights
+
+- **Support for removing a Notification:** Support for removing a previously sent notification from the certified app has been added. 
+- **Put your certified app in the foreground:** Support for requestiong your app to be put in the foreground for the user has been added. This makes it possible for you to automatically put your application in the foreground as part of a specific event e.g. the user interacting with a notification sent by your app. 
+
+## 2.8.0
+
+2024-03-15
+
+### Highlights
+
+- **Updates to the Operation data:** The Operations units and assignedResourceMissionNo fields according to the SOS Alarm profiles are now added as part of the Operation data
+
+
+## 2.7.0
+
+2024-02-08
+
+### Highlights
+
+- **Sending Raw Tetra commands:** Support for sending raw Tetra commands to the Tetra device's PEI interface directly from the certified app over the SDK was added. 
+- **Reading Raw Tetra commands:** Support for reading raw Tetra commands from the Tetra device's PEI interface directly from the certified app over the SDK was added. 
+

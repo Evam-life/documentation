@@ -58,7 +58,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Module: EvamApi" href="../modules/EvamApi.html" />
-    <link rel="prev" title="Enumeration: OperationUnitSource" href="../enums/domain_OperationUnitSource.OperationUnitSource.html" />
+    <link rel="prev" title="Enumeration: PhoneCallState" href="../enums/domain_PhoneCallState.PhoneCallState.html" />
   
    
 
@@ -250,7 +250,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../../../../release_notes/release_notes.html" class="md-nav__link">Changelog | Vehicle Services</a>
+      <a href="../../../../release_notes/changelog_sdk.html" class="md-nav__link">Changelog | SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../release_notes/changelog_vs.html" class="md-nav__link">Changelog | Vehicle Services</a>
       
     
     </li>
@@ -279,6 +286,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#properties" class="md-nav__link">Properties</a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#answercall" class="md-nav__link">answerCall</a>
+        </li>
         <li class="md-nav__item"><a href="#apiready" class="md-nav__link">apiReady</a>
         </li>
         <li class="md-nav__item"><a href="#clearitems" class="md-nav__link">clearItems</a>
@@ -288,6 +297,14 @@
         <li class="md-nav__item"><a href="#deletenavlayer" class="md-nav__link">deleteNavLayer</a>
         </li>
         <li class="md-nav__item"><a href="#getitem" class="md-nav__link">getItem</a>
+        </li>
+        <li class="md-nav__item"><a href="#hangupcall" class="md-nav__link">hangUpCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#holdcall" class="md-nav__link">holdCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#makecall" class="md-nav__link">makeCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#mutemicrophone" class="md-nav__link">muteMicrophone</a>
         </li>
         <li class="md-nav__item"><a href="#putappinforeground" class="md-nav__link">putAppInForeground</a>
         </li>
@@ -306,6 +323,10 @@
         <li class="md-nav__item"><a href="#setnavlayershape" class="md-nav__link">setNavLayerShape</a>
         </li>
         <li class="md-nav__item"><a href="#setpriority" class="md-nav__link">setPriority</a>
+        </li>
+        <li class="md-nav__item"><a href="#unholdcall" class="md-nav__link">unholdCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#unmutemicrophone" class="md-nav__link">unmuteMicrophone</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -325,6 +346,11 @@
 <p><a class="reference internal" href="../modules/domain__internal_AndroidMethodArgumentMap.html"><span class="std std-doc">domain/_internal/AndroidMethodArgumentMap</span></a>.AndroidMethodArgumentMap</p>
 <section id="properties">
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<section id="answercall">
+<h3 id="answercall">answerCall<a class="headerlink" href="#answercall" title="Permalink to this heading">¶</a></h3>
+<p><strong>answerCall</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
 <section id="apiready">
 <h3 id="apiready">apiReady<a class="headerlink" href="#apiready" title="Permalink to this heading">¶</a></h3>
 <p><strong>apiReady</strong>: readonly []</p>
@@ -348,6 +374,26 @@
 <section id="getitem">
 <h3 id="getitem">getItem<a class="headerlink" href="#getitem" title="Permalink to this heading">¶</a></h3>
 <p><strong>getItem</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
+<section id="hangupcall">
+<h3 id="hangupcall">hangUpCall<a class="headerlink" href="#hangupcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>hangUpCall</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
+<section id="holdcall">
+<h3 id="holdcall">holdCall<a class="headerlink" href="#holdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>holdCall</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
+<section id="makecall">
+<h3 id="makecall">makeCall<a class="headerlink" href="#makecall" title="Permalink to this heading">¶</a></h3>
+<p><strong>makeCall</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
+<section id="mutemicrophone">
+<h3 id="mutemicrophone">muteMicrophone<a class="headerlink" href="#mutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>muteMicrophone</strong>: readonly []</p>
 </section>
 <hr class="docutils"/>
 <section id="putappinforeground">
@@ -394,6 +440,16 @@
 <h3 id="setpriority">setPriority<a class="headerlink" href="#setpriority" title="Permalink to this heading">¶</a></h3>
 <p><strong>setPriority</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">number</span></code>]</p>
 </section>
+<hr class="docutils"/>
+<section id="unholdcall">
+<h3 id="unholdcall">unholdCall<a class="headerlink" href="#unholdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>unholdCall</strong>: readonly [<code class="docutils literal notranslate"><span class="pre">string</span></code>]</p>
+</section>
+<hr class="docutils"/>
+<section id="unmutemicrophone">
+<h3 id="unmutemicrophone">unmuteMicrophone<a class="headerlink" href="#unmutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>unmuteMicrophone</strong>: readonly []</p>
+</section>
 </section>
 </section>
 
@@ -407,7 +463,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../enums/domain_OperationUnitSource.OperationUnitSource.html" title="Enumeration: OperationUnitSource"
+            <a href="../enums/domain_PhoneCallState.PhoneCallState.html" title="Enumeration: PhoneCallState"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -416,7 +472,7 @@
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> "Previous" </span> Enumeration: OperationUnitSource </span>
+                      class="md-footer-nav__direction"> "Previous" </span> Enumeration: PhoneCallState </span>
               </div>
             </a>
           

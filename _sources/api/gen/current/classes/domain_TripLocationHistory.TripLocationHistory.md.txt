@@ -16,7 +16,7 @@ An array of locations represents the history of the trip
 | :------ | :------ | :------ |
 | `locationHistory` | [`Location`](domain_Location.Location.md)[] | location array |
 | `etaSeconds` | `number` | 'estimated time of arrival' in seconds |
-| `distanceToDestinationMeters` | `number` | Remaining driving distance until destination in meters (PREVIEW) |
+| `distanceToDestinationMeters` | `number` | Remaining driving distance until destination in meters |
 
 ## Properties
 
@@ -24,7 +24,7 @@ An array of locations represents the history of the trip
 
  **distanceToDestinationMeters**: `number`
 
-Remaining driving distance until destination in meters (PREVIEW)
+Remaining driving distance until destination in meters
 
 ___
 

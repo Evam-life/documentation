@@ -1,0 +1,7 @@
+# Module: api/AndroidNativeHelpers
+
+## Variables
+
+### isRunningInVehicleServices
+
+ `Const` **isRunningInVehicleServices**: `boolean`

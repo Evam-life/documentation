@@ -223,6 +223,8 @@
         <li class="md-nav__item"><a href="#route" class="md-nav__link">Route</a>
         </li>
         <li class="md-nav__item"><a href="#com-coder" class="md-nav__link">Com-coder</a>
+        </li>
+        <li class="md-nav__item"><a href="#sideloaded-certified-app-settings" class="md-nav__link">Sideloaded certified app settings</a>
         </li></ul>
             </nav>
         </li>
@@ -269,7 +271,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../release_notes/release_notes.html" class="md-nav__link">Changelog | Vehicle Services</a>
+      <a href="../release_notes/changelog_sdk.html" class="md-nav__link">Changelog | SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../release_notes/changelog_vs.html" class="md-nav__link">Changelog | Vehicle Services</a>
       
     
     </li>
@@ -301,6 +310,8 @@
         <li class="md-nav__item"><a href="#route" class="md-nav__link">Route</a>
         </li>
         <li class="md-nav__item"><a href="#com-coder" class="md-nav__link">Com-coder</a>
+        </li>
+        <li class="md-nav__item"><a href="#sideloaded-certified-app-settings" class="md-nav__link">Sideloaded certified app settings</a>
         </li></ul>
             </nav>
         </li>
@@ -367,6 +378,63 @@ Developer zone.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">{0x...}</span></code>: Delimiter bytes, specific to the profile - you should not need to modify them from the examples above,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{CURDATE}</span></code>: Inject today’s date,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{CURTIME+N}</span></code> or <code class="docutils literal notranslate"><span class="pre">{CURTIME-N}</span></code>: Inject the current time, plus or minus <code class="docutils literal notranslate"><span class="pre">N</span></code> seconds.</p></li>
+</ul>
+</section>
+<section id="sideloaded-certified-app-settings">
+<h2 id="sideloaded-certified-app-settings">Sideloaded certified app settings<a class="headerlink" href="#sideloaded-certified-app-settings" title="Permalink to this heading">¶</a></h2>
+<div class="admonition-minimum-version admonition">
+<p class="admonition-title">Minimum version</p>
+<p>Make sure you use Vehicle Services version 5.2.4 or above to use this feature.</p>
+</div>
+<p>You can set the sideloaded certified app settings, they will be passed to the certified app over the Evam SDK through <code class="docutils literal notranslate"><span class="pre">onNewOrUpdatedSettings</span></code>.</p>
+<p>The settings shall be defined in your Evam manifest, see the article below for more information:</p>
+<p><a class="reference internal" href="using_the_sdk.html#using-the-sdk"><span class="std std-ref">Using the Evam SDK</span></a></p>
+<p>For instance, if you define those your Evam manifest as such:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"applicationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"com.example.application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"applicationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo application"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"debug"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Debug mode"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enable debug mode by displaying logs on screen"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"backendUrl"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL to the backend server"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The URL to the backend server to be used"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you can simulate a settings update with this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="s2">"devAppSettings"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"com.example.application"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">"settingsString"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"backendUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://other-example.com/"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">"settingsLong"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">"settingsDouble"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">"settingsBoolean"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"debug"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">"policies"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Your certified app, using <code class="docutils literal notranslate"><span class="pre">onNewOrUpdatedSettings</span></code>, will have its callback triggered with:</p>
+<ul class="simple">
+<li><p>When the app starts: <code class="docutils literal notranslate"><span class="pre">{"debug":</span> <span class="pre">false,</span> <span class="pre">"backendUrl":</span> <span class="pre">"https://example.com/"}</span></code>,</p></li>
+<li><p>When your run the command above: <code class="docutils literal notranslate"><span class="pre">{"debug":</span> <span class="pre">true,</span> <span class="pre">"backendUrl":</span> <span class="pre">"https://other-example.com/"}</span></code>.</p></li>
 </ul>
 </section>
 </section>

@@ -8,14 +8,20 @@
 
  **ACTIVE** = ``"ACTIVE"``
 
+The Operation is currently active for this vehicle *
+
 ___
 
 ### AVAILABLE
 
  **AVAILABLE** = ``"AVAILABLE"``
 
+The Operation is not currently active for this vehicle, but can become active if the user selects it *
+
 ___
 
 ### COMPLETE
 
  **COMPLETE** = ``"COMPLETE"``
+
+The Operation is complete *

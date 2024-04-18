@@ -8,8 +8,12 @@
 
  **DARK** = ``"DARK"``
 
+DARK mode is active *
+
 ___
 
 ### LIGHT
 
  **LIGHT** = ``"LIGHT"``
+
+LIGHT mode is active *

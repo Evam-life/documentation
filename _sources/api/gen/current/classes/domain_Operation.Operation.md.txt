@@ -17,7 +17,7 @@
 | `sendTime` | `Date` | The time at which the operation was sent |
 | `createdTime` | `Date` | The time at which the operation was created |
 | `endTime` | `Date` | The time at which the operation ended, `undefined` still ongoing |
-| `acceptedTime` | `Date` | The time at which the operation was accepted (PREVIEW) |
+| `acceptedTime` | `Date` | The time at which the operation was accepted (minimum Vehicle Services version: 5.0.2, otherwise always undefined) |
 | `callCenterId` | `string` | The Call Center ID |
 | `caseFolderId` | `string` | The Case folder ID |
 | `transmitterCode` | `string` | The transmitter code |
@@ -48,8 +48,8 @@
 | `selectedPriority` | `number` | The id of the selected priority [inside available priority] |
 | `operationState` | [`OperationState`](../enums/domain_OperationState.OperationState.md) | the current state of the operation (ACTIVE, AVAILABLE, COMPLETE) |
 | `leavePatientLocation` | [`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md) | The location of the leave-patient ('toCity', etc) |
-| `assignedResourceMissionNo` | `string` | The Assigned Resource Mission No value from SOS |
-| `operationUnits` | [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[] | A list of the units that include the Assigned Resource values from SOS and the Units from the cloud |
+| `assignedResourceMissionNo` | `string` | The Assigned Resource Mission No value from SOS (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
+| `operationUnits` | [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[] | A list of the units that include the Assigned Resource values from SOS and the Units from the cloud (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
 
 ## Properties
 
@@ -57,7 +57,7 @@
 
  **acceptedTime**: `Date`
 
-The time at which the operation was accepted (PREVIEW)
+The time at which the operation was accepted (minimum Vehicle Services version: 5.0.2, otherwise always undefined)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
  **assignedResourceMissionNo**: `string`
 
-The Assigned Resource Mission No value from SOS
+The Assigned Resource Mission No value from SOS (minimum Vehicle Services version: 5.2.2, otherwise always undefined)
 
 ___
 
@@ -281,7 +281,7 @@ ___
 
  **operationUnits**: [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[]
 
-A list of the units that include the Assigned Resource values from SOS and the Units from the cloud
+A list of the units that include the Assigned Resource values from SOS and the Units from the cloud (minimum Vehicle Services version: 5.2.2, otherwise always undefined)
 
 ___
 

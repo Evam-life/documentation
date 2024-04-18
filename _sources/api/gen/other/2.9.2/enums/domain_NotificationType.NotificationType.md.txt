@@ -1,0 +1,43 @@
+# Enumeration: NotificationType
+
+[domain/NotificationType](../modules/domain_NotificationType.md).NotificationType
+
+## Enumeration Members
+
+### ACTION\_HUN
+
+ **ACTION\_HUN** = ``"ACTION_HUN"``
+
+Used for a notification with only app name, time, and actions buttons. Displayed for a shorter amount of time.
+
+___
+
+### CONCEALED\_HUN
+
+ **CONCEALED\_HUN** = ``"CONCEALED_HUN"``
+
+Used for a notification that will go directly in the Notification Center.
+
+___
+
+### LASTING\_HUN
+
+ **LASTING\_HUN** = ``"LASTING_HUN"``
+
+Used for a notification that appears in the middle of the screen area, over the entire UI.
+
+___
+
+### LIMITED\_HUN
+
+ **LIMITED\_HUN** = ``"LIMITED_HUN"``
+
+Used for a notification that will not show its description, until moved to the Notification Center.
+
+___
+
+### QUICK\_HUN
+
+ **QUICK\_HUN** = ``"QUICK_HUN"``
+
+Used for a notification that appears briefly over the current screen.

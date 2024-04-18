@@ -250,7 +250,14 @@
     <li class="md-nav__item">
     
     
-      <a href="../../../../release_notes/release_notes.html" class="md-nav__link">Changelog | Vehicle Services</a>
+      <a href="../../../../release_notes/changelog_sdk.html" class="md-nav__link">Changelog | SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../release_notes/changelog_vs.html" class="md-nav__link">Changelog | Vehicle Services</a>
       
     
     </li>
@@ -279,6 +286,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#enumeration-members" class="md-nav__link">Enumeration Members</a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#answercall" class="md-nav__link">AnswerCall</a>
+        </li>
         <li class="md-nav__item"><a href="#appidset" class="md-nav__link">AppIdSet</a>
         </li>
         <li class="md-nav__item"><a href="#appversionset" class="md-nav__link">AppVersionSet</a>
@@ -286,6 +295,14 @@
         <li class="md-nav__item"><a href="#deviceidset" class="md-nav__link">DeviceIdSet</a>
         </li>
         <li class="md-nav__item"><a href="#grpcestablished" class="md-nav__link">GRPCEstablished</a>
+        </li>
+        <li class="md-nav__item"><a href="#hangupcall" class="md-nav__link">HangUpCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#holdcall" class="md-nav__link">HoldCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#makecall" class="md-nav__link">MakeCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#mutemicrophone" class="md-nav__link">MuteMicrophone</a>
         </li>
         <li class="md-nav__item"><a href="#navlayerdeleted" class="md-nav__link">NavLayerDeleted</a>
         </li>
@@ -299,6 +316,8 @@
         </li>
         <li class="md-nav__item"><a href="#neworupdatedbattery" class="md-nav__link">NewOrUpdatedBattery</a>
         </li>
+        <li class="md-nav__item"><a href="#neworupdatedcalls" class="md-nav__link">NewOrUpdatedCalls</a>
+        </li>
         <li class="md-nav__item"><a href="#neworupdateddevicerole" class="md-nav__link">NewOrUpdatedDeviceRole</a>
         </li>
         <li class="md-nav__item"><a href="#neworupdateddisplaymode" class="md-nav__link">NewOrUpdatedDisplayMode</a>
@@ -306,6 +325,8 @@
         <li class="md-nav__item"><a href="#neworupdatedinternetstate" class="md-nav__link">NewOrUpdatedInternetState</a>
         </li>
         <li class="md-nav__item"><a href="#neworupdatedlocation" class="md-nav__link">NewOrUpdatedLocation</a>
+        </li>
+        <li class="md-nav__item"><a href="#neworupdatedmutestate" class="md-nav__link">NewOrUpdatedMuteState</a>
         </li>
         <li class="md-nav__item"><a href="#neworupdatedoperation" class="md-nav__link">NewOrUpdatedOperation</a>
         </li>
@@ -324,6 +345,10 @@
         <li class="md-nav__item"><a href="#rawrakelactionsent" class="md-nav__link">RawRakelActionSent</a>
         </li>
         <li class="md-nav__item"><a href="#removenotification" class="md-nav__link">RemoveNotification</a>
+        </li>
+        <li class="md-nav__item"><a href="#unholdcall" class="md-nav__link">UnholdCall</a>
+        </li>
+        <li class="md-nav__item"><a href="#unmutemicrophone" class="md-nav__link">UnmuteMicrophone</a>
         </li>
         <li class="md-nav__item"><a href="#vehicleservicesnotificationcallbacktriggered" class="md-nav__link">VehicleServicesNotificationCallbackTriggered</a>
         </li>
@@ -353,6 +378,11 @@
 All names are self-explanatory (_testEvent is specifically for testing purposes and is not used in the sdk or Vehicle Services)</p>
 <section id="enumeration-members">
 <h2 id="enumeration-members">Enumeration Members<a class="headerlink" href="#enumeration-members" title="Permalink to this heading">¶</a></h2>
+<section id="answercall">
+<h3 id="answercall">AnswerCall<a class="headerlink" href="#answercall" title="Permalink to this heading">¶</a></h3>
+<p><strong>AnswerCall</strong> = <code class="docutils literal notranslate"><span class="pre">"answerCall"</span></code></p>
+</section>
+<hr class="docutils"/>
 <section id="appidset">
 <h3 id="appidset">AppIdSet<a class="headerlink" href="#appidset" title="Permalink to this heading">¶</a></h3>
 <p><strong>AppIdSet</strong> = <code class="docutils literal notranslate"><span class="pre">"appIdSet"</span></code></p>
@@ -371,6 +401,26 @@ All names are self-explanatory (_testEvent is specifically for testing purposes 
 <section id="grpcestablished">
 <h3 id="grpcestablished">GRPCEstablished<a class="headerlink" href="#grpcestablished" title="Permalink to this heading">¶</a></h3>
 <p><strong>GRPCEstablished</strong> = <code class="docutils literal notranslate"><span class="pre">"gRPCEstablished"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="hangupcall">
+<h3 id="hangupcall">HangUpCall<a class="headerlink" href="#hangupcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>HangUpCall</strong> = <code class="docutils literal notranslate"><span class="pre">"hangUpCall"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="holdcall">
+<h3 id="holdcall">HoldCall<a class="headerlink" href="#holdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>HoldCall</strong> = <code class="docutils literal notranslate"><span class="pre">"holdCall"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="makecall">
+<h3 id="makecall">MakeCall<a class="headerlink" href="#makecall" title="Permalink to this heading">¶</a></h3>
+<p><strong>MakeCall</strong> = <code class="docutils literal notranslate"><span class="pre">"makeCall"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="mutemicrophone">
+<h3 id="mutemicrophone">MuteMicrophone<a class="headerlink" href="#mutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>MuteMicrophone</strong> = <code class="docutils literal notranslate"><span class="pre">"muteMicrophone"</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="navlayerdeleted">
@@ -403,6 +453,11 @@ All names are self-explanatory (_testEvent is specifically for testing purposes 
 <p><strong>NewOrUpdatedBattery</strong> = <code class="docutils literal notranslate"><span class="pre">"newOrUpdatedBattery"</span></code></p>
 </section>
 <hr class="docutils"/>
+<section id="neworupdatedcalls">
+<h3 id="neworupdatedcalls">NewOrUpdatedCalls<a class="headerlink" href="#neworupdatedcalls" title="Permalink to this heading">¶</a></h3>
+<p><strong>NewOrUpdatedCalls</strong> = <code class="docutils literal notranslate"><span class="pre">"newOrUpdatedCalls"</span></code></p>
+</section>
+<hr class="docutils"/>
 <section id="neworupdateddevicerole">
 <h3 id="neworupdateddevicerole">NewOrUpdatedDeviceRole<a class="headerlink" href="#neworupdateddevicerole" title="Permalink to this heading">¶</a></h3>
 <p><strong>NewOrUpdatedDeviceRole</strong> = <code class="docutils literal notranslate"><span class="pre">"newOrUpdatedDeviceRole"</span></code></p>
@@ -421,6 +476,11 @@ All names are self-explanatory (_testEvent is specifically for testing purposes 
 <section id="neworupdatedlocation">
 <h3 id="neworupdatedlocation">NewOrUpdatedLocation<a class="headerlink" href="#neworupdatedlocation" title="Permalink to this heading">¶</a></h3>
 <p><strong>NewOrUpdatedLocation</strong> = <code class="docutils literal notranslate"><span class="pre">"newOrUpdatedLocation"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="neworupdatedmutestate">
+<h3 id="neworupdatedmutestate">NewOrUpdatedMuteState<a class="headerlink" href="#neworupdatedmutestate" title="Permalink to this heading">¶</a></h3>
+<p><strong>NewOrUpdatedMuteState</strong> = <code class="docutils literal notranslate"><span class="pre">"newOrUpdatedMuteState"</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="neworupdatedoperation">
@@ -466,6 +526,16 @@ All names are self-explanatory (_testEvent is specifically for testing purposes 
 <section id="removenotification">
 <h3 id="removenotification">RemoveNotification<a class="headerlink" href="#removenotification" title="Permalink to this heading">¶</a></h3>
 <p><strong>RemoveNotification</strong> = <code class="docutils literal notranslate"><span class="pre">"removeNotification"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="unholdcall">
+<h3 id="unholdcall">UnholdCall<a class="headerlink" href="#unholdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>UnholdCall</strong> = <code class="docutils literal notranslate"><span class="pre">"unholdCall"</span></code></p>
+</section>
+<hr class="docutils"/>
+<section id="unmutemicrophone">
+<h3 id="unmutemicrophone">UnmuteMicrophone<a class="headerlink" href="#unmutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>UnmuteMicrophone</strong> = <code class="docutils literal notranslate"><span class="pre">"unmuteMicrophone"</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="vehicleservicesnotificationcallbacktriggered">
