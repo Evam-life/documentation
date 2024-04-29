@@ -1,5 +1,24 @@
 # Changelog | Vehicle Services
 
+## 5.2.4
+
+2024-04-29
+
+### Highlights
+
+* **Added support for the Telephony APIs in the Evam SDK:** It is now possible to use Telephony-related APIs with the Evam SDK, including making phone calls, receiving them, and more generally managing their state.
+* **Improved the User experience when receiving notifications:** Accepting an Operations-related Notification should now open the Operations app automatically.
+* **Fixed an issue with the Report functionality:** Vehicle Services allows for a report to be sent if issues have been experienced. Previously, this report could be missing some data making the support more complicated. This should now be fixed.
+* **Added support for injecting settings for a sideloaded certified app:** It is now possible to inject settings for your sideloaded certified app using the Demo Tool, see the documentation here: [Sideloaded Certified App settings](https://www.documentation.evam.life/tech/demo_tool_commands_reference.html#sideloaded-certified-app-settings).
+
+
+### Additional changes
+
+* **Removed limitation on sideloaded app ID:** Previously, when sideloading a certified app, its ID and URL would default to fixed values, which could cause challenges when integrating with some backend using CORS. This limitation has now been removed.
+* **Fixed a sizing issue on the Galaxy Tab S7:** Previously, certified apps running on the Galaxy Tab S7 family of devices could end up looking more "zoomed-in" that they should. This is now fixed and the sizing should be now consistent across all supported devices.
+* **Stability improvements for Navigation:** Closing an Operation should now properly clear the Navigation ETA and waypoints in the map should now be properly handled when manually added.
+* **Stability improvements for Certified apps:** Certified apps could, under some rare circumstances, fail to load when Vehicle Services started or trigger some "Android Not Responding" popup. This should now be fixed.
+
 ## 5.2.3
 
 2024-04-15
