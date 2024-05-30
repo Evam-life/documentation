@@ -32,6 +32,7 @@ https://application.example.com.microapp.device-local.evam.life/
 
 Sideloaded applications are always using this internal URL: `https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/` when using Vehicle Services 5.2.3 or below.
 
+When using Vehicle Services 5.2.4 and above, the sideloaded applications are using this internal URL instead: `https://side-loaded.<APP_SLUG>.microapp.device-local.evam.life/`.
 ```
 
 The DNS server for the domain `microapp.device-local.evam.life` is handled locally, and the local web server uses a TLS certificate trusted by the webview. Thanks to this, the secure context is available. Read more about [Secure Contexts here](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts). 
@@ -97,5 +98,20 @@ As part of your deployment in end users' vehicles, you may need to setup other s
 
 Regardless of the security context of this local network (use of Wi-Fi passwords, RADIUS, etc), we recommend you always secure your communication using TLS and do not rely on plain text. Your certified application runtime environment is a secure context which means plain HTTP calls (as opposed to HTTPS) will fail by design.
 
+Due to certified apps running in a Webview, CORS must be considered. Make sure your backend server is configured to allow requests from the URL corresponding to your certified app (see previous section about the Local Web Server).
+
 Additionally, relying on self-signed certificates is not supported and it is expected that any peer server has a valid certificate signed by a trusted certificate authority prior to any communication being possible. In particular, pay attention to server name validation as it is required.
 
+#### Using a custom Certificate Authority (CA)
+
+```{attention}
+This feature is exclusive to Strategic Partners.
+```
+
+A custom CA can be added to Evam devices, allowing requests to backend servers using certificates signed by this CA to be successful.
+
+You can request your custom CA to be added by reaching out to support@evam.life with your PEM-encoded CA file - **do not include the private key**.
+
+This is to be done when ordering the devices from Evam and is configured at the device level. This means that all requests originating from the device will recognize the identity of your backend server, not only the ones made by your certified application. The custom CA will only be added to the devices owned by the end user organization you are selling to, and your own development devices.
+
+You are responsible for ensuring the integrity of your own custom CA. If the private key were to be leaked, you need to notify Evam immediately at support@evam.life.

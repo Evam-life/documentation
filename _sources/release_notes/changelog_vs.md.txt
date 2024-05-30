@@ -1,5 +1,34 @@
 # Changelog | Vehicle Services
 
+## 5.3.0
+
+2024-05-29
+
+### Highlights
+
+* **Customized Automated Talkgroup Switching:** We are excited to announce that you can now customize automated talkgroup switching to better meet your specific needs. 
+
+    Previously, Vehicle Services always switched to the alarm's RAPS talkgroup when acknowledging the alarm, if one was available. With the new version, talkgroup switching can be customized based on different status messages and switch to chosen dispatched talkgroups, not just RAPS. Here are some examples of how you can configure this:
+
+    *Acknowledge:* Switch to the dispatched talkgroup whose name contains "RAPS".
+    
+    *On Scene:* Switch to the dispatched talkgroup whose name contains "INS".
+
+    It is also possible to switch to a talkgroup that is not sent out in the alarm, but is referenced from a dispatched talkgroups. For example, if "RAPS-1" refers to "INS-1", this mapping can be created and referenced in the talkgroup switches.
+
+    Please note that this functionality is enabled behind a feature flag and the update will not affect your current configuration. If you are interested in accessing this new functionality, please contact support@evam.life.
+
+* **Improved user experience related to Notifications and the use of more than two applications:** We have expanded the functionality for talkgroup switching in Vehicle Services for Airbus terminals. Previously, Vehicle Services could only handle talkgroup switching within the active talkgroup folder on Airbus terminals.
+
+    Now, Vehicle Services can be programmed to handle both switching of talkgroup folders and individual talkgroups. This means that free talkgroup switching can be carried out regardless of the active talkgroup folder, providing greater flexibility and efficiency in your communication.
+
+* **Continuous Improvement of Tetra Terminal Management Stability:** In version 5.3.0, we have further enhanced the stability in the management of Tetra terminals. The focus has been on optimizing the handling of simultaneous commands from various Vehicle Services apps, as well as potential interactions with the terminal's control head. These improvements aim to ensure a more robust and reliable performance.
+
+### Additional changes
+* **Operations app now opens correctly:** We've resolved a bug where the operations app would previously open in fullscreen instead of half-screen. The operations app will now consistently open in the correct screen mode.
+
+
+
 ## 5.2.4
 
 2024-04-29

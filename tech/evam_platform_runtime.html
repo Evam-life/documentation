@@ -239,7 +239,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#error-tracking" class="md-nav__link">Error tracking</a>
         </li>
-        <li class="md-nav__item"><a href="#communication-with-backend-servers" class="md-nav__link">Communication with backend servers</a>
+        <li class="md-nav__item"><a href="#communication-with-backend-servers" class="md-nav__link">Communication with backend servers</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#using-a-custom-certificate-authority-ca" class="md-nav__link">Using a custom Certificate Authority (CA)</a>
+        </li></ul>
+            </nav>
         </li></ul>
             </nav>
         </li></ul>
@@ -329,7 +333,11 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#error-tracking" class="md-nav__link">Error tracking</a>
         </li>
-        <li class="md-nav__item"><a href="#communication-with-backend-servers" class="md-nav__link">Communication with backend servers</a>
+        <li class="md-nav__item"><a href="#communication-with-backend-servers" class="md-nav__link">Communication with backend servers</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#using-a-custom-certificate-authority-ca" class="md-nav__link">Using a custom Certificate Authority (CA)</a>
+        </li></ul>
+            </nav>
         </li></ul>
             </nav>
         </li></ul>
@@ -367,6 +375,7 @@
 <div class="admonition-special-case-sideloaded-applications admonition">
 <p class="admonition-title">Special case - Sideloaded applications</p>
 <p>Sideloaded applications are always using this internal URL: <code class="docutils literal notranslate"><span class="pre">https://dev.microapp.hydras.evam.life.microapp.device-local.evam.life/</span></code> when using Vehicle Services 5.2.3 or below.</p>
+<p>When using Vehicle Services 5.2.4 and above, the sideloaded applications are using this internal URL instead: <code class="docutils literal notranslate"><span class="pre">https://side-loaded.&lt;APP_SLUG&gt;.microapp.device-local.evam.life/</span></code>.</p>
 </div>
 <p>The DNS server for the domain <code class="docutils literal notranslate"><span class="pre">microapp.device-local.evam.life</span></code> is handled locally, and the local web server uses a TLS certificate trusted by the webview. Thanks to this, the secure context is available. Read more about <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts">Secure Contexts here</a>.</p>
 </section>
@@ -420,7 +429,19 @@
 <h3 id="communication-with-backend-servers">Communication with backend servers<a class="headerlink" href="#communication-with-backend-servers" title="Permalink to this heading">¶</a></h3>
 <p>As part of your deployment in end users’ vehicles, you may need to setup other services (physical or not) that may need to be accessed by your certified application. This can typically be some server application running in a computer within the local network of the end user vehicle.</p>
 <p>Regardless of the security context of this local network (use of Wi-Fi passwords, RADIUS, etc), we recommend you always secure your communication using TLS and do not rely on plain text. Your certified application runtime environment is a secure context which means plain HTTP calls (as opposed to HTTPS) will fail by design.</p>
+<p>Due to certified apps running in a Webview, CORS must be considered. Make sure your backend server is configured to allow requests from the URL corresponding to your certified app (see previous section about the Local Web Server).</p>
 <p>Additionally, relying on self-signed certificates is not supported and it is expected that any peer server has a valid certificate signed by a trusted certificate authority prior to any communication being possible. In particular, pay attention to server name validation as it is required.</p>
+<section id="using-a-custom-certificate-authority-ca">
+<h4 id="using-a-custom-certificate-authority-ca">Using a custom Certificate Authority (CA)<a class="headerlink" href="#using-a-custom-certificate-authority-ca" title="Permalink to this heading">¶</a></h4>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This feature is exclusive to Strategic Partners.</p>
+</div>
+<p>A custom CA can be added to Evam devices, allowing requests to backend servers using certificates signed by this CA to be successful.</p>
+<p>You can request your custom CA to be added by reaching out to support@evam.life with your PEM-encoded CA file - <strong>do not include the private key</strong>.</p>
+<p>This is to be done when ordering the devices from Evam and is configured at the device level. This means that all requests originating from the device will recognize the identity of your backend server, not only the ones made by your certified application. The custom CA will only be added to the devices owned by the end user organization you are selling to, and your own development devices.</p>
+<p>You are responsible for ensuring the integrity of your own custom CA. If the private key were to be leaked, you need to notify Evam immediately at support@evam.life.</p>
+</section>
 </section>
 </section>
 </section>
