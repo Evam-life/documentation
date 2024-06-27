@@ -1,0 +1,68 @@
+# Class: PhoneCall
+
+[domain/PhoneCall](../modules/domain_PhoneCall.md).PhoneCall
+
+## Constructors
+
+### constructor
+
+**new PhoneCall**(`callId`, `callNumber`, `callState`, `disconnectCause`)
+
+Model class for the phone call.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callId` | `string` | the unique id of the call |
+| `callNumber` | `string` | the phone number that the call is connecting to |
+| `callState` | [`PhoneCallState`](../enums/domain_PhoneCallState.PhoneCallState.md) | the state of the call. See [PhoneCallState](../enums/domain_PhoneCallState.PhoneCallState.md) |
+| `disconnectCause` | [`CallDisconnectCause`](../enums/domain_CallDisconnectCause.CallDisconnectCause.md) | The cause of the termination of a call. See [CallDisconnectCause](../enums/domain_CallDisconnectCause.CallDisconnectCause.md). |
+
+## Properties
+
+### callId
+
+ **callId**: `string`
+
+the unique id of the call
+
+___
+
+### callNumber
+
+ **callNumber**: `string`
+
+the phone number that the call is connecting to
+
+___
+
+### callState
+
+ **callState**: [`PhoneCallState`](../enums/domain_PhoneCallState.PhoneCallState.md)
+
+the state of the call. See [PhoneCallState](../enums/domain_PhoneCallState.PhoneCallState.md)
+
+___
+
+### disconnectCause
+
+ **disconnectCause**: [`CallDisconnectCause`](../enums/domain_CallDisconnectCause.CallDisconnectCause.md)
+
+The cause of the termination of a call. See [CallDisconnectCause](../enums/domain_CallDisconnectCause.CallDisconnectCause.md).
+
+## Methods
+
+### fromJSON
+
+`Static` **fromJSON**(`data`): [`PhoneCall`](domain_PhoneCall.PhoneCall.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `any` |
+
+#### Returns
+
+[`PhoneCall`](domain_PhoneCall.PhoneCall.md)

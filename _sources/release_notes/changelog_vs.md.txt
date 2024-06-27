@@ -1,5 +1,20 @@
 # Changelog | Vehicle Services
 
+## 5.3.1
+
+2024-06-17
+
+### Highlights
+
+* **Added support for the Audio APIs in the Evam SDK:** It is now possible to use Audio-related APIs with the Evam SDK to select which audio device should be used for Telephone calls (device speaker, Bluetooth, etc).
+* **Fixed an issue with the Units Tab in the Operations app:** While a case is active, the list of units that are on the same case is available in the Units Tab of the Operations app. Those units are retrieved from the dispatch data as well as Evam's Central Services, the latter also include their ETA to destination in minutes. This ETA was not displayed in previous version, and now should show properly.
+
+
+### Additional changes
+
+* **Fixed a rare crash when using the Search functionality:** A crash could occur when using the Search functionality of the Navigation app to start a trip, it should now be fixed.
+
+
 ## 5.3.0
 
 2024-05-29

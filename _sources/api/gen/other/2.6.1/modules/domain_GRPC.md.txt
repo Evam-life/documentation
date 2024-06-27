@@ -1,5 +1,0 @@
-# Module: domain/GRPC
-
-## Classes
-
-- [GRPC](../classes/domain_GRPC.GRPC.md)

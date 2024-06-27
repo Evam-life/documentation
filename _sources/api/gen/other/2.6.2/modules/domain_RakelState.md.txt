@@ -1,5 +1,0 @@
-# Module: domain/RakelState
-
-## Classes
-
-- [RakelState](../classes/domain_RakelState.RakelState.md)

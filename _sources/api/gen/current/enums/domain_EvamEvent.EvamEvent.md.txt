@@ -85,6 +85,12 @@ ___
 
 ___
 
+### NewOrUpdatedAudioDeviceTypes
+
+ **NewOrUpdatedAudioDeviceTypes** = ``"newOrUpdatedAudioDeviceTypes"``
+
+___
+
 ### NewOrUpdatedAvailableVehicleStatusList
 
  **NewOrUpdatedAvailableVehicleStatusList** = ``"newOrUpdatedAvailableVehicleStatusList"``
@@ -103,9 +109,9 @@ ___
 
 ___
 
-### NewOrUpdatedDeviceRole
+### NewOrUpdatedDeviceRoles
 
- **NewOrUpdatedDeviceRole** = ``"newOrUpdatedDeviceRole"``
+ **NewOrUpdatedDeviceRoles** = ``"newOrUpdatedDeviceRoles"``
 
 ___
 
@@ -175,6 +181,12 @@ ___
 
 ___
 
+### PlayRingtone
+
+ **PlayRingtone** = ``"playRingtone"``
+
+___
+
 ### RawRakelActionSent
 
  **RawRakelActionSent** = ``"rawRakelActionSent"``
@@ -184,6 +196,18 @@ ___
 ### RemoveNotification
 
  **RemoveNotification** = ``"removeNotification"``
+
+___
+
+### SelectAudioDeviceType
+
+ **SelectAudioDeviceType** = ``"selectAudioDeviceType"``
+
+___
+
+### StopRingtone
+
+ **StopRingtone** = ``"stopRingtone"``
 
 ___
 

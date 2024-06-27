@@ -1,0 +1,29 @@
+# Enumeration: AudioDevicesType
+
+[domain/AudioDevicesType](../modules/domain_AudioDevicesType.md).AudioDevicesType
+
+Enum for the different audio device types supported for phone calls.
+
+## Enumeration Members
+
+### BLUETOOTH
+
+ **BLUETOOTH** = ``"BLUETOOTH"``
+
+Any bluetooth headset/headphones or speaker
+
+___
+
+### SPEAKER
+
+ **SPEAKER** = ``"SPEAKER"``
+
+The device speaker.
+
+___
+
+### WIRED
+
+ **WIRED** = ``"WIRED"``
+
+Headset/headphones connected using headphone jack or USB

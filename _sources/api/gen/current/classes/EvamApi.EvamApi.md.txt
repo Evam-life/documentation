@@ -975,6 +975,36 @@ Mutes the microphone of the device.
 
 ___
 
+### onNewOrUpdatedAudioDeviceTypes
+
+**onNewOrUpdatedAudioDeviceTypes**(`callback`): `void`
+
+Used to assign a callback when the available and selected audio device types for phone calls are updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`AudioDevices`](domain_AudioDevices.AudioDevices.md), `void`\> | The callback with (optional) argument AudioDevices. Use this to access the current audio devices state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.1 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the available audio devices change or the selected audio device changes.
+
+___
+
 ### onNewOrUpdatedCalls
 
 **onNewOrUpdatedCalls**(`callback`): `void`
@@ -1032,6 +1062,96 @@ Used to assign a callback when the device's microphone mute state is updated.
 **`Trigger`**
 
 The callback triggers every time the device's microphone mute state is updated.
+
+___
+
+### playRingtone
+
+**playRingtone**(`filePath`): `void`
+
+Plays an audio file as a ringtone.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | the relative file path of the ringtone audio file. The file should be placed in the /public folder. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### selectAudioDeviceType
+
+**selectAudioDeviceType**(`audioDeviceType`): `void`
+
+Selects the audio device type for phone calls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `audioDeviceType` | [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md) | the audio device type. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.1 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### stopRingtone
+
+**stopRingtone**(`filePath`): `void`
+
+Stops playing the ringtone for a given audio file.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | the relative file path of the ringtone audio file. The file should be placed in the /public folder. This should match the path sent in [playRingtone](EvamApi.EvamApi.md#playringtone) for a particular ringtone. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
 
 ___
 
@@ -1126,6 +1246,29 @@ This function is to be used for development only and will throw an error when us
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `appVersion` | `string` | The app version to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectAudioDevices
+
+**injectAudioDevices**(`audioDevices`): `void`
+
+Injects the audio devices available (and selected).
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `audioDevices` | [`AudioDevices`](domain_AudioDevices.AudioDevices.md) | the audio devices to inject |
 
 #### Returns
 

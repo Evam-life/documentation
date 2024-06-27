@@ -64,6 +64,12 @@ ___
 
 ___
 
+### playRingtone
+
+ **playRingtone**: readonly [`string`]
+
+___
+
 ### putAppInForeground
 
  **putAppInForeground**: readonly []
@@ -73,6 +79,12 @@ ___
 ### removeNotification
 
  **removeNotification**: readonly [`string`]
+
+___
+
+### selectAudioDeviceType
+
+ **selectAudioDeviceType**: readonly [`string`]
 
 ___
 
@@ -115,6 +127,12 @@ ___
 ### setPriority
 
  **setPriority**: readonly [`number`]
+
+___
+
+### stopRingtone
+
+ **stopRingtone**: readonly [`string`]
 
 ___
 

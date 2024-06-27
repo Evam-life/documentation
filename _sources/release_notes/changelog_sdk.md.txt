@@ -1,5 +1,21 @@
 # Changelog | SDK
 
+## 2.12.0
+
+2024-06-13
+
+### Highlights
+
+- **New API - Ringtone API:** A completly new API has been added now making it possible to play a ringtone through Android's Ringtone sounds.
+
+## 2.11.0
+
+2024-06-10
+
+### Highlights
+
+- **New API - Audio API:** A completly new API has been added now making it possible to select the audio device to be used during Phone calls.
+
 
 ## 2.10.1
 
@@ -15,7 +31,7 @@
 
 ### Highlights
 
-- **New API - Telephony API:** A completly new API has been added now making it possible to make phone calls and retrieve their data using the SDK
+- **New API - Telephony API:** A completely new API has been added now making it possible to make phone calls and retrieve their data using the SDK
 
 
 ## 2.9.2

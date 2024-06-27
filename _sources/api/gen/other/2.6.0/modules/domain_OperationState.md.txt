@@ -1,5 +1,0 @@
-# Module: domain/OperationState
-
-## Enumerations
-
-- [OperationState](../enums/domain_OperationState.OperationState.md)
