@@ -1,5 +1,22 @@
 # Changelog | Vehicle Services
 
+## 5.3.2
+
+2024-07-22
+
+### Highlights
+
+* **Updated Notification Handling:** We have listened to your feedback and improved the handling of notifications in Vehicle Services. Previously, it was difficult to tap on notifications and there was a risk of accidentally swiping them away. Now, we have optimized this feature to make it easier to tap on all notifications without accidentally swiping them away.
+* **Full Support for Intercom:** Evam's SDK now fully supports Intercom, which is used by the Evam COMS application, among others.
+* **Tetra PEI Available in Evam's SDK Even in Multiple-Screen Mode:** It is now possible to access the Tetra PEI interface through Evam's SDK, even in installations that use multiple-screen mode.
+
+
+### Additional changes
+
+* **Correct Opening of Priority Selection Menu:** We have resolved a bug that previously caused the priority selection menu to sometimes open incorrectly.
+
+
+
 ## 5.3.1
 
 2024-06-17

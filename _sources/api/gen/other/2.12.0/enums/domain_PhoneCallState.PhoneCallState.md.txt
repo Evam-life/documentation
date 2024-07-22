@@ -1,0 +1,120 @@
+# Enumeration: PhoneCallState
+
+[domain/PhoneCallState](../modules/domain_PhoneCallState.md).PhoneCallState
+
+## Enumeration Members
+
+### ACTIVE
+
+ **ACTIVE** = ``"ACTIVE"``
+
+The state of a Call when actively supporting conversation.
+
+___
+
+### CONNECTING
+
+ **CONNECTING** = ``"CONNECTING"``
+
+The initial state of an outgoing Call.
+Common transitions are to [DIALING](domain_PhoneCallState.PhoneCallState.md#dialing) state for a successful call or
+[DISCONNECTED](domain_PhoneCallState.PhoneCallState.md#disconnected) if it failed.
+
+___
+
+### DIALING
+
+ **DIALING** = ``"DIALING"``
+
+The state of an outgoing Call when dialing the remote number, but not yet connected.
+
+___
+
+### DISCONNECTED
+
+ **DISCONNECTED** = ``"DISCONNECTED"``
+
+The state of a Call when no further voice or other communication is being
+transmitted, the remote side has been or will inevitably be informed that the Call
+is no longer active, and the local data transport has or inevitably will release resources
+associated with this Call.
+
+___
+
+### DISCONNECTING
+
+ **DISCONNECTING** = ``"DISCONNECTING"``
+
+The state of a Call when the user has initiated a disconnection of the call, but the
+call has not yet been disconnected.  The next
+state of the call is (potentially) [DISCONNECTED](domain_PhoneCallState.PhoneCallState.md#disconnected).
+
+___
+
+### HOLDING
+
+ **HOLDING** = ``"HOLDING"``
+
+The state of a Call when in a holding state.
+
+___
+
+### NEW
+
+ **NEW** = ``"NEW"``
+
+The state of a Call when newly created.
+
+___
+
+### PULLING\_CALL
+
+ **PULLING\_CALL** = ``"PULLING_CALL"``
+
+The state of an external call which is in the process of being pulled from a remote device to
+the local device.
+
+___
+
+### RINGING
+
+ **RINGING** = ``"RINGING"``
+
+The state of an incoming Call when ringing locally, but not yet connected.
+
+___
+
+### SELECT\_PHONE\_ACCOUNT
+
+ **SELECT\_PHONE\_ACCOUNT** = ``"SELECT_PHONE_ACCOUNT"``
+
+The state of an outgoing Call when waiting on user to select a
+PhoneAccount through which to place the call.
+
+___
+
+### STATE\_AUDIO\_PROCESSING
+
+ **STATE\_AUDIO\_PROCESSING** = ``"STATE_AUDIO_PROCESSING"``
+
+The state of a call that is active with the network, but the audio from the call is
+being intercepted by an app on the local device. Telecom does not hold audio focus in this
+state, and the call will be invisible to the user except for a persistent notification.
+
+___
+
+### STATE\_SIMULATED\_RINGING
+
+ **STATE\_SIMULATED\_RINGING** = ``"STATE_SIMULATED_RINGING"``
+
+The state of a call that is being presented to the user after being in
+[STATE_AUDIO_PROCESSING](domain_PhoneCallState.PhoneCallState.md#state_audio_processing). The call is still active with the network in this case, and
+Telecom will hold audio focus and play a ringtone if appropriate.
+
+___
+
+### UNKNOWN
+
+ **UNKNOWN** = ``"UNKNOWN"``
+
+If the state does not correspond to any of the other states.

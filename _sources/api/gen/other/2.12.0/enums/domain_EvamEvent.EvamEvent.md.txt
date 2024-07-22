@@ -1,0 +1,246 @@
+# Enumeration: EvamEvent
+
+[domain/EvamEvent](../modules/domain_EvamEvent.md).EvamEvent
+
+Event names for events specific to Vehicle Services.
+All names are self-explanatory (_testEvent is specifically for testing purposes and is not used in the sdk or Vehicle Services)
+
+## Enumeration Members
+
+### AnswerCall
+
+ **AnswerCall** = ``"answerCall"``
+
+___
+
+### AppIdSet
+
+ **AppIdSet** = ``"appIdSet"``
+
+___
+
+### AppVersionSet
+
+ **AppVersionSet** = ``"appVersionSet"``
+
+___
+
+### DeviceIdSet
+
+ **DeviceIdSet** = ``"deviceIdSet"``
+
+___
+
+### GRPCEstablished
+
+ **GRPCEstablished** = ``"gRPCEstablished"``
+
+___
+
+### HangUpCall
+
+ **HangUpCall** = ``"hangUpCall"``
+
+___
+
+### HoldCall
+
+ **HoldCall** = ``"holdCall"``
+
+___
+
+### MakeCall
+
+ **MakeCall** = ``"makeCall"``
+
+___
+
+### MuteMicrophone
+
+ **MuteMicrophone** = ``"muteMicrophone"``
+
+___
+
+### NavLayerDeleted
+
+ **NavLayerDeleted** = ``"navLayerDeleted"``
+
+___
+
+### NavLayerPointSet
+
+ **NavLayerPointSet** = ``"navLayerPointSet"``
+
+___
+
+### NavLayerShapeSet
+
+ **NavLayerShapeSet** = ``"navLayerShapeSet"``
+
+___
+
+### NewOrUpdateRakelState
+
+ **NewOrUpdateRakelState** = ``"newOrUpdateRakelState"``
+
+___
+
+### NewOrUpdatedAudioDeviceTypes
+
+ **NewOrUpdatedAudioDeviceTypes** = ``"newOrUpdatedAudioDeviceTypes"``
+
+___
+
+### NewOrUpdatedAvailableVehicleStatusList
+
+ **NewOrUpdatedAvailableVehicleStatusList** = ``"newOrUpdatedAvailableVehicleStatusList"``
+
+___
+
+### NewOrUpdatedBattery
+
+ **NewOrUpdatedBattery** = ``"newOrUpdatedBattery"``
+
+___
+
+### NewOrUpdatedCalls
+
+ **NewOrUpdatedCalls** = ``"newOrUpdatedCalls"``
+
+___
+
+### NewOrUpdatedDeviceRoles
+
+ **NewOrUpdatedDeviceRoles** = ``"newOrUpdatedDeviceRoles"``
+
+___
+
+### NewOrUpdatedDisplayMode
+
+ **NewOrUpdatedDisplayMode** = ``"newOrUpdatedDisplayMode"``
+
+___
+
+### NewOrUpdatedInternetState
+
+ **NewOrUpdatedInternetState** = ``"newOrUpdatedInternetState"``
+
+___
+
+### NewOrUpdatedLocation
+
+ **NewOrUpdatedLocation** = ``"newOrUpdatedLocation"``
+
+___
+
+### NewOrUpdatedMuteState
+
+ **NewOrUpdatedMuteState** = ``"newOrUpdatedMuteState"``
+
+___
+
+### NewOrUpdatedOperation
+
+ **NewOrUpdatedOperation** = ``"newOrUpdatedOperation"``
+
+___
+
+### NewOrUpdatedOperationList
+
+ **NewOrUpdatedOperationList** = ``"newOrUpdatedOperationList"``
+
+___
+
+### NewOrUpdatedRakelMessages
+
+ **NewOrUpdatedRakelMessages** = ``"newOrUpdatedRakelMessages"``
+
+___
+
+### NewOrUpdatedSettings
+
+ **NewOrUpdatedSettings** = ``"newOrUpdatedSettings"``
+
+___
+
+### NewOrUpdatedTripLocationHistory
+
+ **NewOrUpdatedTripLocationHistory** = ``"newOrUpdatedTripLocationHistory"``
+
+___
+
+### NewOrUpdatedVehicleState
+
+ **NewOrUpdatedVehicleState** = ``"newOrUpdatedVehicleState"``
+
+___
+
+### OSVersionSet
+
+ **OSVersionSet** = ``"osVersionSet"``
+
+___
+
+### PlayRingtone
+
+ **PlayRingtone** = ``"playRingtone"``
+
+___
+
+### RawRakelActionSent
+
+ **RawRakelActionSent** = ``"rawRakelActionSent"``
+
+___
+
+### RemoveNotification
+
+ **RemoveNotification** = ``"removeNotification"``
+
+___
+
+### SelectAudioDeviceType
+
+ **SelectAudioDeviceType** = ``"selectAudioDeviceType"``
+
+___
+
+### StopRingtone
+
+ **StopRingtone** = ``"stopRingtone"``
+
+___
+
+### UnholdCall
+
+ **UnholdCall** = ``"unholdCall"``
+
+___
+
+### UnmuteMicrophone
+
+ **UnmuteMicrophone** = ``"unmuteMicrophone"``
+
+___
+
+### VehicleServicesNotificationCallbackTriggered
+
+ **VehicleServicesNotificationCallbackTriggered** = ``"vehicleServicesNotificationCallbackTriggered"``
+
+___
+
+### VehicleServicesNotificationSent
+
+ **VehicleServicesNotificationSent** = ``"vehicleServicesNotificationSent"``
+
+___
+
+### VehicleServicesVersionSet
+
+ **VehicleServicesVersionSet** = ``"vehicleServicesVersionSet"``
+
+___
+
+### \_testEvent
+
+ **\_testEvent** = ``"_testEvent"``

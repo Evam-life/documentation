@@ -34,6 +34,12 @@ ___
 
 ___
 
+### enableIntercom
+
+ **enableIntercom**: readonly [`boolean`]
+
+___
+
 ### getItem
 
  **getItem**: readonly [`string`]

@@ -1,0 +1,29 @@
+# Module: domain/LayerData
+
+## Type Aliases
+
+### LayerPointData
+
+ **LayerPointData**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `icon` | `string` |
+| `point` | `LatLon` |
+| `text` | `string` |
+
+___
+
+### LayerShapeData
+
+ **LayerShapeData**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `color` | `string` |
+| `points` | `LatLon`[] |
+| `text` | `string` |

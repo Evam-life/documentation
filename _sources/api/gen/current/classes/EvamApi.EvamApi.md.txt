@@ -87,6 +87,38 @@ ___
 
  `Static` **isRunningInVehicleServices**: `boolean` = `isRunningInVehicleServices`
 
+## Intercom Methods
+
+### enableIntercom
+
+**enableIntercom**(`enable`): `void`
+
+Enables/disables the intercom.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `enable` | `boolean` | true to enable the intercom, otherwise false |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** INTERCOM
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
 ## Navigation Methods
 
 ### deleteNavLayer
@@ -563,6 +595,34 @@ Unsubscribes all registered callbacks from Vehicle Service events.
 #### Returns
 
 `void`
+
+___
+
+## P2P Methods
+
+### onNewOrUpdatedIntercomEnabledState
+
+**onNewOrUpdatedIntercomEnabledState**(`callback`): `void`
+
+Used to assign a callback when the intercom's state
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<`boolean`, `void`\> | The callback with (optional) argument boolean. Use this to access the current intercom enabled state (enabled = true, disabled = false), |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+Permissions INTERCOM
+
+**`Trigger`**
+
+The callback triggers every time the active Intercom enabled state is updated, this can happen if the intercom state was changed using [enableIntercom](EvamApi.EvamApi.md#enableintercom)
 
 ___
 
@@ -1382,6 +1442,28 @@ This function is to be used for development only and will throw an error when us
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `displayMode` | [`DisplayMode`](../enums/domain_DisplayMode.DisplayMode.md) | The display mode (light or dark) to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectIntercomEnabledState
+
+**injectIntercomEnabledState**(`intercomEnabledState`): `void`
+
+Manually inject intercomEnabledState to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `intercomEnabledState` | `boolean` | the intercomEnabledState to inject. |
 
 #### Returns
 

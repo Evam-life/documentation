@@ -1,0 +1,1663 @@
+# Class: EvamApi
+
+[EvamApi](../modules/EvamApi.md).EvamApi
+
+Evam API singleton that exposes methods to interact with the Evam platform.
+
+When using any method, pay attention to the permission they require, you will need to add them to your Evam manifest.
+In general, try to limit how many permissions your certified app requires as more permissions may cause a longer review
+process when deploying your certified app.
+
+**`Example`**
+
+```ts
+// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)
+const evamApi = new EvamApi();
+
+// Register a new callback on any operation update that simply logs it
+evamApi.onNewOrUpdatedActiveOperation((activeOperation) => console.log(activeOperation));
+
+// Register a new callback on any application settings update that simply logs them
+evamApi.onNewOrUpdatedSettings((settings) => console.log(settings));
+
+//Register a new callback to any specific application data update. Available register methods:
+evamApi.onNewOrUpdatedDeviceRole((deviceRole) => ...);
+evamApi.onNewOrUpdatedLocation((location) => ...);
+evamApi.onNewOrUpdatedInternetState((internetState) => ...);
+evamApi.onNewOrUpdatedVehicleState((vehicleState) => ...);
+evamApi.onNewOrUpdatedTripLocationHistory((tripLocationHistory) => ...);
+
+// Send a new notification to VS (this will also work for the developer environment)
+// This will display a notification with heading "example", description "lorem ipsum". It will have type 'QUICK_HUN' and a primary button
+// which is labelled 'primary button' that doesn't do anything when called. The secondary button is not defined, thus it will not display.
+evamApi.sendNotification(new Notification("example","lorem ipsum", NotificationType.QUICK_HUN, {label:'primary button', callback:()=>{}}, undefined))
+
+//Remove all callbacks from the SDK (this is useful for cleanup)
+evamApi.unsubscribeFromAllCallbacks()
+
+//Detect whether the certified app is currently running in Vehicle Services
+EvamApi.isRunningInVehicleServices
+
+//update the current hospital by id (be sure that the hospital is listed in available hospitals)
+evamApi.setHospital(1234)
+
+//update the current priority (be sure that the priority is listed in available priorities)
+evamApi.setPriority (1)
+
+//simulate Vehicle Services data inject (development + testing only)
+//DO NOT USE THESE METHODS IN PRODUCTION, While not breaking by any means they will not perform any function.
+evamApi.injectLocation(new Location(59.364, 18.012, new Date()))
+evamApi.injectVehicleState(new VehicleState(...))
+evamApi.injectTrip(new TripLocationHistory(...))
+evamApi.injectDeviceRole(new DeviceRole(...))
+evamApi.injectInternetState(new InternetState(...))
+evamApi.injectOperation(new Operation(...))
+evamApi.injectSettings(new Settings(...))
+evamApi.injectOperationList([new Operation(...), new Operation(...), ...])
+evamApi.injectBattery(new Battery(...)))
+```
+
+## Constructors
+
+### constructor
+
+**new EvamApi**()
+
+## Properties
+
+### store
+
+ **store**: `Object`
+
+Store used for persisting data within Vehicle Services. If you are in development and not running your application within vehicle services then this
+will serve as a lightweight wrapper around localstorage. To avoid naming conflicts AppId must be set as it is used to identify application items.
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `clear` | () => `void` |
+| `delete` | (`key`: `string`) => `void` |
+| `get` | (`key`: `string`) => `string` |
+| `set` | (`key`: `string`, `value`: `string`) => `void` |
+
+___
+
+### isRunningInVehicleServices
+
+ `Static` **isRunningInVehicleServices**: `boolean` = `isRunningInVehicleServices`
+
+## Navigation Methods
+
+### deleteNavLayer
+
+**deleteNavLayer**(`id`): `void`
+
+Deletes a layer by its ID. A certified app can only delete a layer it has created.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** NAVIGATION_PRIVATE_LAYERS
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### onNewOrUpdatedLocation
+
+**onNewOrUpdatedLocation**(`callback`): `void`
+
+Registers a callback to be run upon new location or location update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`Location`](domain_Location.Location.md), `void`\> | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** LOCATION_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the device location is updated through the GPS or Evam Demo Tool.
+
+___
+
+### onNewOrUpdatedTripLocationHistory
+
+**onNewOrUpdatedTripLocationHistory**(`callback`): `void`
+
+Used to assign a callback when the trip location history is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`TripLocationHistory`](domain_TripLocationHistory.TripLocationHistory.md), `void`\> | The callback with (optional) argument tripLocationHistory. Use this to access the trip location history. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TRIP_HISTORY_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time any of the following is updated: device location, ETA to destination, distance to destination, navigation state.
+
+___
+
+### setNavLayerPoint
+
+**setNavLayerPoint**(`id`, `layerData`): `void`
+
+Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of points on the map with text and icon at the specified lat and lon
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer (if the layer doesn't exist then one will be created) |
+| `layerData` | [`LayerPointData`](../modules/domain_LayerData.md#layerpointdata)[] | array of points to be shown with text and icon. Note that the icon of the first element will be used for all points. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** NAVIGATION_PRIVATE_LAYERS
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### setNavLayerShape
+
+**setNavLayerShape**(`id`, `layerData`): `void`
+
+Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of shapes on the map with the text in its center.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | the id of the layer (if the layer doesn't exist then one will be created) |
+| `layerData` | [`LayerShapeData`](../modules/domain_LayerData.md#layershapedata)[] | array of shapes to be shown with text and shape color (format: "#AARRGGBB", just like the SC buttons) |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** NAVIGATION_PRIVATE_LAYERS
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+## Notifications Methods
+
+### removeNotification
+
+**removeNotification**(`notificationId`): `void`
+
+Removes the notification by given id.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `notificationId` | `string` | The notification id |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** SEND_NOTIFICATION
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### sendNotification
+
+**sendNotification**(`notification`): `void`
+
+Send a notification to Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `notification` | [`Notification`](domain_Notification.Notification.md) | The notification to be sent |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** SEND_NOTIFICATION
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: function with throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+## Operations Methods
+
+### onNewOrUpdatedActiveOperation
+
+**onNewOrUpdatedActiveOperation**(`callback`): `void`
+
+Registers a callback to be run upon a new Active Operation is available or the current Active
+Operation is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`Operation`](domain_Operation.Operation.md), `void`\> | The callback to be executed |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** ACTIVE_OPERATION_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the active Operation is updated, this can happen due to update by the dispatch (e.g. SOS), Evam Demo Tool or user edit (e.g. change of PRIO)
+
+___
+
+### onNewOrUpdatedAvailableVehicleStatusList
+
+**onNewOrUpdatedAvailableVehicleStatusList**(`callback`): `void`
+
+Used to assign a callback when the list of available Vehicle Statuses is created or updated
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)[], `void`\> | The callback with (optional) argument available Vehicle Status list. Use this to access the available Vehicle Statuses. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** AVAILABLE_VEHICLE_STATUS_LIST_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the list of available Vehicle Statuses is updated for this vehicle, and also when the certified app starts.
+
+___
+
+### onNewOrUpdatedOperationList
+
+**onNewOrUpdatedOperationList**(`callback`): `void`
+
+Used to assign a callback when the operation list is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`Operation`](domain_Operation.Operation.md)[], `void`\> | The callback with (optional) argument operationList. Use this to access the operation list. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** OPERATION_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time any Operation is updated in the Evam platform, including the Active one.
+
+___
+
+### onNewOrUpdatedVehicleState
+
+**onNewOrUpdatedVehicleState**(`callback`): `void`
+
+Used to assign a callback when the vehicle state is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`VehicleState`](domain_VehicleState.VehicleState.md), `void`\> | The callback with (optional) argument vehicleState. Use this to access the vehicle state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** VEHICLE_STATE_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time any of the following is updated: device location, Operation ID, Vehicle Status.
+
+___
+
+### setHospital
+
+**setHospital**(`id`): `void`
+
+Sets the selected hospital id for the current active operation. The id must be present inside the available hospitals
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | the id of the hospital to be set |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** ACTIVE_OPERATION_WRITE
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.
+
+___
+
+### setPriority
+
+**setPriority**(`id`): `void`
+
+Sets the selected priority id for the current active operation. The id must be present inside the available priorities.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | of the priority to be set |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** ACTIVE_OPERATION_WRITE
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will trigger an error.
+
+___
+
+## Other Methods
+
+### getAppId
+
+**getAppId**(): `string`
+
+Gets the Evam App id as given by Vehicle Services
+
+#### Returns
+
+`string`
+
+___
+
+### getAppVersion
+
+**getAppVersion**(): `string`
+
+Gets the Evam App version as defined in the evam.json manifest
+
+#### Returns
+
+`string`
+
+___
+
+### getDeviceId
+
+**getDeviceId**(): `string`
+
+Gets the device ID as defined in Android
+
+#### Returns
+
+`string`
+
+___
+
+### getGRPC
+
+**getGRPC**(): [`GRPC`](domain_GRPC.GRPC.md)
+
+Gets the address for the GRPC proxy
+
+#### Returns
+
+[`GRPC`](domain_GRPC.GRPC.md)
+
+___
+
+### getOSVersion
+
+**getOSVersion**(): `string`
+
+Gets the Android OS version
+
+#### Returns
+
+`string`
+
+___
+
+### getVehicleServicesVersion
+
+**getVehicleServicesVersion**(): `string`
+
+Gets the Vehicle Services app version
+
+#### Returns
+
+`string`
+
+___
+
+### unsubscribeFromAllCallbacks
+
+**unsubscribeFromAllCallbacks**(): `void`
+
+Unsubscribes all registered callbacks from Vehicle Service events.
+
+#### Returns
+
+`void`
+
+___
+
+## Radio Methods
+
+### onNewOrUpdatedRakelMessages
+
+**onNewOrUpdatedRakelMessages**(`callback`): `void`
+
+Used to assign a callback when the incoming Rakel messages are updated.
+The messages are piped though in the raw form as they are received from the radio.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<`string`[], `void`\> | The callback with (optional) argument Rakel messages. Use this to access the incoming Rakel messages. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** RAKEL_COMMUNICATION_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time new messages are available from the connected Tetra terminal.
+
+___
+
+### onNewOrUpdatedRakelState
+
+**onNewOrUpdatedRakelState**(`callback`): `void`
+
+Used to assign a callback when the rakel state is created or updated
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`RakelState`](domain_RakelState.RakelState.md), `void`\> | The callback with (optional) argument Rakel state. Use this to access the Rakel state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** RAKEL_STATE_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time any of the following changes: GSSI, MSISDN, ISSI of the connected radio. Also, when the certified app starts.
+
+___
+
+### sendRawRakelAction
+
+**sendRawRakelAction**(`rawRakelAction`): `void`
+
+Sends a RawRakelAction to the Rakel radio.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rawRakelAction` | [`RawRakelAction`](domain_RawRakelAction.RawRakelAction.md) | the RawRakelAction to be sent to the radio. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** RAKEL_RAW_COMMAND_SEND
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: function will throw an Error.
+
+___
+
+## Settings Methods
+
+### onNewOrUpdatedSettings
+
+**onNewOrUpdatedSettings**(`callback`): `void`
+
+Registers a callback to be run upon new application settings reception or settings update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<`any`, `void`\> | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the settings are updated for this certified app, and when the certified app starts. Vehicle Services synchronizes these settings with Evam Central Services once every few hours.
+
+___
+
+## System Methods
+
+### onNewOrUpdatedBattery
+
+**onNewOrUpdatedBattery**(`callback`): `void`
+
+Used to assign a callback when the battery data is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`Battery`](domain_Battery.Battery.md), `void`\> | The callback with (optional) argument battery. Use this to access the battery. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** BATTERY_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the battery state is updated: charge, health, plugged status, or capacity. And when the certified app starts.
+
+___
+
+### onNewOrUpdatedDeviceRole
+
+**onNewOrUpdatedDeviceRole**(`callback`): `void`
+
+Registers a callback to be run upon new device role or device role update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`DeviceRole`](../enums/domain_DeviceRole.DeviceRole.md), `void`\> | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** DEVICE_ROLE_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the device role is changed by the user through the Setup flow, and when the certified app starts.
+
+___
+
+### onNewOrUpdatedDisplayMode
+
+**onNewOrUpdatedDisplayMode**(`callback`): `void`
+
+Used to assign a callback when the display mode is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`DisplayMode`](../enums/domain_DisplayMode.DisplayMode.md), `void`\> | The callback with (optional) argument display mode. Use this to access the display mode. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** DISPLAY_MODE_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the display mode is updated, either by the user or automatically based on the time of the day if the user chose to have to automatically updated.
+
+___
+
+### onNewOrUpdatedInternetState
+
+**onNewOrUpdatedInternetState**(`callback`): `void`
+
+Registers a callback to be run upon new internetState or internetState update
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`InternetState`](../enums/domain_InternetState.InternetState.md), `void`\> | The callback to be executed. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** CONNECTIVITY_READ
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the state of the internet connectivity is updated, and when the certified app starts.
+
+___
+
+### putAppInForeground
+
+**putAppInForeground**(): `void`
+
+Opens the app in foreground in Vehicle Services.
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** PUT_APP_IN_FOREGROUND
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+## Telephony Methods
+
+### answerCall
+
+**answerCall**(`callId`): `void`
+
+Answers a call that matches the given [callId](domain_PhoneCall.PhoneCall.md#callid) provided as part of the calls from newOrUpdatedCalls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callId` | `string` | the id of the call to answer. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### hangUpCall
+
+**hangUpCall**(`callId`): `void`
+
+Hangs up or cancels a call that matches the given [callId](domain_PhoneCall.PhoneCall.md#callid) provided as part of the calls from newOrUpdatedCalls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callId` | `string` | the id of the call to be canceled. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### holdCall
+
+**holdCall**(`callId`): `void`
+
+Puts a call on hold that matches the given [callId](domain_PhoneCall.PhoneCall.md#callid) provided as part of the calls from newOrUpdatedCalls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callId` | `string` | the id of the call to hold. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### makeCall
+
+**makeCall**(`number`): `void`
+
+Initiates a new call to the given number.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `number` | `string` | the phone number to call |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### muteMicrophone
+
+**muteMicrophone**(): `void`
+
+Mutes the microphone of the device.
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### onNewOrUpdatedAudioDeviceTypes
+
+**onNewOrUpdatedAudioDeviceTypes**(`callback`): `void`
+
+Used to assign a callback when the available and selected audio device types for phone calls are updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`AudioDevices`](domain_AudioDevices.AudioDevices.md), `void`\> | The callback with (optional) argument AudioDevices. Use this to access the current audio devices state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.1 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the available audio devices change or the selected audio device changes.
+
+___
+
+### onNewOrUpdatedCalls
+
+**onNewOrUpdatedCalls**(`callback`): `void`
+
+Used to assign a callback when the phone calls are updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<[`PhoneCall`](domain_PhoneCall.PhoneCall.md)[], `void`\> | The callback with (optional) argument array of [PhoneCall](domain_PhoneCall.PhoneCall.md). Use this to access the current phone calls. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the state of incoming calls is updated: new incoming call, hangup etc.
+
+___
+
+### onNewOrUpdatedMuteState
+
+**onNewOrUpdatedMuteState**(`callback`): `void`
+
+Used to assign a callback when the device's microphone mute state is updated.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | `CallbackFunction`\<`boolean`, `void`\> | The callback with (optional) argument boolean. Use this to access the current microphone mute state. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: callback will never trigger.
+
+**`Trigger`**
+
+The callback triggers every time the device's microphone mute state is updated.
+
+___
+
+### playRingtone
+
+**playRingtone**(`filePath`): `void`
+
+Plays an audio file as a ringtone.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | the relative file path of the ringtone audio file. The file should be placed in the /public folder. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### selectAudioDeviceType
+
+**selectAudioDeviceType**(`audioDeviceType`): `void`
+
+Selects the audio device type for phone calls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `audioDeviceType` | [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md) | the audio device type. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.1 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### stopRingtone
+
+**stopRingtone**(`filePath`): `void`
+
+Stops playing the ringtone for a given audio file.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | the relative file path of the ringtone audio file. The file should be placed in the /public folder. This should match the path sent in [playRingtone](EvamApi.EvamApi.md#playringtone) for a particular ringtone. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permission** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### unholdCall
+
+**unholdCall**(`callId`): `void`
+
+Resumes a call on hold that matches the given [callId](domain_PhoneCall.PhoneCall.md#callid) provided as part of the calls from newOrUpdatedCalls.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callId` | `string` | the id of the call to be resumed. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+### unmuteMicrophone
+
+**unmuteMicrophone**(): `void`
+
+Unmutes the microphone of the device.
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Permissions** TELEPHONY
+
+**`Requires`**
+
+**Version** Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.
+
+**`Requires`**
+
+**Environment** Evam device only
+
+___
+
+## Testing and Development Methods
+
+### injectAppId
+
+**injectAppId**(`appId`): `void`
+
+Injects the certified app ID manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `appId` | `string` | The app ID to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectAppVersion
+
+**injectAppVersion**(`appVersion`): `void`
+
+Injects the app version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `appVersion` | `string` | The app version to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectAudioDevices
+
+**injectAudioDevices**(`audioDevices`): `void`
+
+Injects the audio devices available (and selected).
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `audioDevices` | [`AudioDevices`](domain_AudioDevices.AudioDevices.md) | the audio devices to inject |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectAvailableVehicleStatusList
+
+**injectAvailableVehicleStatusList**(`vehicleStatusList`): `void`
+
+Manually inject the Available Vehicle Status list to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `vehicleStatusList` | [`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)[] | the list of available Vehicle Statuses |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectBattery
+
+**injectBattery**(`battery`): `void`
+
+Injects the battery manually. This will trigger onNewOrUpdatedBattery(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `battery` | [`Battery`](domain_Battery.Battery.md) | The battery to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectCalls
+
+**injectCalls**(`calls`): `void`
+
+Inject a list of [PhoneCall](domain_PhoneCall.PhoneCall.md) as they are sent from Vehicle Services.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `calls` | [`PhoneCall`](domain_PhoneCall.PhoneCall.md)[] | the calls to be injected. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectDeviceRole
+
+**injectDeviceRole**(`deviceRole`): `void`
+
+Manually inject deviceRole to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `deviceRole` | [`DeviceRole`](../enums/domain_DeviceRole.DeviceRole.md) | the deviceRole to inject. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectDisplayMode
+
+**injectDisplayMode**(`displayMode`): `void`
+
+Injects the display mode manually. This will trigger onNewOrUpdatedDisplayMode(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `displayMode` | [`DisplayMode`](../enums/domain_DisplayMode.DisplayMode.md) | The display mode (light or dark) to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectInternetState
+
+**injectInternetState**(`internetState`): `void`
+
+Manually inject internetState to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `internetState` | [`InternetState`](../enums/domain_InternetState.InternetState.md) | the internetState to inject. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectLocation
+
+**injectLocation**(`location`): `void`
+
+Manually inject location to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `location` | [`Location`](domain_Location.Location.md) | the location to inject. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectMuteState
+
+**injectMuteState**(`isMuted`): `void`
+
+Injects the mute state of the microphone.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `isMuted` | `boolean` | true if the microphone is muted. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectOSVersion
+
+**injectOSVersion**(`osVersion`): `void`
+
+Injects the OS version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `osVersion` | `string` | The OS version to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectOperation
+
+**injectOperation**(`activeCase`): `void`
+
+Injects the Active Operation manually. This will trigger onNewOrUpdatedActiveOperation(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `activeCase` | [`Operation`](domain_Operation.Operation.md) | The active case to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectOperationList
+
+**injectOperationList**(`operationList`): `void`
+
+Injects the operation list manually. This will trigger onNewOrUpdatedOperationList(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `operationList` | [`Operation`](domain_Operation.Operation.md)[] | The operation list to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectRakelMessages
+
+**injectRakelMessages**(`rakelMessages`): `void`
+
+Inject a list of raw Rakel messages as they would be received from the radio.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rakelMessages` | `string`[] | list of raw Rakel messages. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectRakelState
+
+**injectRakelState**(`rakelState`): `void`
+
+Manually inject the Rakel State to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rakelState` | [`RakelState`](domain_RakelState.RakelState.md) | The Rakel State |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectSettings
+
+**injectSettings**(`settings`): `void`
+
+Injects the settings manually. This will trigger onNewOrUpdatedSettings(...)'s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `settings` | `any` | The settings to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectTrip
+
+**injectTrip**(`tripLocationHistory`): `void`
+
+Manually inject tripLocationHistory to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `tripLocationHistory` | [`TripLocationHistory`](domain_TripLocationHistory.TripLocationHistory.md) | the tripLocationHistory to inject. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectVSVersion
+
+**injectVSVersion**(`vsVersion`): `void`
+
+Injects the Vehicle Services platform version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `vsVersion` | `string` | The Vehicle Services version to be injected for development purposes. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
+
+___
+
+### injectVehicleState
+
+**injectVehicleState**(`vehicleState`): `void`
+
+Manually inject vehicleState to EvamApi (Only available in development.)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `vehicleState` | [`VehicleState`](domain_VehicleState.VehicleState.md) | the vehicleState to inject. |
+
+#### Returns
+
+`void`
+
+**`Requires`**
+
+**Environment** Development (in web browser) only.
