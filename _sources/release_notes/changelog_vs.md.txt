@@ -1,5 +1,38 @@
 # Changelog | Vehicle Services
 
+
+## 6.0.1
+
+2024-09-02
+
+### Highlights
+
+
+* **Improved the general stability of Vehicle Services:** we have found the cause and fixed several rare crashes that could happen in Vehicle Services, notably when using the Search View.
+
+
+### Additional changes
+
+* **Fixed freeze of the Navigation app:** a rare combination of events could cause Navigation to freeze when using multiple screens and dismissing an incoming case, this should no longer happen.
+
+
+## 6.0.0
+
+2024-08-21
+
+### Highlights
+
+* **Design overhaul of the bottom bar:** the Bottom bar of Vehicle Services has received a significant overhaul, it is now more compact and makes the display of the installed apps clearer. It also features a volume control widget that allows for the Tetra device volume to be controlled, as well as the general device volume.
+* **New Top bar is added:** Vehicle Services now includes a custom Top bar as replacement of the Android system one. It displays vital information such as the state of the Tetra connectivity, the selected Talk group, Duplex and Simplex call status, multiple screen state, as well as general internet connectivity and time.
+* **Intercom now supports dynamic volume control:** the intercom volume is now dynamically adjusted to prevent loud sounds from being heard.
+
+
+### Additional changes
+
+* **Intercom robustness has been improved:** the intercom should now be more robust to connection loss, such as when the devices are moved away from each other.
+* **Improved robustness of certified apps:** certified apps will no longer lose SDK functionality in case of app reload.
+
+
 ## 5.3.2
 
 2024-07-22
