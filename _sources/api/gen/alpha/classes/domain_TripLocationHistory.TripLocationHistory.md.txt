@@ -6,7 +6,7 @@
 
 ### constructor
 
-**new TripLocationHistory**(`locationHistory`, `etaSeconds`)
+**new TripLocationHistory**(`locationHistory`, `etaSeconds`, `distanceToDestinationMeters`)
 
 An array of locations represents the history of the trip
 
@@ -16,18 +16,31 @@ An array of locations represents the history of the trip
 | :------ | :------ | :------ |
 | `locationHistory` | [`Location`](domain_Location.Location.md)[] | location array |
 | `etaSeconds` | `number` | 'estimated time of arrival' in seconds |
+| `distanceToDestinationMeters` | `number` | Remaining driving distance until destination in meters |
 
 ## Properties
+
+### distanceToDestinationMeters
+
+ **distanceToDestinationMeters**: `number`
+
+Remaining driving distance until destination in meters
+
+___
 
 ### etaSeconds
 
  **etaSeconds**: `number`
+
+'estimated time of arrival' in seconds
 
 ___
 
 ### locationHistory
 
  **locationHistory**: [`Location`](domain_Location.Location.md)[]
+
+location array
 
 ## Methods
 

@@ -14,4 +14,4 @@ ___
 
 ### EvamTabContext
 
- `Const` **EvamTabContext**: `Context`<[`EvamAppBarContextModel`](../classes/component_appbar_EvamTabContext.EvamAppBarContextModel.md)\>
+ `Const` **EvamTabContext**: `Context`\<[`EvamAppBarContextModel`](../classes/component_appbar_EvamTabContext.EvamAppBarContextModel.md)\>

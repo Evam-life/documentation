@@ -23,11 +23,15 @@ A patient
 
  **name**: `string`
 
+name of the patient
+
 ___
 
 ### uid
 
  **uid**: `string`
+
+unique identifier of the patient
 
 ## Methods
 

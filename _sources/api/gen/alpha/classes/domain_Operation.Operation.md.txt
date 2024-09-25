@@ -6,7 +6,7 @@
 
 ### constructor
 
-**new Operation**(`operationID`, `name`, `sendTime`, `createdTime`, `endTime`, `callCenterId`, `caseFolderId`, `transmitterCode`, `alarmCategory`, `alarmEventCode`, `medicalCommander`, `medicalIncidentOfficer`, `attachedCustomerObject`, `alarmEventText`, `additionalInfo`, `keyNumber`, `electronicKey`, `radioGroupMain`, `radioGroupSecondary`, `additionalCoordinationInformation`, `availablePriorities`, `patientName`, `patientUID`, `vehicleStatus`, `destinationSiteLocation`, `breakpointLocation`, `availableHospitalLocations`, `header1`, `header2`, `eventInfo`, `caseInfo`, `selectedHospital`, `selectedPriority`, `operationState`)
+**new Operation**(`operationID`, `name`, `sendTime`, `createdTime`, `endTime`, `acceptedTime`, `callCenterId`, `caseFolderId`, `transmitterCode`, `alarmCategory`, `alarmEventCode`, `medicalCommander`, `medicalIncidentOfficer`, `attachedCustomerObject`, `alarmEventText`, `additionalInfo`, `keyNumber`, `electronicKey`, `radioGroupMain`, `radioGroupSecondary`, `additionalCoordinationInformation`, `availablePriorities`, `patientName`, `patientUID`, `vehicleStatus`, `destinationSiteLocation`, `breakpointLocation`, `availableHospitalLocations`, `header1`, `header2`, `eventInfo`, `caseInfo`, `selectedHospital`, `selectedPriority`, `operationState`, `leavePatientLocation`, `assignedResourceMissionNo`, `operationUnits`, `prioName`)
 
 #### Parameters
 
@@ -17,6 +17,7 @@
 | `sendTime` | `Date` | The time at which the operation was sent |
 | `createdTime` | `Date` | The time at which the operation was created |
 | `endTime` | `Date` | The time at which the operation ended, `undefined` still ongoing |
+| `acceptedTime` | `Date` | The time at which the operation was accepted (minimum Vehicle Services version: 5.0.2, otherwise always undefined) |
 | `callCenterId` | `string` | The Call Center ID |
 | `caseFolderId` | `string` | The Case folder ID |
 | `transmitterCode` | `string` | The transmitter code |
@@ -45,13 +46,27 @@
 | `caseInfo` | `string` | The case info comment |
 | `selectedHospital` | `number` | The id of the selected hospital [inside available hospitals] |
 | `selectedPriority` | `number` | The id of the selected priority [inside available priority] |
-| `operationState` | [`default`](../enums/domain_OperationState.default.md) | the current state of the operation (ACTIVE, AVAILABLE, COMPLETE) |
+| `operationState` | [`OperationState`](../enums/domain_OperationState.OperationState.md) | the current state of the operation (ACTIVE, AVAILABLE, COMPLETE) |
+| `leavePatientLocation` | [`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md) | The location of the leave-patient ('toCity', etc) |
+| `assignedResourceMissionNo` | `string` | The Assigned Resource Mission No value from SOS (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
+| `operationUnits` | [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[] | A list of the units that include the Assigned Resource values from SOS and the Units from the cloud (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
+| `prioName` | `string` | The operation priority name as it is sent from dispatch or as it is defined in the Application settings when selected by the user. Possible values are: 1, 1a, 2B, PRIO 1, PRIO 1b, PRIO 2A. |
 
 ## Properties
+
+### acceptedTime
+
+ **acceptedTime**: `Date`
+
+The time at which the operation was accepted (minimum Vehicle Services version: 5.0.2, otherwise always undefined)
+
+___
 
 ### additionalCoordinationInformation
 
  **additionalCoordinationInformation**: `string`
+
+Additional coordination information
 
 ___
 
@@ -59,11 +74,15 @@ ___
 
  **additionalInfo**: `string`
 
+The additional information attached to this operation
+
 ___
 
 ### alarmCategory
 
  **alarmCategory**: `string`
+
+The alarm category
 
 ___
 
@@ -71,11 +90,23 @@ ___
 
  **alarmEventCode**: `string`
 
+The alarm event code
+
 ___
 
 ### alarmEventText
 
  **alarmEventText**: `string`
+
+The alarm event text
+
+___
+
+### assignedResourceMissionNo
+
+ **assignedResourceMissionNo**: `string`
+
+The Assigned Resource Mission No value from SOS (minimum Vehicle Services version: 5.2.2, otherwise always undefined)
 
 ___
 
@@ -83,11 +114,15 @@ ___
 
  **attachedCustomerObject**: `string`
 
+The attached customer Object
+
 ___
 
 ### availableHospitalLocations
 
  **availableHospitalLocations**: [`HospitalLocation`](domain_HospitalLocation.HospitalLocation.md)[]
+
+The list of available hospitals to select from
 
 ___
 
@@ -95,11 +130,15 @@ ___
 
  **availablePriorities**: [`OperationPriority`](domain_OperationPriority.OperationPriority.md)[]
 
+The list of available priorities to select from
+
 ___
 
 ### breakpointLocation
 
  **breakpointLocation**: [`DestinationControlPointLocation`](domain_DestinationControlPointLocation.DestinationControlPointLocation.md)
+
+The location of the breakpoint if any
 
 ___
 
@@ -107,11 +146,15 @@ ___
 
  **callCenterId**: `string`
 
+The Call Center ID
+
 ___
 
 ### caseFolderId
 
  **caseFolderId**: `string`
+
+The Case folder ID
 
 ___
 
@@ -119,11 +162,15 @@ ___
 
  **caseInfo**: `string`
 
+The case info comment
+
 ___
 
 ### createdTime
 
  **createdTime**: `Date`
+
+The time at which the operation was created
 
 ___
 
@@ -131,11 +178,15 @@ ___
 
  **destinationSiteLocation**: [`DestinationSiteLocation`](domain_DestinationSiteLocation.DestinationSiteLocation.md)
 
+The location of the destination
+
 ___
 
 ### electronicKey
 
  **electronicKey**: `string`
+
+The electronic key
 
 ___
 
@@ -143,11 +194,15 @@ ___
 
  **endTime**: `Date`
 
+The time at which the operation ended, `undefined` still ongoing
+
 ___
 
 ### eventInfo
 
  **eventInfo**: `string`
+
+The event description
 
 ___
 
@@ -155,11 +210,15 @@ ___
 
  **header1**: `string`
 
+The case index 2
+
 ___
 
 ### header2
 
  **header2**: `string`
+
+The case index 3
 
 ___
 
@@ -167,11 +226,23 @@ ___
 
  **keyNumber**: `string`
 
+The key number
+
+___
+
+### leavePatientLocation
+
+ **leavePatientLocation**: [`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md)
+
+The location of the leave-patient ('toCity', etc)
+
 ___
 
 ### medicalCommander
 
  **medicalCommander**: `string`
+
+The medical commander of this operation
 
 ___
 
@@ -179,11 +250,15 @@ ___
 
  **medicalIncidentOfficer**: `string`
 
+The medical incident office of this operation
+
 ___
 
 ### name
 
  **name**: `string`
+
+The operation name
 
 ___
 
@@ -191,11 +266,23 @@ ___
 
  **operationID**: `string`
 
+The operation ID
+
 ___
 
 ### operationState
 
- **operationState**: [`default`](../enums/domain_OperationState.default.md)
+ **operationState**: [`OperationState`](../enums/domain_OperationState.OperationState.md)
+
+the current state of the operation (ACTIVE, AVAILABLE, COMPLETE)
+
+___
+
+### operationUnits
+
+ **operationUnits**: [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[]
+
+A list of the units that include the Assigned Resource values from SOS and the Units from the cloud (minimum Vehicle Services version: 5.2.2, otherwise always undefined)
 
 ___
 
@@ -203,11 +290,23 @@ ___
 
  **patientName**: `string`
 
+The name of the patient if any
+
 ___
 
 ### patientUID
 
  **patientUID**: `string`
+
+The personal number of the patient if any
+
+___
+
+### prioName
+
+ **prioName**: `string`
+
+The operation priority name as it is sent from dispatch or as it is defined in the Application settings when selected by the user. Possible values are: 1, 1a, 2B, PRIO 1, PRIO 1b, PRIO 2A.
 
 ___
 
@@ -215,11 +314,15 @@ ___
 
  **radioGroupMain**: `string`
 
+The main radio group associated with this operation
+
 ___
 
 ### radioGroupSecondary
 
  **radioGroupSecondary**: `string`
+
+The secondary radio group associated with this operation
 
 ___
 
@@ -227,11 +330,15 @@ ___
 
  **selectedHospital**: `number`
 
+The id of the selected hospital [inside available hospitals]
+
 ___
 
 ### selectedPriority
 
  **selectedPriority**: `number`
+
+The id of the selected priority [inside available priority]
 
 ___
 
@@ -239,17 +346,23 @@ ___
 
  **sendTime**: `Date`
 
+The time at which the operation was sent
+
 ___
 
 ### transmitterCode
 
  **transmitterCode**: `string`
 
+The transmitter code
+
 ___
 
 ### vehicleStatus
 
  **vehicleStatus**: [`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)
+
+The current vehicle status in this operation
 
 ## Methods
 

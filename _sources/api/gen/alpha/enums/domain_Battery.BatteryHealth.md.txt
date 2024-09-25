@@ -6,40 +6,40 @@
 
 ### COLD
 
- **COLD** = ``7``
+ **COLD** = ``"COLD"``
 
 ___
 
 ### DEAD
 
- **DEAD** = ``4``
+ **DEAD** = ``"DEAD"``
 
 ___
 
 ### GOOD
 
- **GOOD** = ``2``
+ **GOOD** = ``"GOOD"``
 
 ___
 
 ### OVERHEAT
 
- **OVERHEAT** = ``3``
+ **OVERHEAT** = ``"OVERHEAT"``
 
 ___
 
 ### OVER\_VOLTAGE
 
- **OVER\_VOLTAGE** = ``5``
+ **OVER\_VOLTAGE** = ``"OVER_VOLTAGE"``
 
 ___
 
 ### UNKNOWN
 
- **UNKNOWN** = ``1``
+ **UNKNOWN** = ``"UNKNOWN"``
 
 ___
 
 ### UNSPECIFIED\_FAILURE
 
- **UNSPECIFIED\_FAILURE** = ``6``
+ **UNSPECIFIED\_FAILURE** = ``"UNSPECIFIED_FAILURE "``

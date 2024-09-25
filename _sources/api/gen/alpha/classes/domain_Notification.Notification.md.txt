@@ -6,7 +6,7 @@
 
 ### constructor
 
-**new Notification**(`heading`, `description`, `notificationType`, `primaryButton`, `secondaryButton`)
+**new Notification**(`heading`, `description`, `notificationType`, `primaryButton`, `secondaryButton`, `notificationId?`)
 
 Notification to appear in vehicle services
 
@@ -19,6 +19,7 @@ Notification to appear in vehicle services
 | `notificationType` | [`NotificationType`](../enums/domain_NotificationType.NotificationType.md) | how the notification is displayed |
 | `primaryButton` | `NotificationButton` | primary button label and optional callback |
 | `secondaryButton` | `NotificationButton` | optional secondary button label and optional callback |
+| `notificationId?` | `string` | unique notification id that is optional and used if the app also needs to remove a notification |
 
 ## Properties
 
@@ -26,11 +27,23 @@ Notification to appear in vehicle services
 
  **description**: `string`
 
+extra detail regarding the notification
+
 ___
 
 ### heading
 
  **heading**: `string`
+
+the main title of the notification
+
+___
+
+### notificationId
+
+ `Optional` **notificationId**: `string`
+
+unique notification id that is optional and used if the app also needs to remove a notification
 
 ___
 
@@ -38,17 +51,23 @@ ___
 
  **notificationType**: [`NotificationType`](../enums/domain_NotificationType.NotificationType.md)
 
+how the notification is displayed
+
 ___
 
 ### primaryButton
 
  **primaryButton**: `NotificationButton`
 
+primary button label and optional callback
+
 ___
 
 ### secondaryButton
 
  **secondaryButton**: `NotificationButton`
+
+optional secondary button label and optional callback
 
 ## Methods
 

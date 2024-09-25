@@ -25,11 +25,15 @@ Location of a breakpoint
 
  **additionalInfo**: `string`
 
+Additional information if available
+
 ___
 
 ### latitude
 
  **latitude**: `number`
+
+Latitude in decimal degrees
 
 ___
 
@@ -37,11 +41,15 @@ ___
 
  **longitude**: `number`
 
+Longitude in decimal degrees
+
 ___
 
 ### name
 
  **name**: `string`
+
+Breakpoint name if available
 
 ## Methods
 

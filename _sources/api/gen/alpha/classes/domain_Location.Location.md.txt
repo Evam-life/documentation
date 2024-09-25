@@ -16,7 +16,7 @@ Location on a map
 | :------ | :------ | :------ |
 | `latitude` | `number` | latitude coordinate of the location |
 | `longitude` | `number` | longitude coordinate of the location |
-| `timestamp` | `Date` | time the location was provided |
+| `timestamp` | `Date` | time the location was provided (ERRATA: this can in some cases be a number instead of a Date) |
 
 ## Properties
 
@@ -24,17 +24,23 @@ Location on a map
 
  **latitude**: `number`
 
+latitude coordinate of the location
+
 ___
 
 ### longitude
 
  **longitude**: `number`
 
+longitude coordinate of the location
+
 ___
 
 ### timestamp
 
  **timestamp**: `Date`
+
+time the location was provided (ERRATA: this can in some cases be a number instead of a Date)
 
 ## Methods
 

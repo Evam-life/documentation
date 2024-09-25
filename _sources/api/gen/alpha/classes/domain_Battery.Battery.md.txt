@@ -26,11 +26,15 @@ Class representing the device's battery health, status and plugged state.
 
  `Optional` **capacity**: `number`
 
+Remaining battery capacity as an integer percentage of total capacity (with no fractional part).
+
 ___
 
 ### health
 
  `Optional` **health**: [`BatteryHealth`](../enums/domain_Battery.BatteryHealth.md)
+
+the battery's health (either UNKNOWN, GOOD, OVERHEAT, DEAD, OVER_VOLTAGE, UNSPECIFIED_FAILURE, COLD)
 
 ___
 
@@ -38,11 +42,15 @@ ___
 
  `Optional` **plugged**: [`BatteryPlugged`](../enums/domain_Battery.BatteryPlugged.md)
 
+the battery's plugged status (either DOCK, AC, USB, WIRELESS)
+
 ___
 
 ### status
 
  `Optional` **status**: [`BatteryStatus`](../enums/domain_Battery.BatteryStatus.md)
+
+the battery's status (either UNKNOWN, CHARGING, DISCHARGING, NOT_CHARGING, FULL)
 
 ## Methods
 

@@ -6,28 +6,28 @@
 
 ### CHARGING
 
- **CHARGING** = ``2``
+ **CHARGING** = ``"CHARGING"``
 
 ___
 
 ### DISCHARGING
 
- **DISCHARGING** = ``3``
+ **DISCHARGING** = ``"DISCHARGING"``
 
 ___
 
 ### FULL
 
- **FULL** = ``5``
+ **FULL** = ``"FULL"``
 
 ___
 
 ### NOT\_CHARGING
 
- **NOT\_CHARGING** = ``4``
+ **NOT\_CHARGING** = ``"NOT_CHARGING"``
 
 ___
 
 ### UNKNOWN
 
- **UNKNOWN** = ``1``
+ **UNKNOWN** = ``"UNKNOWN"``

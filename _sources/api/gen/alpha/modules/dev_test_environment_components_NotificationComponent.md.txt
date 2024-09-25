@@ -4,7 +4,7 @@
 
 ### NotificationComponent
 
-**NotificationComponent**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+**NotificationComponent**(`props`, `context?`): `ReactElement`\<`any`, `any`\>
 
 #### Parameters
 
@@ -15,4 +15,4 @@
 
 #### Returns
 
-`ReactElement`<`any`, `any`\>
+`ReactElement`\<`any`, `any`\>

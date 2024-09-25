@@ -296,6 +296,8 @@
         </li>
         <li class="md-nav__item"><a href="#properties" class="md-nav__link">Properties</a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#distancetodestinationmeters" class="md-nav__link">distanceToDestinationMeters</a>
+        </li>
         <li class="md-nav__item"><a href="#etaseconds" class="md-nav__link">etaSeconds</a>
         </li>
         <li class="md-nav__item"><a href="#locationhistory" class="md-nav__link">locationHistory</a>
@@ -332,7 +334,7 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <section id="constructor">
 <h3 id="constructor">constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h3>
-<p><strong>new TripLocationHistory</strong>(<code class="docutils literal notranslate"><span class="pre">locationHistory</span></code>, <code class="docutils literal notranslate"><span class="pre">etaSeconds</span></code>)</p>
+<p><strong>new TripLocationHistory</strong>(<code class="docutils literal notranslate"><span class="pre">locationHistory</span></code>, <code class="docutils literal notranslate"><span class="pre">etaSeconds</span></code>, <code class="docutils literal notranslate"><span class="pre">distanceToDestinationMeters</span></code>)</p>
 <p>An array of locations represents the history of the trip</p>
 <section id="parameters">
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h4>
@@ -352,6 +354,10 @@
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
 <td class="text-left"><p>‘estimated time of arrival’ in seconds</p></td>
 </tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">distanceToDestinationMeters</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="text-left"><p>Remaining driving distance until destination in meters</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -359,14 +365,22 @@
 </section>
 <section id="properties">
 <h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<section id="distancetodestinationmeters">
+<h3 id="distancetodestinationmeters">distanceToDestinationMeters<a class="headerlink" href="#distancetodestinationmeters" title="Permalink to this heading">¶</a></h3>
+<p><strong>distanceToDestinationMeters</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>Remaining driving distance until destination in meters</p>
+</section>
+<hr class="docutils"/>
 <section id="etaseconds">
 <h3 id="etaseconds">etaSeconds<a class="headerlink" href="#etaseconds" title="Permalink to this heading">¶</a></h3>
 <p><strong>etaSeconds</strong>: <code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>‘estimated time of arrival’ in seconds</p>
 </section>
 <hr class="docutils"/>
 <section id="locationhistory">
 <h3 id="locationhistory">locationHistory<a class="headerlink" href="#locationhistory" title="Permalink to this heading">¶</a></h3>
 <p><strong>locationHistory</strong>: <a class="reference internal" href="domain_Location.Location.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Location</span></code></span></a>[]</p>
+<p>location array</p>
 </section>
 </section>
 <section id="methods">

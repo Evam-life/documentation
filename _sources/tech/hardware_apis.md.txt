@@ -23,7 +23,11 @@ an API to access the Tetra radio connected to the Evam platform will be added in
 
 ## Hardware support
 
-### USB access
+The Evam SDK supports raw USB access as well as CANbus access.
+
+The raw USB access offers low-level access to connected USB devices, whereas the CANbus access allows for easy development of CANbus applications.
+
+## USB access
 
 The USB devices can be accessed using the `EvamHardwareUsbApi` class in the SDK `@evam/sdk`.
 
@@ -79,7 +83,38 @@ let responseText = String.fromCharCode(...result.data)
 console.log(`Response from serial: ${responseText}`)
 ```
 
+## CANbus access
+
+The CANbus APIs allow for:
+
+- Sending CAN frames,
+- Receving CAN frames.
+
+```typescript
+const evam = new EvamApi()
+
+// Register a callback to be executed upon reception of new frames
+evam.onReceivedCANbusFrames((frames) => {
+    console.log("Got frames: " + JSON.stringify(frames))
+})
+
+
+// Send one frame: ID="00 00 00 60", data="81" (hex)
+evam.sendCANbusFrames([
+    new CanbusFrame(
+        [0, 0, 0, 0x60],
+        [0x81],
+        Date.now()
+    )
+])
+```
+
 ## Development environment
+
+```{admonition} Limitations
+
+The CANbus APIs currently require a device, they will not work in the browser.
+```
 
 The Hardware APIs follow the Evam SDK philosophy to ensure a quality developer experience.
 
@@ -158,7 +193,15 @@ The Evam manifest located under `public/evam.json` should be updated to request 
                 "type": "deviceFilter",
                 "value": [{"vendorId": 1022, "productId": 45}]
             },
-        ]
+        ],
+        "hardware.canbus": [
+            {
+                "type": "deviceFilter",
+                "value": [{"vendorId": 3213, "productId": 55}],
+                "speed": 125000
+            }
+        ],
+        
     },
     "version": "0.0.1",
     "versionCode": 1
@@ -181,6 +224,8 @@ making it potentially confusing.
 
 It may also make the review of your application longer before it get published.
 ```
+
+For the CANbus, you also need to specify the speed of the bus in bits per second. Typically 50000, 100000 or 125000.
 
 ### End user authorization
 

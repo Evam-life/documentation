@@ -7,6 +7,18 @@ All names are self-explanatory (_testEvent is specifically for testing purposes 
 
 ## Enumeration Members
 
+### AnswerCall
+
+ **AnswerCall** = ``"answerCall"``
+
+___
+
+### AppIdSet
+
+ **AppIdSet** = ``"appIdSet"``
+
+___
+
 ### AppVersionSet
 
  **AppVersionSet** = ``"appVersionSet"``
@@ -19,9 +31,75 @@ ___
 
 ___
 
+### EnableIntercom
+
+ **EnableIntercom** = ``"enableIntercom"``
+
+___
+
 ### GRPCEstablished
 
  **GRPCEstablished** = ``"gRPCEstablished"``
+
+___
+
+### HangUpCall
+
+ **HangUpCall** = ``"hangUpCall"``
+
+___
+
+### HoldCall
+
+ **HoldCall** = ``"holdCall"``
+
+___
+
+### MakeCall
+
+ **MakeCall** = ``"makeCall"``
+
+___
+
+### MuteMicrophone
+
+ **MuteMicrophone** = ``"muteMicrophone"``
+
+___
+
+### NavLayerDeleted
+
+ **NavLayerDeleted** = ``"navLayerDeleted"``
+
+___
+
+### NavLayerPointSet
+
+ **NavLayerPointSet** = ``"navLayerPointSet"``
+
+___
+
+### NavLayerShapeSet
+
+ **NavLayerShapeSet** = ``"navLayerShapeSet"``
+
+___
+
+### NewOrUpdateRakelState
+
+ **NewOrUpdateRakelState** = ``"newOrUpdateRakelState"``
+
+___
+
+### NewOrUpdatedAudioDeviceTypes
+
+ **NewOrUpdatedAudioDeviceTypes** = ``"newOrUpdatedAudioDeviceTypes"``
+
+___
+
+### NewOrUpdatedAvailableVehicleStatusList
+
+ **NewOrUpdatedAvailableVehicleStatusList** = ``"newOrUpdatedAvailableVehicleStatusList"``
 
 ___
 
@@ -31,15 +109,27 @@ ___
 
 ___
 
-### NewOrUpdatedDeviceRole
+### NewOrUpdatedCalls
 
- **NewOrUpdatedDeviceRole** = ``"newOrUpdatedDeviceRoles"``
+ **NewOrUpdatedCalls** = ``"newOrUpdatedCalls"``
+
+___
+
+### NewOrUpdatedDeviceRoles
+
+ **NewOrUpdatedDeviceRoles** = ``"newOrUpdatedDeviceRoles"``
 
 ___
 
 ### NewOrUpdatedDisplayMode
 
  **NewOrUpdatedDisplayMode** = ``"newOrUpdatedDisplayMode"``
+
+___
+
+### NewOrUpdatedIntercomEnabledState
+
+ **NewOrUpdatedIntercomEnabledState** = ``"newOrUpdatedIntercomEnabledState"``
 
 ___
 
@@ -55,6 +145,12 @@ ___
 
 ___
 
+### NewOrUpdatedMuteState
+
+ **NewOrUpdatedMuteState** = ``"newOrUpdatedMuteState"``
+
+___
+
 ### NewOrUpdatedOperation
 
  **NewOrUpdatedOperation** = ``"newOrUpdatedOperation"``
@@ -64,6 +160,12 @@ ___
 ### NewOrUpdatedOperationList
 
  **NewOrUpdatedOperationList** = ``"newOrUpdatedOperationList"``
+
+___
+
+### NewOrUpdatedRakelMessages
+
+ **NewOrUpdatedRakelMessages** = ``"newOrUpdatedRakelMessages"``
 
 ___
 
@@ -85,9 +187,57 @@ ___
 
 ___
 
+### NewRecvCanbusFrames
+
+ **NewRecvCanbusFrames** = ``"NewRecvCanbusFrames"``
+
+___
+
 ### OSVersionSet
 
  **OSVersionSet** = ``"osVersionSet"``
+
+___
+
+### PlayRingtone
+
+ **PlayRingtone** = ``"playRingtone"``
+
+___
+
+### RawRakelActionSent
+
+ **RawRakelActionSent** = ``"rawRakelActionSent"``
+
+___
+
+### RemoveNotification
+
+ **RemoveNotification** = ``"removeNotification"``
+
+___
+
+### SelectAudioDeviceType
+
+ **SelectAudioDeviceType** = ``"selectAudioDeviceType"``
+
+___
+
+### StopRingtone
+
+ **StopRingtone** = ``"stopRingtone"``
+
+___
+
+### UnholdCall
+
+ **UnholdCall** = ``"unholdCall"``
+
+___
+
+### UnmuteMicrophone
+
+ **UnmuteMicrophone** = ``"unmuteMicrophone"``
 
 ___
 

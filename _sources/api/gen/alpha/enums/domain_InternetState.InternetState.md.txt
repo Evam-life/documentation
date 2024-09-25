@@ -8,40 +8,54 @@ Represent the state of the internet connection
 
 ### CONNECTED\_2G
 
- **CONNECTED\_2G** = ``1``
+ **CONNECTED\_2G** = ``"CONNECTED_2G"``
+
+Internet connection is available at 2G speeds *
 
 ___
 
 ### CONNECTED\_3G
 
- **CONNECTED\_3G** = ``3``
+ **CONNECTED\_3G** = ``"CONNECTED_3G"``
+
+Internet connection is available at 3G speeds *
 
 ___
 
 ### CONNECTED\_4G
 
- **CONNECTED\_4G** = ``4``
+ **CONNECTED\_4G** = ``"CONNECTED_4G"``
+
+Internet connection is available at 4G speeds *
 
 ___
 
 ### CONNECTED\_5G
 
- **CONNECTED\_5G** = ``5``
+ **CONNECTED\_5G** = ``"CONNECTED_5G"``
+
+Internet connection is available at 5G speeds *
 
 ___
 
 ### CONNECTED\_EDGE
 
- **CONNECTED\_EDGE** = ``2``
+ **CONNECTED\_EDGE** = ``"CONNECTED_EDGE"``
+
+Internet connection is available at EDGE speeds *
 
 ___
 
 ### CONNECTED\_WIFI
 
- **CONNECTED\_WIFI** = ``6``
+ **CONNECTED\_WIFI** = ``"CONNECTED_WIFI"``
+
+The device is connected through Wi-Fi *
 
 ___
 
 ### NO\_INTERNET
 
- **NO\_INTERNET** = ``0``
+ **NO\_INTERNET** = ``"NO_INTERNET"``
+
+No internet connection is available at the moment *

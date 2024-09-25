@@ -1,0 +1,57 @@
+# Class: CanbusFrame
+
+[domain/CanbusFrame](../modules/domain_CanbusFrame.md).CanbusFrame
+
+## Constructors
+
+### constructor
+
+**new CanbusFrame**(`frameID`, `frameData`, `timestamp`)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `frameID` | `number`[] | frame ID as bytes * |
+| `frameData` | `number`[] | data content as bytes * |
+| `timestamp` | `number` | timestamp in milliseconds since Epoch * |
+
+## Properties
+
+### frameData
+
+ **frameData**: `number`[]
+
+data content as bytes *
+
+___
+
+### frameID
+
+ **frameID**: `number`[]
+
+frame ID as bytes *
+
+___
+
+### timestamp
+
+ **timestamp**: `number`
+
+timestamp in milliseconds since Epoch *
+
+## Methods
+
+### fromJson
+
+`Static` **fromJson**(`data`): [`CanbusFrame`](domain_CanbusFrame.CanbusFrame.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `data` | `any` |
+
+#### Returns
+
+[`CanbusFrame`](domain_CanbusFrame.CanbusFrame.md)

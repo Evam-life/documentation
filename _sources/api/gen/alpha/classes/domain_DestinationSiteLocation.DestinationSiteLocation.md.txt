@@ -28,11 +28,15 @@ Location of a destination site
 
  **latitude**: `number`
 
+Latitude in decimal degrees
+
 ___
 
 ### locality
 
  **locality**: `string`
+
+The locality name if available
 
 ___
 
@@ -40,11 +44,15 @@ ___
 
  **longitude**: `number`
 
+Longitude in decimal degrees
+
 ___
 
 ### municipality
 
  **municipality**: `string`
+
+The municipality name if available
 
 ___
 
@@ -52,17 +60,23 @@ ___
 
  **pickupTime**: `string`
 
+The pickup time text if available
+
 ___
 
 ### routeDirections
 
  **routeDirections**: `string`
 
+The route directions text if available
+
 ___
 
 ### street
 
  **street**: `string`
+
+The street name if available
 
 ## Methods
 

@@ -24,17 +24,23 @@ Health status of system
 
  **isHealthy**: `boolean`
 
+boolean value represents whether system is healthy or not
+
 ___
 
 ### message
 
  **message**: `string`
 
+information message
+
 ___
 
 ### timestamp
 
  **timestamp**: `Date`
+
+time of information received
 
 ## Methods
 

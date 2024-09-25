@@ -1,0 +1,107 @@
+# Enumeration: CallDisconnectCause
+
+[domain/CallDisconnectCause](../modules/domain_CallDisconnectCause.md).CallDisconnectCause
+
+## Enumeration Members
+
+### ANSWERED\_ELSEWHERE
+
+ **ANSWERED\_ELSEWHERE** = ``"ANSWERED_ELSEWHERE"``
+
+Disconnected because the user did not locally answer the incoming call, but it was answered on another device where the call was ringing.
+
+___
+
+### BUSY
+
+ **BUSY** = ``"BUSY"``
+
+Disconnected because the other party was busy.
+
+___
+
+### CALL\_PULLED
+
+ **CALL\_PULLED** = ``"CALL_PULLED"``
+
+Disconnected because the call was pulled from the current device to another device.
+
+___
+
+### CANCELED
+
+ **CANCELED** = ``"CANCELED"``
+
+Disconnected because it has been canceled.
+
+___
+
+### CONNECTION\_MANAGER\_NOT\_SUPPORTED
+
+ **CONNECTION\_MANAGER\_NOT\_SUPPORTED** = ``"CONNECTION_MANAGER_NOT_SUPPORTED"``
+
+Disconnected because the connection manager did not support the call. The call will be tried again without a connection manager
+
+___
+
+### ERROR
+
+ **ERROR** = ``"ERROR"``
+
+Disconnected because there was an error, such as a problem with the network
+
+___
+
+### LOCAL
+
+ **LOCAL** = ``"LOCAL"``
+
+Disconnected because of a local user-initiated action, such as hanging up.
+
+___
+
+### MISSED
+
+ **MISSED** = ``"MISSED"``
+
+Disconnected because there was no response to an incoming call.
+
+___
+
+### OTHER
+
+ **OTHER** = ``"OTHER"``
+
+Disconnected for reason not described by other disconnect codes.
+
+___
+
+### REJECTED
+
+ **REJECTED** = ``"REJECTED"``
+
+Disconnected because the user rejected an incoming call.
+
+___
+
+### REMOTE
+
+ **REMOTE** = ``"REMOTE"``
+
+Disconnected because of a remote user-initiated action, such as the other party hanging up up.
+
+___
+
+### RESTRICTED
+
+ **RESTRICTED** = ``"RESTRICTED"``
+
+Disconnected because of a restriction on placing the call, such as dialing in airplane mode.
+
+___
+
+### UNKNOWN
+
+ **UNKNOWN** = ``"UNKNOWN"``
+
+Disconnected because of an unknown or unspecified reason.

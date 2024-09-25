@@ -28,11 +28,15 @@ Vehicle status
 
  **categoryName**: `string`
 
+The name of the category as defined by the vehicle user
+
 ___
 
 ### categoryType
 
  **categoryType**: `string`
+
+Type if status: 'mission' or 'other'
 
 ___
 
@@ -40,11 +44,15 @@ ___
 
  **event**: `string`
 
+The event associated to this status, if any
+
 ___
 
 ### isEndStatus
 
  **isEndStatus**: `boolean`
+
+true if this status closes the current operation
 
 ___
 
@@ -52,17 +60,23 @@ ___
 
  **isStartStatus**: `boolean`
 
+true if this status is engaged at the start of a new operation
+
 ___
 
 ### name
 
  **name**: `string`
 
+The name of the vehicle status
+
 ___
 
 ### successorName
 
  **successorName**: `string`
+
+The name of a typical successor to this status based on vehicle configuration
 
 ## Methods
 

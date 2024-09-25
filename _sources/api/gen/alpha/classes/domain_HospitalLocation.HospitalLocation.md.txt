@@ -29,11 +29,15 @@ Location of a hospital
 
  **city**: `string`
 
+city in which hospital is located
+
 ___
 
 ### id
 
  **id**: `number`
+
+Hospital unique ID
 
 ___
 
@@ -41,11 +45,15 @@ ___
 
  **latitude**: `number`
 
+Latitude of hospital location
+
 ___
 
 ### longitude
 
  **longitude**: `number`
+
+Longitude of hospital location
 
 ___
 
@@ -53,11 +61,15 @@ ___
 
  **name**: `string`
 
+Name of hospital
+
 ___
 
 ### postalCode
 
  **postalCode**: `string`
+
+postal code of hospital
 
 ___
 
@@ -65,11 +77,15 @@ ___
 
  **region**: `string`
 
+region in which hospital is located
+
 ___
 
 ### street1
 
  **street1**: `string`
+
+street address of hospital
 
 ## Methods
 

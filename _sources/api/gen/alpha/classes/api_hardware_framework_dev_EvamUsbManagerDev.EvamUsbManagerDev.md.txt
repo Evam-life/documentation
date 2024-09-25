@@ -25,14 +25,14 @@ management APIs.
 
 ### getDeviceList
 
-**getDeviceList**(): `Promise`<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
+**getDeviceList**(): `Promise`\<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
 
 Gets the list of devices the application is allowed (authorized)
 to communicate with.
 
 #### Returns
 
-`Promise`<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
+`Promise`\<[`UsbDevice`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbDevice.md)[]\>
 
 UsbDevice[] List of accessible devices
 
@@ -44,7 +44,7 @@ ___
 
 ### hasPermission
 
-**hasPermission**(`device`): `Promise`<`boolean`\>
+**hasPermission**(`device`): `Promise`\<`boolean`\>
 
 Checks if a specific device can be accessed from this application
 
@@ -56,7 +56,7 @@ Checks if a specific device can be accessed from this application
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 boolean true if application is authorized, false otherwise
 
@@ -68,7 +68,7 @@ ___
 
 ### openDevice
 
-**openDevice**(`device`): `Promise`<`void`\>
+**openDevice**(`device`): `Promise`\<`void`\>
 
 Opens a specific device
 
@@ -80,7 +80,7 @@ Opens a specific device
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -90,7 +90,7 @@ ___
 
 ### requestPermission
 
-**requestPermission**(`filters`, `callback`): `Promise`<`void`\>
+**requestPermission**(`filters`, `callback`): `Promise`\<`void`\>
 
 Requests the permission to access a specific device selected from a
 list of filters. Will cause a system pop-up to be shown to the end user
@@ -105,7 +105,7 @@ for the device selection.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 

@@ -10,10 +10,6 @@
 
 State of the vehicle, location, status, id
 
-**`See`**
-
-VehicleStatus
-
 #### Parameters
 
 | Name | Type | Description |
@@ -23,11 +19,17 @@ VehicleStatus
 | `activeCaseFullId` | `string` | id of the current active operation |
 | `vehicleLocation` | [`Location`](domain_Location.Location.md) | current vehicle location |
 
+**`See`**
+
+VehicleStatus
+
 ## Properties
 
 ### activeCaseFullId
 
  **activeCaseFullId**: `string`
+
+id of the current active operation
 
 ___
 
@@ -35,17 +37,23 @@ ___
 
  **timestamp**: `Date`
 
+timestamp of when state received
+
 ___
 
 ### vehicleLocation
 
  **vehicleLocation**: [`Location`](domain_Location.Location.md)
 
+current vehicle location
+
 ___
 
 ### vehicleStatus
 
  **vehicleStatus**: [`VehicleStatus`](domain_VehicleStatus.VehicleStatus.md)
+
+status of the vehicle
 
 ## Methods
 

@@ -128,7 +128,7 @@ Device USB version as "major.minor.sub-minor"
 
 ### claimInterface
 
-**claimInterface**(`interfaceNumber`, `force`): `Promise`<`void`\>
+**claimInterface**(`interfaceNumber`, `force`): `Promise`\<`void`\>
 
 Claims an interface by its number for exclusive communication access
 
@@ -141,7 +141,7 @@ Claims an interface by its number for exclusive communication access
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -151,13 +151,13 @@ ___
 
 ### close
 
-**close**(): `Promise`<`void`\>
+**close**(): `Promise`\<`void`\>
 
 Close a device once it is no longer needed
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -167,7 +167,7 @@ ___
 
 ### controlTransferIn
 
-**controlTransferIn**(`requestType`, `recipient`, `request`, `value`, `index`, `length`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+**controlTransferIn**(`requestType`, `recipient`, `request`, `value`, `index`, `length`, `timeout`): `Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 Perform a control transfer - IN direction (data read)
 
@@ -185,7 +185,7 @@ Perform a control transfer - IN direction (data read)
 
 #### Returns
 
-`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+`Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 #### Implementation of
 
@@ -195,7 +195,7 @@ ___
 
 ### controlTransferOut
 
-**controlTransferOut**(`requestType`, `recipient`, `request`, `value`, `index`, `data`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+**controlTransferOut**(`requestType`, `recipient`, `request`, `value`, `index`, `data`, `timeout`): `Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 Perform a control transfer - OUT direction (data write)
 
@@ -213,7 +213,7 @@ Perform a control transfer - OUT direction (data write)
 
 #### Returns
 
-`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+`Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 #### Implementation of
 
@@ -223,14 +223,14 @@ ___
 
 ### forget
 
-**forget**(): `Promise`<`void`\>
+**forget**(): `Promise`\<`void`\>
 
 Release the authorization for this device, access will have to
 be requested again.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -256,13 +256,13 @@ ___
 
 ### open
 
-**open**(): `Promise`<`void`\>
+**open**(): `Promise`\<`void`\>
 
 Open the device for communication
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -272,7 +272,7 @@ ___
 
 ### releaseInterface
 
-**releaseInterface**(`interfaceNumber`): `Promise`<`void`\>
+**releaseInterface**(`interfaceNumber`): `Promise`\<`void`\>
 
 Release an interface once communication is no longer needed
 
@@ -284,7 +284,7 @@ Release an interface once communication is no longer needed
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
@@ -294,7 +294,7 @@ ___
 
 ### transferIn
 
-**transferIn**(`endpointNumber`, `length`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+**transferIn**(`endpointNumber`, `length`, `timeout`): `Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 Perform a bulk transfer - IN direction (data read)
 
@@ -308,7 +308,7 @@ Perform a bulk transfer - IN direction (data read)
 
 #### Returns
 
-`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+`Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 #### Implementation of
 
@@ -318,7 +318,7 @@ ___
 
 ### transferOut
 
-**transferOut**(`endpointNumber`, `data`, `timeout`): `Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+**transferOut**(`endpointNumber`, `data`, `timeout`): `Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 Perform a bulk transfer - OUT direction (data write)
 
@@ -332,7 +332,7 @@ Perform a bulk transfer - OUT direction (data write)
 
 #### Returns
 
-`Promise`<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
+`Promise`\<[`UsbTransferResult`](../interfaces/api_hardware_EvamHardwareUsbApi.UsbTransferResult.md)\>
 
 #### Implementation of
 

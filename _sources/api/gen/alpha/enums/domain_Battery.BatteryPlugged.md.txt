@@ -6,22 +6,22 @@
 
 ### AC
 
- **AC** = ``1``
+ **AC** = ``"AC"``
 
 ___
 
 ### DOCK
 
- **DOCK** = ``0``
+ **DOCK** = ``"DOCK"``
 
 ___
 
 ### USB
 
- **USB** = ``2``
+ **USB** = ``"USB"``
 
 ___
 
 ### WIRELESS
 
- **WIRELESS** = ``4``
+ **WIRELESS** = ``"WIRELESS"``

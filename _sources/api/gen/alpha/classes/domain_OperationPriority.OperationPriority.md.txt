@@ -23,11 +23,15 @@ Selectable operation priority
 
  **id**: `number`
 
+id of the priority
+
 ___
 
 ### name
 
  **name**: `string`
+
+name of the priority
 
 ## Methods
 

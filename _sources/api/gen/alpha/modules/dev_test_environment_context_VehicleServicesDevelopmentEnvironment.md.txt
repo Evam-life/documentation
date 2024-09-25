@@ -4,16 +4,17 @@
 
 ### VehicleServicesDevelopmentEnvironment
 
-**VehicleServicesDevelopmentEnvironment**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+**VehicleServicesDevelopmentEnvironment**(`props`, `context?`): `ReactElement`\<`any`, `any`\>
+
+The VehicleServicesDevelopmentEnvironment provides a notification environment for you to test sending notifications in vehicle services.
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | `Object` |
-| `props.children?` | `ReactNode` |
+| `props` | `VehicleServicesDevelopmentEnvironmentProps` |
 | `context?` | `any` |
 
 #### Returns
 
-`ReactElement`<`any`, `any`\>
+`ReactElement`\<`any`, `any`\>

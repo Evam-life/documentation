@@ -1,0 +1,5 @@
+# Module: domain/PhoneCallState
+
+## Enumerations
+
+- [PhoneCallState](../enums/domain_PhoneCallState.PhoneCallState.md)

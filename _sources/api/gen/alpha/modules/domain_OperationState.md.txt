@@ -2,4 +2,4 @@
 
 ## Enumerations
 
-- [default](../enums/domain_OperationState.default.md)
+- [OperationState](../enums/domain_OperationState.OperationState.md)
