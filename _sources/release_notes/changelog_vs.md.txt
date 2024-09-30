@@ -1,5 +1,25 @@
 # Changelog | Vehicle Services
 
+## 6.1.0
+
+2024-09-30
+
+### Highlights
+
+
+* **New helicopter mode in the navigation app – now optimized for airborne use:** We are excited to introduce a brand-new navigation mode that makes the navigation app and Vehicle Services useful for helicopters! With the new helicopter mode activated, the system navigates via direct, straight-line routes, meaning it is no longer restricted by road networks. Additionally, the vehicle's position is fully flexible and independent of roads, offering a precise and smooth navigation experience in the air.
+
+* **Flexible Support for Alarm Priorities in the Operation App:** The Operation App has now been updated to handle alarm priorities in any format, not just numbers. This means you can now send alarm priorities in formats such as "1A," "1B," and similar, offering greater flexibility and customization to meet specific needs.
+
+
+### Additional changes
+
+* **Improved Stability in Vehicle Services:** We have resolved a rare crash that could occasionally occur in Vehicle Services and made general improvements to enhance the platform's stability. 
+
+* **Resolved Issue Related to Phone Functionality:** An issue where Android was unable to detect phone functionality after an update to Google Play Services has now been identified and fixed.
+
+
+
 
 ## 6.0.1
 
