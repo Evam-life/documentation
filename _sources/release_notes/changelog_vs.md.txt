@@ -1,5 +1,16 @@
 # Changelog | Vehicle Services
 
+## 6.1.1
+
+2024-10-08
+
+### Highlights
+
+* **Improved Stability in Vehicle Services:** We have resolved a rare crash that could occasionally occur in Vehicle Services and made general improvements to enhance the platform's stability. 
+
+* **Fixed issue with offline login:** We have resolved a rare issue that could cause the login screen to pop up when the app was offline.
+
+
 ## 6.1.0
 
 2024-09-30

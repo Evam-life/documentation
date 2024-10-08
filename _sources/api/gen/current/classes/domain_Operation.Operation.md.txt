@@ -6,7 +6,7 @@
 
 ### constructor
 
-**new Operation**(`operationID`, `name`, `sendTime`, `createdTime`, `endTime`, `acceptedTime`, `callCenterId`, `caseFolderId`, `transmitterCode`, `alarmCategory`, `alarmEventCode`, `medicalCommander`, `medicalIncidentOfficer`, `attachedCustomerObject`, `alarmEventText`, `additionalInfo`, `keyNumber`, `electronicKey`, `radioGroupMain`, `radioGroupSecondary`, `additionalCoordinationInformation`, `availablePriorities`, `patientName`, `patientUID`, `vehicleStatus`, `destinationSiteLocation`, `breakpointLocation`, `availableHospitalLocations`, `header1`, `header2`, `eventInfo`, `caseInfo`, `selectedHospital`, `selectedPriority`, `operationState`, `leavePatientLocation`, `assignedResourceMissionNo`, `operationUnits`)
+**new Operation**(`operationID`, `name`, `sendTime`, `createdTime`, `endTime`, `acceptedTime`, `callCenterId`, `caseFolderId`, `transmitterCode`, `alarmCategory`, `alarmEventCode`, `medicalCommander`, `medicalIncidentOfficer`, `attachedCustomerObject`, `alarmEventText`, `additionalInfo`, `keyNumber`, `electronicKey`, `radioGroupMain`, `radioGroupSecondary`, `additionalCoordinationInformation`, `availablePriorities`, `patientName`, `patientUID`, `vehicleStatus`, `destinationSiteLocation`, `breakpointLocation`, `availableHospitalLocations`, `header1`, `header2`, `eventInfo`, `caseInfo`, `selectedHospital`, `selectedPriority`, `operationState`, `leavePatientLocation`, `assignedResourceMissionNo`, `operationUnits`, `prioName`)
 
 #### Parameters
 
@@ -50,6 +50,7 @@
 | `leavePatientLocation` | [`LeavePatientLocation`](domain_LeavePatientLocation.LeavePatientLocation.md) | The location of the leave-patient ('toCity', etc) |
 | `assignedResourceMissionNo` | `string` | The Assigned Resource Mission No value from SOS (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
 | `operationUnits` | [`OperationUnit`](domain_OperationUnit.OperationUnit.md)[] | A list of the units that include the Assigned Resource values from SOS and the Units from the cloud (minimum Vehicle Services version: 5.2.2, otherwise always undefined) |
+| `prioName` | `string` | The operation priority name as it is sent from dispatch, or as it is defined in the Application settings when selected by the user. This field is free text and does not adhere to any pattern. Example values include: 1, 1a, 2B, PRIO 1, PRIO 1b, PRIO 2A. (minimum Vehicle Services version: 6.1.0, otherwise always undefined) |
 
 ## Properties
 
@@ -298,6 +299,16 @@ ___
  **patientUID**: `string`
 
 The personal number of the patient if any
+
+___
+
+### prioName
+
+ **prioName**: `string`
+
+The operation priority name as it is sent from dispatch, or as it is defined in the Application settings when selected by the user.
+                This field is free text and does not adhere to any pattern. Example values include: 1, 1a, 2B, PRIO 1, PRIO 1b, PRIO 2A.
+                (minimum Vehicle Services version: 6.1.0, otherwise always undefined)
 
 ___
 

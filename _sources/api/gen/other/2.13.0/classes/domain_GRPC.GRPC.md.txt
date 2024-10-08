@@ -1,0 +1,25 @@
+# Class: GRPC
+
+[domain/GRPC](../modules/domain_GRPC.md).GRPC
+
+## Constructors
+
+### constructor
+
+**new GRPC**(`address`)
+
+Provides information about the gRPC proxy address within Vehicle Services to bind to for usage of gRPC-web.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `address` | `string` | The internal proxy address for gRPC usage |
+
+## Properties
+
+### address
+
+ **address**: `string`
+
+The internal proxy address for gRPC usage
