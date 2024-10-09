@@ -27,7 +27,7 @@ To ensure full control over the Vehicle Services software version used by your c
 Production devices should not be enrolled in the Beta branch.
 ```
 
-* **Production branch:** Once a new production release is available, you will receive comprehensive release notes via email at your registered Strategic Partner email address (To register a new email, please contact support@evam.life). The release notes will include instructions on how to upgrade your build flavor to a new Vehicle Services software version. For transparency, the release notes will clearly state the criticality of the update, e.g., "Critical Security Update."
+* **Production branch:** Once a new production release is available, you will receive comprehensive release notes via email at your registered Strategic Partner email address (To register a new email, please submit your email through the [Form](https://cdn.forms-content.sg-form.com/721a9066-d63d-11ee-8baf-a65239397f1f)). To update your Production Branch please contact support@evam.life indicating what build flavour and production version you want to update to. To update your physical devices please refer to the following guide: [Update Vehicle Services](https://www.support.evam.life/en/update_vehicle_services.html)
 
 ```{attention}
 Only production releases, i.e., no release candidates, can be pushed to the production branch. 
