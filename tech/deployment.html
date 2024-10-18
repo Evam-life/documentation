@@ -55,8 +55,14 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vehicle Services Build Flavour" href="vehicle_services_build_flavour.html" />
@@ -286,6 +292,13 @@
     <li class="md-nav__item">
     
     
+      <a href="cs_integrations.html" class="md-nav__link">Central Services integrations</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
       
     
@@ -386,8 +399,8 @@ ensure they meet the quality standards that users of the Evam platform
 expect. Those reviews can take from a few hours to several days depending
 on the size and nature of the update.</p>
 <p>Once validated, Central Services will download the package and make it available for Vehicle Services to download. Once downloaded by Vehicle Services, users will be able to access it.</p>
-<div class="mermaid">
-            stateDiagram-v2
+<pre class="mermaid">
+        stateDiagram-v2
     DP: Developer Portal Package registry
     CS: Central Services
     VS: Vehicle Services
@@ -397,7 +410,7 @@ on the size and nature of the update.</p>
     DP --&gt; CS : download all updated &amp; verified app packages
     CS --&gt; VS : download updated app packages for this vehicle
     DEV --&gt; DP: Certified App packages
-        </div></section>
+    </pre></section>
 <section id="how-to-publish-a-new-application-do-once-per-certified-application">
 <h2 id="how-to-publish-a-new-application-do-once-per-certified-application">How to publish a new application (do once per certified application)<a class="headerlink" href="#how-to-publish-a-new-application-do-once-per-certified-application" title="Permalink to this heading">¶</a></h2>
 <div class="admonition-support admonition">

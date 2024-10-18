@@ -27,6 +27,7 @@ This is a list of all articles in the documentation.
    tech/hardware_apis
    tech/deployment
    tech/vehicle_services_build_flavour
+   tech/cs_integrations
    design_guidelines/*
    release_notes/*
    api/*
