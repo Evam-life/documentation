@@ -1,5 +1,15 @@
 # Changelog | Vehicle Services
 
+## 6.1.2
+
+2024-10-21
+
+### Highlights
+
+* **Improved the Application performance:** Various improvements to the location search functions should make Vehicle Services faster when using the Search functionality in the Navigation app, and generally when navigating.
+
+* **Improved the Configuration update system:** Updating the Radio configuration in Vehicle Services should no longer require the application to be restarted, making fleet-wide updates to the configuration smoother.
+
 ## 6.1.1
 
 2024-10-08
