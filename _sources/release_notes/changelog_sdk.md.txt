@@ -1,5 +1,22 @@
 # Changelog | SDK
 
+## 2.15.0
+
+2024-11-05
+
+### Highlights
+
+- **Fixed an issue with the map layer in Development Environment:** An issue related to the private map layer was fixed in the Development environment.
+
+## 2.14.0
+
+2024-10-01
+
+### Highlights
+
+- **Added Prio name support to Operation:** The Operation object now provides the PRIO name as sent by the dispatch.
+
+
 ## 2.13.0
 
 2024-07-05

@@ -1,0 +1,17 @@
+# Module: dev-test-environment/components/MapDrawer/hooks/useMapEvents
+
+## Functions
+
+### default
+
+**default**(`«destructured»`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `UseMapEventsProps` |
+
+#### Returns
+
+`void`

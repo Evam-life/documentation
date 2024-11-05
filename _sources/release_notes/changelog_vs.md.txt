@@ -1,5 +1,14 @@
 # Changelog | Vehicle Services
 
+## 6.1.3
+
+2024-11-05
+
+### Highlights
+
+* **Fixed issue with the Search function:** The Search function within the Navigation app could cause incorrect routing under certain conditions, this should no longer be the case.
+
+
 ## 6.1.2
 
 2024-10-21

@@ -126,3 +126,13 @@ $ adb logcat
 02-27 17:38:13.597 27534 27534 D WebAppWebChromeClient-life.evam.hydras.microapp.dev: [LOG] Hello world! -- From line 417 at /assets/index-CrvJ8TfU.js
 [...]
 ```
+
+## Important notes
+
+The sideloaded app should behave exactly like the one you will deploy to production, however there may be some differences.
+
+Here are the differences to be aware of with the latest release of the Vehicle Services platform and SDK:
+
+1. The API `EvamApi.setNavLayerPoint` will only show the text part of the point, not the icon.
+
+Some of those differences may be patched in a future release of the Evam platform.

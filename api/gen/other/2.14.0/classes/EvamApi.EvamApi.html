@@ -1,0 +1,2922 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../../../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../../../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../../../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../../../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../../../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Class: EvamApi &#8212; Evam developer SDK  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Class: EvamAppBarContextModel" href="component_appbar_EvamTabContext.EvamAppBarContextModel.html" />
+    <link rel="prev" title="Module: wrapper" href="../../2.11.0/modules/wrapper.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=white data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#api/gen/other/2.14.0/classes/EvamApi.EvamApi" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../../../index.html" title="Evam developer SDK  documentation"
+           class="md-header-nav__button md-logo">
+          
+              <img src="../../../../../_static/evam-black.png" height="26"
+                   alt="Evam developer SDK documentation logo">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Evam developer SDK  documentation</span>
+          <span class="md-header-nav__topic"> Class: EvamApi </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../../../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../../../../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../../../../"versions.json"",
+        target_loc = "../../../../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../../../../index.html" class="md-tabs__link">Evam developer SDK  documentation</a></li>
+          <li class="md-tabs__item"><a href="../../../../modules.html" class="md-tabs__link">SDK reference</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../../../index.html" title="Evam developer SDK documentation" class="md-nav__button md-logo">
+      
+        <img src="../../../../../_static/evam-black.png" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../../../../index.html"
+       title="Evam developer SDK documentation">Evam developer SDK  documentation</a>
+  </label>
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/getting_started.html" class="md-nav__link">Getting started</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/using_the_sdk.html" class="md-nav__link">Using the Evam SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/development_environment.html" class="md-nav__link">Development environment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/sideloading.html" class="md-nav__link">Sideloading your application</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/demo_tool_commands_reference.html" class="md-nav__link">Evam Demo Tool</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/evam_platform_runtime.html" class="md-nav__link">Evam platform runtime</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/hardware_apis.html" class="md-nav__link">Hardware APIs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/deployment.html" class="md-nav__link">Deployment</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/vehicle_services_build_flavour.html" class="md-nav__link">Vehicle Services Build Flavour</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../tech/cs_integrations.html" class="md-nav__link">Central Services integrations</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../design_guidelines/Design-Guidelines.html" class="md-nav__link">Design guidelines</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../release_notes/changelog_sdk.html" class="md-nav__link">Changelog | SDK</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../../release_notes/changelog_vs.html" class="md-nav__link">Changelog | Vehicle Services</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../../../../modules.html" class="md-nav__link">SDK reference</a>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-gen-other-2-14-0-classes-evamapi-evamapi--page-root" class="md-nav__link">Class: EvamApi</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructor" class="md-nav__link">constructor</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#properties" class="md-nav__link">Properties</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#store" class="md-nav__link">store</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#type-declaration" class="md-nav__link">Type declaration</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#isrunninginvehicleservices" class="md-nav__link">isRunningInVehicleServices</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#intercom-methods" class="md-nav__link">Intercom Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#enableintercom" class="md-nav__link">enableIntercom</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#parameters" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#returns" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#navigation-methods" class="md-nav__link">Navigation Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#deletenavlayer" class="md-nav__link">deleteNavLayer</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id2" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedlocation" class="md-nav__link">onNewOrUpdatedLocation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id3" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id4" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedtriplocationhistory" class="md-nav__link">onNewOrUpdatedTripLocationHistory</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id5" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id6" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#setnavlayerpoint" class="md-nav__link">setNavLayerPoint</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id7" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id8" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#setnavlayershape" class="md-nav__link">setNavLayerShape</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id9" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id10" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#notifications-methods" class="md-nav__link">Notifications Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#removenotification" class="md-nav__link">removeNotification</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id11" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id12" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#sendnotification" class="md-nav__link">sendNotification</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id13" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id14" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#operations-methods" class="md-nav__link">Operations Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#onneworupdatedactiveoperation" class="md-nav__link">onNewOrUpdatedActiveOperation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id15" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id16" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedavailablevehiclestatuslist" class="md-nav__link">onNewOrUpdatedAvailableVehicleStatusList</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id17" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id18" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedoperationlist" class="md-nav__link">onNewOrUpdatedOperationList</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id19" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id20" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedvehiclestate" class="md-nav__link">onNewOrUpdatedVehicleState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id21" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id22" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#sethospital" class="md-nav__link">setHospital</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id23" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id24" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#setpriority" class="md-nav__link">setPriority</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id25" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id26" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#other-methods" class="md-nav__link">Other Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#getappid" class="md-nav__link">getAppId</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id27" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#getappversion" class="md-nav__link">getAppVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id28" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#getdeviceid" class="md-nav__link">getDeviceId</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id29" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#getgrpc" class="md-nav__link">getGRPC</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id30" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#getosversion" class="md-nav__link">getOSVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id31" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#getvehicleservicesversion" class="md-nav__link">getVehicleServicesVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id32" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#unsubscribefromallcallbacks" class="md-nav__link">unsubscribeFromAllCallbacks</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id33" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#p2p-methods" class="md-nav__link">P2P Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#onneworupdatedintercomenabledstate" class="md-nav__link">onNewOrUpdatedIntercomEnabledState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id34" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id35" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#radio-methods" class="md-nav__link">Radio Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#onneworupdatedrakelmessages" class="md-nav__link">onNewOrUpdatedRakelMessages</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id36" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id37" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedrakelstate" class="md-nav__link">onNewOrUpdatedRakelState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id38" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id39" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#sendrawrakelaction" class="md-nav__link">sendRawRakelAction</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id40" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id41" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#settings-methods" class="md-nav__link">Settings Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#onneworupdatedsettings" class="md-nav__link">onNewOrUpdatedSettings</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id42" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id43" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#system-methods" class="md-nav__link">System Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#onneworupdatedbattery" class="md-nav__link">onNewOrUpdatedBattery</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id44" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id45" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdateddevicerole" class="md-nav__link">onNewOrUpdatedDeviceRole</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id46" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id47" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdateddisplaymode" class="md-nav__link">onNewOrUpdatedDisplayMode</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id48" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id49" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedinternetstate" class="md-nav__link">onNewOrUpdatedInternetState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id50" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id51" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#putappinforeground" class="md-nav__link">putAppInForeground</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id52" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#telephony-methods" class="md-nav__link">Telephony Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#answercall" class="md-nav__link">answerCall</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id53" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id54" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#hangupcall" class="md-nav__link">hangUpCall</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id55" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id56" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#holdcall" class="md-nav__link">holdCall</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id57" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id58" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#makecall" class="md-nav__link">makeCall</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id59" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id60" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#mutemicrophone" class="md-nav__link">muteMicrophone</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id61" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedaudiodevicetypes" class="md-nav__link">onNewOrUpdatedAudioDeviceTypes</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id62" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id63" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedcalls" class="md-nav__link">onNewOrUpdatedCalls</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id64" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id65" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#onneworupdatedmutestate" class="md-nav__link">onNewOrUpdatedMuteState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id66" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id67" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#playringtone" class="md-nav__link">playRingtone</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id68" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id69" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#selectaudiodevicetype" class="md-nav__link">selectAudioDeviceType</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id70" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id71" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#stopringtone" class="md-nav__link">stopRingtone</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id72" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id73" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#unholdcall" class="md-nav__link">unholdCall</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id74" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id75" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#unmutemicrophone" class="md-nav__link">unmuteMicrophone</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id76" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#testing-and-development-methods" class="md-nav__link">Testing and Development Methods</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#injectappid" class="md-nav__link">injectAppId</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id77" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id78" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectappversion" class="md-nav__link">injectAppVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id79" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id80" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectaudiodevices" class="md-nav__link">injectAudioDevices</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id81" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id82" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectavailablevehiclestatuslist" class="md-nav__link">injectAvailableVehicleStatusList</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id83" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id84" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectbattery" class="md-nav__link">injectBattery</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id85" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id86" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectcalls" class="md-nav__link">injectCalls</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id87" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id88" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectdevicerole" class="md-nav__link">injectDeviceRole</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id89" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id90" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectdisplaymode" class="md-nav__link">injectDisplayMode</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id91" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id92" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectintercomenabledstate" class="md-nav__link">injectIntercomEnabledState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id93" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id94" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectinternetstate" class="md-nav__link">injectInternetState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id95" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id96" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectlocation" class="md-nav__link">injectLocation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id97" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id98" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectmutestate" class="md-nav__link">injectMuteState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id99" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id100" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectosversion" class="md-nav__link">injectOSVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id101" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id102" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectoperation" class="md-nav__link">injectOperation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id103" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id104" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectoperationlist" class="md-nav__link">injectOperationList</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id105" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id106" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectrakelmessages" class="md-nav__link">injectRakelMessages</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id107" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id108" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectrakelstate" class="md-nav__link">injectRakelState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id109" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id110" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectsettings" class="md-nav__link">injectSettings</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id111" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id112" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injecttrip" class="md-nav__link">injectTrip</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id113" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id114" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectvsversion" class="md-nav__link">injectVSVersion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id115" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id116" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#injectvehiclestate" class="md-nav__link">injectVehicleState</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#id117" class="md-nav__link">Parameters</a>
+        </li>
+        <li class="md-nav__item"><a href="#id118" class="md-nav__link">Returns</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="class-evamapi">
+<h1 id="api-gen-other-2-14-0-classes-evamapi-evamapi--page-root">Class: EvamApi<a class="headerlink" href="#api-gen-other-2-14-0-classes-evamapi-evamapi--page-root" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference internal" href="../modules/EvamApi.html"><span class="std std-doc">EvamApi</span></a>.EvamApi</p>
+<p>Evam API singleton that exposes methods to interact with the Evam platform.</p>
+<p>When using any method, pay attention to the permission they require, you will need to add them to your Evam manifest.
+In general, try to limit how many permissions your certified app requires as more permissions may cause a longer review
+process when deploying your certified app.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Example</span></code></strong></p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get instance (don't be afraid to copy them around or create more, as they're simply a lightweight reference to shared static data)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">evamApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EvamApi</span><span class="p">();</span>
+
+<span class="c1">// Register a new callback on any operation update that simply logs it</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedActiveOperation</span><span class="p">((</span><span class="nx">activeOperation</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">activeOperation</span><span class="p">));</span>
+
+<span class="c1">// Register a new callback on any application settings update that simply logs them</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedSettings</span><span class="p">((</span><span class="nx">settings</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">settings</span><span class="p">));</span>
+
+<span class="c1">//Register a new callback to any specific application data update. Available register methods:</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedDeviceRole</span><span class="p">((</span><span class="nx">deviceRole</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...);</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedLocation</span><span class="p">((</span><span class="nx">location</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...);</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedInternetState</span><span class="p">((</span><span class="nx">internetState</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...);</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedVehicleState</span><span class="p">((</span><span class="nx">vehicleState</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...);</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">onNewOrUpdatedTripLocationHistory</span><span class="p">((</span><span class="nx">tripLocationHistory</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">...);</span>
+
+<span class="c1">// Send a new notification to VS (this will also work for the developer environment)</span>
+<span class="c1">// This will display a notification with heading "example", description "lorem ipsum". It will have type 'QUICK_HUN' and a primary button</span>
+<span class="c1">// which is labelled 'primary button' that doesn't do anything when called. The secondary button is not defined, thus it will not display.</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Notification</span><span class="p">(</span><span class="s2">"example"</span><span class="p">,</span><span class="s2">"lorem ipsum"</span><span class="p">,</span><span class="w"> </span><span class="nx">NotificationType</span><span class="p">.</span><span class="nx">QUICK_HUN</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">label</span><span class="o">:</span><span class="s1">'primary button'</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="o">:</span><span class="p">()=&gt;{}},</span><span class="w"> </span><span class="kc">undefined</span><span class="p">))</span>
+
+<span class="c1">//Remove all callbacks from the SDK (this is useful for cleanup)</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">unsubscribeFromAllCallbacks</span><span class="p">()</span>
+
+<span class="c1">//Detect whether the certified app is currently running in Vehicle Services</span>
+<span class="nx">EvamApi</span><span class="p">.</span><span class="nx">isRunningInVehicleServices</span>
+
+<span class="c1">//update the current hospital by id (be sure that the hospital is listed in available hospitals)</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">setHospital</span><span class="p">(</span><span class="mf">1234</span><span class="p">)</span>
+
+<span class="c1">//update the current priority (be sure that the priority is listed in available priorities)</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">setPriority</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+
+<span class="c1">//simulate Vehicle Services data inject (development + testing only)</span>
+<span class="c1">//DO NOT USE THESE METHODS IN PRODUCTION, While not breaking by any means they will not perform any function.</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectLocation</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Location</span><span class="p">(</span><span class="mf">59.364</span><span class="p">,</span><span class="w"> </span><span class="mf">18.012</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectVehicleState</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">VehicleState</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectTrip</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">TripLocationHistory</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectDeviceRole</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">DeviceRole</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectInternetState</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">InternetState</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectOperation</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Operation</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectSettings</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Settings</span><span class="p">(...))</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectOperationList</span><span class="p">([</span><span class="ow">new</span><span class="w"> </span><span class="nx">Operation</span><span class="p">(...),</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Operation</span><span class="p">(...),</span><span class="w"> </span><span class="p">...])</span>
+<span class="nx">evamApi</span><span class="p">.</span><span class="nx">injectBattery</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">Battery</span><span class="p">(...)))</span>
+</pre></div>
+</div>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
+<section id="constructor">
+<h3 id="constructor">constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h3>
+<p><strong>new EvamApi</strong>()</p>
+</section>
+</section>
+<section id="properties">
+<h2 id="properties">Properties<a class="headerlink" href="#properties" title="Permalink to this heading">¶</a></h2>
+<section id="store">
+<h3 id="store">store<a class="headerlink" href="#store" title="Permalink to this heading">¶</a></h3>
+<p><strong>store</strong>: <code class="docutils literal notranslate"><span class="pre">Object</span></code></p>
+<p>Store used for persisting data within Vehicle Services. If you are in development and not running your application within vehicle services then this
+will serve as a lightweight wrapper around localstorage. To avoid naming conflicts AppId must be set as it is used to identify application items.</p>
+<section id="type-declaration">
+<h4 id="type-declaration">Type declaration<a class="headerlink" href="#type-declaration" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">clear</span></code></p></td>
+<td class="text-left"><p>() =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">delete</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">get</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">set</span></code></p></td>
+<td class="text-left"><p>(<code class="docutils literal notranslate"><span class="pre">key</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>: <code class="docutils literal notranslate"><span class="pre">string</span></code>) =&gt; <code class="docutils literal notranslate"><span class="pre">void</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="isrunninginvehicleservices">
+<h3 id="isrunninginvehicleservices">isRunningInVehicleServices<a class="headerlink" href="#isrunninginvehicleservices" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Static</span></code> <strong>isRunningInVehicleServices</strong>: <code class="docutils literal notranslate"><span class="pre">boolean</span></code> = <code class="docutils literal notranslate"><span class="pre">isRunningInVehicleServices</span></code></p>
+</section>
+</section>
+<section id="intercom-methods">
+<h2 id="intercom-methods">Intercom Methods<a class="headerlink" href="#intercom-methods" title="Permalink to this heading">¶</a></h2>
+<section id="enableintercom">
+<h3 id="enableintercom">enableIntercom<a class="headerlink" href="#enableintercom" title="Permalink to this heading">¶</a></h3>
+<p><strong>enableIntercom</strong>(<code class="docutils literal notranslate"><span class="pre">enable</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Enables/disables the intercom.</p>
+<section id="parameters">
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">enable</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="text-left"><p>true to enable the intercom, otherwise false</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns">
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> INTERCOM</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="navigation-methods">
+<h2 id="navigation-methods">Navigation Methods<a class="headerlink" href="#navigation-methods" title="Permalink to this heading">¶</a></h2>
+<section id="deletenavlayer">
+<h3 id="deletenavlayer">deleteNavLayer<a class="headerlink" href="#deletenavlayer" title="Permalink to this heading">¶</a></h3>
+<p><strong>deleteNavLayer</strong>(<code class="docutils literal notranslate"><span class="pre">id</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Deletes a layer by its ID. A certified app can only delete a layer it has created.</p>
+<section id="id1">
+<h4 id="id1">Parameters<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the layer</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h4 id="id2">Returns<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> NAVIGATION_PRIVATE_LAYERS</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedlocation">
+<h3 id="onneworupdatedlocation">onNewOrUpdatedLocation<a class="headerlink" href="#onneworupdatedlocation" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedLocation</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Registers a callback to be run upon new location or location update</p>
+<section id="id3">
+<h4 id="id3">Parameters<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_Location.Location.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Location</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback to be executed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h4 id="id4">Returns<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> LOCATION_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the device location is updated through the GPS or Evam Demo Tool.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedtriplocationhistory">
+<h3 id="onneworupdatedtriplocationhistory">onNewOrUpdatedTripLocationHistory<a class="headerlink" href="#onneworupdatedtriplocationhistory" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedTripLocationHistory</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the trip location history is updated.</p>
+<section id="id5">
+<h4 id="id5">Parameters<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_TripLocationHistory.TripLocationHistory.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TripLocationHistory</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument tripLocationHistory. Use this to access the trip location history.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h4 id="id6">Returns<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TRIP_HISTORY_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time any of the following is updated: device location, ETA to destination, distance to destination, navigation state.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="setnavlayerpoint">
+<h3 id="setnavlayerpoint">setNavLayerPoint<a class="headerlink" href="#setnavlayerpoint" title="Permalink to this heading">¶</a></h3>
+<p><strong>setNavLayerPoint</strong>(<code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">layerData</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of points on the map with text and icon at the specified lat and lon</p>
+<section id="id7">
+<h4 id="id7">Parameters<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the layer (if the layer doesn’t exist then one will be created)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">layerData</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../modules/domain_LayerData.html#layerpointdata"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LayerPointData</span></code></span></a>[]</p></td>
+<td class="text-left"><p>array of points to be shown with text and icon. Note that the icon of the first element will be used for all points.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id8">
+<h4 id="id8">Returns<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> NAVIGATION_PRIVATE_LAYERS</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="setnavlayershape">
+<h3 id="setnavlayershape">setNavLayerShape<a class="headerlink" href="#setnavlayershape" title="Permalink to this heading">¶</a></h3>
+<p><strong>setNavLayerShape</strong>(<code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">layerData</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Adds/Update a layer by its ID. Reusing a layerID causes the data to be replaced. A certified app can only update a layer it has created.
+This function adds a set of shapes on the map with the text in its center.</p>
+<section id="id9">
+<h4 id="id9">Parameters<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the layer (if the layer doesn’t exist then one will be created)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">layerData</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../modules/domain_LayerData.html#layershapedata"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LayerShapeData</span></code></span></a>[]</p></td>
+<td class="text-left"><p>array of shapes to be shown with text and shape color (format: “#AARRGGBB”, just like the SC buttons)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id10">
+<h4 id="id10">Returns<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> NAVIGATION_PRIVATE_LAYERS</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="notifications-methods">
+<h2 id="notifications-methods">Notifications Methods<a class="headerlink" href="#notifications-methods" title="Permalink to this heading">¶</a></h2>
+<section id="removenotification">
+<h3 id="removenotification">removeNotification<a class="headerlink" href="#removenotification" title="Permalink to this heading">¶</a></h3>
+<p><strong>removeNotification</strong>(<code class="docutils literal notranslate"><span class="pre">notificationId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Removes the notification by given id.</p>
+<section id="id11">
+<h4 id="id11">Parameters<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">notificationId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The notification id</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id12">
+<h4 id="id12">Returns<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> SEND_NOTIFICATION</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="sendnotification">
+<h3 id="sendnotification">sendNotification<a class="headerlink" href="#sendnotification" title="Permalink to this heading">¶</a></h3>
+<p><strong>sendNotification</strong>(<code class="docutils literal notranslate"><span class="pre">notification</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Send a notification to Vehicle Services.</p>
+<section id="id13">
+<h4 id="id13">Parameters<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">notification</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_Notification.Notification.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Notification</span></code></span></a></p></td>
+<td class="text-left"><p>The notification to be sent</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id14">
+<h4 id="id14">Returns<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> SEND_NOTIFICATION</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: function with throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="operations-methods">
+<h2 id="operations-methods">Operations Methods<a class="headerlink" href="#operations-methods" title="Permalink to this heading">¶</a></h2>
+<section id="onneworupdatedactiveoperation">
+<h3 id="onneworupdatedactiveoperation">onNewOrUpdatedActiveOperation<a class="headerlink" href="#onneworupdatedactiveoperation" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedActiveOperation</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Registers a callback to be run upon a new Active Operation is available or the current Active
+Operation is updated.</p>
+<section id="id15">
+<h4 id="id15">Parameters<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_Operation.Operation.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback to be executed</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id16">
+<h4 id="id16">Returns<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> ACTIVE_OPERATION_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the active Operation is updated, this can happen due to update by the dispatch (e.g. SOS), Evam Demo Tool or user edit (e.g. change of PRIO)</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedavailablevehiclestatuslist">
+<h3 id="onneworupdatedavailablevehiclestatuslist">onNewOrUpdatedAvailableVehicleStatusList<a class="headerlink" href="#onneworupdatedavailablevehiclestatuslist" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedAvailableVehicleStatusList</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the list of available Vehicle Statuses is created or updated</p>
+<section id="id17">
+<h4 id="id17">Parameters<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_VehicleStatus.VehicleStatus.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VehicleStatus</span></code></span></a>[], <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument available Vehicle Status list. Use this to access the available Vehicle Statuses.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id18">
+<h4 id="id18">Returns<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> AVAILABLE_VEHICLE_STATUS_LIST_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the list of available Vehicle Statuses is updated for this vehicle, and also when the certified app starts.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedoperationlist">
+<h3 id="onneworupdatedoperationlist">onNewOrUpdatedOperationList<a class="headerlink" href="#onneworupdatedoperationlist" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedOperationList</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the operation list is updated.</p>
+<section id="id19">
+<h4 id="id19">Parameters<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_Operation.Operation.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></span></a>[], <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument operationList. Use this to access the operation list.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id20">
+<h4 id="id20">Returns<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> OPERATION_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time any Operation is updated in the Evam platform, including the Active one.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedvehiclestate">
+<h3 id="onneworupdatedvehiclestate">onNewOrUpdatedVehicleState<a class="headerlink" href="#onneworupdatedvehiclestate" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedVehicleState</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the vehicle state is updated.</p>
+<section id="id21">
+<h4 id="id21">Parameters<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_VehicleState.VehicleState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VehicleState</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument vehicleState. Use this to access the vehicle state.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id22">
+<h4 id="id22">Returns<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> VEHICLE_STATE_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time any of the following is updated: device location, Operation ID, Vehicle Status.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="sethospital">
+<h3 id="sethospital">setHospital<a class="headerlink" href="#sethospital" title="Permalink to this heading">¶</a></h3>
+<p><strong>setHospital</strong>(<code class="docutils literal notranslate"><span class="pre">id</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Sets the selected hospital id for the current active operation. The id must be present inside the available hospitals</p>
+<section id="id23">
+<h4 id="id23">Parameters<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="text-left"><p>the id of the hospital to be set</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id24">
+<h4 id="id24">Returns<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> ACTIVE_OPERATION_WRITE</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will throw an Error.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="setpriority">
+<h3 id="setpriority">setPriority<a class="headerlink" href="#setpriority" title="Permalink to this heading">¶</a></h3>
+<p><strong>setPriority</strong>(<code class="docutils literal notranslate"><span class="pre">id</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Sets the selected priority id for the current active operation. The id must be present inside the available priorities.</p>
+<section id="id25">
+<h4 id="id25">Parameters<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="text-left"><p>of the priority to be set</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id26">
+<h4 id="id26">Returns<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> ACTIVE_OPERATION_WRITE</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.2 and above have full functionality. Other versions: function will trigger an error.</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="other-methods">
+<h2 id="other-methods">Other Methods<a class="headerlink" href="#other-methods" title="Permalink to this heading">¶</a></h2>
+<section id="getappid">
+<h3 id="getappid">getAppId<a class="headerlink" href="#getappid" title="Permalink to this heading">¶</a></h3>
+<p><strong>getAppId</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Gets the Evam App id as given by Vehicle Services</p>
+<section id="id27">
+<h4 id="id27">Returns<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="getappversion">
+<h3 id="getappversion">getAppVersion<a class="headerlink" href="#getappversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>getAppVersion</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Gets the Evam App version as defined in the evam.json manifest</p>
+<section id="id28">
+<h4 id="id28">Returns<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="getdeviceid">
+<h3 id="getdeviceid">getDeviceId<a class="headerlink" href="#getdeviceid" title="Permalink to this heading">¶</a></h3>
+<p><strong>getDeviceId</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Gets the device ID as defined in Android</p>
+<section id="id29">
+<h4 id="id29">Returns<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="getgrpc">
+<h3 id="getgrpc">getGRPC<a class="headerlink" href="#getgrpc" title="Permalink to this heading">¶</a></h3>
+<p><strong>getGRPC</strong>(): <a class="reference internal" href="domain_GRPC.GRPC.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">GRPC</span></code></span></a></p>
+<p>Gets the address for the GRPC proxy</p>
+<section id="id30">
+<h4 id="id30">Returns<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h4>
+<p><a class="reference internal" href="domain_GRPC.GRPC.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">GRPC</span></code></span></a></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="getosversion">
+<h3 id="getosversion">getOSVersion<a class="headerlink" href="#getosversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>getOSVersion</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Gets the Android OS version</p>
+<section id="id31">
+<h4 id="id31">Returns<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="getvehicleservicesversion">
+<h3 id="getvehicleservicesversion">getVehicleServicesVersion<a class="headerlink" href="#getvehicleservicesversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>getVehicleServicesVersion</strong>(): <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Gets the Vehicle Services app version</p>
+<section id="id32">
+<h4 id="id32">Returns<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="unsubscribefromallcallbacks">
+<h3 id="unsubscribefromallcallbacks">unsubscribeFromAllCallbacks<a class="headerlink" href="#unsubscribefromallcallbacks" title="Permalink to this heading">¶</a></h3>
+<p><strong>unsubscribeFromAllCallbacks</strong>(): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Unsubscribes all registered callbacks from Vehicle Service events.</p>
+<section id="id33">
+<h4 id="id33">Returns<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="p2p-methods">
+<h2 id="p2p-methods">P2P Methods<a class="headerlink" href="#p2p-methods" title="Permalink to this heading">¶</a></h2>
+<section id="onneworupdatedintercomenabledstate">
+<h3 id="onneworupdatedintercomenabledstate">onNewOrUpdatedIntercomEnabledState<a class="headerlink" href="#onneworupdatedintercomenabledstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedIntercomEnabledState</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the intercom’s state</p>
+<section id="id34">
+<h4 id="id34">Parameters<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument boolean. Use this to access the current intercom enabled state (enabled = true, disabled = false),</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id35">
+<h4 id="id35">Returns<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p>Permissions INTERCOM</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the active Intercom enabled state is updated, this can happen if the intercom state was changed using <a class="reference internal" href="#enableintercom"><span class="std std-ref">enableIntercom</span></a></p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="radio-methods">
+<h2 id="radio-methods">Radio Methods<a class="headerlink" href="#radio-methods" title="Permalink to this heading">¶</a></h2>
+<section id="onneworupdatedrakelmessages">
+<h3 id="onneworupdatedrakelmessages">onNewOrUpdatedRakelMessages<a class="headerlink" href="#onneworupdatedrakelmessages" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedRakelMessages</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the incoming Rakel messages are updated.
+The messages are piped though in the raw form as they are received from the radio.</p>
+<section id="id36">
+<h4 id="id36">Parameters<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">string</span></code>[], <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument Rakel messages. Use this to access the incoming Rakel messages.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id37">
+<h4 id="id37">Returns<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> RAKEL_COMMUNICATION_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time new messages are available from the connected Tetra terminal.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedrakelstate">
+<h3 id="onneworupdatedrakelstate">onNewOrUpdatedRakelState<a class="headerlink" href="#onneworupdatedrakelstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedRakelState</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the rakel state is created or updated</p>
+<section id="id38">
+<h4 id="id38">Parameters<a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_RakelState.RakelState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RakelState</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument Rakel state. Use this to access the Rakel state.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id39">
+<h4 id="id39">Returns<a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> RAKEL_STATE_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time any of the following changes: GSSI, MSISDN, ISSI of the connected radio. Also, when the certified app starts.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="sendrawrakelaction">
+<h3 id="sendrawrakelaction">sendRawRakelAction<a class="headerlink" href="#sendrawrakelaction" title="Permalink to this heading">¶</a></h3>
+<p><strong>sendRawRakelAction</strong>(<code class="docutils literal notranslate"><span class="pre">rawRakelAction</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Sends a RawRakelAction to the Rakel radio.</p>
+<section id="id40">
+<h4 id="id40">Parameters<a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rawRakelAction</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_RawRakelAction.RawRakelAction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RawRakelAction</span></code></span></a></p></td>
+<td class="text-left"><p>the RawRakelAction to be sent to the radio.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id41">
+<h4 id="id41">Returns<a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> RAKEL_RAW_COMMAND_SEND</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: function will throw an Error.</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="settings-methods">
+<h2 id="settings-methods">Settings Methods<a class="headerlink" href="#settings-methods" title="Permalink to this heading">¶</a></h2>
+<section id="onneworupdatedsettings">
+<h3 id="onneworupdatedsettings">onNewOrUpdatedSettings<a class="headerlink" href="#onneworupdatedsettings" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedSettings</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Registers a callback to be run upon new application settings reception or settings update</p>
+<section id="id42">
+<h4 id="id42">Parameters<a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">any</span></code>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback to be executed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id43">
+<h4 id="id43">Returns<a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the settings are updated for this certified app, and when the certified app starts. Vehicle Services synchronizes these settings with Evam Central Services once every few hours.</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="system-methods">
+<h2 id="system-methods">System Methods<a class="headerlink" href="#system-methods" title="Permalink to this heading">¶</a></h2>
+<section id="onneworupdatedbattery">
+<h3 id="onneworupdatedbattery">onNewOrUpdatedBattery<a class="headerlink" href="#onneworupdatedbattery" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedBattery</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the battery data is updated.</p>
+<section id="id44">
+<h4 id="id44">Parameters<a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_Battery.Battery.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Battery</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument battery. Use this to access the battery.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id45">
+<h4 id="id45">Returns<a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> BATTERY_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the battery state is updated: charge, health, plugged status, or capacity. And when the certified app starts.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdateddevicerole">
+<h3 id="onneworupdateddevicerole">onNewOrUpdatedDeviceRole<a class="headerlink" href="#onneworupdateddevicerole" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedDeviceRole</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Registers a callback to be run upon new device role or device role update</p>
+<section id="id46">
+<h4 id="id46">Parameters<a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="../enums/domain_DeviceRole.DeviceRole.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">DeviceRole</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback to be executed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id47">
+<h4 id="id47">Returns<a class="headerlink" href="#id47" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> DEVICE_ROLE_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.0.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the device role is changed by the user through the Setup flow, and when the certified app starts.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdateddisplaymode">
+<h3 id="onneworupdateddisplaymode">onNewOrUpdatedDisplayMode<a class="headerlink" href="#onneworupdateddisplaymode" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedDisplayMode</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the display mode is updated.</p>
+<section id="id48">
+<h4 id="id48">Parameters<a class="headerlink" href="#id48" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="../enums/domain_DisplayMode.DisplayMode.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">DisplayMode</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument display mode. Use this to access the display mode.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id49">
+<h4 id="id49">Returns<a class="headerlink" href="#id49" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> DISPLAY_MODE_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the display mode is updated, either by the user or automatically based on the time of the day if the user chose to have to automatically updated.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedinternetstate">
+<h3 id="onneworupdatedinternetstate">onNewOrUpdatedInternetState<a class="headerlink" href="#onneworupdatedinternetstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedInternetState</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Registers a callback to be run upon new internetState or internetState update</p>
+<section id="id50">
+<h4 id="id50">Parameters<a class="headerlink" href="#id50" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="../enums/domain_InternetState.InternetState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">InternetState</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback to be executed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id51">
+<h4 id="id51">Returns<a class="headerlink" href="#id51" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> CONNECTIVITY_READ</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.1.0 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the state of the internet connectivity is updated, and when the certified app starts.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="putappinforeground">
+<h3 id="putappinforeground">putAppInForeground<a class="headerlink" href="#putappinforeground" title="Permalink to this heading">¶</a></h3>
+<p><strong>putAppInForeground</strong>(): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Opens the app in foreground in Vehicle Services.</p>
+<section id="id52">
+<h4 id="id52">Returns<a class="headerlink" href="#id52" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> PUT_APP_IN_FOREGROUND</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="telephony-methods">
+<h2 id="telephony-methods">Telephony Methods<a class="headerlink" href="#telephony-methods" title="Permalink to this heading">¶</a></h2>
+<section id="answercall">
+<h3 id="answercall">answerCall<a class="headerlink" href="#answercall" title="Permalink to this heading">¶</a></h3>
+<p><strong>answerCall</strong>(<code class="docutils literal notranslate"><span class="pre">callId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Answers a call that matches the given <a class="reference internal" href="domain_PhoneCall.PhoneCall.html#callid"><span class="std std-ref">callId</span></a> provided as part of the calls from newOrUpdatedCalls.</p>
+<section id="id53">
+<h4 id="id53">Parameters<a class="headerlink" href="#id53" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the call to answer.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id54">
+<h4 id="id54">Returns<a class="headerlink" href="#id54" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="hangupcall">
+<h3 id="hangupcall">hangUpCall<a class="headerlink" href="#hangupcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>hangUpCall</strong>(<code class="docutils literal notranslate"><span class="pre">callId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Hangs up or cancels a call that matches the given <a class="reference internal" href="domain_PhoneCall.PhoneCall.html#callid"><span class="std std-ref">callId</span></a> provided as part of the calls from newOrUpdatedCalls.</p>
+<section id="id55">
+<h4 id="id55">Parameters<a class="headerlink" href="#id55" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the call to be canceled.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id56">
+<h4 id="id56">Returns<a class="headerlink" href="#id56" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="holdcall">
+<h3 id="holdcall">holdCall<a class="headerlink" href="#holdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>holdCall</strong>(<code class="docutils literal notranslate"><span class="pre">callId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Puts a call on hold that matches the given <a class="reference internal" href="domain_PhoneCall.PhoneCall.html#callid"><span class="std std-ref">callId</span></a> provided as part of the calls from newOrUpdatedCalls.</p>
+<section id="id57">
+<h4 id="id57">Parameters<a class="headerlink" href="#id57" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the call to hold.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id58">
+<h4 id="id58">Returns<a class="headerlink" href="#id58" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="makecall">
+<h3 id="makecall">makeCall<a class="headerlink" href="#makecall" title="Permalink to this heading">¶</a></h3>
+<p><strong>makeCall</strong>(<code class="docutils literal notranslate"><span class="pre">number</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Initiates a new call to the given number.</p>
+<section id="id59">
+<h4 id="id59">Parameters<a class="headerlink" href="#id59" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the phone number to call</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id60">
+<h4 id="id60">Returns<a class="headerlink" href="#id60" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="mutemicrophone">
+<h3 id="mutemicrophone">muteMicrophone<a class="headerlink" href="#mutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>muteMicrophone</strong>(): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Mutes the microphone of the device.</p>
+<section id="id61">
+<h4 id="id61">Returns<a class="headerlink" href="#id61" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedaudiodevicetypes">
+<h3 id="onneworupdatedaudiodevicetypes">onNewOrUpdatedAudioDeviceTypes<a class="headerlink" href="#onneworupdatedaudiodevicetypes" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedAudioDeviceTypes</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the available and selected audio device types for phone calls are updated.</p>
+<section id="id62">
+<h4 id="id62">Parameters<a class="headerlink" href="#id62" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_AudioDevices.AudioDevices.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">AudioDevices</span></code></span></a>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument AudioDevices. Use this to access the current audio devices state.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id63">
+<h4 id="id63">Returns<a class="headerlink" href="#id63" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.3.1 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the available audio devices change or the selected audio device changes.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedcalls">
+<h3 id="onneworupdatedcalls">onNewOrUpdatedCalls<a class="headerlink" href="#onneworupdatedcalls" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedCalls</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the phone calls are updated.</p>
+<section id="id64">
+<h4 id="id64">Parameters<a class="headerlink" href="#id64" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<a class="reference internal" href="domain_PhoneCall.PhoneCall.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">PhoneCall</span></code></span></a>[], <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument array of <a class="reference internal" href="domain_PhoneCall.PhoneCall.html"><span class="std std-doc">PhoneCall</span></a>. Use this to access the current phone calls.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id65">
+<h4 id="id65">Returns<a class="headerlink" href="#id65" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the state of incoming calls is updated: new incoming call, hangup etc.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="onneworupdatedmutestate">
+<h3 id="onneworupdatedmutestate">onNewOrUpdatedMuteState<a class="headerlink" href="#onneworupdatedmutestate" title="Permalink to this heading">¶</a></h3>
+<p><strong>onNewOrUpdatedMuteState</strong>(<code class="docutils literal notranslate"><span class="pre">callback</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Used to assign a callback when the device’s microphone mute state is updated.</p>
+<section id="id66">
+<h4 id="id66">Parameters<a class="headerlink" href="#id66" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">CallbackFunction</span></code>&lt;<code class="docutils literal notranslate"><span class="pre">boolean</span></code>, <code class="docutils literal notranslate"><span class="pre">void</span></code>&gt;</p></td>
+<td class="text-left"><p>The callback with (optional) argument boolean. Use this to access the current microphone mute state.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id67">
+<h4 id="id67">Returns<a class="headerlink" href="#id67" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: callback will never trigger.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Trigger</span></code></strong></p>
+<p>The callback triggers every time the device’s microphone mute state is updated.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="playringtone">
+<h3 id="playringtone">playRingtone<a class="headerlink" href="#playringtone" title="Permalink to this heading">¶</a></h3>
+<p><strong>playRingtone</strong>(<code class="docutils literal notranslate"><span class="pre">filePath</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Plays an audio file as a ringtone.</p>
+<section id="id68">
+<h4 id="id68">Parameters<a class="headerlink" href="#id68" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">filePath</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the relative file path of the ringtone audio file. The file should be placed in the /public folder.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id69">
+<h4 id="id69">Returns<a class="headerlink" href="#id69" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permission</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="selectaudiodevicetype">
+<h3 id="selectaudiodevicetype">selectAudioDeviceType<a class="headerlink" href="#selectaudiodevicetype" title="Permalink to this heading">¶</a></h3>
+<p><strong>selectAudioDeviceType</strong>(<code class="docutils literal notranslate"><span class="pre">audioDeviceType</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Selects the audio device type for phone calls.</p>
+<section id="id70">
+<h4 id="id70">Parameters<a class="headerlink" href="#id70" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">audioDeviceType</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../enums/domain_AudioDevicesType.AudioDevicesType.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">AudioDevicesType</span></code></span></a></p></td>
+<td class="text-left"><p>the audio device type.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id71">
+<h4 id="id71">Returns<a class="headerlink" href="#id71" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permission</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.3.1 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="stopringtone">
+<h3 id="stopringtone">stopRingtone<a class="headerlink" href="#stopringtone" title="Permalink to this heading">¶</a></h3>
+<p><strong>stopRingtone</strong>(<code class="docutils literal notranslate"><span class="pre">filePath</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Stops playing the ringtone for a given audio file.</p>
+<section id="id72">
+<h4 id="id72">Parameters<a class="headerlink" href="#id72" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">filePath</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the relative file path of the ringtone audio file. The file should be placed in the /public folder. This should match the path sent in <a class="reference internal" href="#playringtone"><span class="std std-ref">playRingtone</span></a> for a particular ringtone.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id73">
+<h4 id="id73">Returns<a class="headerlink" href="#id73" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permission</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.3.2 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="unholdcall">
+<h3 id="unholdcall">unholdCall<a class="headerlink" href="#unholdcall" title="Permalink to this heading">¶</a></h3>
+<p><strong>unholdCall</strong>(<code class="docutils literal notranslate"><span class="pre">callId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Resumes a call on hold that matches the given <a class="reference internal" href="domain_PhoneCall.PhoneCall.html#callid"><span class="std std-ref">callId</span></a> provided as part of the calls from newOrUpdatedCalls.</p>
+<section id="id74">
+<h4 id="id74">Parameters<a class="headerlink" href="#id74" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">callId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>the id of the call to be resumed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id75">
+<h4 id="id75">Returns<a class="headerlink" href="#id75" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="unmutemicrophone">
+<h3 id="unmutemicrophone">unmuteMicrophone<a class="headerlink" href="#unmutemicrophone" title="Permalink to this heading">¶</a></h3>
+<p><strong>unmuteMicrophone</strong>(): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Unmutes the microphone of the device.</p>
+<section id="id76">
+<h4 id="id76">Returns<a class="headerlink" href="#id76" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Permissions</strong> TELEPHONY</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Version</strong> Vehicle Services version 5.2.4 and above have full functionality. Other versions: function will throw an Error.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Evam device only</p>
+</section>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="testing-and-development-methods">
+<h2 id="testing-and-development-methods">Testing and Development Methods<a class="headerlink" href="#testing-and-development-methods" title="Permalink to this heading">¶</a></h2>
+<section id="injectappid">
+<h3 id="injectappid">injectAppId<a class="headerlink" href="#injectappid" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectAppId</strong>(<code class="docutils literal notranslate"><span class="pre">appId</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the certified app ID manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id77">
+<h4 id="id77">Parameters<a class="headerlink" href="#id77" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">appId</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The app ID to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id78">
+<h4 id="id78">Returns<a class="headerlink" href="#id78" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectappversion">
+<h3 id="injectappversion">injectAppVersion<a class="headerlink" href="#injectappversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectAppVersion</strong>(<code class="docutils literal notranslate"><span class="pre">appVersion</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the app version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id79">
+<h4 id="id79">Parameters<a class="headerlink" href="#id79" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">appVersion</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The app version to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id80">
+<h4 id="id80">Returns<a class="headerlink" href="#id80" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectaudiodevices">
+<h3 id="injectaudiodevices">injectAudioDevices<a class="headerlink" href="#injectaudiodevices" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectAudioDevices</strong>(<code class="docutils literal notranslate"><span class="pre">audioDevices</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the audio devices available (and selected).
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id81">
+<h4 id="id81">Parameters<a class="headerlink" href="#id81" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">audioDevices</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_AudioDevices.AudioDevices.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">AudioDevices</span></code></span></a></p></td>
+<td class="text-left"><p>the audio devices to inject</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id82">
+<h4 id="id82">Returns<a class="headerlink" href="#id82" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectavailablevehiclestatuslist">
+<h3 id="injectavailablevehiclestatuslist">injectAvailableVehicleStatusList<a class="headerlink" href="#injectavailablevehiclestatuslist" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectAvailableVehicleStatusList</strong>(<code class="docutils literal notranslate"><span class="pre">vehicleStatusList</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject the Available Vehicle Status list to EvamApi (Only available in development.)</p>
+<section id="id83">
+<h4 id="id83">Parameters<a class="headerlink" href="#id83" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">vehicleStatusList</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_VehicleStatus.VehicleStatus.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VehicleStatus</span></code></span></a>[]</p></td>
+<td class="text-left"><p>the list of available Vehicle Statuses</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id84">
+<h4 id="id84">Returns<a class="headerlink" href="#id84" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectbattery">
+<h3 id="injectbattery">injectBattery<a class="headerlink" href="#injectbattery" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectBattery</strong>(<code class="docutils literal notranslate"><span class="pre">battery</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the battery manually. This will trigger onNewOrUpdatedBattery(…)’s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id85">
+<h4 id="id85">Parameters<a class="headerlink" href="#id85" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">battery</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_Battery.Battery.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Battery</span></code></span></a></p></td>
+<td class="text-left"><p>The battery to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id86">
+<h4 id="id86">Returns<a class="headerlink" href="#id86" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectcalls">
+<h3 id="injectcalls">injectCalls<a class="headerlink" href="#injectcalls" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectCalls</strong>(<code class="docutils literal notranslate"><span class="pre">calls</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Inject a list of <a class="reference internal" href="domain_PhoneCall.PhoneCall.html"><span class="std std-doc">PhoneCall</span></a> as they are sent from Vehicle Services.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id87">
+<h4 id="id87">Parameters<a class="headerlink" href="#id87" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">calls</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_PhoneCall.PhoneCall.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">PhoneCall</span></code></span></a>[]</p></td>
+<td class="text-left"><p>the calls to be injected.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id88">
+<h4 id="id88">Returns<a class="headerlink" href="#id88" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectdevicerole">
+<h3 id="injectdevicerole">injectDeviceRole<a class="headerlink" href="#injectdevicerole" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectDeviceRole</strong>(<code class="docutils literal notranslate"><span class="pre">deviceRole</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject deviceRole to EvamApi (Only available in development.)</p>
+<section id="id89">
+<h4 id="id89">Parameters<a class="headerlink" href="#id89" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">deviceRole</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../enums/domain_DeviceRole.DeviceRole.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">DeviceRole</span></code></span></a></p></td>
+<td class="text-left"><p>the deviceRole to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id90">
+<h4 id="id90">Returns<a class="headerlink" href="#id90" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectdisplaymode">
+<h3 id="injectdisplaymode">injectDisplayMode<a class="headerlink" href="#injectdisplaymode" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectDisplayMode</strong>(<code class="docutils literal notranslate"><span class="pre">displayMode</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the display mode manually. This will trigger onNewOrUpdatedDisplayMode(…)’s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id91">
+<h4 id="id91">Parameters<a class="headerlink" href="#id91" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">displayMode</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../enums/domain_DisplayMode.DisplayMode.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">DisplayMode</span></code></span></a></p></td>
+<td class="text-left"><p>The display mode (light or dark) to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id92">
+<h4 id="id92">Returns<a class="headerlink" href="#id92" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectintercomenabledstate">
+<h3 id="injectintercomenabledstate">injectIntercomEnabledState<a class="headerlink" href="#injectintercomenabledstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectIntercomEnabledState</strong>(<code class="docutils literal notranslate"><span class="pre">intercomEnabledState</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject intercomEnabledState to EvamApi (Only available in development.)</p>
+<section id="id93">
+<h4 id="id93">Parameters<a class="headerlink" href="#id93" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">intercomEnabledState</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="text-left"><p>the intercomEnabledState to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id94">
+<h4 id="id94">Returns<a class="headerlink" href="#id94" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectinternetstate">
+<h3 id="injectinternetstate">injectInternetState<a class="headerlink" href="#injectinternetstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectInternetState</strong>(<code class="docutils literal notranslate"><span class="pre">internetState</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject internetState to EvamApi (Only available in development.)</p>
+<section id="id95">
+<h4 id="id95">Parameters<a class="headerlink" href="#id95" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">internetState</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="../enums/domain_InternetState.InternetState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">InternetState</span></code></span></a></p></td>
+<td class="text-left"><p>the internetState to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id96">
+<h4 id="id96">Returns<a class="headerlink" href="#id96" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectlocation">
+<h3 id="injectlocation">injectLocation<a class="headerlink" href="#injectlocation" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectLocation</strong>(<code class="docutils literal notranslate"><span class="pre">location</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject location to EvamApi (Only available in development.)</p>
+<section id="id97">
+<h4 id="id97">Parameters<a class="headerlink" href="#id97" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">location</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_Location.Location.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Location</span></code></span></a></p></td>
+<td class="text-left"><p>the location to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id98">
+<h4 id="id98">Returns<a class="headerlink" href="#id98" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectmutestate">
+<h3 id="injectmutestate">injectMuteState<a class="headerlink" href="#injectmutestate" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectMuteState</strong>(<code class="docutils literal notranslate"><span class="pre">isMuted</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the mute state of the microphone.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id99">
+<h4 id="id99">Parameters<a class="headerlink" href="#id99" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">isMuted</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p></td>
+<td class="text-left"><p>true if the microphone is muted.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id100">
+<h4 id="id100">Returns<a class="headerlink" href="#id100" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectosversion">
+<h3 id="injectosversion">injectOSVersion<a class="headerlink" href="#injectosversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectOSVersion</strong>(<code class="docutils literal notranslate"><span class="pre">osVersion</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the OS version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id101">
+<h4 id="id101">Parameters<a class="headerlink" href="#id101" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">osVersion</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The OS version to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id102">
+<h4 id="id102">Returns<a class="headerlink" href="#id102" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectoperation">
+<h3 id="injectoperation">injectOperation<a class="headerlink" href="#injectoperation" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectOperation</strong>(<code class="docutils literal notranslate"><span class="pre">activeCase</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the Active Operation manually. This will trigger onNewOrUpdatedActiveOperation(…)’s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id103">
+<h4 id="id103">Parameters<a class="headerlink" href="#id103" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">activeCase</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_Operation.Operation.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></span></a></p></td>
+<td class="text-left"><p>The active case to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id104">
+<h4 id="id104">Returns<a class="headerlink" href="#id104" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectoperationlist">
+<h3 id="injectoperationlist">injectOperationList<a class="headerlink" href="#injectoperationlist" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectOperationList</strong>(<code class="docutils literal notranslate"><span class="pre">operationList</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the operation list manually. This will trigger onNewOrUpdatedOperationList(…)’s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id105">
+<h4 id="id105">Parameters<a class="headerlink" href="#id105" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">operationList</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_Operation.Operation.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">Operation</span></code></span></a>[]</p></td>
+<td class="text-left"><p>The operation list to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id106">
+<h4 id="id106">Returns<a class="headerlink" href="#id106" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectrakelmessages">
+<h3 id="injectrakelmessages">injectRakelMessages<a class="headerlink" href="#injectrakelmessages" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectRakelMessages</strong>(<code class="docutils literal notranslate"><span class="pre">rakelMessages</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Inject a list of raw Rakel messages as they would be received from the radio.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id107">
+<h4 id="id107">Parameters<a class="headerlink" href="#id107" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rakelMessages</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code>[]</p></td>
+<td class="text-left"><p>list of raw Rakel messages.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id108">
+<h4 id="id108">Returns<a class="headerlink" href="#id108" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectrakelstate">
+<h3 id="injectrakelstate">injectRakelState<a class="headerlink" href="#injectrakelstate" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectRakelState</strong>(<code class="docutils literal notranslate"><span class="pre">rakelState</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject the Rakel State to EvamApi (Only available in development.)</p>
+<section id="id109">
+<h4 id="id109">Parameters<a class="headerlink" href="#id109" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rakelState</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_RakelState.RakelState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">RakelState</span></code></span></a></p></td>
+<td class="text-left"><p>The Rakel State</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id110">
+<h4 id="id110">Returns<a class="headerlink" href="#id110" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectsettings">
+<h3 id="injectsettings">injectSettings<a class="headerlink" href="#injectsettings" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectSettings</strong>(<code class="docutils literal notranslate"><span class="pre">settings</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the settings manually. This will trigger onNewOrUpdatedSettings(…)’s callback.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id111">
+<h4 id="id111">Parameters<a class="headerlink" href="#id111" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">settings</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">any</span></code></p></td>
+<td class="text-left"><p>The settings to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id112">
+<h4 id="id112">Returns<a class="headerlink" href="#id112" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injecttrip">
+<h3 id="injecttrip">injectTrip<a class="headerlink" href="#injecttrip" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectTrip</strong>(<code class="docutils literal notranslate"><span class="pre">tripLocationHistory</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject tripLocationHistory to EvamApi (Only available in development.)</p>
+<section id="id113">
+<h4 id="id113">Parameters<a class="headerlink" href="#id113" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">tripLocationHistory</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_TripLocationHistory.TripLocationHistory.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">TripLocationHistory</span></code></span></a></p></td>
+<td class="text-left"><p>the tripLocationHistory to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id114">
+<h4 id="id114">Returns<a class="headerlink" href="#id114" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectvsversion">
+<h3 id="injectvsversion">injectVSVersion<a class="headerlink" href="#injectvsversion" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectVSVersion</strong>(<code class="docutils literal notranslate"><span class="pre">vsVersion</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Injects the Vehicle Services platform version manually.
+This function is to be used for development only and will throw an error when used in Vehicle Services.</p>
+<section id="id115">
+<h4 id="id115">Parameters<a class="headerlink" href="#id115" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">vsVersion</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td class="text-left"><p>The Vehicle Services version to be injected for development purposes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id116">
+<h4 id="id116">Returns<a class="headerlink" href="#id116" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="injectvehiclestate">
+<h3 id="injectvehiclestate">injectVehicleState<a class="headerlink" href="#injectvehiclestate" title="Permalink to this heading">¶</a></h3>
+<p><strong>injectVehicleState</strong>(<code class="docutils literal notranslate"><span class="pre">vehicleState</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p>Manually inject vehicleState to EvamApi (Only available in development.)</p>
+<section id="id117">
+<h4 id="id117">Parameters<a class="headerlink" href="#id117" title="Permalink to this heading">¶</a></h4>
+<table>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Name</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">vehicleState</span></code></p></td>
+<td class="text-left"><p><a class="reference internal" href="domain_VehicleState.VehicleState.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">VehicleState</span></code></span></a></p></td>
+<td class="text-left"><p>the vehicleState to inject.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id118">
+<h4 id="id118">Returns<a class="headerlink" href="#id118" title="Permalink to this heading">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Requires</span></code></strong></p>
+<p><strong>Environment</strong> Development (in web browser) only.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../../2.11.0/modules/wrapper.html" title="Module: wrapper"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> "Previous" </span> Module: wrapper </span>
+              </div>
+            </a>
+          
+          
+            <a href="component_appbar_EvamTabContext.EvamAppBarContextModel.html" title="Class: EvamAppBarContextModel"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> Class: EvamAppBarContextModel </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2023, Evam.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../../../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+# Module: domain/AudioDevicesType
+
+## Enumerations
+
+- [AudioDevicesType](../enums/domain_AudioDevicesType.AudioDevicesType.md)

@@ -1,0 +1,50 @@
+# Class: AudioDevices
+
+[domain/AudioDevices](../modules/domain_AudioDevices.md).AudioDevices
+
+## Constructors
+
+### constructor
+
+**new AudioDevices**(`availableTypes`, `selectedType`)
+
+Class representing the payload for event NewOrUpdatedAudioDeviceTypes.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `availableTypes` | [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md)[] | the available types of audio devices for phone calls |
+| `selectedType` | [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md) | the selected audio device type for phone calls. |
+
+## Properties
+
+### availableTypes
+
+ **availableTypes**: [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md)[]
+
+the available types of audio devices for phone calls
+
+___
+
+### selectedType
+
+ **selectedType**: [`AudioDevicesType`](../enums/domain_AudioDevicesType.AudioDevicesType.md)
+
+the selected audio device type for phone calls.
+
+## Methods
+
+### fromJSON
+
+`Static` **fromJSON**(`audioDevices`): [`AudioDevices`](domain_AudioDevices.AudioDevices.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `audioDevices` | `any` |
+
+#### Returns
+
+[`AudioDevices`](domain_AudioDevices.AudioDevices.md)
