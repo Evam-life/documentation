@@ -1,5 +1,17 @@
 # Changelog | Vehicle Services
 
+## 6.1.4
+
+2024-11-12
+
+### Highlights
+
+* **Improved the Intercom audio quality and flexibility:** The intercom audio quality has been significantly improved, especially at high volumes or when using a headset. It also now leverages several hardware-backed enhancement filters such as noise reduction and gain control, enabling increased audio clarity in noisy environments.
+
+### Additional changes
+
+* **Improved Stability of the Intercom:** The Intercom could suffer from audio cuts at medium to high volumes, this should now be resolved.
+
 ## 6.1.3
 
 2024-11-05
