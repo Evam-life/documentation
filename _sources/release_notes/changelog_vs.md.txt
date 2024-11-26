@@ -1,5 +1,15 @@
 # Changelog | Vehicle Services
 
+## 6.1.5
+
+2024-11-26
+
+### Highlights
+
+* **Improved the Intercom audio quality and volume:** The intercom audio quality has been improved, and the volume can now be increased significantly - making it easier to use in loud environments.
+* **Ringtones will now always play on speakers:** Previously the ringtone for Tetra and Phone calls would play in the headsets if connected, making it possible to miss them if not all users were using headsets. They now play on speakers and are therefore harder to miss.
+
+
 ## 6.1.4
 
 2024-11-12
