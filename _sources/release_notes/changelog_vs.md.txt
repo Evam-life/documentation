@@ -1,5 +1,14 @@
 # Changelog | Vehicle Services
 
+## 6.1.6
+
+2024-12-03
+
+### Highlights
+
+* **Fixed a crash occuring when receiving phone call with no caller ID:** Receiving a call with no caller ID could cause a crash of Vehicle Services. This case should now be handled properly and the call should be received as expected. 
+
+
 ## 6.1.5
 
 2024-11-26
