@@ -1,5 +1,18 @@
 # Changelog | Vehicle Services
 
+## 6.1.7
+
+2024-12-11
+
+### Highlights
+
+* **The volume slider now adjusts the Phone call volume correctly:** A regression introduced in the previous version caused the "Voice" ("Röst") volume slider in Vehicle Services not to affect the Phone call volume, it was only adjusting the intercom volume. This should now be fixed and the slider should affect both intercom and Phone calls.
+
+### Additional changes
+
+* **Added a new log for raw GPS position in our support logs:** When you submit a support log through Vehicle Services, the vehicle raw GPS position will now be included in addition to the visible position in the Navigation app. This will allow us to help you better in situations of low GPS connectivity or when road data needs an update.
+
+
 ## 6.1.6
 
 2024-12-03
