@@ -1,5 +1,14 @@
 # Changelog | Vehicle Services
 
+## 6.1.8
+
+2025-01-14
+
+### Highlights
+
+* **The Tetra volume slider is now more responsive:** We have improved the handling of the Tetra call volume slider to make volume adjustments faster to apply on both Motorola and Sepura radios.
+
+
 ## 6.1.7
 
 2024-12-11

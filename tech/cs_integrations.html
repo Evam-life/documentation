@@ -386,11 +386,11 @@ Additionally, Central Services will forward logs, messages and other requests ba
 <li><p><code class="docutils literal notranslate"><span class="pre">USERNAME</span></code>: Your Central Services user email,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code>: The complex password you have set at step 3.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">environ</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">environ</span>
 
-<span class="kn">from</span> <span class="nn">oauthlib.oauth2</span> <span class="kn">import</span> <span class="n">LegacyApplicationClient</span>
-<span class="kn">from</span> <span class="nn">requests_oauthlib</span> <span class="kn">import</span> <span class="n">OAuth2Session</span>
-<span class="kn">from</span> <span class="nn">websockets.sync.client</span> <span class="kn">import</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">oauthlib.oauth2</span><span class="w"> </span><span class="kn">import</span> <span class="n">LegacyApplicationClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">requests_oauthlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">OAuth2Session</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">websockets.sync.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span>
 
 <span class="n">integration_uri</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"wss://</span><span class="si">{</span><span class="n">environ</span><span class="p">[</span><span class="s1">'INTEGRATION_URI'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
 
